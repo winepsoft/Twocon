@@ -16,8 +16,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import java.util.Locale;
-
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 import winep.ir.twocon.Presenter.FlashTab.Flashfragment;
 import winep.ir.twocon.Presenter.GroupsTab.GroupsFragment;
@@ -73,19 +71,11 @@ public class MainActivity extends AppCompatActivity
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
     }
 
-    public static boolean isRTL() {
-        return isRTL(Locale.getDefault());
-    }
 
-    public static boolean isRTL(Locale locale) {
-        final int directionality = Character.getDirectionality(locale.getDisplayName().charAt(0));
-        return directionality == Character.DIRECTIONALITY_RIGHT_TO_LEFT ||
-                directionality == Character.DIRECTIONALITY_RIGHT_TO_LEFT_ARABIC;
-    }
 
    private void setupViewPager() {
 
-       if (isRTL()) {
+       if (Utilities.getInstance().isRTL()) {
            // The view has LTR layout
            pagerAdapter.addFragment(new Flashfragment(), getString(R.string.tab_four));
            pagerAdapter.addFragment(new MemoryBankFragment(),getString(R.string.tab_three));
@@ -111,7 +101,7 @@ public class MainActivity extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         }
-        if(isRTL()){
+        if(Utilities.getInstance().isRTL()){
             if (viewPager.getCurrentItem()<pagerAdapter.getCount()-1)
                 viewPager.setCurrentItem(pagerAdapter.getCount()-1);
             else
