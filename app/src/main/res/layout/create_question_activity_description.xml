@@ -94,13 +94,14 @@
                             android:gravity="start">
                             <com.rey.material.widget.EditText
                                 app:et_labelEnable="true"
+                                app:et_inputId="@+id/txt_add_pronunciation_input"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/txt_add_pronunciation"
-                                app:et_inputId="@+id/txt_add_pronunciation_input"
                                 android:hint="@string/add_question_pronunciation"
                                 android:layout_centerVertical="true"
-                                android:layout_marginEnd="5dp" />
+                                android:layout_marginEnd="5dp"
+                                android:textAppearance="?android:attr/textAppearanceMedium"/>
                         </RelativeLayout>
                     </LinearLayout>
                     <LinearLayout
@@ -150,7 +151,8 @@
                                 android:id="@+id/txt_add_synonym"
                                 app:et_inputId="@+id/txt_add_synonym_input"
                                 android:hint="@string/add_question_synonym"
-                                android:layout_centerVertical="true" />
+                                android:layout_centerVertical="true"
+                                android:textAppearance="?android:attr/textAppearanceMedium"/>
                         </RelativeLayout>
                     </LinearLayout>
                     <LinearLayout
@@ -200,7 +202,8 @@
                             app:et_inputId="@+id/txt_add_antonym_input"
                             android:hint="@string/add_question_antonym"
                             android:layout_centerVertical="true"
-                            android:layout_marginLeft="5dp" />
+                            android:layout_marginLeft="5dp"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
                     </RelativeLayout>
                 </LinearLayout>
                 <LinearLayout
@@ -252,7 +255,8 @@
                                 android:layout_centerVertical="true"
                                 android:layout_marginLeft="5dp"
                                 android:lines="4"
-                                android:gravity="center_vertical" />
+                                android:gravity="center_vertical"
+                                android:textAppearance="?android:attr/textAppearanceMedium"/>
                         </RelativeLayout>
                     </LinearLayout>
                     <LinearLayout
