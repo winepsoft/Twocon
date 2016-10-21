@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2196f3</color>
+    <color name="colorPrimaryDark">#1976d2</color>
+    <color name="colorAccent">#ff5252</color>
+    <color name="fab_background_text">#393939</color>
+    <color name="fab_text_color">#FFFFFF</color>
+    <color name="fab_icon_color">#FFFFFF</color>
+
+    <color name="white">#fafafa</color>
+    <color name="black_semi_transparent">#B2000000</color>
+
+    <color name="background_after_click_FAM">#C0FFFFFF</color>
+    <color name="fab_color">#ff5252</color>
+    <color name="fab_plus_color">#FFFFFF</color>
+
+
+    <color name="dialog_save_color">#31a140</color>
+    <color name="dialog_cancel_color">#f7353d</color>
+
+    <color name="statistics_background_color">#dadada</color>
+    <color name="statistics_corner_right_top_color">#2392ec</color>
+    <color name="statistics_label_right_top_color">#2196f3</color>
+    <color name="statistics_corner_right_bottom_color">#f26b6e</color>
+    <color name="statistics_label_right_bottom_color">#ff5252</color>
+    <color name="statistics_corner_left_top_color">#fc578e</color>
+    <color name="statistics_label_left_top_color">#ff4081</color>
+    <color name="statistics_corner_left_bottom_color">#ffb157</color>
+    <color name="statistics_label_left_bottom_color">#ffab40</color>
+    <color name="statistics_button_right_color">#03a9f4</color>
+    <color name="statistics_button_left_color">#f45d5d</color>
+
+    <color name="memory_bank_question_wrong">#ff5252</color>
+    <color name="memory_bank_question_true">#00c853</color>
+    <color name="memory_bank_answer_od_question_seen">#ffab40</color>
+    <color name="memory_bank_question_seen">#ff4081</color>
+    <color name="memory_bank_question_number">#9dc3e6</color>
+    <color name="memory_bank_tool_bar_button_color">#a6a6a6</color>
+    <color name="item_foreground_selected_color">#21300000</color>
+
+    <color name="exam_circle_answer_number">#2e75b6</color>
+    <color name="exam_label_color">#ff5252</color>
+    <color name="exam_end_button_color">#ffab40</color>
+    <color name="exam_prev_button_color">#ff5252</color>
+    <color name="exam_next_button_color">#01c853</color>
+
+    <color name="question_page_background_color">#d1f3f4</color>
+    <color name="hard_question_color">#00c853</color>
+    <color name="know_button">#00c853</color>
+    <color name="no_know_button">#ff5252</color>
+    <color name="button_background">#a6a6a6</color>
+
+    <color name="settings_label">#2196f3</color>
+
+    <color name="crete_question_button_toolbar">#a6a6a6</color>
+    <color name="create_question_label">#2196f3</color>
+
+    <color name="level_settings_label">#2196f3</color>
+
+    <color name="green">#01c853</color>
+    <color name="red">#ff5253</color>
+    <color name="pink">#ff4081</color>
+
+
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/setting_cancel"
+        android:orderInCategory="100"
+        android:title="@string/setting_cancel"
+        android:icon="@mipmap/setting_cancel"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/setting_save"
+        android:orderInCategory="100"
+        android:title="@string/setting_save"
+        android:icon="@mipmap/setting_ok"
+        app:showAsAction="always" />
+
+</menu>

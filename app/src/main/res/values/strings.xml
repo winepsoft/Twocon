@@ -1,0 +1,167 @@
+<resources>
+    //ActionBar
+    <string name="app_name">My Memory</string>
+    <string name="user_profile_name">User Name</string>
+    <string name="action_search">Search</string>
+    <string name="navigation_drawer_open">navigation_drawer_open</string>
+    <string name="navigation_drawer_close">navigation_drawer_close</string>
+
+
+    //Tabs
+    <string name="tab_one">Groups</string>
+    <string name="tab_two">Online Dictionary</string>
+    <string name="tab_three">MemoryBank</string>
+    <string name="tab_four">Flash</string>
+
+    //Group Fragment
+    <string name="new_group_dialog_title">Add New group</string>
+    <string name="new_sub_group_dialog_title">Add new Sub Group</string>
+    <string name="add_a_sub_group_to">Add New sub Group To</string>
+    <string name="new_course_dialog_title">Add New Course</string>
+    <string name="add_a_course_to">Add A Course To </string>
+
+    //PopMenu_group_fragment
+    <string name="information">Information</string>
+    <string name="edit_name">Edit Name</string>
+    <string name="set_the_level">Set Level</string>
+    <string name="delete">Delete</string>
+
+    //NavigationDrawer
+    <string name="user_profile">User Panel</string>
+    <string name="shared_flashcard">Backup</string>
+    <string name="help">Help</string>
+    <string name="setting_app">Setting</string>
+    <string name="ticket">Ticket</string>
+    <string name="rate_us">rate Us</string>
+    <string name="about_us">About Us</string>
+    <string name="exit">Exit</string>
+
+    //FloatingActionMenu_group_fragment
+    <string name="question">Question</string>
+    <string name="course">Course</string>
+    <string name="group">Group</string>
+    <string name="sub_group">Sub Group</string>
+
+    //all dialog
+    <string name="save">OK</string>
+    <string name="cancel">Cancel</string>
+
+    //dialog_edit_group
+    <string name="dialog_edit_group_title">Edit Group</string>
+    <string name="dialog_edit_group_name">Name : </string>
+    <string name="dialog_edit_group_description">Description</string>
+    //dialog_delete_group
+    <string name="dialog_delete_group_title">When delete group then all question of this group :</string>
+    <array name="dialog_delete_group_item_choice">
+        <item>Remained in the memory banks</item>
+        <item>Delete from memory banks</item>
+    </array>
+
+    //action_bar_sub_group_activity
+    <string name="sub_group_activity_title">Sub group</string>
+    <string name="action_back">Back</string>
+    //dialog_edit_sub_group
+    <string name="dialog_edit_sub_group_title">Edit Sub Group</string>
+    <string name="dialog_edit_sub_group_name">Name : </string>
+    <string name="dialog_edit_sub_group_description">Description : </string>
+    //dialog_delete_sub_group
+    <string name="dialog_delete_sub_group_title">When delete Sub group then all question of this Sub group :</string>
+    <array name="dialog_delete_sub_group_item_choice">
+        <item>Remained in the memory banks</item>
+        <item>Delete from memory banks</item>
+    </array>
+    
+    //statistics page
+    <string name="speed_learning">Speed Learn</string>
+    <string name="growth_flashcards">Growth flash Cards</string>
+    <string name="all_cart">All cart</string>
+    <string name="studding">Studding</string>
+    <string name="create_date">Create Date</string>
+    <string name="last_seen">Last seen</string>
+
+    //memory bank page
+    <string name="lesson">Lesson</string>
+    <string name="m_sub_group">Sub Group</string>
+    <string name="m_group">Group</string>
+    <string name="m_delete">Delete</string>
+    <string name="m_change_lesson">Change Lesson</string>
+    <string name="m_multi_selected">Multi Selected</string>
+    <string name="m_edit">Edit</string>
+    <string name="m_filter_group">Filter Group</string>
+    <string name="m_filter_priority">Filter Priority</string>
+    <string name="m_hard">Hard question</string>
+    <string name="m_favourite">Favourite</string>
+
+    //exam page
+    <string name="exam_activity_title">Exam</string>
+    <string name="answer_one">1</string>
+    <string name="answer_two">2</string>
+    <string name="answer_three">3</string>
+    <string name="answer_four">4</string>
+    <string name="answer">yes,it is easy</string>
+    <string name="next">next</string>
+    <string name="previous">previous</string>
+    <string name="end">end</string>
+
+    //question page
+    <string name="question_activity_title">See Question</string>
+    <string name="hard_question">Hard</string>
+    <string name="question_description">pro: \n syn:This is synonym that \n opp:Hard \n example: \n it is so easy</string>
+    <string name="answer_know">I Know</string>
+    <string name="answer_no_know">I Dont Know</string>
+
+    //settings
+    <string name="settings_activity_title">Settings</string>
+    <string name="setting_language">Application Language:</string>
+    <string name="persian">Farsi</string>
+    <string name="english">English</string>
+    <string name="settings_app_color">Application Color: </string>
+    <string name="settings_font_size">Font size:</string>
+    <string name="settings_view_dictionary">View the dictionary in Question:</string>
+    <string name="settings_view_voice_button">View the Voice in Question:</string>
+    <string name="settings_direct_entry_subGroup">Direct entry to SubGroup:</string>
+    <string name="settings_change_question_and_answer">Change question and answer:</string>
+    <string name="settings_play_automatic_voice">Play automatic pronunciation of words:</string>
+    <string name="setting_backup">BackUp</string>
+    <string name="settings_retrieval">Retrieval settings</string>
+    <string name="settings_app_update">Update</string>
+    <string name="setting_cancel">cancel</string>
+    <string name="setting_save">save</string>
+
+    //level page
+    <string name="level_ready">Ready</string>
+    <string name="level_total">Total</string>
+    <string name="level_add_new_question">Add new question</string>
+    <string name="level_add_free_question">Add free questions</string>
+    <string name="level_add_question_from_excel">Add questions from excel</string>
+    <string name="level_view_question_list">View questions list</string>
+    <string name="level_review_questions">Review questions </string>
+    <string name="level_view_hard_questions">View hard questions</string>
+    <string name="level_view_favourite">View favorite questions</string>
+    <string name="level_exam">Test</string>
+
+    //create_question
+    <string name="create_question_activity_title">Add New Question</string>
+    <string name="add_question_group">Group</string>
+    <string name="add_question_sub_group">Sub Group</string>
+    <string name="add_question_course">Course</string>
+    <string name="add_question_question">Question</string>
+    <string name="add_question_answer">Answer</string>
+    <string name="add_question_description">Description</string>
+    <string name="add_question_add_voice">Add voice</string>
+    <string name="add_question_add_image">Add Picture</string>
+    <string name="add_question_pronunciation">pronunciation</string>
+    <string name="add_question_synonym">synonym</string>
+    <string name="add_question_antonym">antonym</string>
+    <string name="add_question_example">example</string>
+    <string name="spinner_select_group">Group</string>
+    <string name="spinner_select_sub_group">Sub Group</string>
+    <string name="spinner_select_course">Course</string>
+
+    //level setting
+    <string name="level_setting_activity_title">Level Setting</string>
+    <string name="level_setting_select_level_number">Select Level Number :</string>
+    <string name="level_number">level Number</string>
+    <string name="level_setting_select_time_type_month">Month</string>
+    <string name="level_setting_select_time_type_day">Day</string>
+</resources>

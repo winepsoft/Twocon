@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="winep.ir.twocon.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/recycler_view_sub_groups">
+        </android.support.v7.widget.RecyclerView>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/containerFloatingActionMenu">
+        <com.getbase.floatingactionbutton.FloatingActionsMenu
+            android:id="@+id/sub_group_fab_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|bottom"
+            android:layout_marginRight="16dp"
+            app:fab_addButtonColorNormal="@color/fab_color"
+            app:fab_addButtonColorPressed="@color/fab_color"
+            app:fab_addButtonPlusIconColor="@color/fab_plus_color"
+
+            fab:fab_labelStyle="@style/menu_labels_style"
+            fab:fab_labelsPosition="left">
+
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/sub_fab_sub_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fab_colorNormal="@color/fab_color"
+                app:fab_colorPressed="@color/fab_color"
+                android:src="@mipmap/sub_group"
+                fab:fab_title="@string/sub_group"
+                fab:fab_size="mini"/>
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/sub_fab_course"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fab_colorNormal="@color/fab_color"
+                app:fab_colorPressed="@color/fab_color"
+                android:src="@mipmap/course"
+                fab:fab_title="@string/course"
+                fab:fab_size="mini"/>
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/sub_fab_question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fab_colorNormal="@color/fab_color"
+                app:fab_colorPressed="@color/fab_color"
+                android:src="@mipmap/question"
+                fab:fab_title="@string/question"
+                fab:fab_size="mini"/>
+
+
+        </com.getbase.floatingactionbutton.FloatingActionsMenu>
+    </FrameLayout>
+</android.support.design.widget.CoordinatorLayout>

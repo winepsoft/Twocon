@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_level_add_new_question"
+        android:orderInCategory="100"
+        android:title="@string/level_add_new_question"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_level_add_free_question"
+        android:orderInCategory="100"
+        android:title="@string/level_add_free_question"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_level_add_question_from_excel"
+        android:orderInCategory="100"
+        android:title="@string/level_add_question_from_excel"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_level_view_question_list"
+        android:orderInCategory="100"
+        android:title="@string/level_view_question_list"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_level_review_questions"
+        android:orderInCategory="100"
+        android:title="@string/level_review_questions"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_level_view_hard_questions"
+        android:orderInCategory="100"
+        android:title="@string/level_view_hard_questions"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_level_view_favourite"
+        android:orderInCategory="100"
+        android:title="@string/level_view_favourite"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_level_exam"
+        android:orderInCategory="100"
+        android:title="@string/level_exam"
+        app:showAsAction="never"/>
+
+</menu>

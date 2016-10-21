@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+    </android.support.design.widget.AppBarLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include layout="@layout/exam_timer_toolbar"/>
+            <include layout="@layout/exam_question"/>
+
+            <RelativeLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/circle_exam_answer_number"
+                    android:id="@+id/txt_number_one"
+                    android:text="@string/answer_one"
+                    android:textColor="@color/white"
+                    android:gravity="center_vertical|center" />
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/txt_number_one">
+                    <LinearLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:weightSum="3"
+                        android:baselineAligned="false">
+                        <LinearLayout
+                            android:layout_width="10dp"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:background="@color/exam_label_color"
+                            android:layout_weight="1" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight="1">
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:gravity="start">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical|center_horizontal"
+                                    android:id="@+id/txt_answer_one"
+                                    android:text="@string/answer"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toEndOf="@+id/txt_question_number"
+                                    android:layout_marginLeft="5dp" />
+                            </RelativeLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="10dp"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:background="@color/exam_label_color"
+                            android:id="@+id/linearLayoutRight"
+                            android:layout_weight="1" />
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+            </RelativeLayout>
+            <RelativeLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/circle_exam_answer_number"
+                    android:id="@+id/txt_number_two"
+                    android:text="@string/answer_two"
+                    android:textColor="@color/white"
+                    android:gravity="center_vertical|center" />
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/txt_number_two">
+                    <LinearLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:weightSum="3"
+                        android:baselineAligned="false">
+                        <LinearLayout
+                            android:layout_width="10dp"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:background="@color/exam_label_color"
+                            android:layout_weight="1" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight="1">
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:gravity="start">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical|center_horizontal"
+                                    android:id="@+id/txt_answer_two"
+                                    android:text="@string/answer"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toEndOf="@+id/txt_question_number"
+                                    android:layout_marginLeft="5dp" />
+                            </RelativeLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="10dp"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:background="@color/exam_label_color"
+                            android:id="@+id/linearLayoutRight"
+                            android:layout_weight="1" />
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+            </RelativeLayout>
+            <RelativeLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/circle_exam_answer_number"
+                    android:id="@+id/txt_number_three"
+                    android:text="@string/answer_three"
+                    android:textColor="@color/white"
+                    android:gravity="center_vertical|center" />
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/txt_number_three">
+                    <LinearLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:weightSum="3"
+                        android:baselineAligned="false">
+                        <LinearLayout
+                            android:layout_width="10dp"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:background="@color/exam_label_color"
+                            android:layout_weight="1" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight="1">
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:gravity="start">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical|center_horizontal"
+                                    android:id="@+id/txt_answer_three"
+                                    android:text="@string/answer"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toEndOf="@+id/txt_question_number"
+                                    android:layout_marginLeft="5dp" />
+                            </RelativeLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="10dp"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:background="@color/exam_label_color"
+                            android:id="@+id/linearLayoutRight"
+                            android:layout_weight="1" />
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+            </RelativeLayout>
+            <RelativeLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/circle_exam_answer_number"
+                    android:id="@+id/txt_number_four"
+                    android:text="@string/answer_four"
+                    android:textColor="@color/white"
+                    android:gravity="center_vertical|center" />
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/txt_number_four">
+                    <LinearLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:weightSum="3"
+                        android:baselineAligned="false">
+                        <LinearLayout
+                            android:layout_width="10dp"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:background="@color/exam_label_color"
+                            android:layout_weight="1" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight="1">
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:gravity="start">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical|center_horizontal"
+                                    android:id="@+id/txt_answer_four"
+                                    android:text="@string/answer"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toEndOf="@+id/txt_question_number"
+                                    android:layout_marginLeft="5dp" />
+                            </RelativeLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="10dp"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:background="@color/exam_label_color"
+                            android:id="@+id/linearLayoutRight"
+                            android:layout_weight="1" />
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+        <include layout="@layout/exam_button_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/information"
+        android:title="@string/m_multi_selected"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/edit_name"
+        android:title="@string/m_edit"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/setLevel"
+        android:title="@string/m_delete"
+        app:showAsAction="always" />
+
+</menu>

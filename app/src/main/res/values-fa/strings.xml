@@ -1,0 +1,168 @@
+<resources>
+    //ActionBar
+    <string name="app_name">حافظه من</string>
+    <string name="user_profile_name">نام کاربری</string>
+    <string name="action_search">جست و جو</string>
+    <string name="navigation_drawer_open">navigation_drawer_open</string>
+    <string name="navigation_drawer_close">navigation_drawer_close</string>
+
+    //Tabs
+    <string name="tab_one">گروهها</string>
+    <string name="tab_two">دیکشنری آنلاین</string>
+    <string name="tab_three">بانک حافظه</string>
+    <string name="tab_four">فلش</string>
+
+    //Group Fragment
+    <string name="new_group_dialog_title">اضافه کردن گروه جدید</string>
+    <string name="new_sub_group_dialog_title">اضافه کردن زیر گروه جدید</string>
+    <string name="add_a_sub_group_to">اضافه کردن زیرگروه جدید به گروه</string>
+    <string name="new_course_dialog_title">اضافه کردن درس جدید</string>
+    <string name="add_a_course_to">اضافه کردن درس جدید به </string>
+
+
+
+    //PopMenu_group_fragment
+    <string name="information">اطلاعات</string>
+    <string name="edit_name">ویرایش نام</string>
+    <string name="set_the_level">تنظیم مراحل</string>
+    <string name="delete">حذف</string>
+
+    //NavigationDrawer
+    <string name="user_profile">پنل کاربری</string>
+    <string name="shared_flashcard">پشتیبانی</string>
+    <string name="help">راهنمای نرم افزار</string>
+    <string name="setting_app">تنظیمات نرم افزار</string>
+    <string name="ticket">تیکت</string>
+    <string name="rate_us">رای به ما</string>
+    <string name="about_us">درباره ما</string>
+    <string name="exit">خروج</string>
+
+    //FloatingActionMenu_group_fragment
+    <string name="question">سوال</string>
+    <string name="course">درس</string>
+    <string name="group">گروه</string>
+    <string name="sub_group">زیرگروه</string>
+
+    //all dialog
+    <string name="save">تایید</string>
+    <string name="cancel">لغو</string>
+
+    //dialog_edit_group
+    <string name="dialog_edit_group_title">ویرایش گروه</string>
+    <string name="dialog_edit_group_name">نام : </string>
+    <string name="dialog_edit_group_description">توضیحات : </string>
+    //dialog_delete_group
+    <string name="dialog_delete_group_title">با حذف گروه تمامی سوالات زیر مجموعه: </string>
+    <array name="dialog_delete_group_item_choice">
+        <item>در بانک حافظه بدون دسته باقی بماند</item>
+        <item>از بانک حافظه حذف شوند</item>
+    </array>
+
+    //action_bar_sub_group_activity
+    <string name="sub_group_activity_title">زیرگروه</string>
+    <string name="action_back">بازگشت</string>
+    //dialog_edit_sub_group
+    <string name="dialog_edit_sub_group_title">ویرایش زیرگروه</string>
+    <string name="dialog_edit_sub_group_name">نام : </string>
+    <string name="dialog_edit_sub_group_description">توضیحات : </string>
+    //dialog_delete_sub_group
+    <string name="dialog_delete_sub_group_title">با حذف زیرگروه تمامی سوالات زیر مجموعه :</string>
+    <array name="dialog_delete_sub_group_item_choice">
+        <item>در بانک حافظه بدون دسته باقی بماند</item>
+        <item>از بانک حافظه حذف شوند</item>
+    </array>
+
+    //statistics page
+    <string name="speed_learning">سرعت یادگیری</string>
+    <string name="growth_flashcards">رشد فلش کارت ها</string>
+    <string name="all_cart">همه کارتها</string>
+    <string name="studding">در حال مطالعه</string>
+    <string name="create_date">تاریخ ایجاد</string>
+    <string name="last_seen">آخرین مشاهده</string>
+
+    //memory bank page
+    <string name="lesson">درس</string>
+    <string name="m_sub_group">زیرگروه</string>
+    <string name="m_group">گروه</string>
+    <string name="m_delete">حذف</string>
+    <string name="m_change_lesson">تغییر درس</string>
+    <string name="m_multi_selected">چند انتخابی</string>
+    <string name="m_edit">ویرایش</string>
+    <string name="m_filter_group">فیلتر گروه</string>
+    <string name="m_filter_priority">فیلتر اولویت</string>
+    <string name="m_hard">سوالات سخت</string>
+    <string name="m_favourite">علاقه مندی ها</string>
+
+    //exam page
+    <string name="exam_activity_title">امتحان</string>
+    <string name="answer_one">1</string>
+    <string name="answer_two">2</string>
+    <string name="answer_three">3</string>
+    <string name="answer_four">4</string>
+    <string name="answer">بله، آسان است</string>
+    <string name="next">بعدی</string>
+    <string name="previous">قبلی</string>
+    <string name="end">پایان</string>
+
+    //question page
+    <string name="question_activity_title">مشاهده سوال</string>
+    <string name="hard_question">سخت</string>
+    <string name="question_description">توضیحات</string>
+    <string name="answer_know">بلدم</string>
+    <string name="answer_no_know">بلد نیستم</string>
+
+    //settings
+    <string name="settings_activity_title">تنظیمات</string>
+    <string name="setting_language">زبان برنامه :</string>
+    <string name="persian">فارسی</string>
+    <string name="english">انگلیسی</string>
+    <string name="settings_app_color">رنگ نرم افزار : </string>
+    <string name="settings_font_size">اندازه متن :</string>
+    <string name="settings_view_dictionary">نمایش دیکشنری در سوالات :</string>
+    <string name="settings_view_voice_button">نمایش دکمه صوت در سوالات :</string>
+    <string name="settings_direct_entry_subGroup">ورود مستقیم به زیرگروه منتخب :</string>
+    <string name="settings_change_question_and_answer">جای پرسش و پاسخ تغییر کند :</string>
+    <string name="settings_play_automatic_voice">تلفظ کلمات به صورت اتوماتیک :</string>
+    <string name="setting_backup">پشتیبان گیری</string>
+    <string name="settings_retrieval">بازیابی تنظیمات</string>
+    <string name="settings_app_update">به روز رسانی</string>
+    <string name="setting_cancel">انصراف</string>
+    <string name="setting_save">ذخیره</string>
+
+    //level page
+    <string name="level_ready">آماده یادگیری</string>
+    <string name="level_total">کل</string>
+    <string name="level_add_new_question">اضافه کردن سوال جدید</string>
+    <string name="level_add_free_question">اضافه کردن لیست سوالات آماده/مجانی</string>
+    <string name="level_add_question_from_excel">اضافه کردن لیست سوالات از فایل اکسل</string>
+    <string name="level_view_question_list">مشاهده لیست سوالات درس</string>
+    <string name="level_review_questions">مرور سوالات مراحل </string>
+    <string name="level_view_hard_questions">مشاهده سوالات سخت</string>
+    <string name="level_view_favourite">مشاهده علاقه مندی ها</string>
+    <string name="level_exam">آزمون چهارگزینه ای</string>
+
+    //create_question
+    <string name="create_question_activity_title">افزودن سوال جدید</string>
+    <string name="add_question_group">گروه</string>
+    <string name="add_question_sub_group">زیر گروه</string>
+    <string name="add_question_course">درس</string>
+    <string name="add_question_question">سوال</string>
+    <string name="add_question_answer">پاسخ</string>
+    <string name="add_question_description">توضیحات</string>
+    <string name="add_question_add_voice">افزودن صوت</string>
+    <string name="add_question_add_image">افزودن تصویر</string>
+    <string name="add_question_pronunciation">تلفظ</string>
+    <string name="add_question_synonym">هم معنی</string>
+    <string name="add_question_antonym">متضاد</string>
+    <string name="add_question_example">مثال</string>
+    <string name="spinner_select_group">گروهها</string>
+    <string name="spinner_select_sub_group">زیرگروهها</string>
+    <string name="spinner_select_course">درسها</string>
+
+    //level setting
+    <string name="level_setting_activity_title">تنظیمات مراحل</string>
+    <string name="level_setting_select_level_number">انتخاب تعدا مراحل :</string>
+    <string name="level_number">شماره مرحله</string>
+    <string name="level_setting_select_time_type_month">ماه</string>
+    <string name="level_setting_select_time_type_day">روز</string>
+</resources>

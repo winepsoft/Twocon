@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="winep.ir.twocon">
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/app_icon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:name="winep.ir.twocon.Utility.Font"
+        android:layoutDirection = "locale">
+        <activity
+            android:name="winep.ir.twocon.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="winep.ir.twocon.Presenter.SubGroupPage.SubGroupActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name="winep.ir.twocon.Presenter.StatisticsPage.StatisticsActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="winep.ir.twocon.Presenter.ExamPage.ExamActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="winep.ir.twocon.Presenter.QuestionPage.QuestionActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="winep.ir.twocon.Presenter.SettingsPage.SettingsActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="winep.ir.twocon.Presenter.LevelPage.LevelActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="winep.ir.twocon.Presenter.CoursePage.CourseActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="winep.ir.twocon.Presenter.CreateQuestionPage.CreateQuestionActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden"/>
+        <activity android:name="winep.ir.twocon.Presenter.LevelSettingPage.LevelSettingActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+    </application>
+</manifest>

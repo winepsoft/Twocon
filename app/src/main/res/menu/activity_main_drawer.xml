@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_user_profile"
+            android:icon="@mipmap/user_profile"
+            android:title="@string/user_profile" />
+        <item
+            android:id="@+id/nav_shared_flashcard"
+            android:icon="@mipmap/backup"
+            android:title="@string/shared_flashcard" />
+        <item
+            android:id="@+id/nav_help"
+            android:icon="@mipmap/help"
+            android:title="@string/help" />
+        <item
+            android:id="@+id/nav_setting_app"
+            android:icon="@mipmap/setting"
+            android:title="@string/setting_app" />
+        <item
+            android:id="@+id/nav_ticket"
+            android:title="@string/ticket" />
+        <item
+            android:id="@+id/nav_rate_us"
+            android:title="@string/rate_us" />
+        <item
+            android:id="@+id/nav_about_us"
+            android:title="@string/about_us" />
+        <item
+            android:id="@+id/nav_exit"
+            android:title="@string/exit" />
+    </group>
+</menu>

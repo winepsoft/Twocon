@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:layout_weight="1"
+    android:orientation="horizontal"
+    android:id="@+id/linearRightBottom"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:background="#dadada"
+    android:focusable="false">
+
+    <RelativeLayout
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/corner_right"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp">
+        <RelativeLayout
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:background="@drawable/dash_rectangle_right_bottom">
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/circle_right_bottom"
+                android:id="@+id/txt_value_right_bottom"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/studding"
+            android:textColor="#000000"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_toLeftOf="@+id/color" />
+
+        <LinearLayout
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:background="@color/statistics_label_right_bottom_color"
+            android:id="@+id/color"
+            android:orientation="horizontal"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+
+</LinearLayout>
