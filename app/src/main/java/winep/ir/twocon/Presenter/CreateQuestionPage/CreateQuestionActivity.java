@@ -3,11 +3,11 @@ package winep.ir.twocon.Presenter.CreateQuestionPage;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.daimajia.androidanimations.library.Techniques;
@@ -29,8 +29,8 @@ public class CreateQuestionActivity extends AppCompatActivity {
     private Spinner spinnerSubGroup;
     private Spinner spinnerCourse;
     private TextView txtQuestionNumber;
-    private CardView cardViewDescription;
-    private boolean showDescriptionCartStatuse=false;
+    private LinearLayout layoutDescription;
+    private boolean showDescriptionCartStatus =false;
     private FloatingActionButton btnShowDescriptionCart;
 
     @Override
@@ -60,25 +60,25 @@ public class CreateQuestionActivity extends AppCompatActivity {
         c.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerCourse.setAdapter(c);
 
-        cardViewDescription=(CardView)findViewById(R.id.card_view_description);
-        cardViewDescription.setVisibility(View.GONE);
+        layoutDescription =(LinearLayout)findViewById(R.id.layout_description_create_question);
+        layoutDescription.setVisibility(View.GONE);
         btnShowDescriptionCart=(FloatingActionButton) findViewById(R.id.btn_show_description_card_view);
         btnShowDescriptionCart.setSize(FloatingActionButton.SIZE_MINI);
         btnShowDescriptionCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!showDescriptionCartStatuse) {
+                if(!showDescriptionCartStatus) {
                     Utilities.getInstance().animateFAB(context,false,btnShowDescriptionCart);
-                    cardViewDescription.setVisibility(View.VISIBLE);
+                    layoutDescription.setVisibility(View.VISIBLE);
                     YoYo.with(Techniques.SlideInDown)
                             .duration(1000)
-                            .playOn(cardViewDescription);
-                    showDescriptionCartStatuse=!showDescriptionCartStatuse;
+                            .playOn(layoutDescription);
+                    showDescriptionCartStatus =!showDescriptionCartStatus;
                 }
 
-                else if (showDescriptionCartStatuse) {
+                else if (showDescriptionCartStatus) {
                     Utilities.getInstance().animateFAB(context,true,btnShowDescriptionCart);
-                    cardViewDescription.setVisibility(View.GONE);
+                    layoutDescription.setVisibility(View.GONE);
                     /*YoYo.with(Techniques.Hinge)
                             .withListener(new Animator.AnimatorListener() {
                                 @Override
@@ -88,7 +88,7 @@ public class CreateQuestionActivity extends AppCompatActivity {
 
                                 @Override
                                 public void onAnimationEnd(Animator animation) {
-                                    cardViewDescription.setVisibility(View.GONE);
+                                    layoutDescription.setVisibility(View.GONE);
 
                                 }
 
@@ -104,7 +104,7 @@ public class CreateQuestionActivity extends AppCompatActivity {
                             })
                             .duration(1000)
                             .playOn(cardViewDescription);*/
-                    showDescriptionCartStatuse=!showDescriptionCartStatuse;
+                    showDescriptionCartStatus =!showDescriptionCartStatus;
                 }
             }
         });

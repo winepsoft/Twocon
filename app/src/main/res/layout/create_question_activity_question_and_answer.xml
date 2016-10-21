@@ -4,13 +4,13 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="5dp">
-
+    android:layout_marginTop="10dp">
     <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -76,6 +76,7 @@
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:layout_centerVertical="true"
         android:layout_toEndOf="@+id/txt_question_number">
         <LinearLayout
@@ -111,7 +112,7 @@
                         android:id="@+id/txt_new_question_answer"
                         app:et_inputId="@+id/txt_new_question_answer_input"
                         android:hint="@string/add_question_answer"
-                        android:layout_marginLeft="5dp"
+                        android:layout_marginLeft="7dp"
                         android:lines="6" />
                 </RelativeLayout>
             </LinearLayout>
