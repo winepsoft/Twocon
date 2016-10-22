@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import winep.ir.twocon.DataModel.MemoryBankItem;
 import winep.ir.twocon.R;
 import winep.ir.twocon.Utility.RectangleView;
+import winep.ir.twocon.Utility.Utilities;
 
 /**
  * Created by ShaisteS on 10/9/2016.
@@ -50,7 +51,7 @@ public class MemoryBankRecyclerViewAdapter  extends DragSelectRecyclerViewAdapte
     @Override
     public MainViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.memory_bank_recycler_view_item, parent, false);
-        return new MainViewHolder(v, mCallback);
+        return new MainViewHolder(context,v, mCallback);
     }
 
     @Override
@@ -82,12 +83,12 @@ public class MemoryBankRecyclerViewAdapter  extends DragSelectRecyclerViewAdapte
         private TextView groupInformation;
         private TextView questionWrongValue;
         private TextView questionTrueValue;
-        private TextView questionAvswerSeenValue;
+        private TextView questionAnswerSeenValue;
         private TextView questionSeenValue;
         private TextView questionNumber;
         private TextView questionTitle;
 
-        public MainViewHolder(View itemView, ClickListener callback) {
+        public MainViewHolder(Context context,View itemView, ClickListener callback) {
             super(itemView);
             mCallback = callback;
             colorSquare = (RectangleView) itemView.findViewById(R.id.colorSquare);
@@ -95,10 +96,15 @@ public class MemoryBankRecyclerViewAdapter  extends DragSelectRecyclerViewAdapte
             itemView.setOnLongClickListener(this);
             groupInformation =(TextView)itemView.findViewById(R.id.txt_group_information);
             questionWrongValue=(TextView)itemView.findViewById(R.id.txt_question_wrong_value);
+            Utilities.getInstance().setFontTextView(context,questionWrongValue);
             questionTrueValue=(TextView)itemView.findViewById(R.id.txt_question_true_value);
-            questionAvswerSeenValue=(TextView)itemView.findViewById(R.id.txt_question_answer_seen);
+            Utilities.getInstance().setFontTextView(context,questionTrueValue);
+            questionAnswerSeenValue =(TextView)itemView.findViewById(R.id.txt_question_answer_seen);
+            Utilities.getInstance().setFontTextView(context, questionAnswerSeenValue);
             questionSeenValue=(TextView)itemView.findViewById(R.id.txt_question_seen);
+            Utilities.getInstance().setFontTextView(context,questionSeenValue);
             questionNumber=(TextView)itemView.findViewById(R.id.txt_question_number);
+            Utilities.getInstance().setFontTextView(context,questionNumber);
             questionTitle=(TextView)itemView.findViewById(R.id.txt_question_title);
         }
 
