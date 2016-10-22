@@ -146,26 +146,34 @@ public class GroupsFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 new MaterialDialog.Builder(context)
-                        .title(R.string.new_course_dialog_title)
-                        .items(createListOfSubGroupsOfAGroup())
+                        .title(R.string.new_sub_group_dialog_title)
+                        .items(createListOfGroupsTitle())
                         .itemsCallback(new MaterialDialog.ListCallback() {
                             @Override
                             public void onSelection(MaterialDialog dialog, View view, int which, CharSequence text) {
-                                boolean wrapInScrollView = true;
                                 new MaterialDialog.Builder(context)
-                                        .title(context.getString(R.string.add_a_course_to)+" "+text)
-                                        .customView(R.layout.dialog_edit_group, wrapInScrollView)
-                                        .positiveText(R.string.save)
-                                        .positiveColor(ContextCompat.getColor(context, R.color.dialog_save_color))
-                                        .negativeText(R.string.cancel)
-                                        .negativeColor(ContextCompat.getColor(context, R.color.dialog_cancel_color))
-                                        .typeface(font.getRTLFontNameForDialog(),null)
+                                        .title(R.string.new_course_dialog_title)
+                                        .items(createListOfSubGroupsOfAGroup())
+                                        .itemsCallback(new MaterialDialog.ListCallback() {
+                                            @Override
+                                            public void onSelection(MaterialDialog dialog, View view, int which, CharSequence text) {
+                                                boolean wrapInScrollView = true;
+                                                new MaterialDialog.Builder(context)
+                                                        .title(context.getString(R.string.add_a_course_to)+" "+text)
+                                                        .customView(R.layout.dialog_edit_group, wrapInScrollView)
+                                                        .positiveText(R.string.save)
+                                                        .positiveColor(ContextCompat.getColor(context, R.color.dialog_save_color))
+                                                        .negativeText(R.string.cancel)
+                                                        .negativeColor(ContextCompat.getColor(context, R.color.dialog_cancel_color))
+                                                        .typeface(font.getRTLFontNameForDialog(),null)
+                                                        .show();
+                                            }
+                                        })
                                         .show();
                             }
                         })
                         .show();
                 closeFloatingActionMenu();
-
             }
         });
 
