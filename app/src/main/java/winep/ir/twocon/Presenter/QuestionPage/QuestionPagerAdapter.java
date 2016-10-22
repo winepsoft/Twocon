@@ -17,6 +17,7 @@ import java.util.ArrayList;
 
 import winep.ir.twocon.DataModel.Question;
 import winep.ir.twocon.R;
+import winep.ir.twocon.Utility.Utilities;
 
 /**
  * Created by ShaisteS on 10/17/2016.
@@ -51,6 +52,8 @@ public class QuestionPagerAdapter  extends PagerAdapter {
 
         final CardView cardView=(CardView)viewLayout.findViewById(R.id.front_card);
         final FrameLayout cardBack=(FrameLayout) viewLayout.findViewById(R.id.back_card);
+        final TextView txtQuestionNumber=(TextView)viewLayout.findViewById(R.id.txt_question_number);
+        Utilities.getInstance().setFontTextView(activity,txtQuestionNumber);
         cardBack.setVisibility(View.GONE);
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
