@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import winep.ir.twocon.DataModel.MemoryBankItem;
 import winep.ir.twocon.Presenter.QuestionPage.QuestionActivity;
 import winep.ir.twocon.R;
+import winep.ir.twocon.Utility.DividerItemDecorationRecyclerView;
 
 /**
  * Created by ShaisteS on 10/1/2016.
@@ -41,6 +42,7 @@ public class MemoryBankFragment extends Fragment implements
         context=getContext();
         recyclerViewMemoryBank=(DragSelectRecyclerView) mainView.findViewById(R.id.recycler_view_memory_bank);
         recyclerViewMemoryBank.setLayoutManager(new LinearLayoutManager(context));
+        recyclerViewMemoryBank.addItemDecoration(new DividerItemDecorationRecyclerView(10));
         mainToolBar= mainView.findViewById(R.id.memoryBankToolBar);
         multiSelectedItemToolBar= mainView.findViewById(R.id.memoryBankToolBarMultiSelectedItem);
         setMainToolBar();
