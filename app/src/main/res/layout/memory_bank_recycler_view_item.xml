@@ -118,14 +118,14 @@
                             android:gravity="center_vertical|center_horizontal"
                             android:layout_marginRight="5dp"/>
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:gravity="center_vertical|center_horizontal"
                             android:id="@+id/txt_question_title"
                             android:text="Question is easy?"
                             android:layout_centerVertical="true"
                             android:layout_toEndOf="@+id/txt_question_number"
-                            android:layout_marginLeft="5dp" />
+                            android:layout_marginLeft="5dp"
+                            android:gravity="center_vertical" />
                     </RelativeLayout>
                 </LinearLayout>
                 <LinearLayout
