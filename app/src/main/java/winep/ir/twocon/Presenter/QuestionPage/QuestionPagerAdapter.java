@@ -8,12 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.TranslateAnimation;
-import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.getbase.floatingactionbutton.FloatingActionButton;
+import com.nineoldandroids.animation.Animator;
 import com.rey.material.widget.Button;
 
 import java.util.ArrayList;
@@ -53,8 +55,8 @@ public class QuestionPagerAdapter  extends PagerAdapter {
         LayoutInflater inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         viewLayout = inflater.inflate(R.layout.question_activity_pager, container, false);
 
-        final CardView cardView=(CardView)viewLayout.findViewById(R.id.front_card);
-        final FrameLayout cardBack=(FrameLayout) viewLayout.findViewById(R.id.back_card);
+        final CardView cardFront=(CardView)viewLayout.findViewById(R.id.front_card);
+        final CardView cardBack=(CardView) viewLayout.findViewById(R.id.back_card);
         cardBack.setVisibility(View.GONE);
         final TextView txtQuestionNumber=(TextView)viewLayout.findViewById(R.id.txt_question_number);
         Utilities.getInstance().setFontTextView(activity,txtQuestionNumber);
@@ -86,24 +88,72 @@ public class QuestionPagerAdapter  extends PagerAdapter {
             }
         });
 
-
-
-
-        cardView.setOnClickListener(new View.OnClickListener() {
+        cardFront.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                cardView.setVisibility(View.GONE);
-                cardBack.setVisibility(View.VISIBLE);
+                YoYo.with(Techniques.FlipOutX)
+                        .withListener(new Animator.AnimatorListener() {
+                            @Override
+                            public void onAnimationStart(Animator animation) {
+
+                            }
+
+                            @Override
+                            public void onAnimationEnd(Animator animation) {
+                                cardFront.setVisibility(View.GONE);
+                                cardBack.setVisibility(View.VISIBLE);
+                                YoYo.with(Techniques.FlipInX)
+                                        .duration(1000)
+                                        .playOn(cardBack);
+                            }
+
+                            @Override
+                            public void onAnimationCancel(Animator animation) {
+
+                            }
+
+                            @Override
+                            public void onAnimationRepeat(Animator animation) {
+
+                            }
+                        })
+                        .duration(1000)
+                        .playOn(cardFront);
             }
         });
-        cardBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                cardView.setVisibility(View.VISIBLE);
-                cardBack.setVisibility(View.GONE);
-            }
-        });
+       cardBack.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {YoYo.with(Techniques.FlipOutX)
+                   .withListener(new Animator.AnimatorListener() {
+                       @Override
+                       public void onAnimationStart(Animator animation) {
+
+                       }
+
+                       @Override
+                       public void onAnimationEnd(Animator animation) {
+                           cardBack.setVisibility(View.GONE);
+                           cardFront.setVisibility(View.VISIBLE);
+                           YoYo.with(Techniques.FlipInX)
+                                   .duration(1000)
+                                   .playOn(cardFront);
+                       }
+
+                       @Override
+                       public void onAnimationCancel(Animator animation) {
+
+                       }
+
+                       @Override
+                       public void onAnimationRepeat(Animator animation) {
+
+                       }
+                   })
+                   .duration(1000)
+                   .playOn(cardBack);
+           }
+       });
 
 
         final boolean[] questionDescriptionShowStatus = {false};
@@ -111,10 +161,12 @@ public class QuestionPagerAdapter  extends PagerAdapter {
             @Override
             public void onClick(View view) {
                 if (!questionDescriptionShowStatus[0]){
+                    Utilities.getInstance().animateFAB(activity, false, fabAnswerDescription);
                     txtQuestionDescription.setVisibility(View.VISIBLE);
                     questionDescriptionShowStatus[0] =!questionDescriptionShowStatus[0];
                 }
                 else if (questionDescriptionShowStatus[0]){
+                    Utilities.getInstance().animateFAB(activity, true, fabAnswerDescription);
                     txtQuestionDescription.setVisibility(View.GONE);
                     questionDescriptionShowStatus[0] =!questionDescriptionShowStatus[0];
                 }
