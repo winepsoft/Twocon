@@ -61,6 +61,8 @@
     <color name="red">#ff5253</color>
     <color name="pink">#ff4081</color>
     <color name="gray">#a6a6a6</color>
+    <color name="orange">#ffab40</color>
+    <color name="blue">#2196f3</color>
 
 
 </resources>

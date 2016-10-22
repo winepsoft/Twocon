@@ -9,9 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.TranslateAnimation;
 import android.widget.FrameLayout;
-import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.getbase.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
@@ -52,9 +53,20 @@ public class QuestionPagerAdapter  extends PagerAdapter {
 
         final CardView cardView=(CardView)viewLayout.findViewById(R.id.front_card);
         final FrameLayout cardBack=(FrameLayout) viewLayout.findViewById(R.id.back_card);
+        cardBack.setVisibility(View.GONE);
         final TextView txtQuestionNumber=(TextView)viewLayout.findViewById(R.id.txt_question_number);
         Utilities.getInstance().setFontTextView(activity,txtQuestionNumber);
-        cardBack.setVisibility(View.GONE);
+        final TextView txtQuestionDescription=(TextView)viewLayout.findViewById(R.id.txt_description);
+        txtQuestionDescription.setVisibility(View.GONE);
+        final FloatingActionButton fabAnswerVoice=(FloatingActionButton)viewLayout.findViewById(R.id.answer_voice);
+        fabAnswerVoice.setSize(FloatingActionButton.SIZE_MINI);
+        final FloatingActionButton fabQuestionMark=(FloatingActionButton)viewLayout.findViewById(R.id.question_mark);
+        fabQuestionMark.setSize(FloatingActionButton.SIZE_MINI);
+        final FloatingActionButton fabAnswerDescription=(FloatingActionButton)viewLayout.findViewById(R.id.answer_description);
+        fabAnswerDescription.setSize(FloatingActionButton.SIZE_MINI);
+
+
+
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,11 +83,9 @@ public class QuestionPagerAdapter  extends PagerAdapter {
             }
         });
 
-        final TextView txtQuestionDescription=(TextView)viewLayout.findViewById(R.id.txt_description);
-        txtQuestionDescription.setVisibility(View.GONE);
-        ImageButton btnQuestionDescriptionShow=(ImageButton)viewLayout.findViewById(R.id.question_description);
+
         final boolean[] questionDescriptionShowStatus = {false};
-        btnQuestionDescriptionShow.setOnClickListener(new View.OnClickListener() {
+        fabAnswerDescription.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (!questionDescriptionShowStatus[0]){
