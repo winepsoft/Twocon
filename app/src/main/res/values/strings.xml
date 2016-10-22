@@ -109,6 +109,8 @@
     <string name="question_description">pro: \n syn:This is synonym that \n opp:Hard \n example: \n it is so easy</string>
     <string name="answer_know">I Know</string>
     <string name="answer_no_know">I Dont Know</string>
+    <string name="know_number_question_title">Number of  Correct Question :</string>
+    <string name="no_Know_question_title">Number of  InCorrect Question :</string>
 
     //settings
     <string name="settings_activity_title">Settings</string>

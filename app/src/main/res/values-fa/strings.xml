@@ -110,6 +110,8 @@
     <string name="question_description">توضیحات</string>
     <string name="answer_know">بلدم</string>
     <string name="answer_no_know">بلد نیستم</string>
+    <string name="know_number_question_title">تعداد سوالات صحیح :</string>
+    <string name="no_Know_question_title">تعداد سوالات ناصحیح :</string>
 
     //settings
     <string name="settings_activity_title">تنظیمات</string>

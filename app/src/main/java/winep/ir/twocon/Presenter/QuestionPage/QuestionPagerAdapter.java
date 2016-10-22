@@ -11,8 +11,10 @@ import android.view.animation.TranslateAnimation;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.getbase.floatingactionbutton.FloatingActionButton;
+import com.rey.material.widget.Button;
 
 import java.util.ArrayList;
 
@@ -64,6 +66,26 @@ public class QuestionPagerAdapter  extends PagerAdapter {
         fabQuestionMark.setSize(FloatingActionButton.SIZE_MINI);
         final FloatingActionButton fabAnswerDescription=(FloatingActionButton)viewLayout.findViewById(R.id.answer_description);
         fabAnswerDescription.setSize(FloatingActionButton.SIZE_MINI);
+        final Button btnKnowNumber=(Button)viewLayout.findViewById(R.id.btn_know_number);
+        final Button btnNoKnowNumber=(Button)viewLayout.findViewById(R.id.btn_no_know_number);
+        final Button btnKnow=(Button)viewLayout.findViewById(R.id.btn_know);
+        final Button btnoNOKnow=(Button)viewLayout.findViewById(R.id.btn_no_know);
+
+
+        btnKnowNumber.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(activity,activity.getString(R.string.know_number_question_title)+"2",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        btnNoKnowNumber.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(activity,activity.getString(R.string.no_Know_question_title)+"12",Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
 
 
