@@ -15,7 +15,7 @@
 
     //Group Fragment
     <string name="new_group_dialog_title">Add New group</string>
-    <string name="new_sub_group_dialog_title">Add new Sub Group</string>
+    <string name="new_sub_group_dialog_title">Select Group</string>
     <string name="add_a_sub_group_to">Add New sub Group To</string>
     <string name="new_course_dialog_title">Add New Course</string>
     <string name="add_a_course_to">Add A Course To </string>
