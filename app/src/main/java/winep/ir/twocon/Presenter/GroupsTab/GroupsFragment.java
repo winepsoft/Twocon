@@ -76,7 +76,7 @@ public class GroupsFragment extends Fragment {
         dragMgr.setInitiateOnMove(false);
         dragMgr.setInitiateOnLongPress(true);
         recyclerViewGroups.setLayoutManager(new LinearLayoutManager(context));
-        recyclerViewGroups.addItemDecoration(new DividerItemDecorationRecyclerView(5));
+        recyclerViewGroups.addItemDecoration(new DividerItemDecorationRecyclerView(10));
         final GroupRecyclerViewAdapter adapter=new GroupRecyclerViewAdapter(context,createGroup());
         recyclerViewGroups.setAdapter(dragMgr.createWrappedAdapter(adapter));
         dragMgr.attachRecyclerView(recyclerViewGroups);

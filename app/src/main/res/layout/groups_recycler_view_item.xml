@@ -28,7 +28,8 @@
                     android:text="پ"
                     android:textSize="25sp"
                     android:textColor="@android:color/white"
-                    android:layout_marginRight="5dp"/>
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp" />
 
                 <LinearLayout
                     android:id="@+id/group_name_layout"
@@ -37,9 +38,9 @@
                     android:orientation="vertical"
                     android:background="#ffffff"
                     android:gravity="center_vertical"
-                    android:layout_weight="9"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp">
+                    android:layout_weight="10"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp">
 
                     <TextView
                         android:id="@+id/group_name"
