@@ -24,8 +24,10 @@ import java.util.ArrayList;
 import winep.ir.twocon.DataModel.Group;
 import winep.ir.twocon.Presenter.CreateQuestionPage.CreateQuestionActivity;
 import winep.ir.twocon.R;
+import winep.ir.twocon.Utility.ClickListener;
 import winep.ir.twocon.Utility.DividerItemDecorationRecyclerView;
 import winep.ir.twocon.Utility.Font;
+import winep.ir.twocon.Utility.RecyclerTouchListener;
 
 /**
  * Created by ShaisteS on 10/1/2016.
@@ -75,9 +77,26 @@ public class GroupsFragment extends Fragment {
         dragMgr.setInitiateOnLongPress(true);
         recyclerViewGroups.setLayoutManager(new LinearLayoutManager(context));
         recyclerViewGroups.addItemDecoration(new DividerItemDecorationRecyclerView(5));
-        GroupRecyclerViewAdapter adapter=new GroupRecyclerViewAdapter(context,createGroup());
+        final GroupRecyclerViewAdapter adapter=new GroupRecyclerViewAdapter(context,createGroup());
         recyclerViewGroups.setAdapter(dragMgr.createWrappedAdapter(adapter));
         dragMgr.attachRecyclerView(recyclerViewGroups);
+
+
+        //for change color of item when click
+        recyclerViewGroups.addOnItemTouchListener(new RecyclerTouchListener(context,recyclerViewGroups, new ClickListener() {
+            @Override
+            public void onClick(View view, final int position) {
+                //Values are passing to activity & to fragment as well
+                adapter.setSelected(position);
+            }
+
+            @Override
+            public void onLongClick(View view, int position) {
+                /*adapter.setSelected(position);
+                dragMgr.setInitiateOnMove(true);*/
+
+            }
+        }));
 
         fabAddNewGroup.setOnClickListener(new View.OnClickListener() {
             @Override

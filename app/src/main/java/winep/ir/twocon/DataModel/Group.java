@@ -9,6 +9,7 @@ public class Group {
     private String description;
     private int color;
     public long id;
+    public boolean selected;
 
     public Group(long id) {
         this.id = id;
@@ -34,5 +35,13 @@ public class Group {
 
     public void setColor(int color) {
         this.color = color;
+    }
+
+    public boolean isSelected() {
+        return selected;
+    }
+
+    public void setSelected(boolean selected) {
+        this.selected = selected;
     }
 }
