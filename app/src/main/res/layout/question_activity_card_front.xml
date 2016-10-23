@@ -1,4 +1,5 @@
-<android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+<android.support.v7.widget.CardView
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,4 +11,20 @@
     android:layout_marginLeft="@dimen/question_card_margin_left"
     card_view:cardCornerRadius="@dimen/question_card_corner"
     card_view:cardElevation="@dimen/question_card_elevation">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/touch_card_seen_answer"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:textStyle="italic" />
+
+    </RelativeLayout>
+
 </android.support.v7.widget.CardView>

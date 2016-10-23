@@ -15,12 +15,13 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical" >
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="5dp"
-            android:layout_marginLeft="5dp">
+            android:layout_marginLeft="5dp"
+            android:id="@+id/back_layout">
             <LinearLayout
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"

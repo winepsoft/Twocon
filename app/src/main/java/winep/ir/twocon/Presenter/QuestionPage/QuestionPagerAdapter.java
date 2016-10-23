@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.TranslateAnimation;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -57,6 +58,7 @@ public class QuestionPagerAdapter  extends PagerAdapter {
 
         final CardView cardFront=(CardView)viewLayout.findViewById(R.id.front_card);
         final CardView cardBack=(CardView) viewLayout.findViewById(R.id.back_card);
+        final RelativeLayout back_layout=(RelativeLayout)viewLayout.findViewById(R.id.back_layout);
         cardBack.setVisibility(View.GONE);
         final TextView txtQuestionNumber=(TextView)viewLayout.findViewById(R.id.txt_question_number);
         Utilities.getInstance().setFontTextView(activity,txtQuestionNumber);
@@ -122,7 +124,7 @@ public class QuestionPagerAdapter  extends PagerAdapter {
                         .playOn(cardFront);
             }
         });
-       cardBack.setOnClickListener(new View.OnClickListener() {
+       back_layout.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {YoYo.with(Techniques.FlipOutX)
                    .withListener(new Animator.AnimatorListener() {

@@ -111,6 +111,7 @@
     <string name="answer_no_know">I Dont Know</string>
     <string name="know_number_question_title">Number of  Correct Question :</string>
     <string name="no_Know_question_title">Number of  InCorrect Question :</string>
+    <string name="touch_card_seen_answer">Touch to view the answer</string>
 
     //settings
     <string name="settings_activity_title">Settings</string>
