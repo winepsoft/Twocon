@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.getbase.floatingactionbutton.FloatingActionButton;
+import com.rey.material.widget.EditText;
 import com.rey.material.widget.Spinner;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
@@ -30,6 +31,12 @@ public class CreateQuestionActivity extends AppCompatActivity {
     private Spinner spinnerSubGroup;
     private Spinner spinnerCourse;
     private TextView txtQuestionNumber;
+    private EditText eTextNewQuestionTitle;
+    private EditText eTextNewQuestionAnswer;
+    private EditText eTextAddPronunciation;
+    private EditText eTextAddSynonym;
+    private EditText eTextAddAntonym;
+    private EditText eTextAddExample;
     private LinearLayout layoutDescription;
     private boolean showDescriptionCartStatus = false;
     private FloatingActionButton btnShowDescriptionCart;
@@ -44,28 +51,46 @@ public class CreateQuestionActivity extends AppCompatActivity {
         setTitle(getString(R.string.create_question_activity_title));
 
         spinnerGroup = (Spinner) findViewById(R.id.spinner_select_group);
+        spinnerSubGroup = (Spinner) findViewById(R.id.spinner_select_sub_group);
+        spinnerCourse = (Spinner) findViewById(R.id.spinner_select_course);
+        layoutDescription = (LinearLayout) findViewById(R.id.layout_description_create_question);
+        layoutDescription.setVisibility(View.GONE);
+        btnShowDescriptionCart = (FloatingActionButton) findViewById(R.id.btn_show_description_card_view);
+        btnShowDescriptionCart.setSize(FloatingActionButton.SIZE_MINI);
+        txtQuestionNumber = (TextView) findViewById(R.id.txt_question_number);
+        Utilities.getInstance().setFontTextView(context, txtQuestionNumber);
+        eTextNewQuestionTitle=(EditText)findViewById(R.id.txt_new_question_title);
+        Utilities.getInstance().setFontEditTextView(context,eTextNewQuestionTitle);
+        eTextNewQuestionAnswer=(EditText)findViewById(R.id.txt_new_question_answer);
+        Utilities.getInstance().setFontEditTextView(context,eTextNewQuestionAnswer);
+        eTextAddPronunciation=(EditText)findViewById(R.id.txt_add_pronunciation);
+        Utilities.getInstance().setFontEditTextView(context,eTextAddPronunciation);
+        eTextAddSynonym=(EditText)findViewById(R.id.txt_add_synonym);
+        Utilities.getInstance().setFontEditTextView(context,eTextAddSynonym);
+        eTextAddAntonym=(EditText)findViewById(R.id.txt_add_antonym);
+        Utilities.getInstance().setFontEditTextView(context,eTextAddAntonym);
+        eTextAddExample=(EditText)findViewById(R.id.txt_add_example);
+        Utilities.getInstance().setFontEditTextView(context,eTextAddExample);
+
+
+
+
         String[] GroupTitle = {getString(R.string.spinner_select_group), "پزشکی", "مهندسی پزشکی", "English Title"};
         ArrayAdapter<String> a = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, GroupTitle);
         a.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerGroup.setAdapter(a);
 
-        spinnerSubGroup = (Spinner) findViewById(R.id.spinner_select_sub_group);
         String[] subGroupTitle = {getString(R.string.spinner_select_sub_group), "فیزیولوژی", "دهان و دندان"};
         ArrayAdapter<String> b = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, subGroupTitle);
         b.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerSubGroup.setAdapter(b);
 
-        spinnerCourse = (Spinner) findViewById(R.id.spinner_select_course);
         String[] courseTitle = {getString(R.string.spinner_select_course), "زبان", "دندان جلو"};
         ArrayAdapter<String> c = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, courseTitle);
         c.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerCourse.setAdapter(c);
 
-        layoutDescription = (LinearLayout) findViewById(R.id.layout_description_create_question);
-        layoutDescription.setVisibility(View.GONE);
-        btnShowDescriptionCart = (FloatingActionButton) findViewById(R.id.btn_show_description_card_view);
-        btnShowDescriptionCart.setSize(FloatingActionButton.SIZE_MINI);
-        btnShowDescriptionCart.setOnClickListener(new View.OnClickListener() {
+       btnShowDescriptionCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (!showDescriptionCartStatus) {
@@ -108,9 +133,6 @@ public class CreateQuestionActivity extends AppCompatActivity {
             }
         });
 
-        txtQuestionNumber = (TextView) findViewById(R.id.txt_question_number);
-        Utilities.getInstance().setFontTextView(context, txtQuestionNumber);
-        txtQuestionNumber.setText("24");
     }
 
     @Override

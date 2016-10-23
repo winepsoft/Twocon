@@ -14,6 +14,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 import com.getbase.floatingactionbutton.FloatingActionButton;
+import com.rey.material.widget.EditText;
 
 import java.util.Locale;
 
@@ -81,6 +82,20 @@ public class Utilities {
     }
 
     public void setFontTextView(Context context,TextView textview){
+        if (isFarsiSelected(context)){
+            Font font=new Font();
+            Typeface face = Typeface.createFromAsset(context.getAssets(),font.getFarsiFontName());
+            textview.setTypeface(face);
+        }
+        else {
+            Font font=new Font();
+            Typeface face = Typeface.createFromAsset(context.getAssets(),font.getFontName());
+            textview.setTypeface(face);
+
+        }
+    }
+
+    public void setFontEditTextView(Context context,EditText textview){
         if (isFarsiSelected(context)){
             Font font=new Font();
             Typeface face = Typeface.createFromAsset(context.getAssets(),font.getFarsiFontName());
