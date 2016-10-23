@@ -49,7 +49,8 @@
                             android:layout_alignParentStart="true"
                             android:layout_toLeftOf="@+id/linearLayoutInform"
                             android:layout_toStartOf="@+id/linearLayoutInform"
-                            android:textAppearance="?android:attr/textAppearanceSmall"/>
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:textSize="@dimen/font_size_small" />
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -68,7 +69,8 @@
                                 android:layout_marginRight="@dimen/memory_bank_item_margin_between_circle"
                                 android:layout_marginLeft="@dimen/memory_bank_item_margin_between_circle"
                                 android:id="@+id/txt_question_wrong_value"
-                                android:text="560" />
+                                android:text="560"
+                                android:textSize="@dimen/font_size_small" />
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -78,7 +80,8 @@
                                 android:layout_marginRight="@dimen/memory_bank_item_margin_between_circle"
                                 android:layout_marginLeft="@dimen/memory_bank_item_margin_between_circle"
                                 android:id="@+id/txt_question_true_value"
-                                android:text="200"/>
+                                android:text="200"
+                                android:textSize="@dimen/font_size_small" />
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -88,7 +91,8 @@
                                 android:layout_marginRight="@dimen/memory_bank_item_margin_between_circle"
                                 android:layout_marginLeft="@dimen/memory_bank_item_margin_between_circle"
                                 android:id="@+id/txt_question_answer_seen"
-                                android:text="20"/>
+                                android:text="20"
+                                android:textSize="@dimen/font_size_small" />
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -98,7 +102,8 @@
                                 android:layout_marginRight="@dimen/memory_bank_item_margin_between_circle"
                                 android:layout_marginLeft="@dimen/memory_bank_item_margin_between_circle"
                                 android:id="@+id/txt_question_seen"
-                                android:text="7"/>
+                                android:text="7"
+                                android:textSize="@dimen/font_size_small" />
                         </LinearLayout>
                     </RelativeLayout>
                     <RelativeLayout
