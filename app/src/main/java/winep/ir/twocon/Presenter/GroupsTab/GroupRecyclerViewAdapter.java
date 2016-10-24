@@ -96,6 +96,7 @@ public class GroupRecyclerViewAdapter extends RecyclerView.Adapter<GroupRecycler
                 popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     @Override
                     public boolean onMenuItemClick(MenuItem item) {
+                        setUnSelected(position);
                         if (item.getTitle().equals(context.getString(R.string.edit_name))){
                             boolean wrapInScrollView = true;
                             new MaterialDialog.Builder(context)
@@ -156,7 +157,6 @@ public class GroupRecyclerViewAdapter extends RecyclerView.Adapter<GroupRecycler
 
         // set background item when drag
         final int dragState = holder.getDragStateFlags();
-
         if (((dragState & Draggable.STATE_FLAG_IS_UPDATED) != 0)) {
 
             if ((dragState & Draggable.STATE_FLAG_IS_ACTIVE) != 0) {
