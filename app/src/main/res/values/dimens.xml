@@ -11,10 +11,10 @@
     <dimen name="memory_bank_item_margin_between_circle">2dp</dimen>
     <dimen name="memory_bank_item_circle_question_number">40dp</dimen>
     <dimen name="exam_answer_number_size">40dp</dimen>
-    <dimen name="question_card_margin_top">20dp</dimen>
-    <dimen name="question_card_margin_bottom">20dp</dimen>
-    <dimen name="question_card_margin_right">20dp</dimen>
-    <dimen name="question_card_margin_left">20dp</dimen>
+    <dimen name="question_card_margin_top">10dp</dimen>
+    <dimen name="question_card_margin_bottom">10dp</dimen>
+    <dimen name="question_card_margin_right">10dp</dimen>
+    <dimen name="question_card_margin_left">10dp</dimen>
     <dimen name="question_card_corner">4dp</dimen>
     <dimen name="question_card_elevation">2dp</dimen>
     <dimen name="level_number_circle_size">30dp</dimen>

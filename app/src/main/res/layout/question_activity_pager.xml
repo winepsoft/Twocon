@@ -13,7 +13,6 @@
         android:layout_weight="1">
         <include layout="@layout/question_activity_card_front"/>
         <include layout="@layout/question_activity_card_back"/>
-
     </FrameLayout>
 
     <include layout="@layout/question_activity_button_toolbar"
