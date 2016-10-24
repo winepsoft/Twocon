@@ -9,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.afollestad.dragselectrecyclerview.DragSelectRecyclerView;
 import com.afollestad.dragselectrecyclerview.DragSelectRecyclerViewAdapter;
@@ -35,6 +37,10 @@ public class MemoryBankFragment extends Fragment implements
     private boolean multiSelectedStatus=false;
     private Spinner spinnerSelectGroupFilter;
     private Spinner spinnerSelectPriorityFilter;
+    private ImageButton btnQuestionSeen;
+    private ImageButton btnAnswerSeen;
+    private ImageButton btnQuestionTrue;
+    private ImageButton btnQuestionWrong;
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
 
@@ -51,6 +57,10 @@ public class MemoryBankFragment extends Fragment implements
         spinnerSelectGroupFilter.setAdapter(setSpinnerGroupFilter());
         spinnerSelectPriorityFilter=(Spinner)mainView.findViewById(R.id.spinner_select_priority_filter);
         spinnerSelectPriorityFilter.setAdapter(setSpinnerPriorityFilter());
+        btnQuestionSeen=(ImageButton)mainView.findViewById(R.id.btn_question_seen);
+        btnAnswerSeen=(ImageButton)mainView.findViewById(R.id.btn_question_answer);
+        btnQuestionTrue=(ImageButton)mainView.findViewById(R.id.btn_question_true);
+        btnQuestionWrong=(ImageButton)mainView.findViewById(R.id.btn_question_wrong);
 
         ArrayList<MemoryBankItem> allItems=new ArrayList<>();
         for (int i=0; i<10; i++){
@@ -62,6 +72,36 @@ public class MemoryBankFragment extends Fragment implements
         }
         adapter=new MemoryBankRecyclerViewAdapter(this,context,allItems);
         recyclerViewMemoryBank.setAdapter(adapter);
+
+        btnQuestionSeen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context,context.getString(R.string.app_name),Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        btnAnswerSeen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context,context.getString(R.string.app_name),Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        btnQuestionTrue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context,context.getString(R.string.app_name),Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+        btnQuestionWrong.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context,context.getString(R.string.app_name),Toast.LENGTH_SHORT).show();
+
+            }
+        });
 
         /*btnCloseMultiSelectedToolBar.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="@color/memory_bank_question_true"></solid>
+    <size
+        android:height="@dimen/memory_bank_circle_item_dimen"
+        android:width="@dimen/memory_bank_circle_item_dimen" />
+    <stroke
+        android:width="@dimen/memory_bank_circle_stroke_dimen"
+        android:color="@color/memory_bank_question_true" />
+
+</shape>
