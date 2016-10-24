@@ -88,8 +88,8 @@
     <string name="m_change_lesson">تغییر درس</string>
     <string name="m_multi_selected">چند انتخابی</string>
     <string name="m_edit">ویرایش</string>
-    <string name="m_filter_group">فیلتر گروه</string>
-    <string name="m_filter_priority">فیلتر اولویت</string>
+    <string name="m_filter_group">گروه</string>
+    <string name="m_filter_priority">اولویت</string>
     <string name="m_hard">سوالات سخت</string>
     <string name="m_favourite">علاقه مندی ها</string>
 

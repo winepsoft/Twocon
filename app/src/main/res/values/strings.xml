@@ -87,8 +87,8 @@
     <string name="m_change_lesson">Change Lesson</string>
     <string name="m_multi_selected">Multi Selected</string>
     <string name="m_edit">Edit</string>
-    <string name="m_filter_group">Filter Group</string>
-    <string name="m_filter_priority">Filter Priority</string>
+    <string name="m_filter_group">Group</string>
+    <string name="m_filter_priority">Priority</string>
     <string name="m_hard">Hard question</string>
     <string name="m_favourite">Favourite</string>
 
