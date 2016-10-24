@@ -83,7 +83,7 @@ public class MemoryBankFragment extends Fragment implements
 
             }
         });*/
-
+       //getFragmentManager().beginTransaction().addToBackStack(null).commit();
         return mainView;
     }
 
@@ -93,7 +93,6 @@ public class MemoryBankFragment extends Fragment implements
         a.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         return a;
     }
-
     private ArrayAdapter<String> setSpinnerPriorityFilter(){
         String[] GroupTitle = {getString(R.string.m_filter_priority),getString(R.string.m_hard),getString(R.string.m_favourite)};
         ArrayAdapter<String> a =new ArrayAdapter<>(context,android.R.layout.simple_spinner_item, GroupTitle);
@@ -109,7 +108,6 @@ public class MemoryBankFragment extends Fragment implements
         mainToolBar.setVisibility(View.GONE);
         multiSelectedItemToolBar.setVisibility(View.VISIBLE);
     }
-
     private void closeMultiSelectedItemToolBar(){
         adapter.clearSelected();
         setMainToolBar();
@@ -129,7 +127,6 @@ public class MemoryBankFragment extends Fragment implements
             context.startActivity(intent);
         }
     }
-
     @Override
     public void onLongClick(int index) {
         if (!multiSelectedStatus){
@@ -145,16 +142,18 @@ public class MemoryBankFragment extends Fragment implements
     }
 
     @Override
-    public void onDragSelectionChanged(int count) {
-    }
-
-    @Override
     public void onBackPressed() {
+        //getFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
         if (adapter.getSelectedCount() > 0) {
             adapter.clearSelected();
             setMainToolBar();
         }
         else
             onBackPressed();
+
+    }
+
+    @Override
+    public void onDragSelectionChanged(int count) {
     }
 }

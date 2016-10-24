@@ -124,6 +124,7 @@
     <string name="settings_font_size">اندازه متن :</string>
     <string name="settings_view_dictionary">نمایش دیکشنری در سوالات :</string>
     <string name="settings_view_voice_button">نمایش دکمه صوت در سوالات :</string>
+    <string name="settings_view_hard_button">نمایش دکمه سخت در سوال :</string>
     <string name="settings_direct_entry_subGroup">ورود مستقیم به زیرگروه منتخب :</string>
     <string name="settings_change_question_and_answer">جای پرسش و پاسخ تغییر کند :</string>
     <string name="settings_play_automatic_voice">تلفظ کلمات به صورت اتوماتیک :</string>

@@ -122,6 +122,7 @@
     <string name="settings_font_size">Font size:</string>
     <string name="settings_view_dictionary">View the dictionary in Question:</string>
     <string name="settings_view_voice_button">View the Voice in Question:</string>
+    <string name="settings_view_hard_button">View Hard Button in Questions:</string>
     <string name="settings_direct_entry_subGroup">Direct entry to SubGroup:</string>
     <string name="settings_change_question_and_answer">Change question and answer:</string>
     <string name="settings_play_automatic_voice">Play automatic pronunciation of words:</string>
