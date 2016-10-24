@@ -55,7 +55,6 @@
                     android:layout_marginRight="5dp"
                     android:layout_marginLeft="5dp"
                     android:text="@string/save"
-                    android:drawableRight="@mipmap/setting_ok"
                     android:layout_weight="1"
                     style="?android:attr/buttonStyleSmall"/>
 
@@ -70,7 +69,6 @@
                     android:layout_marginRight="5dp"
                     android:layout_marginLeft="5dp"
                     android:text="@string/cancel"
-                    android:drawableRight="@mipmap/setting_cancel"
                     android:layout_weight="1"
                     style="?android:attr/buttonStyleSmall"/>
 

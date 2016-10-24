@@ -18,6 +18,6 @@
     <dimen name="question_card_corner">4dp</dimen>
     <dimen name="question_card_elevation">2dp</dimen>
     <dimen name="level_number_circle_size">30dp</dimen>
-    <dimen name="button_corner_size">2dp</dimen>
+    <dimen name="button_corner_size">3dp</dimen>
     <dimen name="font_size_small">10sp</dimen>
 </resources>
