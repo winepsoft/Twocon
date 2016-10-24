@@ -9,14 +9,16 @@
    <RelativeLayout
        android:layout_width="match_parent"
        android:layout_height="match_parent"
-       android:id="@+id/container">
+       android:id="@+id/container"
+       android:background="#ede9e9">
       <android.support.v7.widget.RecyclerView
           android:layout_width="match_parent"
           android:layout_height="match_parent"
           android:id="@+id/recycler_view_groups"
-          android:layout_marginTop="5dp"
+          android:layout_marginTop="10dp"
           android:layout_marginRight="5dp"
-          android:layout_marginLeft="5dp">
+          android:layout_marginLeft="5dp"
+          android:background="#ede9e9">
       </android.support.v7.widget.RecyclerView>
    </RelativeLayout>
 
