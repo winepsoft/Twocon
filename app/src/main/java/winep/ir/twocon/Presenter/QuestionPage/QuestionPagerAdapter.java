@@ -71,7 +71,9 @@ public class QuestionPagerAdapter  extends PagerAdapter {
         final FloatingActionButton fabAnswerDescription=(FloatingActionButton)viewLayout.findViewById(R.id.answer_description);
         fabAnswerDescription.setSize(FloatingActionButton.SIZE_MINI);
         final Button btnKnowNumber=(Button)viewLayout.findViewById(R.id.btn_know_number);
+        Utilities.getInstance().setFontButtonView(activity,btnKnowNumber);
         final Button btnNoKnowNumber=(Button)viewLayout.findViewById(R.id.btn_no_know_number);
+        Utilities.getInstance().setFontButtonView(activity,btnNoKnowNumber);
         final Button btnKnow=(Button)viewLayout.findViewById(R.id.btn_know);
         final Button btnoNOKnow=(Button)viewLayout.findViewById(R.id.btn_no_know);
 
@@ -106,7 +108,7 @@ public class QuestionPagerAdapter  extends PagerAdapter {
                                 cardFront.setVisibility(View.GONE);
                                 cardBack.setVisibility(View.VISIBLE);
                                 YoYo.with(Techniques.FlipInX)
-                                        .duration(1000)
+                                        .duration(700)
                                         .playOn(cardBack);
                             }
 
@@ -138,7 +140,7 @@ public class QuestionPagerAdapter  extends PagerAdapter {
                            cardBack.setVisibility(View.GONE);
                            cardFront.setVisibility(View.VISIBLE);
                            YoYo.with(Techniques.FlipInX)
-                                   .duration(1000)
+                                   .duration(700)
                                    .playOn(cardFront);
                        }
 

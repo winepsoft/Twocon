@@ -14,6 +14,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 import com.getbase.floatingactionbutton.FloatingActionButton;
+import com.rey.material.widget.Button;
 import com.rey.material.widget.EditText;
 
 import java.util.Locale;
@@ -109,6 +110,19 @@ public class Utilities {
         }
     }
 
+    public void setFontButtonView(Context context,Button button){
+        if (isFarsiSelected(context)){
+            Font font=new Font();
+            Typeface face = Typeface.createFromAsset(context.getAssets(),font.getFarsiFontName());
+            button.setTypeface(face);
+        }
+        else {
+            Font font=new Font();
+            Typeface face = Typeface.createFromAsset(context.getAssets(),font.getFontName());
+            button.setTypeface(face);
+
+        }
+    }
     public void animateFAB(Context context,boolean isFabOpen,FloatingActionButton fab){
 
         Animation rotate_forward = AnimationUtils.loadAnimation(context.getApplicationContext(), R.anim.rotate_forward);
