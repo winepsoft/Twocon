@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.rey.material.widget.Spinner;
+import com.rey.material.widget.EditText;
 
 import java.util.ArrayList;
 
@@ -36,11 +36,10 @@ public class LevelSettingRecyclerViewAdapter extends RecyclerView.Adapter<LevelS
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        holder.spinnerSelectTimeType.setAdapter(setSpinnerTimeType());
-        holder.spinnerSelectTime.setAdapter(setSpinnerTime());
         holder.txtLevelNumber.setText(Integer.toString(position+1));
         Utilities.getInstance().customView(holder.txtLevelNumber, ContextCompat.getColor(context,R.color.level_settings_label),
                 ContextCompat.getColor(context,R.color.level_settings_label));
+        holder.editTextTimeNumber.setText("1");
     }
 
     @Override
@@ -50,13 +49,13 @@ public class LevelSettingRecyclerViewAdapter extends RecyclerView.Adapter<LevelS
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         private TextView txtLevelNumber;
-        private Spinner spinnerSelectTimeType;
-        private Spinner spinnerSelectTime;
+        private EditText editTextTimeNumber;
         public MyViewHolder(View itemView) {
             super(itemView);
             txtLevelNumber=(TextView)itemView.findViewById(R.id.txt_level_number);
-            spinnerSelectTimeType=(Spinner)itemView.findViewById(R.id.spinner_select_time_type);
-            spinnerSelectTime=(Spinner)itemView.findViewById(R.id.spinner_select_time);
+            Utilities.getInstance().setFontTextView(context,txtLevelNumber);
+            editTextTimeNumber=(EditText) itemView.findViewById(R.id.editText_select_time_type);
+            Utilities.getInstance().setFontEditTextView(context,editTextTimeNumber);
         }
     }
 

@@ -1,61 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView android:layout_width="match_parent"
+<android.support.v7.widget.CardView
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginTop="5dp">
     <LinearLayout
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:orientation="horizontal"
-        android:baselineAligned="false">
+        android:baselineAligned="false"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp">
         <LinearLayout
             android:layout_width="5dp"
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:background="@color/level_settings_label"/>
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginRight="5dp"
-            android:layout_marginLeft="5dp">
+            android:layout_marginLeft="5dp"
+            android:weightSum="3">
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="@string/level_number"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/txt_level_number"
+                android:textAlignment="gravity"
+                android:gravity="center_vertical|center_horizontal"
+                android:textColor="@color/white"/>
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
                 android:layout_weight="1">
-                <TextView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:text="@string/level_number"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginLeft="5dp"
-                    android:id="@+id/txt_level_number"
-                    android:textAlignment="gravity"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:textColor="@color/white" />
-                <com.rey.material.widget.Spinner
-                    style="@style/Material.Widget.Spinner"
-                    app:rd_style="@style/Material.Drawable.Ripple.Wave"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginLeft="5dp"
-                    android:id="@+id/spinner_select_time_type"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_vertical" />
-                <com.rey.material.widget.Spinner
-                    style="@style/Material.Widget.Spinner"
-                    app:rd_style="@style/Material.Drawable.Ripple.Wave"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginLeft="5dp"
-                    android:id="@+id/spinner_select_time"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_vertical" />
+
+            </LinearLayout>
+            <com.rey.material.widget.EditText
+                app:et_labelEnable="false"
+                app:et_inputId="@+id/editText_select_time_type_input"
+                app:et_labelEllipsize="middle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_gravity="center"
+                android:id="@+id/editText_select_time_type"
+                android:layout_weight="1"
+                android:textAlignment="center" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/spinner_select_time"
+                android:text="@string/level_setting_select_time_type_day"
+                android:layout_weight="1"
+                android:gravity="center_vertical|center_horizontal" />
             </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
 </android.support.v7.widget.CardView>
