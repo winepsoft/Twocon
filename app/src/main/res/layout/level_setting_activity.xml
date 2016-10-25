@@ -33,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/level_setting_select_level_number"/>
 
-            <com.rey.material.widget.Slider
+            <!--<com.rey.material.widget.Slider
                 style="@style/Material.Widget.Slider.Discrete"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -43,7 +43,17 @@
                 app:sl_maxValue="20"
                 app:sl_value="1"
                 app:sl_primaryColor="@color/colorPrimary"
-                app:sl_secondaryColor="@color/colorPrimary"/>
+                app:sl_secondaryColor="@color/colorPrimary"/>-->
+            <org.adw.library.widgets.discreteseekbar.DiscreteSeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:dsb_min="1"
+                app:dsb_max="20"
+                android:id="@+id/slider_level"
+                app:dsb_trackColor="@color/colorPrimary"
+                app:dsb_rippleColor="@color/colorPrimary"
+                app:dsb_progressColor="@color/colorPrimary"
+                app:dsb_indicatorColor="@color/colorPrimary"/>
 
             <android.support.v7.widget.RecyclerView
                 android:layout_width="match_parent"

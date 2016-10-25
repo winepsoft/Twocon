@@ -6,8 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.widget.Toast;
 
-import com.rey.material.widget.Slider;
+import org.adw.library.widgets.discreteseekbar.DiscreteSeekBar;
 
 import java.util.ArrayList;
 
@@ -23,7 +24,8 @@ import winep.ir.twocon.Utility.Utilities;
 public class LevelSettingActivity extends AppCompatActivity {
 
     private RecyclerView recyclerViewLevelSetting;
-    private Slider sliderLevel;
+   // private Slider sliderLevel;
+    private DiscreteSeekBar seekBar;
     private ArrayList<LevelSetting> allLevelsInformation;
     private Context context;
 
@@ -39,14 +41,56 @@ public class LevelSettingActivity extends AppCompatActivity {
         allLevelsInformation=new ArrayList<>();
 
         recyclerViewLevelSetting=(RecyclerView)findViewById(R.id.recycler_view_level_setting);
-        sliderLevel=(Slider)findViewById(R.id.slider_level);
+        //sliderLevel=(Slider)findViewById(R.id.slider_level);
+        seekBar=(DiscreteSeekBar)findViewById(R.id.slider_level);
 
         recyclerViewLevelSetting.setLayoutManager(new LinearLayoutManager(context));
         recyclerViewLevelSetting.addItemDecoration(new DividerItemDecorationRecyclerView(5));
         final LevelSettingRecyclerViewAdapter adapter=new LevelSettingRecyclerViewAdapter(context,createLevel());
         recyclerViewLevelSetting.setAdapter(adapter);
 
-        sliderLevel.setValue(8,true);
+        seekBar.setProgress(8);
+        seekBar.setOnProgressChangeListener(new DiscreteSeekBar.OnProgressChangeListener() {
+            @Override
+            public void onProgressChanged(DiscreteSeekBar discreteSeekBar, int i, boolean b) {
+                //Toast.makeText(context,"1",Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onStartTrackingTouch(DiscreteSeekBar discreteSeekBar) {
+                int a=discreteSeekBar.getProgress();
+                Toast.makeText(context,Integer.toString(a),Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onStopTrackingTouch(DiscreteSeekBar discreteSeekBar) {
+               // Toast.makeText(context,"3",Toast.LENGTH_SHORT).show();
+                int lastCounter=adapter.getItemCount();
+                int newCounter=discreteSeekBar.getProgress();
+                if(newCounter>lastCounter){
+                    for(int j=0;j<newCounter-lastCounter;j++){
+                        LevelSetting newLevel=new LevelSetting(adapter.getItemCount()+2,0,0);
+                        adapter.addNewItem(newLevel);
+                    }
+
+                }
+                else if(newCounter<lastCounter){
+                    int counter=lastCounter-newCounter;
+                    int size=adapter.getItemCount()-1;
+                    for(int j=0;j<counter;j++){
+                        adapter.removeItem(size);
+                        size=size-1;
+                    }
+                }
+
+
+
+            }
+        });
+
+
+       /* sliderLevel.setValue(8,true);
+
         sliderLevel.setOnPositionChangeListener(new Slider.OnPositionChangeListener() {
             @Override
             public void onPositionChanged(Slider slider, boolean b, float v, float v1, int i, int i1) {
@@ -67,11 +111,7 @@ public class LevelSettingActivity extends AppCompatActivity {
                 }
 
             }
-        });
-
-
-
-
+        });*/
     }
 
     private ArrayList<LevelSetting> createLevel(){
