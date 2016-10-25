@@ -9,11 +9,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.getbase.floatingactionbutton.FloatingActionButton;
+import com.nineoldandroids.animation.Animator;
 import com.rey.material.widget.EditText;
 import com.rey.material.widget.Spinner;
 
@@ -71,9 +73,7 @@ public class CreateQuestionActivity extends AppCompatActivity {
         Utilities.getInstance().setFontEditTextView(context,eTextAddAntonym);
         eTextAddExample=(EditText)findViewById(R.id.txt_add_example);
         Utilities.getInstance().setFontEditTextView(context,eTextAddExample);
-
-
-
+        final ScrollView scrollViewDescriptionPart=(ScrollView)findViewById(R.id.scroll_description_part);
 
         String[] GroupTitle = {getString(R.string.spinner_select_group), "پزشکی", "مهندسی پزشکی", "English Title"};
         ArrayAdapter<String> a = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, GroupTitle);
@@ -97,6 +97,29 @@ public class CreateQuestionActivity extends AppCompatActivity {
                     Utilities.getInstance().animateFAB(context, false, btnShowDescriptionCart);
                     layoutDescription.setVisibility(View.VISIBLE);
                     YoYo.with(Techniques.SlideInDown)
+                            .withListener(new Animator.AnimatorListener() {
+                                @Override
+                                public void onAnimationStart(Animator animation) {
+
+                                }
+
+                                @Override
+                                public void onAnimationEnd(Animator animation) {
+
+                                    scrollViewDescriptionPart.fullScroll(View.FOCUS_DOWN);
+
+                                }
+
+                                @Override
+                                public void onAnimationCancel(Animator animation) {
+
+                                }
+
+                                @Override
+                                public void onAnimationRepeat(Animator animation) {
+
+                                }
+                            })
                             .duration(1000)
                             .playOn(layoutDescription);
                     showDescriptionCartStatus = !showDescriptionCartStatus;
@@ -132,6 +155,8 @@ public class CreateQuestionActivity extends AppCompatActivity {
                 }
             }
         });
+
+
 
     }
 

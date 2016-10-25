@@ -14,10 +14,10 @@
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
     </android.support.design.widget.AppBarLayout>
-
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:id="@+id/scroll_description_part">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
