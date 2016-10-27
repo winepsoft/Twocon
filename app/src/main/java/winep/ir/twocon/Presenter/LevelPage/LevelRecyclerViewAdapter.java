@@ -3,6 +3,7 @@ package winep.ir.twocon.Presenter.LevelPage;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,7 +38,7 @@ public class LevelRecyclerViewAdapter extends RecyclerView.Adapter<LevelRecycler
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
-        holder.levelNumber.setText(Integer.toString(allLevel.get(position).getLevelNumber()));
+        holder.levelNumber.setText(context.getString(R.string.level_number)+""+Integer.toString(allLevel.get(position).getLevelNumber()));
         if (allLevel.get(position).getLevelStatus()==0)
             Utilities.getInstance().customView(holder.levelNumber, Color.GREEN,Color.GREEN);
         else if (allLevel.get(position).getLevelStatus()==1) {
@@ -75,8 +76,14 @@ public class LevelRecyclerViewAdapter extends RecyclerView.Adapter<LevelRecycler
         public MyViewHolder(View itemView) {
             super(itemView);
             levelNumber=(TextView)itemView.findViewById(R.id.txt_level_number);
+            Utilities.getInstance().setFontTextView(context,levelNumber);
             levelReadyQuestionNumber=(TextView)itemView.findViewById(R.id.txt_ready);
+            Utilities.getInstance().setFontTextView(context,levelReadyQuestionNumber);
+            levelReadyQuestionNumber.setPaintFlags(levelReadyQuestionNumber.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
             levelTotalQuestionNumber=(TextView)itemView.findViewById(R.id.txt_total);
+            Utilities.getInstance().setFontTextView(context,levelTotalQuestionNumber);
+            levelTotalQuestionNumber.setPaintFlags(levelTotalQuestionNumber.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+
         }
     }
 }

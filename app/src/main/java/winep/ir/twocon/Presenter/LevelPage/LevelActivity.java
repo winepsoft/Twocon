@@ -37,7 +37,7 @@ public class LevelActivity extends AppCompatActivity {
 
         recyclerViewLevel=(RecyclerView)findViewById(R.id.recycler_view_level);
         recyclerViewLevel.setLayoutManager(new LinearLayoutManager(context));
-        recyclerViewLevel.addItemDecoration(new DividerItemDecorationRecyclerView(5));
+        recyclerViewLevel.addItemDecoration(new DividerItemDecorationRecyclerView(10));
         LevelRecyclerViewAdapter adapter=new LevelRecyclerViewAdapter(context,createLevel());
         recyclerViewLevel.setAdapter(adapter);
     }
