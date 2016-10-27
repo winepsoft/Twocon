@@ -93,10 +93,10 @@ public class GroupRecyclerViewAdapter extends RecyclerView.Adapter<GroupRecycler
             public void onClick(View view) {
                 PopupMenu popup = new PopupMenu(view.getContext(), view);
                 popup.inflate(R.menu.menu_groups_item);
+                setUnSelected(position);
                 popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     @Override
                     public boolean onMenuItemClick(MenuItem item) {
-                        setUnSelected(position);
                         if (item.getTitle().equals(context.getString(R.string.edit_name))){
                             boolean wrapInScrollView = true;
                             new MaterialDialog.Builder(context)
