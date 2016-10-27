@@ -58,7 +58,7 @@ public class SubGroupActivity extends AppCompatActivity
 
         recyclerVieSubGroups =(RecyclerView)findViewById(R.id.recycler_view_sub_groups);
         recyclerVieSubGroups.setLayoutManager(new LinearLayoutManager(context));
-        recyclerVieSubGroups.addItemDecoration(new DividerItemDecorationRecyclerView(5));
+        recyclerVieSubGroups.addItemDecoration(new DividerItemDecorationRecyclerView(10));
         SubGroupRecyclerViewAdapter adapter=new SubGroupRecyclerViewAdapter(context,createSubGroup());
         recyclerVieSubGroups.setAdapter(adapter);
 
