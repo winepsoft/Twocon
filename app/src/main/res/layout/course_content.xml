@@ -7,7 +7,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="winep.ir.twocon.MainActivity">
+    tools:context="winep.ir.twocon.MainActivity"
+    android:background="@color/main_background_color">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,7 +32,11 @@
         <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/recycler_view_course">
+            android:id="@+id/recycler_view_course"
+            android:background="@color/main_background_color"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp">
         </android.support.v7.widget.RecyclerView>
 
     </LinearLayout>
