@@ -1,7 +1,6 @@
 package winep.ir.twocon.Presenter.LevelSettingPage;
 
 import android.content.Context;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,9 +35,7 @@ public class LevelSettingRecyclerViewAdapter extends RecyclerView.Adapter<LevelS
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        holder.txtLevelNumber.setText(Integer.toString(position+1));
-        Utilities.getInstance().customView(holder.txtLevelNumber, ContextCompat.getColor(context,R.color.level_settings_label),
-                ContextCompat.getColor(context,R.color.level_settings_label));
+        holder.txtLevelNumber.setText(context.getString(R.string.level_number)+" "+Integer.toString(position+1));
         holder.editTextTimeNumber.setText("1");
     }
 
@@ -60,8 +57,7 @@ public class LevelSettingRecyclerViewAdapter extends RecyclerView.Adapter<LevelS
     }
 
     private ArrayAdapter<String> setSpinnerTimeType(){
-        String[] timeType = {context.getString(R.string.level_setting_select_time_type_month),
-                context.getString(R.string.level_setting_select_time_type_day)};
+        String[] timeType = {context.getString(R.string.level_setting_select_time_type_month),context.getString(R.string.level_setting_select_time_type_day)};
         ArrayAdapter<String> a =new ArrayAdapter<>(context,android.R.layout.simple_spinner_item, timeType);
         a.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         return a;

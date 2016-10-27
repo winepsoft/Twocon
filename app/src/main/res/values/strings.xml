@@ -165,7 +165,7 @@
     //level setting
     <string name="level_setting_activity_title">Level Setting</string>
     <string name="level_setting_select_level_number">Select Level Number :</string>
-    <string name="level_number">level Number</string>
+    <string name="level_number">level</string>
     <string name="level_setting_select_time_type_month">Month</string>
     <string name="level_setting_select_time_type_day">Day</string>
 </resources>

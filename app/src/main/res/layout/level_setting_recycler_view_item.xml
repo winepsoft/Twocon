@@ -23,11 +23,13 @@
             android:orientation="horizontal"
             android:layout_marginRight="5dp"
             android:layout_marginLeft="5dp"
-            android:weightSum="3">
+            android:weightSum="4">
             <TextView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:text="@string/level_number"
+                android:background="@drawable/button_with_corner_blue"
                 android:layout_marginRight="5dp"
                 android:layout_marginLeft="5dp"
                 android:id="@+id/txt_level_number"
