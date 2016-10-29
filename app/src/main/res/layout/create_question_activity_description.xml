@@ -25,7 +25,89 @@
                 android:layout_alignParentStart="true"
                 android:background="@null"
                 android:id="@+id/btn_show_description_card_view"/>
-            <com.rey.material.widget.ImageButton
+
+            <LinearLayout
+                style="@android:style/Widget.Button"
+                android:background="@drawable/button_with_corner_purple"
+                android:id="@+id/add_picture"
+                android:layout_alignParentTop="true"
+                android:layout_toStartOf="@+id/add_voice"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_height="50dp"
+                android:layout_width="60dp">
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/picture"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="@null">
+                </ImageButton>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1">
+                    </LinearLayout>
+                    <ImageButton
+                        android:textColor="#000"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:src="@mipmap/plus"
+                        android:background="@null"
+                        android:layout_marginStart="10dp">
+                    </ImageButton>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@android:style/Widget.Button"
+                android:background="@drawable/button_with_corner_purple_deep"
+                android:id="@+id/add_voice"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+
+                android:layout_height="50dp"
+                android:layout_width="60dp">
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/voice"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="@null">
+                </ImageButton>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1">
+                    </LinearLayout>
+                    <ImageButton
+                        android:textColor="#000"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:src="@mipmap/plus"
+                        android:background="@null"
+                        android:layout_marginStart="10dp">
+                    </ImageButton>
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+            <!--<com.rey.material.widget.ImageButton
                 app:rd_style="@style/Material.Drawable.Ripple.Wave"
                 android:layout_width="60dp"
                 android:layout_height="50dp"
@@ -49,7 +131,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginRight="5dp"
                 android:layout_marginLeft="5dp"
-                style="?android:attr/buttonStyleSmall"/>
+                style="?android:attr/buttonStyleSmall"/>-->
         </RelativeLayout>
     </android.support.v7.widget.CardView>
     <LinearLayout
