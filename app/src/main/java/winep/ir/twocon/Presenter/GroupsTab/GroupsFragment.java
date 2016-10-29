@@ -58,29 +58,28 @@ public class GroupsFragment extends Fragment {
         fabAddNewCourse=(FloatingActionButton)mainView.findViewById(R.id.fab_add_new_course);
         fabAddNewQuestion=(FloatingActionButton)mainView.findViewById(R.id.fab_add_new_question);
         frameLayout=(FrameLayout)mainView.findViewById(R.id.containerFloatingActionMenu);
+        frameLayout.setClickable(false);
         floatingActionsMenu.setOnFloatingActionsMenuUpdateListener(new FloatingActionsMenu.OnFloatingActionsMenuUpdateListener() {
             @Override
             public void onMenuExpanded() {
                 frameLayout.setBackgroundColor(ContextCompat.getColor(context, R.color.background_after_click_FAM));
+                frameLayout.setClickable(true);
+                frameLayout.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        floatingActionsMenu.collapse();
+                    }
+                });
             }
 
             @Override
             public void onMenuCollapsed() {
                 frameLayout.setBackgroundColor(Color.TRANSPARENT);
+                frameLayout.setClickable(false);
 
             }
         });
 
-        /*frameLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(floatingActionsMenu.isExpanded()) {
-                    floatingActionsMenu.collapse();
-                    frameLayout.setBackgroundColor(Color.TRANSPARENT);
-
-                }
-            }
-        });*/
         // Setup D&D feature and RecyclerView
         RecyclerViewDragDropManager dragMgr = new RecyclerViewDragDropManager();
         dragMgr.setInitiateOnMove(false);
