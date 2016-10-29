@@ -19,8 +19,8 @@
         android:layout_marginTop="10dp"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="10dp">
-        <include layout="@layout/question_activity_card_front"/>
         <include layout="@layout/question_activity_card_back"/>
+        <include layout="@layout/question_activity_card_front"/>
     </FrameLayout>
 
     <include layout="@layout/question_activity_button_toolbar"

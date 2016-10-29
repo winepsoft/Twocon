@@ -1,5 +1,7 @@
 package winep.ir.twocon.Presenter.QuestionPage;
 
+import android.animation.AnimatorInflater;
+import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
@@ -10,16 +12,12 @@ import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
-import android.view.animation.TranslateAnimation;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.daimajia.androidanimations.library.Techniques;
-import com.daimajia.androidanimations.library.YoYo;
 import com.getbase.floatingactionbutton.FloatingActionButton;
-import com.nineoldandroids.animation.Animator;
 import com.rey.material.widget.Button;
 
 import java.util.ArrayList;
@@ -112,7 +110,9 @@ public class QuestionPagerAdapter  extends PagerAdapter {
             @Override
             public void onClick(View view) {
 
-                YoYo.with(Techniques.FlipOutX)
+                flipOut(cardFront,cardBack);
+
+                /*YoYo.with(Techniques.FlipOutX)
                         .withListener(new Animator.AnimatorListener() {
                             @Override
                             public void onAnimationStart(Animator animation) {
@@ -124,7 +124,7 @@ public class QuestionPagerAdapter  extends PagerAdapter {
                                 cardFront.setVisibility(View.GONE);
                                 cardBack.setVisibility(View.VISIBLE);
                                 YoYo.with(Techniques.FlipInX)
-                                        .duration(700)
+                                        .duration(200)
                                         .playOn(cardBack);
                             }
 
@@ -138,13 +138,17 @@ public class QuestionPagerAdapter  extends PagerAdapter {
 
                             }
                         })
-                        .duration(1000)
-                        .playOn(cardFront);
+                        .duration(200)
+                        .playOn(cardFront);*/
             }
         });
        back_layout.setOnClickListener(new View.OnClickListener() {
            @Override
-           public void onClick(View view) {YoYo.with(Techniques.FlipOutX)
+           public void onClick(View view) {
+
+               flipOut(cardBack,cardFront);
+
+               /*YoYo.with(Techniques.FlipOutX)
                    .withListener(new Animator.AnimatorListener() {
                        @Override
                        public void onAnimationStart(Animator animation) {
@@ -156,7 +160,7 @@ public class QuestionPagerAdapter  extends PagerAdapter {
                            cardBack.setVisibility(View.GONE);
                            cardFront.setVisibility(View.VISIBLE);
                            YoYo.with(Techniques.FlipInX)
-                                   .duration(700)
+                                   .duration(200)
                                    .playOn(cardFront);
                        }
 
@@ -170,8 +174,8 @@ public class QuestionPagerAdapter  extends PagerAdapter {
 
                        }
                    })
-                   .duration(1000)
-                   .playOn(cardBack);
+                   .duration(200)
+                   .playOn(cardBack);*/
            }
        });
 
@@ -202,12 +206,42 @@ public class QuestionPagerAdapter  extends PagerAdapter {
 
     }
 
-    public void slideToRight(View view){
-        TranslateAnimation animate = new TranslateAnimation(0,view.getWidth(),0,0);
-        animate.setDuration(5000);
-        animate.setFillAfter(true);
-        view.startAnimation(animate);
-        view.setVisibility(View.GONE);
+    private void flipOut(final View viewFront, final View viewBack){
+        ObjectAnimator anim = (ObjectAnimator) AnimatorInflater.loadAnimator(activity, R.animator.flip_out);
+        anim.setTarget(viewFront);
+        anim.setDuration(200);
+        anim.addListener(new android.animation.Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(android.animation.Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(android.animation.Animator animator) {
+                viewBack.setVisibility(View.VISIBLE);
+                flipIn(viewBack);
+
+
+            }
+
+            @Override
+            public void onAnimationCancel(android.animation.Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(android.animation.Animator animator) {
+
+            }
+        });
+        anim.start();
+    }
+    private void flipIn(View view){
+        ObjectAnimator anim = (ObjectAnimator) AnimatorInflater.loadAnimator(activity, R.animator.flip_in);
+        anim.setTarget(view);
+        anim.setDuration(200);
+        anim.start();
+
     }
 
 }
