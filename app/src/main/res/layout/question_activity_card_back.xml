@@ -63,7 +63,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="center_vertical|center_horizontal"
                             android:id="@+id/answer_voice"
-                            android:src="@mipmap/voice_play"
+                            android:src="@mipmap/play_voice"
                             android:layout_toStartOf="@+id/question_mark"
                             android:background="@null"
                             android:layout_centerVertical="true" />
@@ -75,7 +75,7 @@
                             android:layout_height="50dp"
                             android:gravity="center_vertical|center_horizontal"
                             android:id="@+id/question_mark"
-                            android:src="@mipmap/mark"
+                            android:src="@mipmap/book_mark"
                             android:layout_toStartOf="@+id/answer_description"
                             android:background="@null"
                             android:layout_centerVertical="true" />
@@ -87,7 +87,7 @@
                             android:layout_height="50dp"
                             android:gravity="center_vertical|center_horizontal"
                             android:id="@+id/answer_description"
-                            android:src="@mipmap/arrow_expand"
+                            android:src="@mipmap/expand"
                             android:background="@null"
                             android:layout_centerVertical="true"
                             android:layout_alignParentEnd="true" />

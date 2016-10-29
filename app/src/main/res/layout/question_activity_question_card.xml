@@ -91,7 +91,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical|center_horizontal"
                         android:id="@+id/question_play_voice"
-                        android:src="@mipmap/voice_play"
+                        android:src="@mipmap/play_voice"
                         android:background="@null"
                         android:layout_centerVertical="true"
                         android:layout_alignParentEnd="true" />

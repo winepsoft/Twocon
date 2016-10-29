@@ -20,7 +20,7 @@
                 fab:fab_size="mini"
                 app:fab_colorNormal="@color/pink"
                 app:fab_colorPressed="@color/pink"
-                android:src="@mipmap/arrow_expand"
+                android:src="@mipmap/expand"
                 android:layout_centerVertical="true"
                 android:layout_alignParentStart="true"
                 android:background="@null"
