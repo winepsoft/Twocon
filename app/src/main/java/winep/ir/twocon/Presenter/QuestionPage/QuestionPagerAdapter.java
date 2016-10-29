@@ -70,6 +70,8 @@ public class QuestionPagerAdapter  extends PagerAdapter {
         fabQuestionMark.setSize(FloatingActionButton.SIZE_MINI);
         final FloatingActionButton fabAnswerDescription=(FloatingActionButton)viewLayout.findViewById(R.id.answer_description);
         fabAnswerDescription.setSize(FloatingActionButton.SIZE_MINI);
+        final FloatingActionButton fabQuestionPlayVoice=(FloatingActionButton)viewLayout.findViewById(R.id.question_play_voice);
+        fabQuestionPlayVoice.setSize(FloatingActionButton.SIZE_MINI);
         final Button btnKnowNumber=(Button)viewLayout.findViewById(R.id.btn_know_number);
         Utilities.getInstance().setFontButtonView(activity,btnKnowNumber);
         final Button btnNoKnowNumber=(Button)viewLayout.findViewById(R.id.btn_no_know_number);
