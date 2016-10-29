@@ -23,7 +23,8 @@
             android:gravity="center_vertical|center_horizontal"
             android:layout_centerVertical="true"
             android:layout_alignParentStart="true"
-            android:textStyle="italic" />
+            android:textStyle="italic"
+            android:id="@+id/txt_please_touch"/>
 
     </RelativeLayout>
 

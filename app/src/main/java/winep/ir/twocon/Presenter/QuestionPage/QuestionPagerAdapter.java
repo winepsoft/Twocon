@@ -7,6 +7,9 @@ import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.LinearInterpolator;
 import android.view.animation.TranslateAnimation;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -78,6 +81,17 @@ public class QuestionPagerAdapter  extends PagerAdapter {
         Utilities.getInstance().setFontButtonView(activity,btnNoKnowNumber);
         final Button btnKnow=(Button)viewLayout.findViewById(R.id.btn_know);
         final Button btnoNOKnow=(Button)viewLayout.findViewById(R.id.btn_no_know);
+
+
+        final TextView txtPleaseTouch=(TextView)viewLayout.findViewById(R.id.txt_please_touch);
+        Animation animation = new AlphaAnimation(1, 0); // Change alpha from fully visible to invisible
+        animation.setDuration(700); // duration - half a second
+        animation.setInterpolator(new LinearInterpolator()); // do not alter animation rate
+        animation.setRepeatCount(Animation.INFINITE); // Repeat animation infinitely
+        animation.setRepeatMode(Animation.REVERSE); // Reverse animation at the end so the button will fade back in
+        txtPleaseTouch.setAnimation(animation);
+
+
 
 
         btnKnowNumber.setOnClickListener(new View.OnClickListener() {
