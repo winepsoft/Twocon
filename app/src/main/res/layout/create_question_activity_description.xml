@@ -25,29 +25,25 @@
                 android:layout_alignParentStart="true"
                 android:background="@null"
                 android:id="@+id/btn_show_description_card_view"/>
-            <com.rey.material.widget.Button
-                app:rd_enable="true"
+            <com.rey.material.widget.ImageButton
                 app:rd_style="@style/Material.Drawable.Ripple.Wave"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
                 android:background="@drawable/button_with_corner_purple"
-                android:drawableRight="@mipmap/picture"
-                android:text="@string/add_question_add_image"
-                android:id="@+id/add_voice"
+                android:src="@mipmap/add_pic"
+                android:id="@+id/add_picture"
                 android:textColor="@color/white"
                 android:layout_alignParentTop="true"
-                android:layout_toStartOf="@+id/add_picture"
+                android:layout_toStartOf="@+id/add_voice"
                 android:layout_marginRight="5dp"
                 android:layout_marginLeft="5dp"/>
-            <com.rey.material.widget.Button
-                app:rd_enable="true"
+            <com.rey.material.widget.ImageButton
                 app:rd_style="@style/Material.Drawable.Ripple.Wave"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
                 android:background="@drawable/button_with_corner_purple_deep"
-                android:text="@string/add_question_add_voice"
-                android:drawableRight="@mipmap/voice"
-                android:id="@+id/add_picture"
+                android:src="@mipmap/add_voice"
+                android:id="@+id/add_voice"
                 android:textColor="@color/white"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
@@ -252,11 +248,12 @@
                                 android:id="@+id/txt_add_example"
                                 app:et_inputId="@+id/txt_add_example_input"
                                 android:hint="@string/add_question_example"
-                                android:layout_centerVertical="true"
                                 android:layout_marginLeft="5dp"
                                 android:lines="4"
                                 android:gravity="center_vertical"
-                                android:textAppearance="?android:attr/textAppearanceMedium"/>
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentEnd="true" />
                         </RelativeLayout>
                     </LinearLayout>
                     <LinearLayout
