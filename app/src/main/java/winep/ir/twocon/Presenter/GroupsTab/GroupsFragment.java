@@ -25,7 +25,6 @@ import winep.ir.twocon.DataModel.Group;
 import winep.ir.twocon.Presenter.CreateQuestionPage.CreateQuestionActivity;
 import winep.ir.twocon.R;
 import winep.ir.twocon.Utility.ClickListener;
-import winep.ir.twocon.Utility.DividerItemDecorationRecyclerView;
 import winep.ir.twocon.Utility.Font;
 import winep.ir.twocon.Utility.RecyclerTouchListener;
 
@@ -72,7 +71,7 @@ public class GroupsFragment extends Fragment {
             }
         });
 
-        frameLayout.setOnClickListener(new View.OnClickListener() {
+        /*frameLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(floatingActionsMenu.isExpanded()) {
@@ -81,13 +80,13 @@ public class GroupsFragment extends Fragment {
 
                 }
             }
-        });
+        });*/
         // Setup D&D feature and RecyclerView
         RecyclerViewDragDropManager dragMgr = new RecyclerViewDragDropManager();
         dragMgr.setInitiateOnMove(false);
         dragMgr.setInitiateOnLongPress(true);
         recyclerViewGroups.setLayoutManager(new LinearLayoutManager(context));
-        recyclerViewGroups.addItemDecoration(new DividerItemDecorationRecyclerView(10));
+        //recyclerViewGroups.addItemDecoration(new DividerItemDecorationRecyclerView(5));
         final GroupRecyclerViewAdapter adapter=new GroupRecyclerViewAdapter(context,createGroup());
         recyclerViewGroups.setAdapter(dragMgr.createWrappedAdapter(adapter));
         dragMgr.attachRecyclerView(recyclerViewGroups);
