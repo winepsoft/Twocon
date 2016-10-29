@@ -71,6 +71,17 @@ public class GroupsFragment extends Fragment {
 
             }
         });
+
+        frameLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(floatingActionsMenu.isExpanded()) {
+                    floatingActionsMenu.collapse();
+                    frameLayout.setBackgroundColor(Color.TRANSPARENT);
+
+                }
+            }
+        });
         // Setup D&D feature and RecyclerView
         RecyclerViewDragDropManager dragMgr = new RecyclerViewDragDropManager();
         dragMgr.setInitiateOnMove(false);
