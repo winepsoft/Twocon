@@ -1,8 +1,8 @@
 <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/tools"
     android:layout_marginTop="@dimen/question_card_margin_top"
     android:layout_marginBottom="@dimen/question_card_margin_bottom"
     android:layout_marginRight="@dimen/question_card_margin_right"
@@ -13,7 +13,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginRight="5dp"
-        android:layout_marginLeft="5dp">
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp">
         <LinearLayout
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
