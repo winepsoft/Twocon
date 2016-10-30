@@ -18,6 +18,7 @@
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:background="@color/level_settings_label"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -28,7 +29,7 @@
             android:layout_gravity="center_vertical">
             <TextView
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="40dp"
                 android:layout_weight="1"
                 android:text="@string/level_number"
                 android:background="@drawable/button_with_corner_blue"
@@ -37,26 +38,38 @@
                 android:id="@+id/txt_level_number"
                 android:textAlignment="gravity"
                 android:gravity="center_vertical|center_horizontal"
-                android:textColor="@color/white"/>
+                android:textColor="@color/white"
+                android:layout_gravity="center_vertical" />
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1">
 
             </LinearLayout>
-            <com.rey.material.widget.EditText
-                app:et_labelEnable="false"
-                app:et_inputId="@+id/editText_select_time_type_input"
-                app:et_labelEllipsize="middle"
+            <RelativeLayout
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
                 android:layout_marginLeft="5dp"
                 android:layout_gravity="center"
-                android:id="@+id/editText_select_time_type"
-                android:layout_weight="1"
-                android:textAlignment="gravity"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+                android:layout_weight="1" >
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_gravity="center"
+                    android:id="@+id/editText_select_time_type"
+                    android:textAlignment="center"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true">
+                    <requestFocus />
+                </EditText>
+
+            </RelativeLayout>
 
             <TextView
                 android:layout_width="0dp"

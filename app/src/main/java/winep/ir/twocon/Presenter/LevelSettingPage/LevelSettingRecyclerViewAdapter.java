@@ -8,8 +8,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.rey.material.widget.EditText;
-
 import java.util.ArrayList;
 
 import winep.ir.twocon.DataModel.LevelSetting;
@@ -46,12 +44,12 @@ public class LevelSettingRecyclerViewAdapter extends RecyclerView.Adapter<LevelS
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         private TextView txtLevelNumber;
-        private EditText editTextTimeNumber;
+        private android.widget.EditText editTextTimeNumber;
         public MyViewHolder(View itemView) {
             super(itemView);
             txtLevelNumber=(TextView)itemView.findViewById(R.id.txt_level_number);
             Utilities.getInstance().setFontTextView(context,txtLevelNumber);
-            editTextTimeNumber=(EditText) itemView.findViewById(R.id.editText_select_time_type);
+            editTextTimeNumber=(android.widget.EditText) itemView.findViewById(R.id.editText_select_time_type);
             Utilities.getInstance().setFontEditTextView(context,editTextTimeNumber);
         }
     }

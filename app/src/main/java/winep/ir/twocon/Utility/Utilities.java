@@ -110,6 +110,20 @@ public class Utilities {
         }
     }
 
+    public void setFontEditTextView(Context context, android.widget.EditText textview){
+        if (isFarsiSelected(context)){
+            Font font=new Font();
+            Typeface face = Typeface.createFromAsset(context.getAssets(),font.getFarsiFontName());
+            textview.setTypeface(face);
+        }
+        else {
+            Font font=new Font();
+            Typeface face = Typeface.createFromAsset(context.getAssets(),font.getFontName());
+            textview.setTypeface(face);
+
+        }
+    }
+
     public void setFontButtonView(Context context,Button button){
         if (isFarsiSelected(context)){
             Font font=new Font();
