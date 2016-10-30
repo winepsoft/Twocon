@@ -170,4 +170,7 @@
     <string name="level_number">مرحله</string>
     <string name="level_setting_select_time_type_month">ماه</string>
     <string name="level_setting_select_time_type_day">روز</string>
+
+    //subGroup page
+    <string name="dialog_sub_group_add_new_sub_group_title">اضافه کردن زیرگروه جدید</string>
 </resources>

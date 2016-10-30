@@ -1,6 +1,7 @@
 package winep.ir.twocon.Presenter.SubGroupPage;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -15,6 +16,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 
+import com.afollestad.materialdialogs.MaterialDialog;
+import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
 import com.github.lzyzsd.randomcolor.RandomColor;
 import com.h6ah4i.android.widget.advrecyclerview.draggable.RecyclerViewDragDropManager;
@@ -23,8 +26,10 @@ import java.util.ArrayList;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 import winep.ir.twocon.DataModel.Group;
+import winep.ir.twocon.Presenter.CreateQuestionPage.CreateQuestionActivity;
 import winep.ir.twocon.R;
 import winep.ir.twocon.Utility.ClickListener;
+import winep.ir.twocon.Utility.Font;
 import winep.ir.twocon.Utility.RecyclerTouchListener;
 import winep.ir.twocon.Utility.Utilities;
 
@@ -36,9 +41,14 @@ public class SubGroupActivity extends AppCompatActivity
     private NavigationView navigationView;
     private RecyclerView recyclerVieSubGroups;
     private FloatingActionsMenu floatingActionsMenu;
+    private FloatingActionButton fabAddSubGroup;
+    private FloatingActionButton fabAddCourse;
+    private FloatingActionButton fabAddQuestion;
     private FrameLayout frameLayout;
     private Context context;
     private  SubGroupRecyclerViewAdapter adapter;
+    private Font font;
+
 
 
 
@@ -47,6 +57,7 @@ public class SubGroupActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sub_group_activity);
         context=this;
+        font=new Font();
         setTitle(getIntent().getExtras().get("groupName").toString());
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -67,7 +78,6 @@ public class SubGroupActivity extends AppCompatActivity
         adapter=new SubGroupRecyclerViewAdapter(context,createSubGroup());
         recyclerVieSubGroups.setAdapter(dragMgr.createWrappedAdapter(adapter));
         dragMgr.attachRecyclerView(recyclerVieSubGroups);
-
         //for change color of item when click
         recyclerVieSubGroups.addOnItemTouchListener(new RecyclerTouchListener(context,recyclerVieSubGroups, new ClickListener() {
             @Override
@@ -85,6 +95,9 @@ public class SubGroupActivity extends AppCompatActivity
         }));
 
         floatingActionsMenu=(FloatingActionsMenu)findViewById(R.id.sub_group_fab_add);
+        fabAddSubGroup=(FloatingActionButton)findViewById(R.id.sub_fab_sub_group);
+        fabAddCourse=(FloatingActionButton)findViewById(R.id.sub_fab_course);
+        fabAddQuestion=(FloatingActionButton)findViewById(R.id.sub_fab_question);
         frameLayout=(FrameLayout)findViewById(R.id.containerFloatingActionMenu);
         frameLayout.setClickable(false);
         floatingActionsMenu.setOnFloatingActionsMenuUpdateListener(new FloatingActionsMenu.OnFloatingActionsMenuUpdateListener() {
@@ -106,7 +119,71 @@ public class SubGroupActivity extends AppCompatActivity
                 frameLayout.setClickable(false);
             }
         });
+        fabAddSubGroup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                boolean wrapInScrollView = true;
+                new MaterialDialog.Builder(context)
+                        .title(R.string.dialog_sub_group_add_new_sub_group_title)
+                        .customView(R.layout.dialog_edit_group, wrapInScrollView)
+                        .positiveText(R.string.save)
+                        .positiveColor(ContextCompat.getColor(context, R.color.dialog_save_color))
+                        .negativeText(R.string.cancel)
+                        .negativeColor(ContextCompat.getColor(context, R.color.dialog_cancel_color))
+                        .typeface(font.getRTLFontNameForDialog(),null)
+                        .show();
+                closeFloatingActionMenu();
+            }
+        });
 
+        fabAddCourse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                new MaterialDialog.Builder(context)
+                    .title(R.string.new_course_dialog_title)
+                    .items(createListOfSubGroupsOfAGroup())
+                    .itemsCallback(new MaterialDialog.ListCallback() {
+                        @Override
+                        public void onSelection(MaterialDialog dialog, View view, int which, CharSequence text) {
+                            boolean wrapInScrollView = true;
+                            new MaterialDialog.Builder(context)
+                                    .title(context.getString(R.string.add_a_course_to)+" "+text)
+                                    .customView(R.layout.dialog_edit_group, wrapInScrollView)
+                                    .positiveText(R.string.save)
+                                    .positiveColor(ContextCompat.getColor(context, R.color.dialog_save_color))
+                                    .negativeText(R.string.cancel)
+                                    .negativeColor(ContextCompat.getColor(context, R.color.dialog_cancel_color))
+                                    .typeface(font.getRTLFontNameForDialog(),null)
+                                    .show();
+                        }
+                    })
+                    .show();
+                closeFloatingActionMenu();
+            }
+        });
+
+        fabAddQuestion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                closeFloatingActionMenu();
+                Intent intent=new Intent(context, CreateQuestionActivity.class);
+                startActivity(intent);
+            }
+        });
+
+    }
+
+    private void closeFloatingActionMenu(){
+        frameLayout.setBackgroundColor(Color.TRANSPARENT);
+        floatingActionsMenu.collapse();
+    }
+
+    private String[] createListOfSubGroupsOfAGroup(){
+        String[] subGroupTitle=new String[2];
+        subGroupTitle[0]="فیزیولوژی";
+        subGroupTitle[1]="دهان و دندان";
+        return subGroupTitle;
     }
 
     @Override
