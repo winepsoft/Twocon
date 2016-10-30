@@ -45,7 +45,7 @@
         android:layout_height="match_parent"
         android:id="@+id/containerFloatingActionMenu">
         <com.getbase.floatingactionbutton.FloatingActionsMenu
-            android:id="@+id/sub_group_fab_add"
+            android:id="@+id/level_fab_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right|bottom"
@@ -58,7 +58,7 @@
             fab:fab_labelsPosition="left">
 
             <com.getbase.floatingactionbutton.FloatingActionButton
-                android:id="@+id/sub_fab_question"
+                android:id="@+id/level_fab_question"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:fab_colorNormal="@color/fab_color"

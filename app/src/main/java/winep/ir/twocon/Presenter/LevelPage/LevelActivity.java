@@ -1,18 +1,27 @@
 package winep.ir.twocon.Presenter.LevelPage;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.FrameLayout;
+
+import com.getbase.floatingactionbutton.FloatingActionButton;
+import com.getbase.floatingactionbutton.FloatingActionsMenu;
 
 import java.util.ArrayList;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 import winep.ir.twocon.DataModel.Level;
+import winep.ir.twocon.Presenter.CreateQuestionPage.CreateQuestionActivity;
 import winep.ir.twocon.R;
 import winep.ir.twocon.Utility.Utilities;
 
@@ -24,6 +33,9 @@ public class LevelActivity extends AppCompatActivity {
     private RecyclerView recyclerViewLevel;
     private Context context;
     private ArrayList<Level> allLevels;
+    private FrameLayout frameLayout;
+    private FloatingActionsMenu floatingActionsMenu;
+    private FloatingActionButton fabAddQuestion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +52,44 @@ public class LevelActivity extends AppCompatActivity {
         //recyclerViewLevel.addItemDecoration(new DividerItemDecorationRecyclerView(10));
         LevelRecyclerViewAdapter adapter=new LevelRecyclerViewAdapter(context,createLevel());
         recyclerViewLevel.setAdapter(adapter);
+
+        floatingActionsMenu=(FloatingActionsMenu)findViewById(R.id.level_fab_add);
+        fabAddQuestion=(FloatingActionButton)findViewById(R.id.level_fab_question);
+        frameLayout=(FrameLayout)findViewById(R.id.containerFloatingActionMenu);
+        frameLayout.setClickable(false);
+        floatingActionsMenu.setOnFloatingActionsMenuUpdateListener(new FloatingActionsMenu.OnFloatingActionsMenuUpdateListener() {
+            @Override
+            public void onMenuExpanded() {
+                frameLayout.setBackgroundColor(ContextCompat.getColor(context, R.color.background_after_click_FAM));
+                frameLayout.setClickable(true);
+                frameLayout.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        floatingActionsMenu.collapse();
+                    }
+                });
+            }
+
+            @Override
+            public void onMenuCollapsed() {
+                frameLayout.setBackgroundColor(Color.TRANSPARENT);
+                frameLayout.setClickable(false);
+            }
+        });
+
+        fabAddQuestion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                closeFloatingActionMenu();
+                Intent intent=new Intent(context, CreateQuestionActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void closeFloatingActionMenu(){
+        frameLayout.setBackgroundColor(Color.TRANSPARENT);
+        floatingActionsMenu.collapse();
     }
 
     private ArrayList<Level> createLevel(){
