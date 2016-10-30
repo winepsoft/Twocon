@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -47,13 +45,13 @@ public class SubGroupActivity extends AppCompatActivity
         setTitle(getIntent().getExtras().get("groupName").toString());
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        /*DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
         navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setNavigationItemSelectedListener(this);*/
 
         recyclerVieSubGroups =(RecyclerView)findViewById(R.id.recycler_view_sub_groups);
         recyclerVieSubGroups.setLayoutManager(new LinearLayoutManager(context));
@@ -82,10 +80,14 @@ public class SubGroupActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.title_back_menu, menu);
-        if(Utilities.getInstance().isRTL())
+        if(Utilities.getInstance().isRTL()) {
             menu.getItem(0).setIcon(R.mipmap.back_fa);
-        else
-            menu.getItem(0).setIcon(R.mipmap.back_en);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        }
+        else {
+            menu.getItem(0).setVisible(false);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
         return true;
     }
 
@@ -95,6 +97,8 @@ public class SubGroupActivity extends AppCompatActivity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+        if (id==android.R.id.home)
+            finish();
         if (id==R.id.action_back)
             finish();
         return super.onOptionsItemSelected(item);
