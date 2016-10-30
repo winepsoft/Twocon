@@ -16,6 +16,7 @@ import android.widget.FrameLayout;
 
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
 import com.github.lzyzsd.randomcolor.RandomColor;
+import com.h6ah4i.android.widget.advrecyclerview.draggable.RecyclerViewDragDropManager;
 
 import java.util.ArrayList;
 
@@ -54,10 +55,15 @@ public class SubGroupActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);*/
 
         recyclerVieSubGroups =(RecyclerView)findViewById(R.id.recycler_view_sub_groups);
+        RecyclerViewDragDropManager dragMgr = new RecyclerViewDragDropManager();
+        dragMgr.setInitiateOnMove(false);
+        dragMgr.setInitiateOnLongPress(true);
         recyclerVieSubGroups.setLayoutManager(new LinearLayoutManager(context));
         //recyclerVieSubGroups.addItemDecoration(new DividerItemDecorationRecyclerView(10));
         SubGroupRecyclerViewAdapter adapter=new SubGroupRecyclerViewAdapter(context,createSubGroup());
-        recyclerVieSubGroups.setAdapter(adapter);
+        recyclerVieSubGroups.setAdapter(dragMgr.createWrappedAdapter(adapter));
+        dragMgr.attachRecyclerView(recyclerVieSubGroups);
+
 
         floatingActionsMenu=(FloatingActionsMenu)findViewById(R.id.sub_group_fab_add);
         frameLayout=(FrameLayout)findViewById(R.id.containerFloatingActionMenu);

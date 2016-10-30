@@ -2,6 +2,8 @@ package winep.ir.twocon.Presenter.SubGroupPage;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
@@ -9,10 +11,15 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.h6ah4i.android.widget.advrecyclerview.draggable.DraggableItemAdapter;
+import com.h6ah4i.android.widget.advrecyclerview.draggable.DraggableItemConstants;
+import com.h6ah4i.android.widget.advrecyclerview.draggable.ItemDraggableRange;
+import com.h6ah4i.android.widget.advrecyclerview.utils.AbstractDraggableItemViewHolder;
 
 import java.util.ArrayList;
 
@@ -20,22 +27,37 @@ import winep.ir.twocon.DataModel.Group;
 import winep.ir.twocon.Presenter.CoursePage.CourseActivity;
 import winep.ir.twocon.R;
 import winep.ir.twocon.Utility.Font;
+import winep.ir.twocon.Utility.RectangleView;
 import winep.ir.twocon.Utility.Utilities;
 
 /**
  * Created by ShaisteS on 10/4/2016.
  */
-public class SubGroupRecyclerViewAdapter extends RecyclerView.Adapter<SubGroupRecyclerViewAdapter.MyViewHolder> {
+public class SubGroupRecyclerViewAdapter extends RecyclerView.Adapter<SubGroupRecyclerViewAdapter.MyViewHolder>
+        implements DraggableItemAdapter<SubGroupRecyclerViewAdapter.MyViewHolder> {
+
 
     private ArrayList<Group> allSubGroups;
     private Context context;
     private Font font;
+    private Drawable d;
 
-    public SubGroupRecyclerViewAdapter(Context context,ArrayList<Group> subGroups){
-        this.context=context;
-        allSubGroups=subGroups;
-        font=new Font();
+    // NOTE: Make accessible with short name
+    private interface Draggable extends DraggableItemConstants {
     }
+
+    public SubGroupRecyclerViewAdapter(Context context, ArrayList<Group> subGroups) {
+        setHasStableIds(true); // this is required for D&D feature.
+        this.context = context;
+        allSubGroups = subGroups;
+        font = new Font();
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return allSubGroups.get(position).id; // need to return stable (= not change even after reordered) value
+    }
+
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.sub_group_recycler_view_item, parent, false);
@@ -43,7 +65,7 @@ public class SubGroupRecyclerViewAdapter extends RecyclerView.Adapter<SubGroupRe
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, final int position) {
+    public void onBindViewHolder(final MyViewHolder holder, final int position) {
         String firstCharecterOfSubGroupTitle=allSubGroups.get(position).getTitle().substring(0,1);
         holder.minSubGroupName.setText(firstCharecterOfSubGroupTitle);
         Utilities.getInstance().customView(holder.minSubGroupName, allSubGroups.get(position).getColor(),allSubGroups.get(position).getColor());
@@ -76,10 +98,6 @@ public class SubGroupRecyclerViewAdapter extends RecyclerView.Adapter<SubGroupRe
                                     .itemsCallbackSingleChoice(-1, new MaterialDialog.ListCallbackSingleChoice() {
                                         @Override
                                         public boolean onSelection(MaterialDialog dialog, View view, int which, CharSequence text) {
-                                            /**
-                                             * If you use alwaysCallSingleChoiceCallback(), which is discussed below,
-                                             * returning false here won't allow the newly selected radio button to actually be selected.
-                                             **/
                                             return true;
                                         }
                                     })
@@ -96,6 +114,141 @@ public class SubGroupRecyclerViewAdapter extends RecyclerView.Adapter<SubGroupRe
                 popup.show();
             }
         });
+        //Change color item when click
+        if (allSubGroups.get(position).isSelected()) {
+            Context c = holder.itemView.getContext();
+            d = new ColorDrawable(ContextCompat.getColor(c, R.color.item_foreground_selected_color));
+        } else {
+            d = null;
+        }
+        ((FrameLayout) holder.colorSquare).setForeground(d);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, SubGroupActivity.class);
+                intent.putExtra("groupName", allSubGroups.get(position).getTitle());
+                context.startActivity(intent);
+                setUnSelected(position);
+            }
+        });
+
+        // set background item when drag
+        final int dragState = holder.getDragStateFlags();
+        if (((dragState & Draggable.STATE_FLAG_IS_UPDATED) != 0)) {
+
+            if ((dragState & Draggable.STATE_FLAG_IS_ACTIVE) != 0) {
+                Context c = holder.itemView.getContext();
+                d = new ColorDrawable(ContextCompat.getColor(c, R.color.item_foreground_selected_color));
+
+            } else if ((dragState & Draggable.STATE_FLAG_DRAGGING) != 0) {
+                d = null;
+            } else {
+                d = null;
+            }
+            ((FrameLayout) holder.colorSquare).setForeground(d);
+        }
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context, CourseActivity.class);
+                intent.putExtra("subGroupName", allSubGroups.get(position).getTitle());
+                context.startActivity(intent);
+            }
+        });
+    }
+
+    public void setSelected(int pos) {
+        try {
+            allSubGroups.get(pos).setSelected(true);
+            notifyDataSetChanged();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void setUnSelected(int pos) {
+        try {
+            allSubGroups.get(pos).setSelected(false);
+            notifyDataSetChanged();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public int getItemCount() {
+        return allSubGroups.size();
+    }
+
+    @Override
+    public void onMoveItem(int fromPosition, int toPosition) {
+        Group movedItem = allSubGroups.remove(fromPosition);
+        allSubGroups.add(toPosition, movedItem);
+        notifyItemMoved(fromPosition, toPosition);
+    }
+
+    @Override
+    public boolean onCheckCanStartDrag(MyViewHolder holder, int position, int x, int y) {
+        return true;
+    }
+
+
+    @Override
+    public ItemDraggableRange onGetItemDraggableRange(MyViewHolder holder, int position) {
+        return null;
+    }
+
+    @Override
+    public boolean onCheckCanDrop(int draggingPosition, int dropPosition) {
+        return true;
+    }
+
+    static class MyViewHolder extends AbstractDraggableItemViewHolder {
+        TextView minSubGroupName;
+        ImageButton subGroupFavourite;
+        TextView subGroupName;
+        TextView subGroupDescription;
+        ImageButton subGroupSetting;
+        RectangleView colorSquare;
+
+        public MyViewHolder(View itemView) {
+            super(itemView);
+            colorSquare = (RectangleView) itemView.findViewById(R.id.subColorSquare);
+            minSubGroupName = (TextView) itemView.findViewById(R.id.min_sub_group_name);
+            subGroupFavourite = (ImageButton) itemView.findViewById(R.id.sub_group_favorite);
+            subGroupName = (TextView) itemView.findViewById(R.id.sub_group_name);
+            subGroupDescription = (TextView) itemView.findViewById(R.id.sub_group_description);
+            subGroupSetting = (ImageButton) itemView.findViewById(R.id.sub_group_settings);
+        }
+    }
+}
+/*extends RecyclerView.Adapter<SubGroupRecyclerViewAdapter.MyViewHolder> {
+
+    private ArrayList<Group> allSubGroups;
+    private Context context;
+    private Font font;
+
+    public SubGroupRecyclerViewAdapter(Context context,ArrayList<Group> subGroups){
+        this.context=context;
+        allSubGroups=subGroups;
+        font=new Font();
+    }
+    @Override
+    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.sub_group_recycler_view_item, parent, false);
+        return new MyViewHolder(v);
+    }
+
+    @Override
+    public void onBindViewHolder(MyViewHolder holder, final int position) {
+        String firstCharecterOfSubGroupTitle=allSubGroups.get(position).getTitle().substring(0,1);
+        holder.minSubGroupName.setText(firstCharecterOfSubGroupTitle);
+        Utilities.getInstance().customView(holder.minSubGroupName, allSubGroups.get(position).getColor(),allSubGroups.get(position).getColor());
+        holder.subGroupName.setText(allSubGroups.get(position).getTitle());
+        holder.subGroupDescription.setText(allSubGroups.get(position).getDescription());
+
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -129,4 +282,4 @@ public class SubGroupRecyclerViewAdapter extends RecyclerView.Adapter<SubGroupRe
             subGroupSetting=(ImageButton)itemView.findViewById(R.id.sub_group_settings);
         }
     }
-}
+}*/
