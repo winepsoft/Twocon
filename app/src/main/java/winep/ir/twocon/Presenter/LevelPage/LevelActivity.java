@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 import winep.ir.twocon.DataModel.Level;
 import winep.ir.twocon.R;
-import winep.ir.twocon.Utility.DividerItemDecorationRecyclerView;
 import winep.ir.twocon.Utility.Utilities;
 
 /**
@@ -37,7 +36,7 @@ public class LevelActivity extends AppCompatActivity {
 
         recyclerViewLevel=(RecyclerView)findViewById(R.id.recycler_view_level);
         recyclerViewLevel.setLayoutManager(new LinearLayoutManager(context));
-        recyclerViewLevel.addItemDecoration(new DividerItemDecorationRecyclerView(10));
+        //recyclerViewLevel.addItemDecoration(new DividerItemDecorationRecyclerView(10));
         LevelRecyclerViewAdapter adapter=new LevelRecyclerViewAdapter(context,createLevel());
         recyclerViewLevel.setAdapter(adapter);
     }

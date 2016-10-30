@@ -21,7 +21,6 @@ import java.util.ArrayList;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 import winep.ir.twocon.DataModel.Course;
 import winep.ir.twocon.R;
-import winep.ir.twocon.Utility.DividerItemDecorationRecyclerView;
 import winep.ir.twocon.Utility.Utilities;
 
 /**
@@ -58,7 +57,7 @@ public class CourseActivity extends AppCompatActivity
         dragMgr.setInitiateOnMove(false);
         dragMgr.setInitiateOnLongPress(true);
         recyclerViewCourses.setLayoutManager(new LinearLayoutManager(context));
-        recyclerViewCourses.addItemDecoration(new DividerItemDecorationRecyclerView(5));
+        //recyclerViewCourses.addItemDecoration(new DividerItemDecorationRecyclerView(5));
         CourseRecyclerViewAdapter adapter=new CourseRecyclerViewAdapter(context,createCourse());
         recyclerViewCourses.setAdapter(dragMgr.createWrappedAdapter(adapter));
         dragMgr.attachRecyclerView(recyclerViewCourses);

@@ -24,7 +24,6 @@ import java.util.ArrayList;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 import winep.ir.twocon.DataModel.Group;
 import winep.ir.twocon.R;
-import winep.ir.twocon.Utility.DividerItemDecorationRecyclerView;
 import winep.ir.twocon.Utility.Utilities;
 
 /**
@@ -58,7 +57,7 @@ public class SubGroupActivity extends AppCompatActivity
 
         recyclerVieSubGroups =(RecyclerView)findViewById(R.id.recycler_view_sub_groups);
         recyclerVieSubGroups.setLayoutManager(new LinearLayoutManager(context));
-        recyclerVieSubGroups.addItemDecoration(new DividerItemDecorationRecyclerView(10));
+        //recyclerVieSubGroups.addItemDecoration(new DividerItemDecorationRecyclerView(10));
         SubGroupRecyclerViewAdapter adapter=new SubGroupRecyclerViewAdapter(context,createSubGroup());
         recyclerVieSubGroups.setAdapter(adapter);
 
