@@ -34,9 +34,9 @@
             android:layout_height="match_parent"
             android:id="@+id/recycler_view_course"
             android:background="@color/main_background_color"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginLeft="5dp">
+            android:layout_marginTop="@dimen/margin_recycler_view_top"
+            android:layout_marginRight="@dimen/margin_recycler_view_right"
+            android:layout_marginLeft="@dimen/margin_recycler_view_right">
         </android.support.v7.widget.RecyclerView>
 
     </LinearLayout>
