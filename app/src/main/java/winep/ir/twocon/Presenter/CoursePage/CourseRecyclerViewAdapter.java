@@ -64,7 +64,7 @@ public class CourseRecyclerViewAdapter extends RecyclerView.Adapter<CourseRecycl
             @Override
             public void onClick(View view) {
                 PopupMenu popup = new PopupMenu(view.getContext(), view);
-                popup.inflate(R.menu.menu_groups_item);
+                popup.inflate(R.menu.menu_course_item);
                 popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     @Override
                     public boolean onMenuItemClick(MenuItem item) {

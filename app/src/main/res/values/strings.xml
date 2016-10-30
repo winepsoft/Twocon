@@ -171,4 +171,7 @@
 
     //subGroup page
     <string name="dialog_sub_group_add_new_sub_group_title">Add New Sub Group</string>
+
+    //course page
+    <string name="review_question">Review Questions</string>
 </resources>
