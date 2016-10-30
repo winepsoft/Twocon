@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.github.lzyzsd.randomcolor.RandomColor;
 import com.h6ah4i.android.widget.advrecyclerview.draggable.RecyclerViewDragDropManager;
@@ -19,6 +20,8 @@ import java.util.ArrayList;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 import winep.ir.twocon.DataModel.Course;
 import winep.ir.twocon.R;
+import winep.ir.twocon.Utility.ClickListener;
+import winep.ir.twocon.Utility.RecyclerTouchListener;
 import winep.ir.twocon.Utility.Utilities;
 
 /**
@@ -31,6 +34,7 @@ public class CourseActivity extends AppCompatActivity
     private Context context;
     private RecyclerView recyclerViewCourses;
     private ArrayList<Course> allCourse;
+    private CourseRecyclerViewAdapter adapter;
 
 
 
@@ -56,9 +60,23 @@ public class CourseActivity extends AppCompatActivity
         dragMgr.setInitiateOnLongPress(true);
         recyclerViewCourses.setLayoutManager(new LinearLayoutManager(context));
         //recyclerViewCourses.addItemDecoration(new DividerItemDecorationRecyclerView(5));
-        CourseRecyclerViewAdapter adapter=new CourseRecyclerViewAdapter(context,createCourse());
+        adapter=new CourseRecyclerViewAdapter(context,createCourse());
         recyclerViewCourses.setAdapter(dragMgr.createWrappedAdapter(adapter));
         dragMgr.attachRecyclerView(recyclerViewCourses);
+        recyclerViewCourses.addOnItemTouchListener(new RecyclerTouchListener(context,recyclerViewCourses, new ClickListener() {
+            @Override
+            public void onClick(View view, final int position) {
+                //Values are passing to activity & to fragment as well
+                adapter.setSelected(position);
+            }
+
+            @Override
+            public void onLongClick(View view, int position) {
+                /*adapter.setSelected(position);
+                dragMgr.setInitiateOnMove(true);*/
+
+            }
+        }));
     }
 
     private ArrayList<Course> createCourse(){

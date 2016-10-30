@@ -93,6 +93,7 @@ public class CourseRecyclerViewAdapter extends RecyclerView.Adapter<CourseRecycl
             public void onClick(View view) {
                 PopupMenu popup = new PopupMenu(view.getContext(), view);
                 popup.inflate(R.menu.menu_course_item);
+                setUnSelected(position);
                 popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     @Override
                     public boolean onMenuItemClick(MenuItem item) {
@@ -136,14 +137,43 @@ public class CourseRecyclerViewAdapter extends RecyclerView.Adapter<CourseRecycl
             }
         });
 
+        //Change color item when click
+        if (allCourses.get(position).isSelected()) {
+            Context c = holder.itemView.getContext();
+            d = new ColorDrawable(ContextCompat.getColor(c, R.color.item_foreground_selected_color));
+        } else {
+            d = null;
+        }
+        ((FrameLayout) holder.colorSquare).setForeground(d);
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context, LevelActivity.class);
                 intent.putExtra("courseName", allCourses.get(position).getTitle());
                 context.startActivity(intent);
+                setUnSelected(position);
+
             }
         });
+    }
+
+    public void setSelected(int pos) {
+        try {
+            allCourses.get(pos).setSelected(true);
+            notifyDataSetChanged();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void setUnSelected(int pos) {
+        try {
+            allCourses.get(pos).setSelected(false);
+            notifyDataSetChanged();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
