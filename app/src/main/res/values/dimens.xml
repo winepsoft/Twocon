@@ -20,7 +20,10 @@
     <dimen name="level_number_circle_size">50dp</dimen>
     <dimen name="button_corner_size">3dp</dimen>
     <dimen name="font_size_small">10sp</dimen>
-    <dimen name="card_elevation">4dp</dimen>
-    <dimen name="card_corner_radius">5dp</dimen>
+    <dimen name="card_elevation">2dp</dimen>
+    <dimen name="card_corner_radius">3dp</dimen>
     <dimen name="card_content_padding">5dp</dimen>
+    <dimen name="margin_recycler_view_top">3dp</dimen>
+    <dimen name="margin_recycler_view_right">3dp</dimen>
+    <dimen name="margin_recycler_view_left">3dp</dimen>
 </resources>
