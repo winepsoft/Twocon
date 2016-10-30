@@ -174,4 +174,5 @@
 
     //course page
     <string name="review_question">Review Questions</string>
+    <string name="dialog_course_add_new_course_title">Add New Course</string>
 </resources>

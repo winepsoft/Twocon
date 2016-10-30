@@ -176,4 +176,5 @@
 
     //course page
     <string name="review_question">مرور سوالات</string>
+    <string name="dialog_course_add_new_course_title">اضافه کردن درس جدید</string>
 </resources>
