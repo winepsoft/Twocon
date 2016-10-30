@@ -71,7 +71,7 @@ public class LevelActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.level_page_menu, menu);
+        getMenuInflater().inflate(R.menu.title_back_menu, menu);
         if(Utilities.getInstance().isRTL()) {
             menu.getItem(0).setIcon(R.mipmap.back_fa);
             getSupportActionBar().setDisplayHomeAsUpEnabled(false);
@@ -95,6 +95,7 @@ public class LevelActivity extends AppCompatActivity {
             finish();
         return super.onOptionsItemSelected(item);
     }
+
 
 
     @Override
