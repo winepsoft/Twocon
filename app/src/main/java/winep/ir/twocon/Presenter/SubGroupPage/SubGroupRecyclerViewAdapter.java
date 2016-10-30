@@ -76,6 +76,7 @@ public class SubGroupRecyclerViewAdapter extends RecyclerView.Adapter<SubGroupRe
             public void onClick(View view) {
                 PopupMenu popup = new PopupMenu(view.getContext(), view);
                 popup.inflate(R.menu.menu_sub_group_item);
+                setUnSelected(position);
                 popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     @Override
                     public boolean onMenuItemClick(MenuItem item) {
@@ -123,16 +124,6 @@ public class SubGroupRecyclerViewAdapter extends RecyclerView.Adapter<SubGroupRe
         }
         ((FrameLayout) holder.colorSquare).setForeground(d);
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(context, SubGroupActivity.class);
-                intent.putExtra("groupName", allSubGroups.get(position).getTitle());
-                context.startActivity(intent);
-                setUnSelected(position);
-            }
-        });
-
         // set background item when drag
         final int dragState = holder.getDragStateFlags();
         if (((dragState & Draggable.STATE_FLAG_IS_UPDATED) != 0)) {
@@ -155,6 +146,7 @@ public class SubGroupRecyclerViewAdapter extends RecyclerView.Adapter<SubGroupRe
                 Intent intent=new Intent(context, CourseActivity.class);
                 intent.putExtra("subGroupName", allSubGroups.get(position).getTitle());
                 context.startActivity(intent);
+                setUnSelected(position);
             }
         });
     }

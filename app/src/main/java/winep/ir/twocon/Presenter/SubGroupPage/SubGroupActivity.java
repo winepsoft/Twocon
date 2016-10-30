@@ -12,6 +12,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.FrameLayout;
 
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
@@ -23,6 +24,8 @@ import java.util.ArrayList;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 import winep.ir.twocon.DataModel.Group;
 import winep.ir.twocon.R;
+import winep.ir.twocon.Utility.ClickListener;
+import winep.ir.twocon.Utility.RecyclerTouchListener;
 import winep.ir.twocon.Utility.Utilities;
 
 /**
@@ -35,6 +38,7 @@ public class SubGroupActivity extends AppCompatActivity
     private FloatingActionsMenu floatingActionsMenu;
     private FrameLayout frameLayout;
     private Context context;
+    private  SubGroupRecyclerViewAdapter adapter;
 
 
 
@@ -60,23 +64,46 @@ public class SubGroupActivity extends AppCompatActivity
         dragMgr.setInitiateOnLongPress(true);
         recyclerVieSubGroups.setLayoutManager(new LinearLayoutManager(context));
         //recyclerVieSubGroups.addItemDecoration(new DividerItemDecorationRecyclerView(10));
-        SubGroupRecyclerViewAdapter adapter=new SubGroupRecyclerViewAdapter(context,createSubGroup());
+        adapter=new SubGroupRecyclerViewAdapter(context,createSubGroup());
         recyclerVieSubGroups.setAdapter(dragMgr.createWrappedAdapter(adapter));
         dragMgr.attachRecyclerView(recyclerVieSubGroups);
 
+        //for change color of item when click
+        recyclerVieSubGroups.addOnItemTouchListener(new RecyclerTouchListener(context,recyclerVieSubGroups, new ClickListener() {
+            @Override
+            public void onClick(View view, final int position) {
+                //Values are passing to activity & to fragment as well
+                adapter.setSelected(position);
+            }
+
+            @Override
+            public void onLongClick(View view, int position) {
+                /*adapter.setSelected(position);
+                dragMgr.setInitiateOnMove(true);*/
+
+            }
+        }));
 
         floatingActionsMenu=(FloatingActionsMenu)findViewById(R.id.sub_group_fab_add);
         frameLayout=(FrameLayout)findViewById(R.id.containerFloatingActionMenu);
+        frameLayout.setClickable(false);
         floatingActionsMenu.setOnFloatingActionsMenuUpdateListener(new FloatingActionsMenu.OnFloatingActionsMenuUpdateListener() {
             @Override
             public void onMenuExpanded() {
                 frameLayout.setBackgroundColor(ContextCompat.getColor(context, R.color.background_after_click_FAM));
+                frameLayout.setClickable(true);
+                frameLayout.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        floatingActionsMenu.collapse();
+                    }
+                });
             }
 
             @Override
             public void onMenuCollapsed() {
                 frameLayout.setBackgroundColor(Color.TRANSPARENT);
-
+                frameLayout.setClickable(false);
             }
         });
 
