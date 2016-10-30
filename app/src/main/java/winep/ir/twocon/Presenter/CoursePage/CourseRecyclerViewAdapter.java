@@ -2,6 +2,8 @@ package winep.ir.twocon.Presenter.CoursePage;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
@@ -9,11 +11,13 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.h6ah4i.android.widget.advrecyclerview.draggable.DraggableItemAdapter;
+import com.h6ah4i.android.widget.advrecyclerview.draggable.DraggableItemConstants;
 import com.h6ah4i.android.widget.advrecyclerview.draggable.ItemDraggableRange;
 import com.h6ah4i.android.widget.advrecyclerview.utils.AbstractDraggableItemViewHolder;
 
@@ -24,6 +28,7 @@ import winep.ir.twocon.Presenter.LevelPage.LevelActivity;
 import winep.ir.twocon.Presenter.StatisticsPage.StatisticsActivity;
 import winep.ir.twocon.R;
 import winep.ir.twocon.Utility.Font;
+import winep.ir.twocon.Utility.RectangleView;
 import winep.ir.twocon.Utility.Utilities;
 
 /**
@@ -34,6 +39,12 @@ public class CourseRecyclerViewAdapter extends RecyclerView.Adapter<CourseRecycl
     private ArrayList<Course> allCourses;
     private Context context;
     private Font font;
+    private Drawable d;
+
+    // NOTE: Make accessible with short name
+    private interface Draggable extends DraggableItemConstants {
+    }
+
 
     public CourseRecyclerViewAdapter(Context context,ArrayList<Course> courses) {
         setHasStableIds(true); // this is required for D&D feature.
@@ -60,6 +71,23 @@ public class CourseRecyclerViewAdapter extends RecyclerView.Adapter<CourseRecycl
         Utilities.getInstance().customView(holder.minCourseName, allCourses.get(position).getColor(), allCourses.get(position).getColor());
         holder.courseName.setText(allCourses.get(position).getTitle());
         holder.courseDescription.setText(allCourses.get(position).getDescription());
+
+        // set background item when drag
+        final int dragState = holder.getDragStateFlags();
+        if (((dragState & Draggable.STATE_FLAG_IS_UPDATED) != 0)) {
+
+            if ((dragState & Draggable.STATE_FLAG_IS_ACTIVE) != 0) {
+                Context c = holder.itemView.getContext();
+                d = new ColorDrawable(ContextCompat.getColor(c, R.color.item_foreground_selected_color));
+
+            } else if ((dragState & Draggable.STATE_FLAG_DRAGGING) != 0) {
+                d = null;
+            } else {
+                d = null;
+            }
+            ((FrameLayout) holder.colorSquare).setForeground(d);
+        }
+
         holder.courseSetting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -150,8 +178,10 @@ public class CourseRecyclerViewAdapter extends RecyclerView.Adapter<CourseRecycl
         TextView courseName;
         TextView courseDescription;
         ImageButton courseSetting;
+        RectangleView colorSquare;
         public MyViewHolder(View itemView) {
             super(itemView);
+            colorSquare = (RectangleView) itemView.findViewById(R.id.courseColorSquare);
             minCourseName =(TextView)itemView.findViewById(R.id.min_course_name);
             courseName =(TextView)itemView.findViewById(R.id.course_name);
             courseDescription =(TextView)itemView.findViewById(R.id.course_description);
