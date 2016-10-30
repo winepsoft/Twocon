@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/main_background_color">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -25,13 +27,17 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp">
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/level_setting_select_level_number"/>
+                android:text="@string/level_setting_select_level_number"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/black"/>
 
             <!--<com.rey.material.widget.Slider
                 style="@style/Material.Widget.Slider.Discrete"
@@ -44,22 +50,34 @@
                 app:sl_value="1"
                 app:sl_primaryColor="@color/colorPrimary"
                 app:sl_secondaryColor="@color/colorPrimary"/>-->
-            <org.adw.library.widgets.discreteseekbar.DiscreteSeekBar
+
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:dsb_min="1"
-                app:dsb_max="20"
-                android:id="@+id/slider_level"
-                app:dsb_trackColor="@color/colorPrimary"
-                app:dsb_rippleColor="@color/colorPrimary"
-                app:dsb_progressColor="@color/colorPrimary"
-                app:dsb_indicatorColor="@color/colorPrimary"/>
+                android:layout_height="match_parent"
+                card_view:cardCornerRadius="@dimen/card_corner_radius"
+                card_view:cardElevation="@dimen/card_elevation"
+                card_view:cardUseCompatPadding="true"
+                android:layout_marginTop="5dp">
+
+                <org.adw.library.widgets.discreteseekbar.DiscreteSeekBar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:dsb_min="1"
+                    app:dsb_max="20"
+                    android:id="@+id/slider_level"
+                    app:dsb_trackColor="@color/colorPrimary"
+                    app:dsb_rippleColor="@color/colorPrimary"
+                    app:dsb_progressColor="@color/colorPrimary"
+                    app:dsb_indicatorColor="@color/colorPrimary"/>
+
+            </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:id="@+id/recycler_view_level_setting">
+                android:layout_marginTop="20dp"
+                android:id="@+id/recycler_view_level_setting"
+                android:background="@color/main_background_color">
             </android.support.v7.widget.RecyclerView>
 
         </LinearLayout>
