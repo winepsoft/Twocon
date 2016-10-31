@@ -137,8 +137,6 @@ public class StatisticsActivity extends AppCompatActivity {
         int id = item.getItemId();
         if (id==android.R.id.home)
             finish();
-        if (id==R.id.action_back)
-            finish();
         return super.onOptionsItemSelected(item);
     }
 
