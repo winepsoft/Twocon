@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_centerVertical="true"
-    android:layout_marginTop="@dimen/margin_recycler_view_top"
     android:layout_marginRight="@dimen/margin_recycler_view_right"
     android:layout_marginLeft="@dimen/margin_recycler_view_right"
     card_view:cardCornerRadius="@dimen/card_corner_radius"
