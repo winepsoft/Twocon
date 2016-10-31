@@ -27,6 +27,8 @@
                 android:layout_height="50dp"
                 android:background="@drawable/circle_right_bottom"
                 android:id="@+id/txt_value_right_bottom"
+                android:gravity="center_vertical|center_horizontal"
+                android:textColor="@color/white"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true" />
         </RelativeLayout>
