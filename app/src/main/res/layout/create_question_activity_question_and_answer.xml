@@ -4,14 +4,14 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="10dp">
+    android:layout_height="wrap_content">
     <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp">
+        android:layout_marginRight="@dimen/margin_recycler_view_right"
+        android:layout_marginLeft="@dimen/margin_recycler_view_right">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -81,12 +81,14 @@
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
         android:layout_centerVertical="true"
         android:layout_toEndOf="@+id/txt_question_number"
+        android:layout_marginRight="@dimen/margin_recycler_view_right"
+        android:layout_marginLeft="@dimen/margin_recycler_view_right"
         card_view:cardCornerRadius="@dimen/card_corner_radius"
         card_view:contentPadding="@dimen/card_content_padding"
-        card_view:cardElevation="@dimen/card_elevation">
+        card_view:cardElevation="@dimen/card_elevation"
+        card_view:cardUseCompatPadding="true">
         <LinearLayout
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
