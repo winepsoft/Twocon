@@ -133,6 +133,8 @@
     <string name="settings_app_update">به روز رسانی</string>
     <string name="setting_cancel">انصراف</string>
     <string name="setting_save">ذخیره</string>
+    <string name="color_picker_dialog_title">انتخاب رنگ</string>
+
 
     //level page
     <string name="level_ready">آماده یادگیری</string>

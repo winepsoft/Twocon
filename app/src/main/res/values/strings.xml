@@ -131,6 +131,7 @@
     <string name="settings_app_update">Update</string>
     <string name="setting_cancel">cancel</string>
     <string name="setting_save">save</string>
+    <string name="color_picker_dialog_title">Choose color</string>
 
     //level page
     <string name="level_ready">Ready</string>
