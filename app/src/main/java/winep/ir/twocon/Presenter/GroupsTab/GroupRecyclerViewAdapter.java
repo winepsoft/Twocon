@@ -132,6 +132,7 @@ public class GroupRecyclerViewAdapter extends RecyclerView.Adapter<GroupRecycler
                         }
                         else if(item.getTitle().equals(context.getString(R.string.information))){
                             Intent intent=new Intent(context, StatisticsActivity.class);
+                            intent.putExtra("groupTitle",allGroups.get(position).getTitle());
                             context.startActivity(intent);
                         }
                         else if (item.getTitle().equals(context.getString(R.string.set_the_level))){
