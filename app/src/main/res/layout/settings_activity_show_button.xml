@@ -97,7 +97,8 @@
                     android:layout_toLeftOf="@+id/switch_settings_view_hard_button"
                     android:layout_toStartOf="@+id/switch_settings_view_hard_button"/>
                 <com.rey.material.widget.Switch
-                    style="@style/Material.Widget.Switch"                    android:layout_width="wrap_content"
+                    style="@style/Material.Widget.Switch"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/switch_settings_view_hard_button"
                     android:layout_alignTop="@+id/txt_settings_view_hard_button"
