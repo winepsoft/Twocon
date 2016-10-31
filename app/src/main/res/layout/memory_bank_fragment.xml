@@ -3,13 +3,14 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginRight="5dp"
-    android:layout_marginLeft="5dp"
-    android:layout_marginTop="5dp">
+    android:background="@color/main_background_color">
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_recycler_view_top"
+        android:layout_marginRight="@dimen/margin_recycler_view_right"
+        android:layout_marginLeft="@dimen/margin_recycler_view_right">
         <include layout="@layout/memory_bank_tool_bar"
             android:id="@+id/memoryBankToolBar"/>
         <include layout="@layout/memory_bank_tool_bar_multi_selected_item"
@@ -20,9 +21,9 @@
         android:id="@+id/recycler_view_memory_bank"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginRight="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
-        android:scrollbars="vertical" />
+        android:scrollbars="vertical"
+        android:layout_marginTop="@dimen/margin_recycler_view_top"
+        android:layout_marginRight="@dimen/margin_recycler_view_right"
+        android:layout_marginLeft="@dimen/margin_recycler_view_right"
+        android:background="@color/main_background_color"/>
 </LinearLayout>
