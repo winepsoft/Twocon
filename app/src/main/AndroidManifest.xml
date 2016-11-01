@@ -40,6 +40,8 @@
         <activity android:name="winep.ir.twocon.Presenter.LevelSettingPage.LevelSettingActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateHidden"/>
+        <activity android:name=".Presenter.StatisticsTotalPage.StatisticsTotalActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
 
     </application>
 </manifest>

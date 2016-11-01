@@ -7,11 +7,19 @@
             android:icon="@mipmap/user_profile"
             android:title="@string/user_profile" />
         <item
+            android:id="@+id/nav_my_activities"
+            android:icon="@mipmap/backup"
+            android:title="@string/my_activities" />
+        <item
             android:id="@+id/nav_shared_flashcard"
             android:icon="@mipmap/backup"
             android:title="@string/shared_flashcard" />
         <item
-            android:id="@+id/nav_help"
+            android:id="@+id/nav_add_card_from_excel"
+            android:icon="@mipmap/backup"
+            android:title="@string/add_card_from_excel" />
+        <item
+            android:id="@+id/nav_guide"
             android:icon="@mipmap/help"
             android:title="@string/help" />
         <item

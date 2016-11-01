@@ -29,8 +29,10 @@
 
     //NavigationDrawer
     <string name="user_profile">پنل کاربری</string>
-    <string name="shared_flashcard">پشتیبانی</string>
-    <string name="help">راهنمای نرم افزار</string>
+    <string name="my_activities">فعالیت های من</string>
+    <string name="shared_flashcard">اشتراک فلش کارت</string>
+    <string name="add_card_from_excel">اضافه کردن فلش کارت از اکسل</string>
+    <string name="help">راهنما</string>
     <string name="setting_app">تنظیمات نرم افزار</string>
     <string name="ticket">تیکت</string>
     <string name="rate_us">رای به ما</string>
@@ -183,4 +185,7 @@
     //course page
     <string name="review_question">مرور سوالات</string>
     <string name="dialog_course_add_new_course_title">اضافه کردن درس جدید</string>
+
+    //total statistics page
+    <string name="statistics_total_title">آمار کلی نرم افزار</string>
 </resources>

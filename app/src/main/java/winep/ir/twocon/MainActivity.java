@@ -23,6 +23,7 @@ import winep.ir.twocon.Presenter.MemoryBankTab.MemoryBankFragment;
 import winep.ir.twocon.Presenter.OnlineDictionaryTab.OnlineDictionaryFragment;
 import winep.ir.twocon.Presenter.PagerAdapter;
 import winep.ir.twocon.Presenter.SettingsPage.SettingsActivity;
+import winep.ir.twocon.Presenter.StatisticsTotalPage.StatisticsTotalActivity;
 import winep.ir.twocon.Utility.StaticParameters;
 import winep.ir.twocon.Utility.Utilities;
 
@@ -168,6 +169,11 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_setting_app) {
             Intent intent=new Intent(this, SettingsActivity.class);
+            startActivity(intent);
+        }
+
+        else if(id==R.id.nav_my_activities){
+            Intent intent=new Intent(this, StatisticsTotalActivity.class);
             startActivity(intent);
         }
 

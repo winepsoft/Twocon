@@ -28,11 +28,13 @@
 
     //NavigationDrawer
     <string name="user_profile">User Panel</string>
-    <string name="shared_flashcard">Backup</string>
-    <string name="help">Help</string>
+    <string name="my_activities">My Activities</string>
+    <string name="shared_flashcard">Shared flashcard</string>
+    <string name="add_card_from_excel">Add Card from Excel</string>
+    <string name="help">Guide</string>
     <string name="setting_app">Setting</string>
     <string name="ticket">Ticket</string>
-    <string name="rate_us">rate Us</string>
+    <string name="rate_us">Rate Us</string>
     <string name="about_us">About Us</string>
     <string name="exit">Exit</string>
 
@@ -178,4 +180,7 @@
     //course page
     <string name="review_question">Review Questions</string>
     <string name="dialog_course_add_new_course_title">Add New Course</string>
+
+    //total statistics page
+    <string name="statistics_total_title">Total Statistics</string>
 </resources>
