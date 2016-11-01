@@ -15,73 +15,80 @@
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
     </android.support.design.widget.AppBarLayout>
-    <ScrollView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/scroll_description_part">
-        <LinearLayout
+        android:layout_height="match_parent">
+
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:id="@+id/linearLayout">
-            <include layout="@layout/create_question_activity_button_toolbar"/>
-            <include layout="@layout/create_question_activity_question_and_answer"/>
-            <include layout="@layout/create_question_activity_description"/>
+            android:layout_height="match_parent"
+            android:id="@+id/scroll_description_part"
+            android:layout_above="@+id/create_button_layout">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="4"
-                android:layout_alignParentBottom="true"
-                android:layout_alignEnd="@+id/linearLayout"
-                android:layout_marginTop="@dimen/margin_recycler_view_top"
-                android:layout_marginRight="@dimen/margin_recycler_view_right"
-                android:layout_marginLeft="@dimen/margin_recycler_view_right"
-                android:layout_marginBottom="@dimen/margin_recycler_view_top">
+                android:orientation="vertical"
+                android:id="@+id/linearLayout"
+                android:layout_alignParentStart="false">
+                <include layout="@layout/create_question_activity_button_toolbar"/>
+                <include layout="@layout/create_question_activity_question_and_answer"/>
+                <include layout="@layout/create_question_activity_description"/>
+            </LinearLayout>
+        </ScrollView>
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
-                </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="4"
+            android:id="@+id/create_button_layout"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="@dimen/margin_recycler_view_top"
+            android:layout_marginRight="@dimen/margin_recycler_view_right"
+            android:layout_marginLeft="@dimen/margin_recycler_view_right"
+            android:layout_marginBottom="@dimen/margin_recycler_view_top">
 
-                <com.rey.material.widget.Button
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+            </LinearLayout>
+            <com.rey.material.widget.Button
                 app:rd_enable="true"
                 app:rd_style="@style/Material.Drawable.Ripple.Wave"
                 android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/add_save"
-                    android:background="@drawable/button_with_corner_green"
-                    android:textColor="@color/white"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginLeft="5dp"
-                    android:text="@string/save"
-                    android:layout_weight="1"
-                    style="?android:attr/buttonStyleSmall"/>
-
-                <com.rey.material.widget.Button
-                    app:rd_enable="true"
-                    app:rd_style="@style/Material.Drawable.Ripple.Wave"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/add_cancel"
-                    android:background="@drawable/button_with_corner_red"
-                    android:textColor="@color/white"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginLeft="5dp"
-                    android:text="@string/cancel"
-                    android:layout_weight="1"
-                    style="?android:attr/buttonStyleSmall"/>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
-                </LinearLayout>
-
+                android:layout_height="wrap_content"
+                android:id="@+id/add_save"
+                android:background="@drawable/button_with_corner_green"
+                android:textColor="@color/white"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:text="@string/save"
+                android:layout_weight="1"
+                style="?android:attr/buttonStyleSmall"/>
+            <com.rey.material.widget.Button
+                app:rd_enable="true"
+                app:rd_style="@style/Material.Drawable.Ripple.Wave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/add_cancel"
+                android:background="@drawable/button_with_corner_red"
+                android:textColor="@color/white"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:text="@string/cancel"
+                android:layout_weight="1"
+                style="?android:attr/buttonStyleSmall"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
             </LinearLayout>
+
         </LinearLayout>
-    </ScrollView>
+
+
+    </RelativeLayout>
 
 
 </LinearLayout>

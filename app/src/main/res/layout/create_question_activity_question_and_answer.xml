@@ -64,7 +64,7 @@
                             app:et_inputId="@+id/txt_new_question_title_input"
                             android:hint="@string/add_question_question"
                             android:layout_marginLeft="5dp"
-                            android:minLines="3"
+                            android:minLines="1"
                             android:textAppearance="?android:attr/textAppearanceMedium"/>
                     </RelativeLayout>
                 </LinearLayout>
@@ -123,7 +123,7 @@
                         app:et_inputId="@+id/txt_new_question_answer_input"
                         android:hint="@string/add_question_answer"
                         android:layout_marginLeft="7dp"
-                        android:minLines="6"
+                        android:minLines="1"
                         android:textAppearance="?android:attr/textAppearanceMedium"/>
                 </RelativeLayout>
             </LinearLayout>
