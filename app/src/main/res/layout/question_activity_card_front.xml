@@ -9,8 +9,7 @@
     android:layout_marginBottom="@dimen/question_card_margin_bottom"
     card_view:cardCornerRadius="@dimen/card_corner_radius"
     card_view:cardElevation="@dimen/card_elevation"
-    card_view:cardUseCompatPadding="true"
-    android:minHeight="170dp">
+    card_view:cardUseCompatPadding="true">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -19,7 +18,7 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="@string/touch_card_seen_answer"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:gravity="center_vertical|center_horizontal"
