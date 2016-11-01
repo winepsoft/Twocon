@@ -19,6 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/last_seen"
+            android:id="@+id/txt_title_left_bottom"
             android:textColor="#000000"
             android:gravity="center_vertical|center_horizontal"
             android:layout_centerVertical="true"

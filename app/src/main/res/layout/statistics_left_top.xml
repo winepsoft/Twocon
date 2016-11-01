@@ -18,7 +18,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/create_date"
+            android:id="@+id/txt_title_left_top"
             android:textColor="#000000"
             android:gravity="center_vertical|center_horizontal"
             android:layout_centerVertical="true"

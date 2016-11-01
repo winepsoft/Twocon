@@ -35,10 +35,14 @@ public class StatisticsGroupActivity extends AppCompatActivity {
     private PieChart chart2;
     private PieChart chart3;
     private String groupTitle;
-    private TextView txtLeftTop;
-    private TextView txtLeftBottom;
-    private TextView txtRightTop;
-    private TextView txtRightBottom;
+    private TextView txtLeftTopValue;
+    private TextView txtLeftBottomValue;
+    private TextView txtRightTopValue;
+    private TextView txtRightBottomValue;
+    private TextView txtLeftTopTitle;
+    private TextView txtLeftBottomTitle;
+    private TextView txtRightTopTitle;
+    private TextView txtRightBottomTitle;
     private Context context;
 
 
@@ -55,21 +59,39 @@ public class StatisticsGroupActivity extends AppCompatActivity {
         chart1=(LineChart)findViewById(R.id.chart1);
         chart2=(PieChart)findViewById(R.id.chart2);
         chart3=(PieChart)findViewById(R.id.chart3);
-        txtLeftTop=(TextView)findViewById(R.id.txt_value_left_top);
-        Utilities.getInstance().setFontTextView(context,txtLeftTop);
-        txtLeftTop.setText("95/07/07");
 
-        txtLeftBottom=(TextView)findViewById(R.id.txt_value_left_bottom);
-        Utilities.getInstance().setFontTextView(context,txtLeftBottom);
-        txtLeftBottom.setText("95/08/10");
+        //Title
+        txtLeftTopTitle =(TextView)findViewById(R.id.txt_title_left_top);
+        txtLeftTopTitle.setText(getString(R.string.create_date));
 
-        txtRightTop=(TextView)findViewById(R.id.txt_value_right_top);
-        Utilities.getInstance().setFontTextView(context,txtRightTop);
-        txtRightTop.setText("200");
+        txtLeftBottomTitle =(TextView)findViewById(R.id.txt_title_left_bottom);
+        txtLeftBottomTitle.setText(getString(R.string.last_seen));
 
-        txtRightBottom=(TextView)findViewById(R.id.txt_value_right_bottom);
-        Utilities.getInstance().setFontTextView(context,txtRightBottom);
-        txtRightBottom.setText("1000");
+        txtRightTopTitle =(TextView)findViewById(R.id.txt_title_right_top);
+        txtRightTopTitle.setText(getString(R.string.all_cart));
+
+        txtRightBottomTitle =(TextView)findViewById(R.id.txt_title_right_bottom);
+        txtRightBottomTitle.setText(getString(R.string.ready_to_learn));
+
+
+        //Value
+        txtLeftTopValue =(TextView)findViewById(R.id.txt_value_left_top);
+        Utilities.getInstance().setFontTextView(context, txtLeftTopValue);
+        txtLeftTopValue.setText("95/07/07");
+
+        txtLeftBottomValue =(TextView)findViewById(R.id.txt_value_left_bottom);
+        Utilities.getInstance().setFontTextView(context, txtLeftBottomValue);
+        txtLeftBottomValue.setText("95/08/10");
+
+        txtRightTopValue =(TextView)findViewById(R.id.txt_value_right_top);
+        Utilities.getInstance().setFontTextView(context, txtRightTopValue);
+        txtRightTopValue.setText("200");
+
+        txtRightBottomValue =(TextView)findViewById(R.id.txt_value_right_bottom);
+        Utilities.getInstance().setFontTextView(context, txtRightBottomValue);
+        txtRightBottomValue.setText("1000");
+
+
 
 
 
