@@ -183,4 +183,14 @@
 
     //total statistics page
     <string name="statistics_total_title">Total Statistics</string>
+    <string name="statistics_total_purchased">Purchased</string>
+    <string name="statistics_total_shared_lesson">Shared Lesson</string>
+    <string name="statistics_total_download">Download</string>
+    <string name="statistics_total_group">Group</string>
+    <string name="statistics_total_sub_group">Sub Group</string>
+    <string name="statistics_total_lesson">Lesson</string>
+    <string name="statistics_total_card">Card</string>
+
+
+
 </resources>

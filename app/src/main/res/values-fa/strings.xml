@@ -188,4 +188,11 @@
 
     //total statistics page
     <string name="statistics_total_title">آمار کلی نرم افزار</string>
+    <string name="statistics_total_purchased">کارت های خریداری شده</string>
+    <string name="statistics_total_shared_lesson">درسهای اشتراکی</string>
+    <string name="statistics_total_download">دانلود</string>
+    <string name="statistics_total_group">گروه</string>
+    <string name="statistics_total_sub_group">زیر گروه</string>
+    <string name="statistics_total_lesson">درس</string>
+    <string name="statistics_total_card">کارت</string>
 </resources>

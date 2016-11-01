@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.charts.PieChart;
@@ -34,6 +35,20 @@ public class StatisticsTotalActivity extends AppCompatActivity {
     private PieChart chart2;
     private PieChart chart3;
     private Context context;
+    private TextView txtValuePurchased;
+    private TextView txtTitlePurchased;
+    private TextView txtValueSharedLesson;
+    private TextView txtTitleSharedLesson;
+    private TextView txtValueDownload;
+    private TextView txtTitleDownload;
+    private TextView txtValueGroup;
+    private TextView txtTitleGroup;
+    private TextView txtValueSubGroup;
+    private TextView txtTitleSubGroup;
+    private TextView txtValueLesson;
+    private TextView txtTitleLesson;
+    private TextView txtValueCard;
+    private TextView txtTitleCard;
 
 
     @Override
@@ -48,6 +63,50 @@ public class StatisticsTotalActivity extends AppCompatActivity {
         chart1 = (LineChart) findViewById(R.id.chart1);
         chart2 = (PieChart) findViewById(R.id.chart2);
         chart3 = (PieChart) findViewById(R.id.chart3);
+
+        txtTitlePurchased=(TextView)findViewById(R.id.txt_title_flash_cart_right_top);
+        txtTitlePurchased.setText(getString(R.string.statistics_total_purchased));
+        txtValuePurchased=(TextView)findViewById(R.id.txt_value_flash_cart_right_top);
+        Utilities.getInstance().setFontTextView(context,txtValuePurchased);
+        txtValuePurchased.setText("12");
+
+        txtTitleSharedLesson=(TextView)findViewById(R.id.txt_title_flash_cart_left_top);
+        txtTitleSharedLesson.setText(getString(R.string.statistics_total_shared_lesson));
+        txtValueSharedLesson=(TextView)findViewById(R.id.txt_value_flash_cart_left_top);
+        Utilities.getInstance().setFontTextView(context,txtValueSharedLesson);
+        txtValueSharedLesson.setText("28");
+
+        txtTitleDownload=(TextView)findViewById(R.id.txt_title_flash_cart_left_bottom);
+        txtTitleDownload.setText(getString(R.string.statistics_total_download));
+        txtValueDownload=(TextView)findViewById(R.id.txt_value_flash_cart_left_bottom);
+        Utilities.getInstance().setFontTextView(context,txtValueDownload);
+        txtValueDownload.setText("32");
+
+
+        txtTitleGroup =(TextView)findViewById(R.id.txt_title_left_top);
+        txtTitleGroup.setText(getString(R.string.statistics_total_group));
+        txtValueGroup =(TextView)findViewById(R.id.txt_value_left_top);
+        Utilities.getInstance().setFontTextView(context, txtValueGroup);
+        txtValueGroup.setText("3");
+
+        txtTitleSubGroup =(TextView)findViewById(R.id.txt_title_left_bottom);
+        txtTitleSubGroup.setText(getString(R.string.statistics_total_sub_group));
+        txtValueSubGroup =(TextView)findViewById(R.id.txt_value_left_bottom);
+        Utilities.getInstance().setFontTextView(context, txtValueSubGroup);
+        txtValueSubGroup.setText("2");
+
+        txtTitleLesson =(TextView)findViewById(R.id.txt_title_right_top);
+        txtTitleLesson.setText(getString(R.string.statistics_total_lesson));
+        txtValueLesson =(TextView)findViewById(R.id.txt_value_right_top);
+        Utilities.getInstance().setFontTextView(context, txtValueLesson);
+        txtValueLesson.setText("2");
+
+        txtTitleCard =(TextView)findViewById(R.id.txt_title_right_bottom);
+        txtTitleCard.setText(getString(R.string.statistics_total_card));
+        txtValueCard =(TextView)findViewById(R.id.txt_value_right_bottom);
+        Utilities.getInstance().setFontTextView(context, txtValueCard);
+        txtValueCard.setText("100");
+
 
         //LineChart Set Data
         ArrayList<String> xLine=new ArrayList<>();
