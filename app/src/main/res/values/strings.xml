@@ -78,6 +78,7 @@
     <string name="ready_to_learn">Ready to Learn</string>
     <string name="create_date">Create Date</string>
     <string name="last_seen">Last seen</string>
+    <string name="group_diagram_title">Groups Statistics</string>
 
     //memory bank page
     <string name="lesson">Lesson</string>

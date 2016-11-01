@@ -79,6 +79,8 @@
     <string name="ready_to_learn">آماده یادگیری</string>
     <string name="create_date">تاریخ ایجاد</string>
     <string name="last_seen">آخرین مشاهده</string>
+    <string name="group_diagram_title">آمار گروهها</string>
+
 
     //memory bank page
     <string name="lesson">درس</string>
