@@ -25,7 +25,7 @@ import java.util.ArrayList;
 
 import winep.ir.twocon.DataModel.Course;
 import winep.ir.twocon.Presenter.LevelPage.LevelActivity;
-import winep.ir.twocon.Presenter.StatisticsPage.StatisticsActivity;
+import winep.ir.twocon.Presenter.StatisticsGroupPage.StatisticsGroupActivity;
 import winep.ir.twocon.R;
 import winep.ir.twocon.Utility.Font;
 import winep.ir.twocon.Utility.RectangleView;
@@ -127,7 +127,7 @@ public class CourseRecyclerViewAdapter extends RecyclerView.Adapter<CourseRecycl
                                     .show();
                         }
                         else if(item.getTitle().equals(context.getString(R.string.information))){
-                            Intent intent=new Intent(context, StatisticsActivity.class);
+                            Intent intent=new Intent(context, StatisticsGroupActivity.class);
                             context.startActivity(intent);
                         }
                         return true;

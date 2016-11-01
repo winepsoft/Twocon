@@ -22,7 +22,7 @@
             android:name="winep.ir.twocon.Presenter.SubGroupPage.SubGroupActivity"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name="winep.ir.twocon.Presenter.StatisticsPage.StatisticsActivity"
+        <activity android:name=".Presenter.StatisticsGroupPage.StatisticsGroupActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name="winep.ir.twocon.Presenter.ExamPage.ExamActivity"
             android:theme="@style/AppTheme.NoActionBar"/>

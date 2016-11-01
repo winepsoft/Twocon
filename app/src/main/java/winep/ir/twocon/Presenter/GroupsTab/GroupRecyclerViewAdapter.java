@@ -25,7 +25,7 @@ import java.util.ArrayList;
 
 import winep.ir.twocon.DataModel.Group;
 import winep.ir.twocon.Presenter.LevelSettingPage.LevelSettingActivity;
-import winep.ir.twocon.Presenter.StatisticsPage.StatisticsActivity;
+import winep.ir.twocon.Presenter.StatisticsGroupPage.StatisticsGroupActivity;
 import winep.ir.twocon.Presenter.SubGroupPage.SubGroupActivity;
 import winep.ir.twocon.R;
 import winep.ir.twocon.Utility.Font;
@@ -131,7 +131,7 @@ public class GroupRecyclerViewAdapter extends RecyclerView.Adapter<GroupRecycler
                                     .show();
                         }
                         else if(item.getTitle().equals(context.getString(R.string.information))){
-                            Intent intent=new Intent(context, StatisticsActivity.class);
+                            Intent intent=new Intent(context, StatisticsGroupActivity.class);
                             intent.putExtra("groupTitle",allGroups.get(position).getTitle());
                             context.startActivity(intent);
                         }

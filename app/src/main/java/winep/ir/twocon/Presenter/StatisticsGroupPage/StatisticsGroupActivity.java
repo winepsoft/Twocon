@@ -1,4 +1,4 @@
-package winep.ir.twocon.Presenter.StatisticsPage;
+package winep.ir.twocon.Presenter.StatisticsGroupPage;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -29,7 +29,7 @@ import winep.ir.twocon.Utility.Utilities;
 /**
  * Created by ShaisteS on 10/8/2016.
  */
-public class StatisticsActivity extends AppCompatActivity {
+public class StatisticsGroupActivity extends AppCompatActivity {
 
     private LineChart chart1;
     private PieChart chart2;
@@ -46,7 +46,7 @@ public class StatisticsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         groupTitle=getIntent().getExtras().getString("groupTitle");
-        setContentView(R.layout.statistics_activity);
+        setContentView(R.layout.statistics_group_activity);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         forceRTLIfSupported();
