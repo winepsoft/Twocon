@@ -2,6 +2,7 @@ package winep.ir.twocon.Presenter.StatisticsTotalPage;
 
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.data.Entry;
@@ -23,6 +25,7 @@ import com.github.mikephil.charting.utils.ColorTemplate;
 import java.util.ArrayList;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+import winep.ir.twocon.Presenter.StatisticsGroupPage.StatisticsGroupActivity;
 import winep.ir.twocon.R;
 import winep.ir.twocon.Utility.Utilities;
 
@@ -107,6 +110,66 @@ public class StatisticsTotalActivity extends AppCompatActivity {
         Utilities.getInstance().setFontTextView(context, txtValueCard);
         txtValueCard.setText("100");
 
+        txtTitleGroup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new MaterialDialog.Builder(context)
+                        .title(R.string.statistics_total_group_dialog)
+                        .items(getAllCategory())
+                        .itemsCallback(new MaterialDialog.ListCallback() {
+                            @Override
+                            public void onSelection(MaterialDialog dialog, View view, int which, CharSequence text) {
+                                Intent intent=new Intent(context, StatisticsGroupActivity.class);
+                                intent.putExtra("groupTitle",text);
+                                startActivity(intent);
+
+                            }
+                        })
+                        .show();
+            }
+
+        });
+
+        txtTitleSubGroup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new MaterialDialog.Builder(context)
+                        .title(R.string.statistics_total_sub_group_dialog)
+                        .items(getAllSubCategoris())
+                        .itemsCallback(new MaterialDialog.ListCallback() {
+                            @Override
+                            public void onSelection(MaterialDialog dialog, View view, int which, CharSequence text) {
+                                Intent intent=new Intent(context, StatisticsGroupActivity.class);
+                                intent.putExtra("groupTitle",text);
+                                startActivity(intent);
+
+                            }
+                        })
+                        .show();
+            }
+
+        });
+
+        txtTitleLesson.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new MaterialDialog.Builder(context)
+                        .title(R.string.statistics_total_lesson_dialog)
+                        .items(getAllCourse())
+                        .itemsCallback(new MaterialDialog.ListCallback() {
+                            @Override
+                            public void onSelection(MaterialDialog dialog, View view, int which, CharSequence text) {
+                                Intent intent=new Intent(context, StatisticsGroupActivity.class);
+                                intent.putExtra("groupTitle",text);
+                                startActivity(intent);
+
+                            }
+                        })
+                        .show();
+            }
+
+        });
+
 
         //LineChart Set Data
         ArrayList<String> xLine=new ArrayList<>();
@@ -153,6 +216,28 @@ public class StatisticsTotalActivity extends AppCompatActivity {
         chart3.setCenterText(getString(R.string.course));
         chart3.setDrawXValues(false);
         chart3.setDescription("");
+    }
+
+    private String[] getAllCategory(){
+        String[] allCategories=new String[3];
+        allCategories[0]="پزشکی";
+        allCategories[1]="مهندسی پزشکی";
+        allCategories[2]="English Title";
+        return allCategories;
+    }
+
+    private String[] getAllSubCategoris(){
+        String[] allSubcategories=new String[2];
+        allSubcategories[0]="فیزیولوژی";
+        allSubcategories[1]="دهان و دندان";
+        return allSubcategories;
+    }
+
+    private String[] getAllCourse(){
+        String[] allCourses=new String[2];
+        allCourses[0]="زبان";
+        allCourses[1]="دندان جلو";
+        return allCourses;
     }
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)

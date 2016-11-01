@@ -155,11 +155,11 @@ public class StatisticsGroupActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         if(Utilities.getInstance().isRTL()) {
-            getSupportActionBar().setTitle("آمار گروه"+" "+groupTitle);
+            getSupportActionBar().setTitle("آمار"+" "+groupTitle);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
         else {
-            getSupportActionBar().setTitle("Statistics Group of"+" "+groupTitle);
+            getSupportActionBar().setTitle("Statistics of"+" "+groupTitle);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         }

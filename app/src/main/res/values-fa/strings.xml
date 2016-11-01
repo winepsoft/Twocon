@@ -195,4 +195,9 @@
     <string name="statistics_total_sub_group">زیر گروه</string>
     <string name="statistics_total_lesson">درس</string>
     <string name="statistics_total_card">کارت</string>
+    <string name="statistics_total_group_dialog">انتخاب گروه</string>
+    <string name="statistics_total_sub_group_dialog">انتخاب زیر گروه</string>
+    <string name="statistics_total_lesson_dialog">انتخاب درس</string>
+
+
 </resources>

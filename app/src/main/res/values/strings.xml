@@ -190,6 +190,12 @@
     <string name="statistics_total_sub_group">Sub Group</string>
     <string name="statistics_total_lesson">Lesson</string>
     <string name="statistics_total_card">Card</string>
+    <string name="statistics_total_group_dialog">Select Group</string>
+    <string name="statistics_total_sub_group_dialog">Select Sub Group</string>
+    <string name="statistics_total_lesson_dialog">Select Course</string>
+
+
+
 
 
 
