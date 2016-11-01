@@ -3,7 +3,6 @@ package winep.ir.twocon.Presenter.LevelPage;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.Paint;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -79,10 +78,10 @@ public class LevelRecyclerViewAdapter extends RecyclerView.Adapter<LevelRecycler
             Utilities.getInstance().setFontTextView(context,levelNumber);
             levelReadyQuestionNumber=(TextView)itemView.findViewById(R.id.txt_ready);
             Utilities.getInstance().setFontTextView(context,levelReadyQuestionNumber);
-            levelReadyQuestionNumber.setPaintFlags(levelReadyQuestionNumber.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+           // levelReadyQuestionNumber.setPaintFlags(levelReadyQuestionNumber.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
             levelTotalQuestionNumber=(TextView)itemView.findViewById(R.id.txt_total);
             Utilities.getInstance().setFontTextView(context,levelTotalQuestionNumber);
-            levelTotalQuestionNumber.setPaintFlags(levelTotalQuestionNumber.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+            //levelTotalQuestionNumber.setPaintFlags(levelTotalQuestionNumber.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 
         }
     }
