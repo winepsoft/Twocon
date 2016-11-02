@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 
 import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
@@ -36,6 +37,7 @@ public class LevelActivity extends AppCompatActivity {
     private FrameLayout frameLayout;
     private FloatingActionsMenu floatingActionsMenu;
     private FloatingActionButton fabAddQuestion;
+    private TextView txtSuccessLearnValue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +48,9 @@ public class LevelActivity extends AppCompatActivity {
         setTitle(getIntent().getExtras().get("courseName").toString());
         context=this;
         allLevels=new ArrayList<Level>();
+
+        txtSuccessLearnValue=(TextView)findViewById(R.id.txt_success_learn_value);
+        Utilities.getInstance().setFontTextView(context,txtSuccessLearnValue);
 
         recyclerViewLevel=(RecyclerView)findViewById(R.id.recycler_view_level);
         recyclerViewLevel.setLayoutManager(new LinearLayoutManager(context));
