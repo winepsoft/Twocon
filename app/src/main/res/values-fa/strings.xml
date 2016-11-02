@@ -200,5 +200,6 @@
     <string name="statistics_total_sub_group_dialog">انتخاب زیر گروه</string>
     <string name="statistics_total_lesson_dialog">انتخاب درس</string>
 
-
+    //Edit Question Activity
+    <string name="edit_question_page_title">ویرایش سوال</string>
 </resources>

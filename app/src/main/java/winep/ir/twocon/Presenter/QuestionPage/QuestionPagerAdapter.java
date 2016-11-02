@@ -4,6 +4,8 @@ import android.animation.AnimatorInflater;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
@@ -52,10 +54,11 @@ public class QuestionPagerAdapter  extends PagerAdapter {
 
 
     @Override
-    public Object instantiateItem(ViewGroup container, int position) {
+    public Object instantiateItem(ViewGroup container, final int position) {
         LayoutInflater inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         viewLayout = inflater.inflate(R.layout.question_activity_pager, container, false);
 
+        final CardView cardQuestion=(CardView)viewLayout.findViewById(R.id.question_cart_layout);
         final CardView cardFront=(CardView)viewLayout.findViewById(R.id.front_card);
         final CardView cardBack=(CardView) viewLayout.findViewById(R.id.back_card);
         final RelativeLayout back_layout=(RelativeLayout)viewLayout.findViewById(R.id.back_layout);
@@ -90,6 +93,18 @@ public class QuestionPagerAdapter  extends PagerAdapter {
 
 
 
+        cardQuestion.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                Intent intent=new Intent();
+                Bundle bundle=new Bundle();
+                bundle.putParcelable("Question",allQuestion.get(position));
+                intent.putExtras(bundle);
+                intent.setClass(activity, EditQuestionActivity.class);
+                activity.startActivity(intent);
+                return false;
+            }
+        });
 
         btnKnowNumber.setOnClickListener(new View.OnClickListener() {
             @Override

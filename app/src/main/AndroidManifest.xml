@@ -42,6 +42,8 @@
             android:windowSoftInputMode="stateHidden"/>
         <activity android:name=".Presenter.StatisticsTotalPage.StatisticsTotalActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".Presenter.QuestionPage.EditQuestionActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
 
     </application>
 </manifest>
