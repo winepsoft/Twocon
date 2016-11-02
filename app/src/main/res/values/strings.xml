@@ -173,6 +173,7 @@
     <string name="level_setting_activity_title">Level Setting</string>
     <string name="level_setting_select_level_number">Select Level Number</string>
     <string name="level_number">level</string>
+    <string name="level_default">Default</string>
     <string name="level_setting_select_time_type_hour">Hour</string>
     <string name="level_setting_select_time_type_day">Day</string>
 

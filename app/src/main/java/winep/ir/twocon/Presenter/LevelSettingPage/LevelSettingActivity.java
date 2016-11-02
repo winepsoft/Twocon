@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import org.adw.library.widgets.discreteseekbar.DiscreteSeekBar;
 
@@ -28,6 +29,8 @@ public class LevelSettingActivity extends AppCompatActivity {
     private DiscreteSeekBar seekBar;
     private ArrayList<LevelSetting> allLevelsInformation;
     private Context context;
+    private TextView txtDefaultDay;
+    private TextView txtDefaultHour;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +42,11 @@ public class LevelSettingActivity extends AppCompatActivity {
 
         context=this;
         allLevelsInformation=new ArrayList<>();
+
+        txtDefaultDay=(TextView)findViewById(R.id.txt_set_day_default);
+        Utilities.getInstance().setFontTextView(context,txtDefaultDay);
+        txtDefaultHour=(TextView)findViewById(R.id.txt_set_hour_default);
+        Utilities.getInstance().setFontTextView(context,txtDefaultHour);
 
         recyclerViewLevelSetting=(RecyclerView)findViewById(R.id.recycler_view_level_setting);
         //sliderLevel=(Slider)findViewById(R.id.slider_level);
