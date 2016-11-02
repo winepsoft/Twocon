@@ -148,6 +148,8 @@
     <string name="level_view_hard_questions">View hard questions</string>
     <string name="level_view_favourite">View favorite questions</string>
     <string name="level_exam">Test</string>
+    <string name="success_learn">Learned Successfully</string>
+
 
     //create_question
     <string name="create_question_activity_title">Add New Question</string>

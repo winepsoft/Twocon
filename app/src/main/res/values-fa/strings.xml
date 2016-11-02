@@ -153,6 +153,7 @@
     <string name="level_view_hard_questions">مشاهده سوالات سخت</string>
     <string name="level_view_favourite">مشاهده علاقه مندی ها</string>
     <string name="level_exam">آزمون چهارگزینه ای</string>
+    <string name="success_learn">سوالات یاد گرفته شده</string>
 
     //create_question
     <string name="create_question_activity_title">افزودن سوال جدید</string>
