@@ -176,6 +176,13 @@
     <string name="level_default">Default</string>
     <string name="level_setting_select_time_type_hour">Hour</string>
     <string name="level_setting_select_time_type_day">Day</string>
+    <string name="level_setting_animation_type">Type Of animation</string>
+    <array name="animation_type">
+        <item>None</item>
+        <item>Fade In</item>
+        <item>Fade Out</item>
+        <item>One by One</item>
+    </array>
 
     //subGroup page
     <string name="dialog_sub_group_add_new_sub_group_title">Add New Sub Group</string>

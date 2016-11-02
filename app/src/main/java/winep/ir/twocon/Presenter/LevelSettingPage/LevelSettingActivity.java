@@ -8,7 +8,10 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
+import com.rey.material.widget.Spinner;
 
 import org.adw.library.widgets.discreteseekbar.DiscreteSeekBar;
 
@@ -31,6 +34,7 @@ public class LevelSettingActivity extends AppCompatActivity {
     private Context context;
     private TextView txtDefaultDay;
     private TextView txtDefaultHour;
+    private Spinner spinnerSelectAnimation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +51,9 @@ public class LevelSettingActivity extends AppCompatActivity {
         Utilities.getInstance().setFontTextView(context,txtDefaultDay);
         txtDefaultHour=(TextView)findViewById(R.id.txt_set_hour_default);
         Utilities.getInstance().setFontTextView(context,txtDefaultHour);
+
+        spinnerSelectAnimation=(Spinner)findViewById(R.id.spinner_select_animation);
+        spinnerSelectAnimation.setAdapter(setSpinnerAnimationType());
 
         recyclerViewLevelSetting=(RecyclerView)findViewById(R.id.recycler_view_level_setting);
         //sliderLevel=(Slider)findViewById(R.id.slider_level);
@@ -117,6 +124,12 @@ public class LevelSettingActivity extends AppCompatActivity {
 
             }
         });*/
+    }
+
+    private ArrayAdapter<String> setSpinnerAnimationType(){
+        ArrayAdapter<String> a =new ArrayAdapter<>(context,android.R.layout.simple_spinner_item,getResources().getStringArray(R.array.animation_type));
+        a.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        return a;
     }
 
     private ArrayList<LevelSetting> createLevel(){
