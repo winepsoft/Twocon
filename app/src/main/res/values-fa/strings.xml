@@ -177,7 +177,7 @@
     <string name="level_setting_activity_title">تنظیمات مراحل</string>
     <string name="level_setting_select_level_number">انتخاب تعداد مراحل</string>
     <string name="level_number">مرحله</string>
-    <string name="level_setting_select_time_type_month">ماه</string>
+    <string name="level_setting_select_time_type_hour">ساعت</string>
     <string name="level_setting_select_time_type_day">روز</string>
 
     //subGroup page

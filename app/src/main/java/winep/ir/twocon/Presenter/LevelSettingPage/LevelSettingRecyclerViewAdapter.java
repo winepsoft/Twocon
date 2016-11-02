@@ -5,7 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -34,7 +34,8 @@ public class LevelSettingRecyclerViewAdapter extends RecyclerView.Adapter<LevelS
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         holder.txtLevelNumber.setText(context.getString(R.string.level_number)+" "+Integer.toString(position+1));
-        holder.editTextTimeNumber.setText("1");
+        holder.editTextSetDay.setText("1");
+        holder.editTextSetHour.setText("2");
     }
 
     @Override
@@ -44,30 +45,17 @@ public class LevelSettingRecyclerViewAdapter extends RecyclerView.Adapter<LevelS
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         private TextView txtLevelNumber;
-        private android.widget.EditText editTextTimeNumber;
+        private EditText editTextSetDay;
+        private EditText editTextSetHour;
         public MyViewHolder(View itemView) {
             super(itemView);
             txtLevelNumber=(TextView)itemView.findViewById(R.id.txt_level_number);
             Utilities.getInstance().setFontTextView(context,txtLevelNumber);
-            editTextTimeNumber=(android.widget.EditText) itemView.findViewById(R.id.editText_select_time_type);
-            Utilities.getInstance().setFontEditTextView(context,editTextTimeNumber);
+            editTextSetDay =(EditText) itemView.findViewById(R.id.editText_set_day);
+            Utilities.getInstance().setFontEditTextView(context, editTextSetDay);
+            editTextSetHour=(EditText)itemView.findViewById(R.id.editText_set_hour);
+            Utilities.getInstance().setFontEditTextView(context,editTextSetHour);
         }
-    }
-
-    private ArrayAdapter<String> setSpinnerTimeType(){
-        String[] timeType = {context.getString(R.string.level_setting_select_time_type_month),context.getString(R.string.level_setting_select_time_type_day)};
-        ArrayAdapter<String> a =new ArrayAdapter<>(context,android.R.layout.simple_spinner_item, timeType);
-        a.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        return a;
-    }
-
-    private ArrayAdapter<String> setSpinnerTime(){
-        String[] spinnerTime=new String[20] ;
-        for (int i=0;i<20;i++)
-            spinnerTime[i]=Integer.toString(i);
-        ArrayAdapter<String> a =new ArrayAdapter<>(context,android.R.layout.simple_spinner_item, spinnerTime);
-        a.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        return a;
     }
 
     public void addNewItem(LevelSetting newLevel){
