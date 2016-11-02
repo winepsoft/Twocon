@@ -8,14 +8,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import com.daimajia.androidanimations.library.Techniques;
-import com.daimajia.androidanimations.library.YoYo;
 import com.getbase.floatingactionbutton.FloatingActionButton;
-import com.nineoldandroids.animation.Animator;
+import com.github.aakira.expandablelayout.ExpandableLayout;
+import com.github.aakira.expandablelayout.ExpandableLayoutListener;
 import com.rey.material.widget.EditText;
 import com.rey.material.widget.Spinner;
 
@@ -39,7 +37,7 @@ public class CreateQuestionActivity extends AppCompatActivity {
     private EditText eTextAddSynonym;
     private EditText eTextAddAntonym;
     private EditText eTextAddExample;
-    private LinearLayout layoutDescription;
+    private ExpandableLayout layoutDescription;
     private boolean showDescriptionCartStatus = false;
     private FloatingActionButton btnShowDescriptionCart;
 
@@ -55,8 +53,8 @@ public class CreateQuestionActivity extends AppCompatActivity {
         spinnerGroup = (Spinner) findViewById(R.id.spinner_select_group);
         spinnerSubGroup = (Spinner) findViewById(R.id.spinner_select_sub_group);
         spinnerCourse = (Spinner) findViewById(R.id.spinner_select_course);
-        layoutDescription = (LinearLayout) findViewById(R.id.layout_description_create_question);
-        layoutDescription.setVisibility(View.GONE);
+        layoutDescription = (ExpandableLayout) findViewById(R.id.layout_description_create_question);
+        //layoutDescription.setVisibility(View.GONE);
         btnShowDescriptionCart = (FloatingActionButton) findViewById(R.id.btn_show_description_card_view);
         btnShowDescriptionCart.setSize(FloatingActionButton.SIZE_MINI);
         txtQuestionNumber = (TextView) findViewById(R.id.txt_question_number);
@@ -94,8 +92,9 @@ public class CreateQuestionActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (!showDescriptionCartStatus) {
-                    Utilities.getInstance().animateFAB(context, false, btnShowDescriptionCart);
-                    layoutDescription.setVisibility(View.VISIBLE);
+                    layoutDescription.expand();
+                   // Utilities.getInstance().animateFAB(context, false, btnShowDescriptionCart);
+                    /*layoutDescription.setVisibility(View.VISIBLE);
                     YoYo.with(Techniques.SlideInDown)
                             .withListener(new Animator.AnimatorListener() {
                                 @Override
@@ -121,11 +120,12 @@ public class CreateQuestionActivity extends AppCompatActivity {
                                 }
                             })
                             .duration(1000)
-                            .playOn(layoutDescription);
+                            .playOn(layoutDescription);*/
                     showDescriptionCartStatus = !showDescriptionCartStatus;
                 } else if (showDescriptionCartStatus) {
-                    Utilities.getInstance().animateFAB(context, true, btnShowDescriptionCart);
-                    layoutDescription.setVisibility(View.GONE);
+                    layoutDescription.collapse();
+                    //Utilities.getInstance().animateFAB(context, true, btnShowDescriptionCart);
+                    //layoutDescription.setVisibility(View.GONE);
                     /*YoYo.with(Techniques.Hinge)
                             .withListener(new Animator.AnimatorListener() {
                                 @Override
@@ -153,6 +153,45 @@ public class CreateQuestionActivity extends AppCompatActivity {
                             .playOn(cardViewDescription);*/
                     showDescriptionCartStatus = !showDescriptionCartStatus;
                 }
+            }
+        });
+
+        layoutDescription.setListener(new ExpandableLayoutListener() {
+            @Override
+            public void onAnimationStart() {
+                if (!showDescriptionCartStatus) {
+                    Utilities.getInstance().animateFAB(context, false, btnShowDescriptionCart);
+                }
+                else {
+                    Utilities.getInstance().animateFAB(context, true, btnShowDescriptionCart);
+
+                }
+
+            }
+
+            @Override
+            public void onAnimationEnd() {
+
+            }
+
+            @Override
+            public void onPreOpen() {
+
+            }
+
+            @Override
+            public void onPreClose() {
+
+            }
+
+            @Override
+            public void onOpened() {
+
+            }
+
+            @Override
+            public void onClosed() {
+
             }
         });
 

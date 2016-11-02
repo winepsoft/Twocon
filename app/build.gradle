@@ -51,4 +51,7 @@ dependencies {
     compile 'org.adw.library:discrete-seekbar:1.0.1'
     //ColorPicker
     compile project(':library-release')
+    //Expandable Layout
+    compile 'com.github.aakira:expandable-layout:1.6.0@aar'
+
 }
