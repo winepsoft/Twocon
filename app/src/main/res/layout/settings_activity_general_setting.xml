@@ -10,9 +10,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/settings_general_title"
-        android:textColor="@color/black"
         android:layout_marginRight="@dimen/margin_recycler_view_right"
         android:layout_marginLeft="@dimen/margin_recycler_view_right"
         android:layout_marginTop="@dimen/margin_recycler_view_top"/>

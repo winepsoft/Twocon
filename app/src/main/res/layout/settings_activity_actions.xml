@@ -1,117 +1,188 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_centerVertical="true"
-    android:layout_marginRight="@dimen/margin_recycler_view_right"
-    android:layout_marginLeft="@dimen/margin_recycler_view_right"
-    card_view:cardCornerRadius="@dimen/card_corner_radius"
-    card_view:contentPadding="@dimen/card_content_padding"
-    card_view:cardElevation="@dimen/card_elevation"
-    card_view:cardUseCompatPadding="true">
-    <LinearLayout
-        android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/settings_question_title"
+        android:layout_marginRight="@dimen/margin_recycler_view_right"
+        android:layout_marginLeft="@dimen/margin_recycler_view_right"
+        android:layout_marginTop="@dimen/margin_recycler_view_top"/>
+
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:weightSum="3"
-        android:baselineAligned="false">
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/margin_recycler_view_right"
+        android:layout_marginLeft="@dimen/margin_recycler_view_right"
+        card_view:cardCornerRadius="@dimen/card_corner_radius"
+        card_view:contentPadding="@dimen/card_content_padding"
+        card_view:cardElevation="@dimen/card_elevation"
+        card_view:cardUseCompatPadding="true">
         <LinearLayout
-            android:layout_width="5dp"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:background="@color/settings_label"
-            android:layout_weight="1" />
-        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginRight="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_weight="1">
-            <RelativeLayout
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:baselineAligned="false">
+            <LinearLayout
+                android:layout_width="5dp"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:background="@color/settings_label"
+                android:layout_weight="1" />
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:gravity="start">
-                <TextView
-                    android:layout_width="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1">
+                <RelativeLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/txt_settings_direct_entry_subGroup"
-                    android:text="@string/settings_direct_entry_subGroup"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_toLeftOf="@+id/switch_settings_view_dictionary"
-                    android:layout_toStartOf="@+id/switch_settings_view_dictionary"/>
-                <com.rey.material.widget.Switch
-                    style="@style/Material.Widget.Switch"
-                    android:layout_width="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="start">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txt_settings_view_dictionary"
+                        android:text="@string/settings_view_dictionary"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_toLeftOf="@+id/switch_settings_view_dictionary"
+                        android:layout_toStartOf="@+id/switch_settings_view_dictionary"/>
+                    <com.rey.material.widget.Switch
+                        style="@style/Material.Widget.Switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/switch_settings_view_dictionary"
+                        android:layout_alignTop="@+id/txt_settings_view_dictionary"
+                        android:layout_alignParentEnd="true" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/switch_settings_view_dictionary"
-                    android:layout_alignTop="@+id/txt_settings_direct_entry_subGroup"
-                    android:layout_alignParentEnd="true" />
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:gravity="start">
-                <TextView
-                    android:layout_width="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="start">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txt_settings_view_voice_button"
+                        android:text="@string/settings_view_voice_button"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_toLeftOf="@+id/switch_settings_view_voice_button"
+                        android:layout_toStartOf="@+id/switch_settings_view_voice_button" />
+                    <com.rey.material.widget.Switch
+                        style="@style/Material.Widget.Switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/switch_settings_view_voice_button"
+                        android:layout_alignTop="@+id/txt_settings_view_voice_button"
+                        android:layout_alignParentEnd="true"
+                        android:thumb="@drawable/custom_switch_selector"
+                        android:track="@drawable/custom_track"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/txt_settings_change_question_answer"
-                    android:text="@string/settings_change_question_and_answer"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_toLeftOf="@+id/switch_settings_change_question_answer"
-                    android:layout_toStartOf="@+id/switch_settings_change_question_answer" />
-                <com.rey.material.widget.Switch
-                    style="@style/Material.Widget.Switch"
-                    android:layout_width="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="start">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txt_settings_view_hard_button"
+                        android:text="@string/settings_view_hard_button"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_toLeftOf="@+id/switch_settings_view_hard_button"
+                        android:layout_toStartOf="@+id/switch_settings_view_hard_button" />
+                    <com.rey.material.widget.Switch
+                        style="@style/Material.Widget.Switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/switch_settings_view_hard_button"
+                        android:layout_alignTop="@+id/txt_settings_view_hard_button"
+                        android:layout_alignParentEnd="true"
+                        android:thumb="@drawable/custom_switch_selector"
+                        android:track="@drawable/custom_track"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/switch_settings_change_question_answer"
-                    android:layout_alignTop="@+id/txt_settings_change_question_answer"
-                    android:layout_alignParentEnd="true"
-                    android:thumb="@drawable/custom_switch_selector"
-                    android:track="@drawable/custom_track"/>
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:gravity="start"
-                android:weightSum="2">
-                <TextView
-                    android:layout_width="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="start">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txt_settings_change_question_answer"
+                        android:text="@string/settings_change_question_and_answer"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_toLeftOf="@+id/switch_settings_change_question_answer"
+                        android:layout_toStartOf="@+id/switch_settings_change_question_answer" />
+                    <com.rey.material.widget.Switch
+                        style="@style/Material.Widget.Switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/switch_settings_change_question_answer"
+                        android:layout_alignTop="@+id/txt_settings_change_question_answer"
+                        android:layout_alignParentEnd="true"
+                        android:thumb="@drawable/custom_switch_selector"
+                        android:track="@drawable/custom_track"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/txt_settings_play_automatic_voice"
-                    android:text="@string/settings_play_automatic_voice"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_toLeftOf="@+id/switch_settings_play_automatic_voice"
-                    android:layout_toStartOf="@+id/switch_settings_play_automatic_voice" />
-                <com.rey.material.widget.Switch
-                    style="@style/Material.Widget.Switch"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/switch_settings_play_automatic_voice"
-                    android:layout_alignTop="@+id/txt_settings_play_automatic_voice"
-                    android:layout_alignParentEnd="true"
-                    android:thumb="@drawable/custom_switch_selector"
-                    android:track="@drawable/custom_track"/>
-            </RelativeLayout>
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="start"
+                    android:weightSum="2">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txt_settings_play_automatic_voice"
+                        android:text="@string/settings_play_automatic_voice"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_toLeftOf="@+id/switch_settings_play_automatic_voice"
+                        android:layout_toStartOf="@+id/switch_settings_play_automatic_voice" />
+                    <com.rey.material.widget.Switch
+                        style="@style/Material.Widget.Switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/switch_settings_play_automatic_voice"
+                        android:layout_alignTop="@+id/txt_settings_play_automatic_voice"
+                        android:layout_alignParentEnd="true"
+                        android:thumb="@drawable/custom_switch_selector"
+                        android:track="@drawable/custom_track"/>
+                </RelativeLayout>
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
-</android.support.v7.widget.CardView>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

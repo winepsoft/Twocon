@@ -10,9 +10,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/settings_group_title"
-        android:textColor="@color/black"
         android:layout_marginRight="@dimen/margin_recycler_view_right"
         android:layout_marginLeft="@dimen/margin_recycler_view_right"
         android:layout_marginTop="@dimen/margin_recycler_view_top"/>
@@ -208,23 +206,21 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/txt_settings_change_question_answer"
-                        android:text="@string/settings_change_question_and_answer"
+                        android:id="@+id/txt_settings_direct_entry_subGroup"
+                        android:text="@string/settings_direct_entry_subGroup"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
                         android:layout_alignParentStart="true"
-                        android:layout_toLeftOf="@+id/switch_settings_change_question_answer"
-                        android:layout_toStartOf="@+id/switch_settings_change_question_answer" />
+                        android:layout_toLeftOf="@+id/switch_settings_view_dictionary"
+                        android:layout_toStartOf="@+id/switch_settings_view_dictionary"/>
                     <com.rey.material.widget.Switch
                         style="@style/Material.Widget.Switch"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/switch_settings_change_question_answer"
-                        android:layout_alignTop="@+id/txt_settings_change_question_answer"
-                        android:layout_alignParentEnd="true"
-                        android:thumb="@drawable/custom_switch_selector"
-                        android:track="@drawable/custom_track"/>
+                        android:id="@+id/switch_settings_view_dictionary"
+                        android:layout_alignTop="@+id/txt_settings_direct_entry_subGroup"
+                        android:layout_alignParentEnd="true" />
                 </RelativeLayout>
                 <RelativeLayout
                     android:layout_width="match_parent"
