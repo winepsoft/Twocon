@@ -183,6 +183,11 @@
         <item>Fade Out</item>
         <item>One by One</item>
     </array>
+    <string name="level_status_ready">it is ready!</string>
+    <string name="level_status_empty">Empty!</string>
+    <string name="level_status_hours">hour(s)</string>
+    <string name="level_status_days">day(s)</string>
+    
 
     //subGroup page
     <string name="dialog_sub_group_add_new_sub_group_title">Add New Sub Group</string>

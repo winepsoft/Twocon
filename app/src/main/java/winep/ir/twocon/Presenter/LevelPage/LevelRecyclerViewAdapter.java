@@ -38,15 +38,22 @@ public class LevelRecyclerViewAdapter extends RecyclerView.Adapter<LevelRecycler
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
         holder.levelNumber.setText(context.getString(R.string.level_number)+""+Integer.toString(allLevel.get(position).getLevelNumber()));
-        if (allLevel.get(position).getLevelStatus()==0)
-            Utilities.getInstance().customView(holder.levelNumber, Color.GREEN,Color.GREEN);
+        if (allLevel.get(position).getLevelStatus()==0) {
+            Utilities.getInstance().customView(holder.levelNumber, Color.GREEN, Color.GREEN);
+            holder.levelStatus.setText(context.getString(R.string.level_status_ready));
+        }
+
         else if (allLevel.get(position).getLevelStatus()==1) {
             Utilities.getInstance().customView(holder.levelNumber, Color.RED, Color.RED);
             holder.itemView.setClickable(false);
+            holder.levelStatus.setText(context.getString(R.string.level_status_empty));
+
         }
         else if (allLevel.get(position).getLevelStatus()==2) {
             Utilities.getInstance().customView(holder.levelNumber, Color.GRAY, Color.GRAY);
             holder.itemView.setClickable(false);
+            holder.levelStatus.setText("6"+context.getString(R.string.level_status_days)+"12"+context.getString(R.string.level_status_hours));
+
         }
 
         holder.levelTotalQuestionNumber.setText(Integer.toString(allLevel.get(position).getLevelTotalQuestion()));
@@ -72,6 +79,7 @@ public class LevelRecyclerViewAdapter extends RecyclerView.Adapter<LevelRecycler
         private TextView levelNumber;
         private TextView levelReadyQuestionNumber;
         private TextView levelTotalQuestionNumber;
+        private TextView levelStatus;
         public MyViewHolder(View itemView) {
             super(itemView);
             levelNumber=(TextView)itemView.findViewById(R.id.txt_level_number);
@@ -82,6 +90,8 @@ public class LevelRecyclerViewAdapter extends RecyclerView.Adapter<LevelRecycler
             levelTotalQuestionNumber=(TextView)itemView.findViewById(R.id.txt_total);
             Utilities.getInstance().setFontTextView(context,levelTotalQuestionNumber);
             //levelTotalQuestionNumber.setPaintFlags(levelTotalQuestionNumber.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+            levelStatus=(TextView)itemView.findViewById(R.id.txt_level_status);
+            Utilities.getInstance().setFontTextView(context,levelStatus);
 
         }
     }

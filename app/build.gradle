@@ -53,5 +53,6 @@ dependencies {
     compile project(':library-release')
     //Expandable Layout
     compile 'com.github.aakira:expandable-layout:1.6.0@aar'
-
+    //Recycler View Item Animator
+    compile 'jp.wasabeef:recyclerview-animators:2.2.4'
 }
