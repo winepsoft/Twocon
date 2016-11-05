@@ -1,84 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_centerVertical="true"
-    android:layout_marginRight="@dimen/margin_recycler_view_right"
-    android:layout_marginLeft="@dimen/margin_recycler_view_right"
-    card_view:cardCornerRadius="@dimen/card_corner_radius"
-    card_view:contentPadding="@dimen/card_content_padding"
-    card_view:cardElevation="@dimen/card_elevation"
-    card_view:cardUseCompatPadding="true">
-    <LinearLayout
-        android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/settings_general_title"
+        android:textColor="@color/black"
+        android:layout_marginRight="@dimen/margin_recycler_view_right"
+        android:layout_marginLeft="@dimen/margin_recycler_view_right"
+        android:layout_marginTop="@dimen/margin_recycler_view_top"/>
+
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:weightSum="3"
-        android:baselineAligned="false">
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/margin_recycler_view_right"
+        android:layout_marginLeft="@dimen/margin_recycler_view_right"
+        android:layout_marginTop="@dimen/margin_recycler_view_top"
+        card_view:cardCornerRadius="@dimen/card_corner_radius"
+        card_view:contentPadding="@dimen/card_content_padding"
+        card_view:cardElevation="@dimen/card_elevation"
+        card_view:cardUseCompatPadding="true">
         <LinearLayout
-            android:layout_width="5dp"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:background="@color/settings_label"
-            android:layout_weight="1" />
-        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginRight="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_weight="1">
-            <RelativeLayout
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:baselineAligned="false">
+            <LinearLayout
+                android:layout_width="5dp"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:background="@color/settings_label"
+                android:layout_weight="1" />
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:gravity="start">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:id="@+id/txt_settings_app_color"
-                    android:text="@string/settings_app_color"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"/>
-                <com.getbase.floatingactionbutton.FloatingActionButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:fab_colorNormal="@color/colorPrimary"
-                    app:fab_colorPressed="@color/colorPrimary"
-                    app:fab_size="mini"
-                    android:id="@+id/btn_settings_app_color"
-                    android:layout_alignParentTop="true"
-                    android:layout_toEndOf="@+id/txt_settings_app_color"/>
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:gravity="start">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:id="@+id/txt_settings_font_size"
-                    android:text="@string/settings_font_size"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"/>
-                <SeekBar
+                android:orientation="vertical"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1">
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/spinner_settings_font_size"
-                    android:layout_alignParentTop="true"
-                    android:layout_toEndOf="@+id/txt_settings_font_size"/>
-            </RelativeLayout>
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="start">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:id="@+id/txt_settings_language"
+                        android:text="@string/setting_language"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"/>
+                    <com.rey.material.widget.Spinner
+                        style="@style/Material.Widget.Spinner"
+                        app:rd_style="@style/Material.Drawable.Ripple.Wave"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:id="@+id/spinner_settings_language"
+                        android:layout_alignParentTop="true"
+                        android:layout_toEndOf="@+id/txt_settings_language"
+                        android:layout_gravity="center_vertical"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="start">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:id="@+id/txt_settings_app_color"
+                        android:text="@string/settings_app_color"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"/>
+                    <com.getbase.floatingactionbutton.FloatingActionButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:fab_colorNormal="@color/colorPrimary"
+                        app:fab_colorPressed="@color/colorPrimary"
+                        app:fab_size="mini"
+                        android:id="@+id/btn_settings_app_color"
+                        android:layout_alignParentTop="true"
+                        android:layout_toEndOf="@+id/txt_settings_app_color"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="start">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:id="@+id/txt_settings_font_size"
+                        android:text="@string/settings_font_size"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"/>
+                    <SeekBar
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/spinner_settings_font_size"
+                        android:layout_alignParentTop="true"
+                        android:layout_toEndOf="@+id/txt_settings_font_size"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="start">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txt_settings_night_vision"
+                        android:text="@string/settings_night_vision"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_toLeftOf="@+id/switch_settings_view_dictionary"
+                        android:layout_toStartOf="@+id/switch_settings_view_dictionary"/>
+                    <com.rey.material.widget.Switch
+                        style="@style/Material.Widget.Switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/switch_settings_night_vision"
+                        android:layout_alignTop="@+id/txt_settings_night_vision"
+                        android:layout_alignParentEnd="true"
+                        android:thumb="@drawable/custom_switch_selector"
+                        android:track="@drawable/custom_track"/>
+                </RelativeLayout>
+
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
-</android.support.v7.widget.CardView>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

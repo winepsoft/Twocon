@@ -23,7 +23,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <include layout="@layout/settings_activity_language"/>
             <include layout="@layout/settings_activity_font_and_color"/>
             <include layout="@layout/settings_activity_show_button"/>
             <include layout="@layout/settings_activity_actions"/>

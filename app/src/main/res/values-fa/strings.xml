@@ -139,8 +139,8 @@
     <string name="setting_save">ذخیره</string>
     <string name="color_picker_dialog_title">انتخاب رنگ</string>
     <string name="select_language">انتخاب زبان</string>
-
-
+    <string name="settings_night_vision">دید در شب:</string>
+    <string name="settings_general_title">تنظیمات عمومی</string>
 
     //level page
     <string name="level_ready">آماده یادگیری</string>
