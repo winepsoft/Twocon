@@ -40,6 +40,7 @@ public class LevelActivity extends AppCompatActivity {
     private TextView txtSuccessLearnValue;
     private TextView txtReadyNumber;
     private TextView txtTotalNumber;
+    private String courseTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +48,8 @@ public class LevelActivity extends AppCompatActivity {
         setContentView(R.layout.level_activity);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        setTitle(getIntent().getExtras().get("courseName").toString());
+        courseTitle=getIntent().getExtras().get("courseName").toString();
+        setTitle(getString(R.string.course)+" "+courseTitle);
         context=this;
         allLevels=new ArrayList<Level>();
 

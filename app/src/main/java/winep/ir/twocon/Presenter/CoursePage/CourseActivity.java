@@ -49,6 +49,7 @@ public class CourseActivity extends AppCompatActivity
     private FloatingActionButton fabAddCourse;
     private FloatingActionButton fabAddQuestion;
     private Font font;
+    private String subGroupTitle;
 
 
 
@@ -59,7 +60,9 @@ public class CourseActivity extends AppCompatActivity
         setContentView(R.layout.course_activity);
         context = this;
         font=new Font();
-        setTitle(getIntent().getExtras().get("subGroupName").toString());
+        subGroupTitle=getIntent().getExtras().get("subGroupName").toString();
+
+        setTitle(getString(R.string.sub_group)+ " "+subGroupTitle);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         /*DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

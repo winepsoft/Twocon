@@ -48,6 +48,7 @@ public class SubGroupActivity extends AppCompatActivity
     private Context context;
     private  SubGroupRecyclerViewAdapter adapter;
     private Font font;
+    private String groupTitle;
 
 
 
@@ -58,7 +59,8 @@ public class SubGroupActivity extends AppCompatActivity
         setContentView(R.layout.sub_group_activity);
         context=this;
         font=new Font();
-        setTitle(getIntent().getExtras().get("groupName").toString());
+        groupTitle=getIntent().getExtras().get("groupName").toString();
+        setTitle(getString(R.string.group)+ " "+groupTitle);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         /*DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
