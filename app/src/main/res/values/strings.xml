@@ -139,7 +139,7 @@
     <string name="settings_night_vision">Night Vision:</string>
     <string name="settings_general_title">General Setting</string>
     <string name="settings_group_title">Groups</string>
-    <string name="settings_level_number_title">Default levels setting</string>
+    <string name="settings_level_number_title">Default levels setting:</string>
     <string name="settings_automatic_rtl_ltr">Set Automatic RTL and LTR:</string>
 
     //level page
