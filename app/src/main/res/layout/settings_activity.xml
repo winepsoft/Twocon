@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <include layout="@layout/settings_activity_general_setting"/>
-            <include layout="@layout/settings_activity_show_button"/>
+            <include layout="@layout/settings_activity_group_setting"/>
             <include layout="@layout/settings_activity_actions"/>
             <include layout="@layout/settings_activity_button_toolbar"/>
         </LinearLayout>

@@ -141,6 +141,11 @@
     <string name="select_language">انتخاب زبان</string>
     <string name="settings_night_vision">دید در شب:</string>
     <string name="settings_general_title">تنظیمات عمومی</string>
+    <string name="settings_group_title">گروهها</string>
+    <string name="settings_level_number_title">تنظیمات پیش فرض مراحل</string>
+    <string name="settings_automatic_rtl_ltr">تنظیمات خودکار راست چین و چپ چین:</string>
+
+
 
     //level page
     <string name="level_ready">آماده یادگیری</string>
