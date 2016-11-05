@@ -38,6 +38,8 @@ public class LevelActivity extends AppCompatActivity {
     private FloatingActionsMenu floatingActionsMenu;
     private FloatingActionButton fabAddQuestion;
     private TextView txtSuccessLearnValue;
+    private TextView txtReadyNumber;
+    private TextView txtTotalNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +53,14 @@ public class LevelActivity extends AppCompatActivity {
 
         txtSuccessLearnValue=(TextView)findViewById(R.id.txt_success_learn_value);
         Utilities.getInstance().setFontTextView(context,txtSuccessLearnValue);
+
+        txtReadyNumber=(TextView)findViewById(R.id.txt_ready);
+        Utilities.getInstance().setFontTextView(context,txtReadyNumber);
+        txtReadyNumber.setText(getString(R.string.level_ready)+ ": "+"138");
+
+        txtTotalNumber=(TextView)findViewById(R.id.txt_total);
+        Utilities.getInstance().setFontTextView(context,txtTotalNumber);
+        txtTotalNumber.setText(getString(R.string.level_total)+": "+"192");
 
         recyclerViewLevel=(RecyclerView)findViewById(R.id.recycler_view_level);
         recyclerViewLevel.setLayoutManager(new LinearLayoutManager(context));

@@ -156,8 +156,8 @@
     <string name="success_learn">سوالات یاد گرفته شده</string>
     <string name="level_status_ready">آماده!</string>
     <string name="level_status_empty">خالی!</string>
-    <string name="level_status_hours">ساعت(ها)</string>
-    <string name="level_status_days">روز(ها)</string>
+    <string name="level_status_hours">ساعت</string>
+    <string name="level_status_days">روز</string>
 
     //create_question
     <string name="create_question_activity_title">افزودن سوال جدید</string>
