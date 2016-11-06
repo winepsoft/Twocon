@@ -65,7 +65,7 @@ public class CourseRecyclerViewAdapter extends RecyclerView.Adapter<CourseRecycl
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, final int position) {
+    public void onBindViewHolder(final MyViewHolder holder, final int position) {
         String firstCharecterOfGroupTitle= allCourses.get(position).getTitle().substring(0,1);
         holder.minCourseName.setText(firstCharecterOfGroupTitle);
         Utilities.getInstance().customView(holder.minCourseName, allCourses.get(position).getColor(), allCourses.get(position).getColor());
@@ -156,6 +156,14 @@ public class CourseRecyclerViewAdapter extends RecyclerView.Adapter<CourseRecycl
 
             }
         });
+
+        holder.courseShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setUnSelected(position);
+                holder.courseShare.setImageResource(R.mipmap.share_green);
+            }
+        });
     }
 
     public void setSelected(int pos) {
@@ -208,6 +216,8 @@ public class CourseRecyclerViewAdapter extends RecyclerView.Adapter<CourseRecycl
         TextView courseName;
         TextView courseDescription;
         ImageButton courseSetting;
+        ImageButton courseShare;
+        ImageButton courseFavourite;
         RectangleView colorSquare;
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -216,6 +226,8 @@ public class CourseRecyclerViewAdapter extends RecyclerView.Adapter<CourseRecycl
             courseName =(TextView)itemView.findViewById(R.id.course_name);
             courseDescription =(TextView)itemView.findViewById(R.id.course_description);
             courseSetting =(ImageButton)itemView.findViewById(R.id.course_settings);
+            courseFavourite=(ImageButton)itemView.findViewById(R.id.course_favorite);
+            courseShare=(ImageButton)itemView.findViewById(R.id.course_share);
         }
     }
 }
