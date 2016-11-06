@@ -50,6 +50,8 @@
                 android:layout_marginTop="@dimen/margin_recycler_view_top"
                 android:drawableRight="@mipmap/plus_black" />
 
+            <include layout="@layout/settings_activity_reminder_new"/>
+
         </LinearLayout>
 
 

@@ -7,7 +7,7 @@ public class Reminder {
     private String day;
     private String hour;
     private String minute;
-    private String timeType; //am or pm
+   // private String timeType; //am or pm
 
     public String getDay() {
         return day;
@@ -33,11 +33,11 @@ public class Reminder {
         this.minute = minute;
     }
 
-    public String getTimeType() {
+    /*public String getTimeType() {
         return timeType;
     }
 
     public void setTimeType(String timeType) {
         this.timeType = timeType;
-    }
+    }*/
 }

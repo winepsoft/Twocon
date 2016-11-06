@@ -37,7 +37,7 @@ public class SettingReminderRecyclerViewAdapter extends RecyclerView.Adapter<Set
     public void onBindViewHolder(MyViewHolder holder, final int position) {
         Reminder aRemind=new Reminder();
         aRemind=allReminder.get(position);
-        holder.txtReminderTime.setText(aRemind.getDay()+", "+aRemind.getHour()+":"+aRemind.getMinute()+" "+aRemind.getTimeType());
+        holder.txtReminderTime.setText(aRemind.getDay()+", "+aRemind.getHour()+":"+aRemind.getMinute());
         holder.btnReminderDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

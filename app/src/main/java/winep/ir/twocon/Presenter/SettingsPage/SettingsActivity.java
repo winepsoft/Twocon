@@ -12,14 +12,20 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.flask.colorpicker.ColorPickerView;
 import com.flask.colorpicker.OnColorSelectedListener;
 import com.flask.colorpicker.builder.ColorPickerClickListener;
 import com.flask.colorpicker.builder.ColorPickerDialogBuilder;
 import com.getbase.floatingactionbutton.FloatingActionButton;
+import com.rey.material.app.Dialog;
+import com.rey.material.app.DialogFragment;
+import com.rey.material.app.TimePickerDialog;
 import com.rey.material.widget.Spinner;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
@@ -37,8 +43,13 @@ public class SettingsActivity extends AppCompatActivity {
     private RecyclerView reminderRecyclerView;
     private SettingReminderRecyclerViewAdapter reminderAdapter;
     private ArrayList<Reminder> allReminders;
+    private Reminder newreminder;
     private FloatingActionButton btnSelectColor;
-    private Button btnAddReminder;
+    private Button btnMore;
+    private LinearLayout layoutMore;
+    private Spinner spinnerSelectDay;
+    private Button btnSelectTime;
+    private Button btnAddReminderOk;
     private Spinner spinnerSelectLanguage;
     private FloatingActionButton btnColor1;
     private FloatingActionButton btnColor2;
@@ -67,10 +78,54 @@ public class SettingsActivity extends AppCompatActivity {
         reminderAdapter=new SettingReminderRecyclerViewAdapter(context,getAllreminder());
         reminderRecyclerView.setAdapter(reminderAdapter);
 
-        btnAddReminder=(Button)findViewById(R.id.btn_add_reminder);
+        btnMore =(Button)findViewById(R.id.btn_add_reminder);
+        layoutMore=(LinearLayout)findViewById(R.id.linear_layout_more);
+        layoutMore.setVisibility(View.GONE);
+        spinnerSelectDay=(Spinner)findViewById(R.id.spinner_Select_Day);
+        btnSelectTime=(Button)findViewById(R.id.btn_select_Time);
+        btnAddReminderOk=(Button)findViewById(R.id.btn_new_reminder_ok);
+        ArrayAdapter<String> dayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item,getResources().getStringArray(R.array.days));
+        dayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerSelectDay.setAdapter(dayAdapter);
 
+        btnMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                layoutMore.setVisibility(View.VISIBLE);
+                newreminder=new Reminder();
+            }
+        });
 
+        btnSelectTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showTimePickerDialog();
 
+            }
+        });
+
+        spinnerSelectDay.setOnItemSelectedListener(new Spinner.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(Spinner parent, View view, int position, long id) {
+                newreminder.setDay(parent.getAdapter().getItem(position).toString());
+            }
+        });
+
+        btnAddReminderOk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (newreminder.getDay()==null)
+                    Toast.makeText(context,getString(R.string.setting_message_select_day),Toast.LENGTH_SHORT).show();
+                else if (newreminder.getHour()==null)
+                    Toast.makeText(context,getString(R.string.setting_message_select_Time),Toast.LENGTH_SHORT).show();
+                else if (newreminder.getDay()!=null && newreminder.getHour()!=null) {
+                    reminderAdapter.addreminder(newreminder);
+                    spinnerSelectDay.setSelection(0);
+                    btnSelectTime.setText(getString(R.string.setting_button_select_time));
+                    layoutMore.setVisibility(View.GONE);
+                }
+            }
+        });
 
         btnColor1=(FloatingActionButton)findViewById(R.id.btn_settings_group_color_1);
         btnColor2=(FloatingActionButton)findViewById(R.id.btn_settings_group_color_2);
@@ -170,6 +225,26 @@ public class SettingsActivity extends AppCompatActivity {
         a.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerSelectLanguage.setAdapter(a);
     }
+
+
+    private void showTimePickerDialog(){
+        Dialog.Builder builder=new TimePickerDialog.Builder(R.style.Material_Widget_TimePicker_Light,24,00){
+            @Override public void onPositiveActionClicked(    DialogFragment fragment){
+                TimePickerDialog dialog=(TimePickerDialog)fragment.getDialog();
+                newreminder.setHour(Integer.toString(dialog.getHour()));
+                newreminder.setMinute(Integer.toString(dialog.getMinute()));
+                btnSelectTime.setText(dialog.getFormattedTime(SimpleDateFormat.getTimeInstance()));
+                super.onPositiveActionClicked(fragment);
+            }
+            @Override public void onNegativeActionClicked(    DialogFragment fragment){
+                super.onNegativeActionClicked(fragment);
+            }
+        };
+        builder.positiveAction(getString(R.string.save)).negativeAction(getString(R.string.cancel));
+        DialogFragment fragment=DialogFragment.newInstance(builder);
+        fragment.show(getSupportFragmentManager(),null);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -219,14 +294,14 @@ public class SettingsActivity extends AppCompatActivity {
         aReminder1.setDay("Saturday");
         aReminder1.setHour("10");
         aReminder1.setMinute("0");
-        aReminder1.setTimeType("pm");
+        //aReminder1.setTimeType("pm");
         allReminders.add(aReminder1);
 
         Reminder aReminder2=new Reminder();
         aReminder2.setDay("Sunday");
         aReminder2.setHour("10");
         aReminder2.setMinute("0");
-        aReminder2.setTimeType("pm");
+        //aReminder2.setTimeType("pm");
         allReminders.add(aReminder2);
 
         return allReminders;

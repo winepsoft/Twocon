@@ -145,6 +145,20 @@
     <string name="settings_reminder_title">Reminder</string>
     <string name="settings_reminder_description">Reminder For Study and Learn</string>
     <string name="setting_more_button_text">More</string>
+    <string name="setting_button_select_time">Time</string>
+    <string name="setting_spinner_select_day">Day</string>
+    <string name="setting_message_select_day">Select Day</string>
+    <string name="setting_message_select_Time">Select Time</string>
+
+    <array name="days">
+        <item>Saturday</item>
+        <item>SunDay</item>
+        <item>MonDay</item>
+        <item>TuesDay</item>
+        <item>WednesDay</item>
+        <item>ThursDay</item>
+        <item>FriDay</item>
+    </array>
 
 
     //level page
@@ -159,6 +173,7 @@
     <string name="level_view_favourite">View favorite questions</string>
     <string name="level_exam">Test</string>
     <string name="success_learn">Learned Successfully</string>
+
 
 
     //create_question
