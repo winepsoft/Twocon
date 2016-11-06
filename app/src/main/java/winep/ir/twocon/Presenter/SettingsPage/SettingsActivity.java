@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -53,6 +54,7 @@ public class SettingsActivity extends AppCompatActivity {
     private Spinner spinnerSelectLanguage;
     private Spinner spinnerBackupFrequencyTime;
     private Spinner spinnerBackupEmail;
+    private EditText editTextSetLevelNumber;
     private FloatingActionButton btnColor1;
     private FloatingActionButton btnColor2;
     private FloatingActionButton btnColor3;
@@ -146,6 +148,8 @@ public class SettingsActivity extends AppCompatActivity {
         spinnerBackupEmail.setAdapter(emailAdapter);
 
         //Group
+        editTextSetLevelNumber=(EditText)findViewById(R.id.editText_settings_level_number);
+        Utilities.getInstance().setFontEditTextView(context,editTextSetLevelNumber);
         btnColor1=(FloatingActionButton)findViewById(R.id.btn_settings_group_color_1);
         btnColor2=(FloatingActionButton)findViewById(R.id.btn_settings_group_color_2);
         btnColor3=(FloatingActionButton)findViewById(R.id.btn_settings_group_color_3);
