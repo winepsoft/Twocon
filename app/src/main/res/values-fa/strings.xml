@@ -180,6 +180,7 @@
     <string name="level_add_free_question">اضافه کردن لیست سوالات آماده/مجانی</string>
     <string name="level_add_question_from_excel">اضافه کردن لیست سوالات از فایل اکسل</string>
     <string name="level_view_question_list">مشاهده لیست سوالات درس</string>
+    <string name="level_share_course">اشتراک درس</string>
     <string name="level_review_questions">مرور سوالات مراحل </string>
     <string name="level_view_hard_questions">مشاهده سوالات سخت</string>
     <string name="level_view_favourite">مشاهده علاقه مندی ها</string>

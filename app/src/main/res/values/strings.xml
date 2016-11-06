@@ -178,6 +178,7 @@
     <string name="level_add_free_question">Add free questions</string>
     <string name="level_add_question_from_excel">Add questions from excel</string>
     <string name="level_view_question_list">View questions list</string>
+    <string name="level_share_course">Share Course</string>
     <string name="level_review_questions">Review questions </string>
     <string name="level_view_hard_questions">View hard questions</string>
     <string name="level_view_favourite">View favorite questions</string>
