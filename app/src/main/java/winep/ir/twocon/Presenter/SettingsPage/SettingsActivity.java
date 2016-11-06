@@ -1,5 +1,6 @@
 package winep.ir.twocon.Presenter.SettingsPage;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -66,6 +67,8 @@ public class SettingsActivity extends AppCompatActivity {
     private FloatingActionButton btnColor8;
     private FloatingActionButton btnColor9;
     private FloatingActionButton btnColor10;
+
+    final static int STATIC_INTEGER_VALUE=1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -151,6 +154,7 @@ public class SettingsActivity extends AppCompatActivity {
         //Group
         btnSetLevelNumber=(Button) findViewById(R.id.btn_settings_level_number);
         Utilities.getInstance().setFontButtonView(context,btnSetLevelNumber);
+        btnSetLevelNumber.setText("8"+" "+ getString(R.string.level_number));
         btnColor1=(FloatingActionButton)findViewById(R.id.btn_settings_group_color_1);
         btnColor2=(FloatingActionButton)findViewById(R.id.btn_settings_group_color_2);
         btnColor3=(FloatingActionButton)findViewById(R.id.btn_settings_group_color_3);
@@ -166,7 +170,7 @@ public class SettingsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context, LevelSettingActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent,STATIC_INTEGER_VALUE);
             }
         });
 
@@ -365,6 +369,19 @@ public class SettingsActivity extends AppCompatActivity {
         allReminders.add(aReminder2);
 
         return allReminders;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch(requestCode) {
+            case (STATIC_INTEGER_VALUE) : {
+                if (resultCode == Activity.RESULT_OK) {
+                    btnSetLevelNumber.setText(Integer.toString(data.getExtras().getInt("value"))+" "+getString(R.string.level_number));
+                }
+                break;
+            }
+        }
     }
 
 }

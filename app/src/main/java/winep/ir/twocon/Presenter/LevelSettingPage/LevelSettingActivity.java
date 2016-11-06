@@ -1,6 +1,8 @@
 package winep.ir.twocon.Presenter.LevelSettingPage;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -183,10 +185,18 @@ public class LevelSettingActivity extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id==android.R.id.home)
+        if (id==android.R.id.home) {
+            Intent resultIntent = new Intent();
+            resultIntent.putExtra("value", seekBar.getProgress());
+            setResult(Activity.RESULT_OK, resultIntent);
             finish();
-        if (id==R.id.action_back)
+        }
+        if (id==R.id.action_back) {
+            Intent resultIntent = new Intent();
+            resultIntent.putExtra("value", seekBar.getProgress());
+            setResult(Activity.RESULT_OK, resultIntent);
             finish();
+        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -195,7 +205,14 @@ public class LevelSettingActivity extends AppCompatActivity {
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
         Utilities.getInstance().setSettingLanguage(newBase);
-
     }
 
-}
+    @Override
+    public void onBackPressed() {
+        Intent resultIntent = new Intent();
+        resultIntent.putExtra("value", seekBar.getProgress());
+        setResult(Activity.RESULT_OK, resultIntent);
+        finish();
+    }
+
+    }
