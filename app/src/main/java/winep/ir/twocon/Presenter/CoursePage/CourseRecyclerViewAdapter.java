@@ -128,6 +128,8 @@ public class CourseRecyclerViewAdapter extends RecyclerView.Adapter<CourseRecycl
                         }
                         else if(item.getTitle().equals(context.getString(R.string.information))){
                             Intent intent=new Intent(context, StatisticsGroupActivity.class);
+                            intent.putExtra("groupTitle",allCourses.get(position).getTitle());
+                            intent.putExtra("pieChartStatus",false);
                             context.startActivity(intent);
                         }
                         return true;

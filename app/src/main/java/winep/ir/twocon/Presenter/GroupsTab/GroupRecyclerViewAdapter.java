@@ -133,6 +133,7 @@ public class GroupRecyclerViewAdapter extends RecyclerView.Adapter<GroupRecycler
                         else if(item.getTitle().equals(context.getString(R.string.information))){
                             Intent intent=new Intent(context, StatisticsGroupActivity.class);
                             intent.putExtra("groupTitle",allGroups.get(position).getTitle());
+                            intent.putExtra("pieChartStatus",true);
                             context.startActivity(intent);
                         }
                         else if (item.getTitle().equals(context.getString(R.string.set_the_level))){

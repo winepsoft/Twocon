@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.LineChart;
@@ -44,12 +45,15 @@ public class StatisticsGroupActivity extends AppCompatActivity {
     private TextView txtRightTopTitle;
     private TextView txtRightBottomTitle;
     private Context context;
+    private Boolean pieChartsShowStatus;
+    private LinearLayout layoutPieCharts;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         groupTitle=getIntent().getExtras().getString("groupTitle");
+        pieChartsShowStatus=getIntent().getExtras().getBoolean("pieChartStatus");
         setContentView(R.layout.statistics_group_activity);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -59,6 +63,10 @@ public class StatisticsGroupActivity extends AppCompatActivity {
         chart1=(LineChart)findViewById(R.id.chart1);
         chart2=(PieChart)findViewById(R.id.chart2);
         chart3=(PieChart)findViewById(R.id.chart3);
+        layoutPieCharts=(LinearLayout)findViewById(R.id.layoutPieCharts);
+        if(!pieChartsShowStatus){
+            layoutPieCharts.setVisibility(View.GONE);
+        }
 
         //Title
         txtLeftTopTitle =(TextView)findViewById(R.id.txt_title_left_top);

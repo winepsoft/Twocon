@@ -25,6 +25,7 @@ import java.util.ArrayList;
 
 import winep.ir.twocon.DataModel.Group;
 import winep.ir.twocon.Presenter.CoursePage.CourseActivity;
+import winep.ir.twocon.Presenter.StatisticsGroupPage.StatisticsGroupActivity;
 import winep.ir.twocon.R;
 import winep.ir.twocon.Utility.Font;
 import winep.ir.twocon.Utility.RectangleView;
@@ -108,6 +109,12 @@ public class SubGroupRecyclerViewAdapter extends RecyclerView.Adapter<SubGroupRe
                                     .neutralColor(ContextCompat.getColor(context, R.color.dialog_cancel_color))
                                     .typeface(font.getRTLFontNameForDialog(),null)
                                     .show();
+                        }
+                        else if(item.getTitle().equals(context.getString(R.string.information))){
+                            Intent intent=new Intent(context, StatisticsGroupActivity.class);
+                            intent.putExtra("groupTitle",allSubGroups.get(position).getTitle());
+                            intent.putExtra("pieChartStatus",false);
+                            context.startActivity(intent);
                         }
                         return true;
                     }
