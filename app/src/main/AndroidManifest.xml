@@ -29,7 +29,8 @@
         <activity android:name="winep.ir.twocon.Presenter.QuestionPage.QuestionActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name="winep.ir.twocon.Presenter.SettingsPage.SettingsActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden"/>
         <activity android:name="winep.ir.twocon.Presenter.LevelPage.LevelActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name="winep.ir.twocon.Presenter.CoursePage.CourseActivity"

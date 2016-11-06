@@ -5,10 +5,13 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 
 import com.flask.colorpicker.ColorPickerView;
 import com.flask.colorpicker.OnColorSelectedListener;
@@ -17,8 +20,12 @@ import com.flask.colorpicker.builder.ColorPickerDialogBuilder;
 import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.rey.material.widget.Spinner;
 
+import java.util.ArrayList;
+
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+import winep.ir.twocon.DataModel.Reminder;
 import winep.ir.twocon.R;
+import winep.ir.twocon.Utility.DividerItemDecorationRecyclerView;
 import winep.ir.twocon.Utility.Utilities;
 
 /**
@@ -27,7 +34,11 @@ import winep.ir.twocon.Utility.Utilities;
 public class SettingsActivity extends AppCompatActivity {
 
     private Context context;
+    private RecyclerView reminderRecyclerView;
+    private SettingReminderRecyclerViewAdapter reminderAdapter;
+    private ArrayList<Reminder> allReminders;
     private FloatingActionButton btnSelectColor;
+    private Button btnAddReminder;
     private Spinner spinnerSelectLanguage;
     private FloatingActionButton btnColor1;
     private FloatingActionButton btnColor2;
@@ -48,6 +59,19 @@ public class SettingsActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         setTitle(getString(R.string.settings_activity_title));
         context=this;
+
+        allReminders=new ArrayList<>();
+        reminderRecyclerView=(RecyclerView)findViewById(R.id.setting_reminder_recycler_view);
+        reminderRecyclerView.setLayoutManager(new LinearLayoutManager(context));
+        reminderRecyclerView.addItemDecoration(new DividerItemDecorationRecyclerView(3));
+        reminderAdapter=new SettingReminderRecyclerViewAdapter(context,getAllreminder());
+        reminderRecyclerView.setAdapter(reminderAdapter);
+
+        btnAddReminder=(Button)findViewById(R.id.btn_add_reminder);
+
+
+
+
         btnColor1=(FloatingActionButton)findViewById(R.id.btn_settings_group_color_1);
         btnColor2=(FloatingActionButton)findViewById(R.id.btn_settings_group_color_2);
         btnColor3=(FloatingActionButton)findViewById(R.id.btn_settings_group_color_3);
@@ -188,6 +212,24 @@ public class SettingsActivity extends AppCompatActivity {
                 })
                 .build()
                 .show();
+    }
+
+    private ArrayList<Reminder> getAllreminder(){
+        Reminder aReminder1=new Reminder();
+        aReminder1.setDay("Saturday");
+        aReminder1.setHour("10");
+        aReminder1.setMinute("0");
+        aReminder1.setTimeType("pm");
+        allReminders.add(aReminder1);
+
+        Reminder aReminder2=new Reminder();
+        aReminder2.setDay("Sunday");
+        aReminder2.setHour("10");
+        aReminder2.setMinute("0");
+        aReminder2.setTimeType("pm");
+        allReminders.add(aReminder2);
+
+        return allReminders;
     }
 
 }
