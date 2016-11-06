@@ -2,6 +2,7 @@ package winep.ir.twocon.Presenter.SettingsPage;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -13,7 +14,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -31,6 +31,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import winep.ir.twocon.DataModel.Reminder;
+import winep.ir.twocon.Presenter.LevelSettingPage.LevelSettingActivity;
 import winep.ir.twocon.R;
 import winep.ir.twocon.Utility.DividerItemDecorationRecyclerView;
 import winep.ir.twocon.Utility.Utilities;
@@ -54,7 +55,7 @@ public class SettingsActivity extends AppCompatActivity {
     private Spinner spinnerSelectLanguage;
     private Spinner spinnerBackupFrequencyTime;
     private Spinner spinnerBackupEmail;
-    private EditText editTextSetLevelNumber;
+    private Button btnSetLevelNumber;
     private FloatingActionButton btnColor1;
     private FloatingActionButton btnColor2;
     private FloatingActionButton btnColor3;
@@ -148,8 +149,8 @@ public class SettingsActivity extends AppCompatActivity {
         spinnerBackupEmail.setAdapter(emailAdapter);
 
         //Group
-        editTextSetLevelNumber=(EditText)findViewById(R.id.editText_settings_level_number);
-        Utilities.getInstance().setFontEditTextView(context,editTextSetLevelNumber);
+        btnSetLevelNumber=(Button) findViewById(R.id.btn_settings_level_number);
+        Utilities.getInstance().setFontButtonView(context,btnSetLevelNumber);
         btnColor1=(FloatingActionButton)findViewById(R.id.btn_settings_group_color_1);
         btnColor2=(FloatingActionButton)findViewById(R.id.btn_settings_group_color_2);
         btnColor3=(FloatingActionButton)findViewById(R.id.btn_settings_group_color_3);
@@ -160,6 +161,14 @@ public class SettingsActivity extends AppCompatActivity {
         btnColor8=(FloatingActionButton)findViewById(R.id.btn_settings_group_color_8);
         btnColor9=(FloatingActionButton)findViewById(R.id.btn_settings_group_color_9);
         btnColor10=(FloatingActionButton)findViewById(R.id.btn_settings_group_color_10);
+
+        btnSetLevelNumber.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context, LevelSettingActivity.class);
+                startActivity(intent);
+            }
+        });
 
         btnSelectColor=(FloatingActionButton)findViewById(R.id.btn_settings_app_color);
         btnSelectColor.setSize(com.getbase.floatingactionbutton.FloatingActionButton.SIZE_MINI);

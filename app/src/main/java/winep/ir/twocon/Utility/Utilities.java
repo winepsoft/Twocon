@@ -137,6 +137,20 @@ public class Utilities {
 
         }
     }
+
+    public void setFontButtonView(Context context, android.widget.Button button){
+        if (isSelectedALTRLanguage(context)){
+            Font font=new Font();
+            Typeface face = Typeface.createFromAsset(context.getAssets(),font.getFarsiFontName());
+            button.setTypeface(face);
+        }
+        else {
+            Font font=new Font();
+            Typeface face = Typeface.createFromAsset(context.getAssets(),font.getFontName());
+            button.setTypeface(face);
+
+        }
+    }
     public void animateFAB(Context context,boolean isFabOpen,FloatingActionButton fab){
 
         Animation rotate_forward = AnimationUtils.loadAnimation(context.getApplicationContext(), R.anim.rotate_forward);
