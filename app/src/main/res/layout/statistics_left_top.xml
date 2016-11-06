@@ -5,7 +5,6 @@
     android:layout_weight="1"
     android:background="@color/statistics_background_color"
     android:orientation="horizontal"
-    android:id="@+id/linearLeftTop"
     android:layout_marginLeft="5dp"
     android:layout_marginRight="5dp"
     android:layout_marginTop="10dp"
@@ -13,7 +12,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent"
+        android:id="@+id/layoutLeftTop">
 
         <TextView
             android:layout_width="match_parent"

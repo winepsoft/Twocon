@@ -4,13 +4,12 @@
     android:layout_height="60dp"
     android:layout_weight="1"
     android:orientation="horizontal"
-    android:id="@+id/linearRightTop"
     android:layout_marginLeft="5dp"
     android:layout_marginRight="5dp"
     android:layout_marginTop="10dp"
     android:layout_marginBottom="10dp"
     android:background="#dadada"
-    android:focusable="false">
+    android:id="@+id/layoutRightTop">
 
     <RelativeLayout
         android:layout_width="60dp"

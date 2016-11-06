@@ -10,6 +10,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -52,6 +54,9 @@ public class StatisticsTotalActivity extends AppCompatActivity {
     private TextView txtTitleLesson;
     private TextView txtValueCard;
     private TextView txtTitleCard;
+    private RelativeLayout layoutGroup;
+    private RelativeLayout layoutSubGroup;
+    private LinearLayout layoutCourse;
 
 
     @Override
@@ -110,7 +115,8 @@ public class StatisticsTotalActivity extends AppCompatActivity {
         Utilities.getInstance().setFontTextView(context, txtValueCard);
         txtValueCard.setText("100");
 
-        txtTitleGroup.setOnClickListener(new View.OnClickListener() {
+        layoutGroup=(RelativeLayout)findViewById(R.id.layoutLeftTop);
+        layoutGroup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 new MaterialDialog.Builder(context)
@@ -130,7 +136,8 @@ public class StatisticsTotalActivity extends AppCompatActivity {
 
         });
 
-        txtTitleSubGroup.setOnClickListener(new View.OnClickListener() {
+        layoutSubGroup=(RelativeLayout)findViewById(R.id.layoutLeftBottom);
+        layoutSubGroup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 new MaterialDialog.Builder(context)
@@ -150,7 +157,8 @@ public class StatisticsTotalActivity extends AppCompatActivity {
 
         });
 
-        txtTitleLesson.setOnClickListener(new View.OnClickListener() {
+        layoutCourse=(LinearLayout) findViewById(R.id.layoutRightTop);
+        layoutCourse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 new MaterialDialog.Builder(context)
