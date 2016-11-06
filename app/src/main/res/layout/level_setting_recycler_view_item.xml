@@ -32,7 +32,7 @@
                 android:layout_height="40dp"
                 android:layout_weight="1"
                 android:text="@string/level_number"
-                android:background="@drawable/button_with_corner_blue"
+                android:background="@drawable/button_with_corner_gray"
                 android:layout_marginRight="5dp"
                 android:layout_marginLeft="5dp"
                 android:id="@+id/txt_level_number"
