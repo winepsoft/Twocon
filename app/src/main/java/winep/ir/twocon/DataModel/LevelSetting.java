@@ -5,13 +5,13 @@ package winep.ir.twocon.DataModel;
  */
 public class LevelSetting {
     private int levelNumber;
-    private int levelTimeType; //0=month , 1=day
-    private int levelTime;
+    private int levelDay;
+    private int levelHour;
 
-    public LevelSetting(int levelNumber,int levelTimeType,int levelTime){
+    public LevelSetting(int levelNumber,int levelDay,int levelHour){
         this.levelNumber=levelNumber;
-        this.levelTimeType=levelTimeType;
-        this.levelTime=levelTime;
+        this.levelDay =levelDay;
+        this.levelHour=levelHour;
     }
 
     public int getLevelNumber() {
@@ -22,19 +22,19 @@ public class LevelSetting {
         this.levelNumber = levelNumber;
     }
 
-    public int getLevelTimeType() {
-        return levelTimeType;
+    public int getLevelDay() {
+        return levelDay;
     }
 
-    public void setLevelTimeType(int levelTimeType) {
-        this.levelTimeType = levelTimeType;
+    public void setLevelDay(int levelDay) {
+        this.levelDay = levelDay;
     }
 
-    public int getLevelTime() {
-        return levelTime;
+    public int getLevelHour() {
+        return levelHour;
     }
 
-    public void setLevelTime(int levelTime) {
-        this.levelTime = levelTime;
+    public void setLevelHour(int levelHour) {
+        this.levelHour = levelHour;
     }
 }

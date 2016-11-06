@@ -34,8 +34,8 @@ public class LevelSettingRecyclerViewAdapter extends RecyclerView.Adapter<LevelS
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         holder.txtLevelNumber.setText(context.getString(R.string.level_number)+" "+Integer.toString(position+1));
-        holder.editTextSetDay.setText("1");
-        holder.editTextSetHour.setText("2");
+        holder.editTextSetDay.setText(Integer.toString(allLevelInformation.get(position).getLevelDay()));
+        holder.editTextSetHour.setText(Integer.toString(allLevelInformation.get(position).getLevelHour()));
     }
 
     @Override

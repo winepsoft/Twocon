@@ -39,19 +39,20 @@
                 android:gravity="center_vertical|center_horizontal"
                 android:textColor="@color/white"
                 android:layout_gravity="center_vertical" />
-            <TextView
+            <EditText
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginRight="5dp"
                 android:layout_marginLeft="5dp"
                 android:layout_gravity="center"
-                android:id="@+id/txt_set_day_default"
+                android:id="@+id/edit_text_set_day_default"
                 android:textAlignment="center"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="4"
+                android:inputType="number"
                 android:textColor="@color/black">
-            </TextView>
+            </EditText>
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -63,19 +64,20 @@
                 android:gravity="center_vertical|center_horizontal"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/black"/>
-            <TextView
+            <EditText
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginRight="5dp"
                 android:layout_marginLeft="5dp"
                 android:layout_gravity="center"
-                android:id="@+id/txt_set_hour_default"
+                android:id="@+id/edit_text_set_hour_default"
+                android:inputType="number"
                 android:textAlignment="center"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="2"
                 android:textColor="@color/black">
-            </TextView>
+            </EditText>
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
