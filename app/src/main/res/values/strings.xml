@@ -142,6 +142,10 @@
     <string name="settings_question_title">Question</string>
     <string name="settings_level_number_title">Default levels setting:</string>
     <string name="settings_automatic_rtl_ltr">Set Automatic RTL and LTR:</string>
+    <string name="settings_reminder_title">Reminder</string>
+    <string name="settings_reminder_description">Reminder For Study and Learn</string>
+    <string name="setting_more_button_text">More</string>
+
 
     //level page
     <string name="level_ready">Ready</string>

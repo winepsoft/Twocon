@@ -145,8 +145,9 @@
     <string name="settings_question_title">سوالات</string>
     <string name="settings_level_number_title">تنظیمات پیش فرض مراحل:</string>
     <string name="settings_automatic_rtl_ltr">تنظیمات خودکار راست چین و چپ چین:</string>
-
-
+    <string name="settings_reminder_title">یادآوری</string>
+    <string name="settings_reminder_description">یادآوری مطالعه و یادگیری</string>
+    <string name="setting_more_button_text">بیشتر</string>
 
     //level page
     <string name="level_ready">آماده یادگیری</string>
