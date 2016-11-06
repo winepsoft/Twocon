@@ -46,13 +46,13 @@ public class LevelRecyclerViewAdapter extends RecyclerView.Adapter<LevelRecycler
         else if (allLevel.get(position).getLevelStatus()==1) {
             Utilities.getInstance().customView(holder.levelNumber, Color.RED, Color.RED);
             holder.itemView.setClickable(false);
-            holder.levelStatus.setText(context.getString(R.string.level_status_empty));
+            holder.levelStatus.setText("6"+context.getString(R.string.level_status_days)+"12"+context.getString(R.string.level_status_hours));
 
         }
         else if (allLevel.get(position).getLevelStatus()==2) {
             Utilities.getInstance().customView(holder.levelNumber, Color.GRAY, Color.GRAY);
             holder.itemView.setClickable(false);
-            holder.levelStatus.setText("6"+context.getString(R.string.level_status_days)+"12"+context.getString(R.string.level_status_hours));
+            holder.levelStatus.setText(context.getString(R.string.level_status_empty));
 
         }
 
