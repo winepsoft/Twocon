@@ -35,6 +35,7 @@ public class LevelSettingActivity extends AppCompatActivity {
     private TextView txtDefaultDay;
     private TextView txtDefaultHour;
     private Spinner spinnerSelectAnimation;
+    private TextView txtLevelNumberTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,13 +59,18 @@ public class LevelSettingActivity extends AppCompatActivity {
         recyclerViewLevelSetting=(RecyclerView)findViewById(R.id.recycler_view_level_setting);
         //sliderLevel=(Slider)findViewById(R.id.slider_level);
         seekBar=(DiscreteSeekBar)findViewById(R.id.slider_level);
+        seekBar.setProgress(8);
+
 
         recyclerViewLevelSetting.setLayoutManager(new LinearLayoutManager(context));
         //recyclerViewLevelSetting.addItemDecoration(new DividerItemDecorationRecyclerView(5));
         final LevelSettingRecyclerViewAdapter adapter=new LevelSettingRecyclerViewAdapter(context,createLevel());
         recyclerViewLevelSetting.setAdapter(adapter);
 
-        seekBar.setProgress(8);
+        txtLevelNumberTitle=(TextView)findViewById(R.id.txt_level_number_title);
+        Utilities.getInstance().setFontTextView(context,txtLevelNumberTitle);
+        txtLevelNumberTitle.setText(seekBar.getProgress()+" "+getString(R.string.level_number));
+
         seekBar.setOnProgressChangeListener(new DiscreteSeekBar.OnProgressChangeListener() {
             @Override
             public void onProgressChanged(DiscreteSeekBar discreteSeekBar, int i, boolean b) {
@@ -97,6 +103,7 @@ public class LevelSettingActivity extends AppCompatActivity {
                         size=size-1;
                     }
                 }
+                txtLevelNumberTitle.setText(seekBar.getProgress()+" "+getString(R.string.level_number));
             }
         });
 
