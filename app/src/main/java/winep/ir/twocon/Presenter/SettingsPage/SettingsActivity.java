@@ -51,6 +51,8 @@ public class SettingsActivity extends AppCompatActivity {
     private Button btnSelectTime;
     private Button btnAddReminderOk;
     private Spinner spinnerSelectLanguage;
+    private Spinner spinnerBackupFrequencyTime;
+    private Spinner spinnerBackupEmail;
     private FloatingActionButton btnColor1;
     private FloatingActionButton btnColor2;
     private FloatingActionButton btnColor3;
@@ -78,6 +80,8 @@ public class SettingsActivity extends AppCompatActivity {
         reminderAdapter=new SettingReminderRecyclerViewAdapter(context,getAllreminder());
         reminderRecyclerView.setAdapter(reminderAdapter);
 
+
+        //Reminder
         btnMore =(Button)findViewById(R.id.btn_add_reminder);
         layoutMore=(LinearLayout)findViewById(R.id.linear_layout_more);
         layoutMore.setVisibility(View.GONE);
@@ -127,6 +131,21 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
 
+        //Backup
+        spinnerBackupFrequencyTime=(Spinner)findViewById(R.id.spinner_settings_backup_time);
+        ArrayAdapter<String> backupFrequencyTime = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item,getResources().getStringArray(R.array.backup_frequency));
+        backupFrequencyTime.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerBackupFrequencyTime.setAdapter(backupFrequencyTime);
+
+        spinnerBackupEmail=(Spinner)findViewById(R.id.spinner_email_backup);
+        String[] backupEmail=new String[2];
+        backupEmail[0]=getString(R.string.no);
+        backupEmail[1]="iran8b@gmail.com";
+        ArrayAdapter<String> emailAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item,backupEmail);
+        emailAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerBackupEmail.setAdapter(emailAdapter);
+
+        //Group
         btnColor1=(FloatingActionButton)findViewById(R.id.btn_settings_group_color_1);
         btnColor2=(FloatingActionButton)findViewById(R.id.btn_settings_group_color_2);
         btnColor3=(FloatingActionButton)findViewById(R.id.btn_settings_group_color_3);

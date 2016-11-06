@@ -152,6 +152,10 @@
     <string name="setting_spinner_select_day">Day</string>
     <string name="setting_message_select_day">روز موردنظر را انتخاب کنید</string>
     <string name="setting_message_select_Time">ساعت مورد نظر را انتخاب کنید</string>
+    <string name="settings_backup_title">پشتیبانی</string>
+    <string name="settings_backup_time_title">زمان بندی پشتیبانی:</string>
+    <string name="settings_backup_email_title">آیا فایل پشتیبان ایمیل شود؟</string>
+    <string name="no">خیر</string>
     <array name="days">
         <item>شنبه</item>
         <item>یکشنبه</item>
@@ -161,6 +165,12 @@
         <item>پنجشنبه</item>
         <item>جمعه</item>
     </array>
+    <array name="backup_frequency">
+        <item>خیر</item>
+        <item>هر هفته</item>
+        <item>هر ماه</item>
+    </array>
+
 
     //level page
     <string name="level_ready">آماده یادگیری</string>

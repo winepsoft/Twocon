@@ -149,7 +149,10 @@
     <string name="setting_spinner_select_day">Day</string>
     <string name="setting_message_select_day">Select Day</string>
     <string name="setting_message_select_Time">Select Time</string>
-
+    <string name="settings_backup_title">Backup</string>
+    <string name="settings_backup_time_title">Backup Time Frequency:</string>
+    <string name="settings_backup_email_title">Email backup files?</string>
+    <string name="no">No</string>
     <array name="days">
         <item>Saturday</item>
         <item>SunDay</item>
@@ -159,6 +162,12 @@
         <item>ThursDay</item>
         <item>FriDay</item>
     </array>
+    <array name="backup_frequency">
+        <item>No</item>
+        <item>Every week</item>
+        <item>Every Month</item>
+    </array>
+
 
 
     //level page
