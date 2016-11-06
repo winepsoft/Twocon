@@ -71,10 +71,10 @@ public class Utilities {
         context.startActivity(i);
     }
 
-    public  boolean isFarsiSelected(Context context){
+    public  boolean isSelectedALTRLanguage(Context context){
         SettingsManager settingsManager=new SettingsManager(context);
         boolean status;
-        if(settingsManager.getLangugeSetting().equals("fa")) {
+        if(settingsManager.getLangugeSetting().equals("fa") ||settingsManager.getLangugeSetting().equals("ar") ) {
             status=true;
         }
         else
@@ -83,7 +83,7 @@ public class Utilities {
     }
 
     public void setFontTextView(Context context,TextView textview){
-        if (isFarsiSelected(context)){
+        if (isSelectedALTRLanguage(context)){
             Font font=new Font();
             Typeface face = Typeface.createFromAsset(context.getAssets(),font.getFarsiFontName());
             textview.setTypeface(face);
@@ -97,7 +97,7 @@ public class Utilities {
     }
 
     public void setFontEditTextView(Context context,EditText textview){
-        if (isFarsiSelected(context)){
+        if (isSelectedALTRLanguage(context)){
             Font font=new Font();
             Typeface face = Typeface.createFromAsset(context.getAssets(),font.getFarsiFontName());
             textview.setTypeface(face);
@@ -111,7 +111,7 @@ public class Utilities {
     }
 
     public void setFontEditTextView(Context context, android.widget.EditText textview){
-        if (isFarsiSelected(context)){
+        if (isSelectedALTRLanguage(context)){
             Font font=new Font();
             Typeface face = Typeface.createFromAsset(context.getAssets(),font.getFarsiFontName());
             textview.setTypeface(face);
@@ -125,7 +125,7 @@ public class Utilities {
     }
 
     public void setFontButtonView(Context context,Button button){
-        if (isFarsiSelected(context)){
+        if (isSelectedALTRLanguage(context)){
             Font font=new Font();
             Typeface face = Typeface.createFromAsset(context.getAssets(),font.getFarsiFontName());
             button.setTypeface(face);
