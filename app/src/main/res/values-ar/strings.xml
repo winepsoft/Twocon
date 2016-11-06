@@ -1,0 +1,204 @@
+﻿<resources>
+    //ActionBar
+    <string name="app_name">ذاكرتي</string>
+    <string name="user_profile_name">إسم المستخدم</string>
+    <string name="action_search">بحث</string>
+    <string name="navigation_drawer_open">navigation_drawer_open</string>
+    <string name="navigation_drawer_close">navigation_drawer_close</string>
+
+    //Tabs
+    <string name="tab_one">المجموعة</string>
+    <string name="tab_two">قاموس أونلاين</string>
+    <string name="tab_three">بنك الذاكرة</string>
+    <string name="tab_four">كرت</string>
+
+    //Group Fragment
+    <string name="new_group_dialog_title">إضافة مجموعة جديدة</string>
+    <string name="new_sub_group_dialog_title">إختيار المجموعة</string>
+    <string name="add_a_sub_group_to">إضافة تصنيف جديد للمجموعة</string>
+    <string name="new_course_dialog_title">إختيار التصنيف</string>
+    <string name="add_a_course_to">إضافة درس جديد إلى </string>
+
+
+
+    //PopMenu_group_fragment
+    <string name="information">معلومات</string>
+    <string name="edit_name">تحرير الإسم</string>
+    <string name="set_the_level">إعدادات المراحل</string>
+    <string name="delete">حذف</string>
+
+    //NavigationDrawer
+    <string name="user_profile">لوحة التحكم</string>
+    <string name="my_activities">نشاطاتي</string>
+    <string name="shared_flashcard">مشاركة بطاقة تعليمية</string>
+    <string name="add_card_from_excel">إضافة بطاقة تعليمية من برنامج EXCEL</string>
+    <string name="help">دلیل</string>
+    <string name="setting_app">إعدادات البرنامج</string>
+    <string name="ticket">تیکت</string>
+    <string name="rate_us">قيّم البرنامج</string>
+    <string name="about_us">من نحن</string>
+    <string name="exit">خروج</string>
+
+    //FloatingActionMenu_group_fragment
+    <string name="question">سؤال</string>
+    <string name="course">درس</string>
+    <string name="group">مجموعة</string>
+    <string name="sub_group">تصنيف</string>
+
+    //all dialog
+    <string name="save">موافق</string>
+    <string name="cancel">إلغاء</string>
+
+    //dialog_edit_group
+    <string name="dialog_edit_group_title">تحرير المجموعة</string>
+    <string name="dialog_edit_group_name">الإسم : </string>
+    <string name="dialog_edit_group_description">الوصف : </string>
+    //dialog_delete_group
+    <string name="dialog_delete_group_title">بعد حذف المجوعه، جميع أسئلة التصنيف : </string>
+    <array name="dialog_delete_group_item_choice">
+        <item>تحفظ في بنك الذاكرة بدون تصنيف</item>
+        <item>تحذف من بنك الذاكرة نهائياً</item>
+    </array>
+
+    //action_bar_sub_group_activity
+    <string name="sub_group_activity_title">التصنيف</string>
+    <string name="action_back">العودة</string>
+    //dialog_edit_sub_group
+    <string name="dialog_edit_sub_group_title">تحرير التصنيف</string>
+    <string name="dialog_edit_sub_group_name">نام : </string>
+    <string name="dialog_edit_sub_group_description">الوصف : </string>
+    //dialog_delete_sub_group
+    <string name="dialog_delete_sub_group_title">بعد حذف المجوعه، جميع أسئلة التصنيف :</string>
+    <array name="dialog_delete_sub_group_item_choice">
+        <item>تحفظ في بنك الذاكرة بدون تصنيف</item>
+        <item>تحذف من بنك الذاكرة نهائياً</item>
+    </array>
+
+    //statistics page
+    <string name="speed_learning">سرعة التعلم</string>
+    <string name="growth_flashcards">نمو البطاقات التعليمية</string>
+    <string name="all_cart">جميع البطاقات</string>
+    <string name="ready_to_learn">جاهزة للتعلم</string>
+    <string name="create_date">تاريخ الإنشاء</string>
+    <string name="last_seen">الزيارة الأخيرة</string>
+    <string name="group_diagram_title">إحصائية المجموعات</string>
+
+
+    //memory bank page
+    <string name="lesson">درس</string>
+    <string name="m_sub_group">تصنيف</string>
+    <string name="m_group">مجموعة</string>
+    <string name="m_delete">حذف</string>
+    <string name="m_change_lesson">تغيير الدرس</string>
+    <string name="m_multi_selected">إختيار متعدد</string>
+    <string name="m_edit">تحرير</string>
+    <string name="m_filter_group">مجموعة</string>
+    <string name="m_filter_priority">الأولوية</string>
+    <string name="m_hard">الأسئلة الصعبة</string>
+    <string name="m_favourite">المفضلة</string>
+
+    //exam page
+    <string name="exam_activity_title">إختبار</string>
+    <string name="answer_one">1</string>
+    <string name="answer_two">2</string>
+    <string name="answer_three">3</string>
+    <string name="answer_four">4</string>
+    <string name="answer">نعم، سهل</string>
+    <string name="next">التالي</string>
+    <string name="previous">السابق</string>
+    <string name="end">النهاية</string>
+
+    //question page
+    <string name="question_activity_title">عرض الأسئلة</string>
+    <string name="hard_question">صعب</string>
+    <string name="question_description">الوصف</string>
+    <string name="answer_know">أعرف</string>
+    <string name="answer_no_know">لا أعرف</string>
+    <string name="know_number_question_title">عدد الأسئلة الصحيحة :</string>
+    <string name="no_Know_question_title">عدد الأسئلة الغير صحيحة :</string>
+    <string name="touch_card_seen_answer">لعرض الإجابة إنقر هنا</string>
+
+
+    //settings
+    <string name="settings_activity_title">الإعدادات</string>
+    <string name="setting_language">لغة البرنامج :</string>
+    <string name="persian">فارسي</string>
+    <string name="english">English</string>
+    <string name="arabic">العربی</string>
+    <string name="settings_app_color">لون البرنامج : </string>
+    <string name="settings_font_size">حجم النص :</string>
+    <string name="settings_view_dictionary">عرض القاموس في الأسئلة :</string>
+    <string name="settings_view_voice_button">عرض زر الصوت في الأسئلة :</string>
+    <string name="settings_view_hard_button">عرض زر (صعب) في الأسئلة :</string>
+    <string name="settings_direct_entry_subGroup">الدخول المباشر إلى التصنيف المحدد :</string>
+    <string name="settings_change_question_and_answer">عكس مكان السؤال بالإجابة :</string>
+    <string name="settings_play_automatic_voice">نطق الكلمات أتوماتيكياً :</string>
+    <string name="setting_backup">النسخ الإحتياطي</string>
+    <string name="settings_retrieval">إستعادة الإعدادات</string>
+    <string name="settings_app_update">تحيث البرنامج</string>
+    <string name="setting_cancel">إنصراف</string>
+    <string name="setting_save">حفظ</string>
+    <string name="color_picker_dialog_title">إختيار اللون</string>
+    <string name="select_language">إختيار اللغة</string>
+
+
+
+    //level page
+    <string name="level_ready">جاهز للتعلم</string>
+    <string name="level_total">كل</string>
+    <string name="level_add_new_question">إضافة سؤال جديد</string>
+    <string name="level_add_free_question">إضافة عدة أسئلة جاهزة/مجانية</string>
+    <string name="level_add_question_from_excel">إضافة مجموعة أسئلة من برنامج EXCEL</string>
+    <string name="level_view_question_list">عرض جميع أسئلة الدرس</string>
+    <string name="level_review_questions">مراجعة أسئلة المراحل</string>
+    <string name="level_view_hard_questions">عرض الأسئلة الصعبة</string>
+    <string name="level_view_favourite">عرض المفضلة</string>
+    <string name="level_exam">إختبار متعدد الخيارات</string>
+
+    //create_question
+    <string name="create_question_activity_title">إضافة سؤال جديد</string>
+    <string name="add_question_group">المجموعة</string>
+    <string name="add_question_sub_group">التصنيف</string>
+    <string name="add_question_course">الدرس</string>
+    <string name="add_question_question">السؤال</string>
+    <string name="add_question_answer">الإجابة</string>
+    <string name="add_question_description">الوصف</string>
+    <string name="add_question_add_voice">افزودن صوت</string>
+    <string name="add_question_add_image">افزودن تصویر</string>
+    <string name="add_question_pronunciation">التلفظ</string>
+    <string name="add_question_synonym">مرادف</string>
+    <string name="add_question_antonym">مضاد</string>
+    <string name="add_question_example">مثال</string>
+    <string name="spinner_select_group">المجموعات</string>
+    <string name="spinner_select_sub_group">التصانيف</string>
+    <string name="spinner_select_course">الدروس</string>
+
+    //level setting
+    <string name="level_setting_activity_title">إعدادات المراحل</string>
+    <string name="level_setting_select_level_number">تحديد عدد المراحل</string>
+    <string name="level_number">مرحلة</string>
+    <string name="level_setting_select_time_type_month">شهر</string>
+    <string name="level_setting_select_time_type_day">يوم</string>
+
+    //subGroup page
+    <string name="dialog_sub_group_add_new_sub_group_title">إضافة تصنيف جديد</string>
+
+    //course page
+    <string name="review_question">مراجعة الأسئلة</string>
+    <string name="dialog_course_add_new_course_title">إضافة درس جديد</string>
+
+    //total statistics page
+    <string name="statistics_total_title">الإحصائة العامة للبرمانج</string>
+    <string name="statistics_total_purchased">بطاقات تم شراؤها</string>
+    <string name="statistics_total_shared_lesson">دروس تم مشاركتها</string>
+    <string name="statistics_total_download">تحميل</string>
+    <string name="statistics_total_group">المجموعة</string>
+    <string name="statistics_total_sub_group">التصنيف</string>
+    <string name="statistics_total_lesson">الدرس</string>
+    <string name="statistics_total_card">بطاقة</string>
+    <string name="statistics_total_group_dialog">إختيار المجموعة</string>
+    <string name="statistics_total_sub_group_dialog">إختيار التصنيف</string>
+    <string name="statistics_total_lesson_dialog">إختيار الدرس</string>
+
+
+</resources>

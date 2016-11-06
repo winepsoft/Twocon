@@ -43,7 +43,7 @@ public class SettingsActivity extends AppCompatActivity {
     private RecyclerView reminderRecyclerView;
     private SettingReminderRecyclerViewAdapter reminderAdapter;
     private ArrayList<Reminder> allReminders;
-    private Reminder newreminder;
+    private Reminder newReminder;
     private FloatingActionButton btnSelectColor;
     private Button btnMore;
     private LinearLayout layoutMore;
@@ -96,7 +96,7 @@ public class SettingsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 layoutMore.setVisibility(View.VISIBLE);
-                newreminder=new Reminder();
+                newReminder =new Reminder();
             }
         });
 
@@ -111,19 +111,19 @@ public class SettingsActivity extends AppCompatActivity {
         spinnerSelectDay.setOnItemSelectedListener(new Spinner.OnItemSelectedListener() {
             @Override
             public void onItemSelected(Spinner parent, View view, int position, long id) {
-                newreminder.setDay(parent.getAdapter().getItem(position).toString());
+                newReminder.setDay(parent.getAdapter().getItem(position).toString());
             }
         });
 
         btnAddReminderOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (newreminder.getDay()==null)
+                if (newReminder.getDay()==null)
                     Toast.makeText(context,getString(R.string.setting_message_select_day),Toast.LENGTH_SHORT).show();
-                else if (newreminder.getHour()==null)
+                else if (newReminder.getHour()==null)
                     Toast.makeText(context,getString(R.string.setting_message_select_Time),Toast.LENGTH_SHORT).show();
-                else if (newreminder.getDay()!=null && newreminder.getHour()!=null) {
-                    reminderAdapter.addreminder(newreminder);
+                else if (newReminder.getDay()!=null && newReminder.getHour()!=null) {
+                    reminderAdapter.addreminder(newReminder);
                     spinnerSelectDay.setSelection(0);
                     btnSelectTime.setText(getString(R.string.setting_button_select_time));
                     layoutMore.setVisibility(View.GONE);
@@ -239,7 +239,7 @@ public class SettingsActivity extends AppCompatActivity {
 
 
         spinnerSelectLanguage =(Spinner)findViewById(R.id.spinner_settings_language);
-        String[] languageTitle = {getString(R.string.select_language), getString(R.string.english),getString(R.string.persian)};
+        String[] languageTitle = {getString(R.string.select_language), getString(R.string.english),getString(R.string.persian),getString(R.string.arabic)};
         ArrayAdapter<String> a = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, languageTitle);
         a.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerSelectLanguage.setAdapter(a);
@@ -250,8 +250,8 @@ public class SettingsActivity extends AppCompatActivity {
         Dialog.Builder builder=new TimePickerDialog.Builder(R.style.Material_Widget_TimePicker_Light,24,00){
             @Override public void onPositiveActionClicked(    DialogFragment fragment){
                 TimePickerDialog dialog=(TimePickerDialog)fragment.getDialog();
-                newreminder.setHour(Integer.toString(dialog.getHour()));
-                newreminder.setMinute(Integer.toString(dialog.getMinute()));
+                newReminder.setHour(Integer.toString(dialog.getHour()));
+                newReminder.setMinute(Integer.toString(dialog.getMinute()));
                 btnSelectTime.setText(dialog.getFormattedTime(SimpleDateFormat.getTimeInstance()));
                 super.onPositiveActionClicked(fragment);
             }

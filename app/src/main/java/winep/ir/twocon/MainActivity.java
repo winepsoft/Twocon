@@ -157,7 +157,9 @@ public class MainActivity extends AppCompatActivity
         else if(id==R.id.action_english_languge){
             Utilities.getInstance().setLocale(context,"en");
         }
-
+        else if(id==R.id.action_arabic_language){
+            Utilities.getInstance().setLocale(context,"ar");
+        }
         return super.onOptionsItemSelected(item);
     }
 

@@ -18,4 +18,11 @@
         android:orderInCategory="100"
         android:title="@string/english"
         app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_arabic_language"
+        android:orderInCategory="100"
+        android:title="@string/arabic"
+        app:showAsAction="never"/>
+
+
 </menu>
