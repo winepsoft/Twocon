@@ -9,6 +9,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -28,7 +29,6 @@ import com.rey.material.widget.Spinner;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
-import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 import winep.ir.twocon.DataModel.Reminder;
 import winep.ir.twocon.R;
 import winep.ir.twocon.Utility.DividerItemDecorationRecyclerView;
@@ -264,7 +264,7 @@ public class SettingsActivity extends AppCompatActivity {
         fragment.show(getSupportFragmentManager(),null);
     }
 
-    @Override
+   /* @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.setting_page_menu, menu);
@@ -276,6 +276,34 @@ public class SettingsActivity extends AppCompatActivity {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
         Utilities.getInstance().setSettingLanguage(newBase);
 
+    }*/
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.title_back_menu, menu);
+        if(Utilities.getInstance().isRTL()) {
+            menu.getItem(0).setIcon(R.mipmap.back_fa);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        }
+        else {
+            menu.getItem(0).setVisible(false);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        if (id==android.R.id.home)
+            finish();
+        if (id==R.id.action_back)
+            finish();
+        return super.onOptionsItemSelected(item);
     }
 
     private void showColorPickerDialog(final FloatingActionButton buttonSelected){
