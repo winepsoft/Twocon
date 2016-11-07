@@ -31,6 +31,7 @@ import com.rey.material.widget.Spinner;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 import winep.ir.twocon.DataModel.Reminder;
 import winep.ir.twocon.Presenter.LevelSettingPage.LevelSettingActivity;
 import winep.ir.twocon.R;
@@ -369,6 +370,14 @@ public class SettingsActivity extends AppCompatActivity {
         allReminders.add(aReminder2);
 
         return allReminders;
+    }
+
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+        Utilities.getInstance().setSettingLanguage(newBase);
+
     }
 
     @Override
