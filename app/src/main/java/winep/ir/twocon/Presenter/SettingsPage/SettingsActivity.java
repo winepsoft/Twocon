@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.flask.colorpicker.ColorPickerView;
@@ -27,6 +28,8 @@ import com.rey.material.app.Dialog;
 import com.rey.material.app.DialogFragment;
 import com.rey.material.app.TimePickerDialog;
 import com.rey.material.widget.Spinner;
+
+import org.adw.library.widgets.discreteseekbar.DiscreteSeekBar;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -68,6 +71,9 @@ public class SettingsActivity extends AppCompatActivity {
     private FloatingActionButton btnColor8;
     private FloatingActionButton btnColor9;
     private FloatingActionButton btnColor10;
+    private TextView txtFontSizeShow;
+    private DiscreteSeekBar seekBarFontSize;
+
 
     final static int STATIC_INTEGER_VALUE=1;
 
@@ -86,6 +92,28 @@ public class SettingsActivity extends AppCompatActivity {
         reminderRecyclerView.addItemDecoration(new DividerItemDecorationRecyclerView(3));
         reminderAdapter=new SettingReminderRecyclerViewAdapter(context,getAllreminder());
         reminderRecyclerView.setAdapter(reminderAdapter);
+
+        //General
+        txtFontSizeShow=(TextView)findViewById(R.id.txt_show_font_size);
+        Utilities.getInstance().setFontTextView(context,txtFontSizeShow);
+        seekBarFontSize=(DiscreteSeekBar)findViewById(R.id.seek_bar_settings_font_size);
+        seekBarFontSize.setOnProgressChangeListener(new DiscreteSeekBar.OnProgressChangeListener() {
+            @Override
+            public void onProgressChanged(DiscreteSeekBar seekBar, int value, boolean fromUser) {
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(DiscreteSeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(DiscreteSeekBar seekBar) {
+                txtFontSizeShow.setText(Integer.toString(seekBar.getProgress()));
+
+            }
+        });
 
 
         //Reminder

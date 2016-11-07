@@ -115,12 +115,29 @@
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"/>
-                    <SeekBar
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:id="@+id/txt_show_font_size"
+                        android:textColor="@color/black"
+                        android:layout_toEndOf="@+id/txt_settings_font_size"
+                        android:layout_alignParentEnd="false"
+                        android:textAppearance="?android:attr/textAppearanceMedium"/>
+                    <org.adw.library.widgets.discreteseekbar.DiscreteSeekBar
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/spinner_settings_font_size"
+                        app:dsb_min="10"
+                        app:dsb_max="20"
+                        app:dsb_trackColor="@color/colorPrimary"
+                        app:dsb_rippleColor="@color/colorPrimary"
+                        app:dsb_progressColor="@color/colorPrimary"
+                        app:dsb_indicatorColor="@color/colorPrimary"
+                        android:id="@+id/seek_bar_settings_font_size"
                         android:layout_alignParentTop="true"
-                        android:layout_toEndOf="@+id/txt_settings_font_size"/>
+                        android:layout_toEndOf="@+id/txt_show_font_size"/>
                 </RelativeLayout>
                 <RelativeLayout
                     android:layout_width="match_parent"
