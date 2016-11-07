@@ -9,11 +9,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.afollestad.dragselectrecyclerview.DragSelectRecyclerView;
 import com.afollestad.dragselectrecyclerview.DragSelectRecyclerViewAdapter;
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.rey.material.widget.Spinner;
 
 import java.util.ArrayList;
@@ -22,6 +24,7 @@ import winep.ir.twocon.DataModel.MemoryBankItem;
 import winep.ir.twocon.Presenter.QuestionPage.EditQuestionActivity;
 import winep.ir.twocon.Presenter.QuestionPage.QuestionActivity;
 import winep.ir.twocon.R;
+import winep.ir.twocon.Utility.Font;
 
 /**
  * Created by ShaisteS on 10/1/2016.
@@ -36,17 +39,21 @@ public class MemoryBankFragment extends Fragment implements
     private View mainToolBar;
     private View multiSelectedItemToolBar;
     private boolean multiSelectedStatus=false;
-    private Spinner spinnerSelectGroupFilter;
+   // private Spinner spinnerSelectGroupFilter;
+    private Button btnSelectGroupFilter;
     private Spinner spinnerSelectPriorityFilter;
     private ImageButton btnQuestionSeen;
     private ImageButton btnAnswerSeen;
     private ImageButton btnQuestionTrue;
     private ImageButton btnQuestionWrong;
+    private Font font;
+
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
 
         View mainView = inflater.inflate(R.layout.memory_bank_fragment, container, false);
         context=getContext();
+        font=new Font();
         recyclerViewMemoryBank=(DragSelectRecyclerView) mainView.findViewById(R.id.recycler_view_memory_bank);
         recyclerViewMemoryBank.setLayoutManager(new LinearLayoutManager(context));
         //recyclerViewMemoryBank.addItemDecoration(new DividerItemDecorationRecyclerView(10));
@@ -54,8 +61,15 @@ public class MemoryBankFragment extends Fragment implements
         multiSelectedItemToolBar= mainView.findViewById(R.id.memoryBankToolBarMultiSelectedItem);
         setMainToolBar();
 
-        spinnerSelectGroupFilter=(Spinner)mainView.findViewById(R.id.spinner_select_group_filter);
-        spinnerSelectGroupFilter.setAdapter(setSpinnerGroupFilter());
+        //spinnerSelectGroupFilter=(Spinner)mainView.findViewById(R.id.spinner_select_group_filter);
+        //spinnerSelectGroupFilter.setAdapter(setSpinnerGroupFilter());
+        btnSelectGroupFilter=(Button)mainView.findViewById(R.id.btn_select_group_filter);
+        btnSelectGroupFilter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDialogFilterOnGroup();
+            }
+        });
         spinnerSelectPriorityFilter=(Spinner)mainView.findViewById(R.id.spinner_select_priority_filter);
         spinnerSelectPriorityFilter.setAdapter(setSpinnerPriorityFilter());
         btnQuestionSeen=(ImageButton)mainView.findViewById(R.id.btn_question_seen);
@@ -126,6 +140,60 @@ public class MemoryBankFragment extends Fragment implements
         });*/
        //getFragmentManager().beginTransaction().addToBackStack(null).commit();
         return mainView;
+    }
+
+    private void showDialogFilterOnGroup(){
+        new MaterialDialog.Builder(context)
+                .title(R.string.group)
+                .items(createListOfGroupsTitle())
+                .itemsCallback(new MaterialDialog.ListCallback() {
+                    @Override
+                    public void onSelection(MaterialDialog dialog, View view, int which, CharSequence text) {
+                        new MaterialDialog.Builder(context)
+                                .title(R.string.sub_group)
+                                .items(createListOfSubGroupsOfAGroup())
+                                .itemsCallback(new MaterialDialog.ListCallback() {
+                                    @Override
+                                    public void onSelection(MaterialDialog dialog, View view, int which, CharSequence text) {
+                                        new MaterialDialog.Builder(context)
+                                                .title(R.string.course)
+                                                .items(createListOfCourseOfSubGroup())
+                                                .itemsCallback(new MaterialDialog.ListCallback() {
+                                                    @Override
+                                                    public void onSelection(MaterialDialog dialog, View itemView, int position, CharSequence text) {
+                                                        btnSelectGroupFilter.setText(text);
+                                                    }
+                                                })
+                                                .show();
+
+                                    }
+                                })
+                                .show();
+                    }
+                })
+                .show();
+    }
+
+    private String[] createListOfGroupsTitle(){
+        String[] groupsTitle=new String[3];
+        groupsTitle[0]="پزشکی";
+        groupsTitle[1]="مهندسی پزشکی";
+        groupsTitle[2]="English title";
+        return groupsTitle;
+    }
+
+    private String[] createListOfSubGroupsOfAGroup(){
+        String[] subGroupTitle=new String[2];
+        subGroupTitle[0]="فیزیولوژی";
+        subGroupTitle[1]="دهان و دندان";
+        return subGroupTitle;
+    }
+
+    private String[] createListOfCourseOfSubGroup(){
+        String[] courseTitle=new String[2];
+        courseTitle[0]="زبان";
+        courseTitle[1]="دندان جلو";
+        return courseTitle;
     }
 
     private ArrayAdapter<String> setSpinnerGroupFilter(){
