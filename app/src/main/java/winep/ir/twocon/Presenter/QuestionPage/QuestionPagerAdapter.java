@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -81,6 +82,10 @@ public class QuestionPagerAdapter  extends PagerAdapter {
         Utilities.getInstance().setFontButtonView(activity,btnNoKnowNumber);
         final Button btnKnow=(Button)viewLayout.findViewById(R.id.btn_know);
         final Button btnoNOKnow=(Button)viewLayout.findViewById(R.id.btn_no_know);
+        final LinearLayout layoutButtonKnowStatus=(LinearLayout)viewLayout.findViewById(R.id.layout_button_know_status);
+        layoutButtonKnowStatus.setVisibility(View.GONE);
+        final boolean[] showAnswerCartStatus = {false};
+
 
 
         final TextView txtPleaseTouch=(TextView)viewLayout.findViewById(R.id.txt_please_touch);
@@ -124,7 +129,13 @@ public class QuestionPagerAdapter  extends PagerAdapter {
             @Override
             public void onClick(View view) {
 
-                flipOut(cardFront,cardBack);
+                if (!showAnswerCartStatus[0]){
+                    flipOut(cardFront,cardBack);
+                    layoutButtonKnowStatus.setVisibility(View.VISIBLE);
+                    showAnswerCartStatus[0] =true;
+                }
+
+
 
                 /*YoYo.with(Techniques.FlipOutX)
                         .withListener(new Animator.AnimatorListener() {
@@ -156,7 +167,7 @@ public class QuestionPagerAdapter  extends PagerAdapter {
                         .playOn(cardFront);*/
             }
         });
-       back_layout.setOnClickListener(new View.OnClickListener() {
+       /*back_layout.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
 
@@ -189,9 +200,9 @@ public class QuestionPagerAdapter  extends PagerAdapter {
                        }
                    })
                    .duration(200)
-                   .playOn(cardBack);*/
+                   .playOn(cardBack);
            }
-       });
+       });*/
 
 
         final boolean[] questionDescriptionShowStatus = {false};
