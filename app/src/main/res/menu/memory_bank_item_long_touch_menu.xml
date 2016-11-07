@@ -3,15 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/information"
+        android:id="@+id/memory_bank_multi_selected"
         android:title="@string/m_multi_selected"
         app:showAsAction="always" />
     <item
-        android:id="@+id/edit_name"
+        android:id="@+id/memory_bank_edit_question"
         android:title="@string/m_edit"
         app:showAsAction="always" />
     <item
-        android:id="@+id/setLevel"
+        android:id="@+id/memory_bank_delete_question"
         android:title="@string/m_delete"
         app:showAsAction="always" />
 

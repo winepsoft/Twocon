@@ -31,13 +31,13 @@ public class MemoryBankRecyclerViewAdapter  extends DragSelectRecyclerViewAdapte
     public interface ClickListener {
         void onClick(int index);
 
-        void onLongClick(int index);
+        void onLongClick(int menuIndex,int index);
 
         void onBackPressed();
     }
 
     private final ClickListener mCallback;
-    private ArrayList<MemoryBankItem> allMemoryBankItems;
+    public ArrayList<MemoryBankItem> allMemoryBankItems;
     private Context context;
 
     protected MemoryBankRecyclerViewAdapter(ClickListener callback,Context context,ArrayList<MemoryBankItem> memoryBankItems) {
@@ -87,9 +87,12 @@ public class MemoryBankRecyclerViewAdapter  extends DragSelectRecyclerViewAdapte
         private TextView questionSeenValue;
         private TextView questionNumber;
         private TextView questionTitle;
+        private Context context1;
+
 
         public MainViewHolder(Context context,View itemView, ClickListener callback) {
             super(itemView);
+            context1=context;
             mCallback = callback;
             colorSquare = (RectangleView) itemView.findViewById(R.id.colorSquare);
             itemView.setOnClickListener(this);
@@ -121,10 +124,8 @@ public class MemoryBankRecyclerViewAdapter  extends DragSelectRecyclerViewAdapte
             popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                 @Override
                 public boolean onMenuItemClick(MenuItem item) {
-                    if (item.getTitle().equals(itemView.getContext().getString(R.string.m_multi_selected))){
-                        if (mCallback != null)
-                            mCallback.onLongClick(getAdapterPosition());
-                    }
+                    if (mCallback != null)
+                        mCallback.onLongClick(item.getItemId(),getAdapterPosition());
                     return true;
                 }
             });

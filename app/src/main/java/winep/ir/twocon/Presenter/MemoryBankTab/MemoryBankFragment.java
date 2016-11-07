@@ -19,6 +19,7 @@ import com.rey.material.widget.Spinner;
 import java.util.ArrayList;
 
 import winep.ir.twocon.DataModel.MemoryBankItem;
+import winep.ir.twocon.Presenter.QuestionPage.EditQuestionActivity;
 import winep.ir.twocon.Presenter.QuestionPage.QuestionActivity;
 import winep.ir.twocon.R;
 
@@ -29,6 +30,7 @@ public class MemoryBankFragment extends Fragment implements
         MemoryBankRecyclerViewAdapter.ClickListener, DragSelectRecyclerViewAdapter.SelectionListener{
 
     private DragSelectRecyclerView recyclerViewMemoryBank;
+    private ArrayList<MemoryBankItem> allItems;
     private MemoryBankRecyclerViewAdapter adapter;
     private Context context;
     private View mainToolBar;
@@ -61,7 +63,7 @@ public class MemoryBankFragment extends Fragment implements
         btnQuestionTrue=(ImageButton)mainView.findViewById(R.id.btn_question_true);
         btnQuestionWrong=(ImageButton)mainView.findViewById(R.id.btn_question_wrong);
 
-        ArrayList<MemoryBankItem> allItems=new ArrayList<>();
+        allItems=new ArrayList<>();
         for (int i=0; i<10; i++){
             MemoryBankItem item=new MemoryBankItem();
             item.setLessonTitle("lesson");
@@ -167,15 +169,19 @@ public class MemoryBankFragment extends Fragment implements
         }
     }
     @Override
-    public void onLongClick(int index) {
-        if (!multiSelectedStatus){
+    public void onLongClick(int menuIndex,int index) {
+        if (menuIndex==R.id.memory_bank_multi_selected && !multiSelectedStatus){
             recyclerViewMemoryBank.setDragSelectActive(false, index);
             setMultiSelectedItemToolBar();
             multiSelectedStatus=true;
         }
-        else {
-            adapter.clearSelected();
-            recyclerViewMemoryBank.setDragSelectActive(false, index);
+        else if (menuIndex==R.id.memory_bank_edit_question) {
+            Intent intent=new Intent();
+            Bundle bundle=new Bundle();
+            bundle.putParcelable("Question",allItems.get(index).getQuestion());
+            intent.putExtras(bundle);
+            intent.setClass(context, EditQuestionActivity.class);
+            context.startActivity(intent);
         }
 
     }

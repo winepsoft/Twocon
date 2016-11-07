@@ -13,6 +13,7 @@ public class MemoryBankItem {
     private String questionAnswerSeenNumber;
     private String questionSeenNumber;
     private String questionTitle;
+    private Question question;
 
     public String getLessonTitle() {
         return lessonTitle;
@@ -76,5 +77,13 @@ public class MemoryBankItem {
 
     public void setQuestionTitle(String questionTitle) {
         this.questionTitle = questionTitle;
+    }
+
+    public Question getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(Question question) {
+        this.question = question;
     }
 }
