@@ -66,8 +66,8 @@ public class QuestionPagerAdapter  extends PagerAdapter {
         cardBack.setVisibility(View.GONE);
         final TextView txtQuestionNumber=(TextView)viewLayout.findViewById(R.id.txt_question_number);
         Utilities.getInstance().setFontTextView(activity,txtQuestionNumber);
-        final TextView txtQuestionDescription=(TextView)viewLayout.findViewById(R.id.txt_description);
-        txtQuestionDescription.setVisibility(View.GONE);
+        final LinearLayout layoutQuestionDescription=(LinearLayout)viewLayout.findViewById(R.id.layout_description);
+        layoutQuestionDescription.setVisibility(View.GONE);
         final FloatingActionButton fabAnswerVoice=(FloatingActionButton)viewLayout.findViewById(R.id.answer_voice);
         fabAnswerVoice.setSize(FloatingActionButton.SIZE_MINI);
         final FloatingActionButton fabQuestionMark=(FloatingActionButton)viewLayout.findViewById(R.id.question_mark);
@@ -211,12 +211,12 @@ public class QuestionPagerAdapter  extends PagerAdapter {
             public void onClick(View view) {
                 if (!questionDescriptionShowStatus[0]){
                     Utilities.getInstance().animateFAB(activity, false, fabAnswerDescription);
-                    txtQuestionDescription.setVisibility(View.VISIBLE);
+                    layoutQuestionDescription.setVisibility(View.VISIBLE);
                     questionDescriptionShowStatus[0] =!questionDescriptionShowStatus[0];
                 }
                 else if (questionDescriptionShowStatus[0]){
                     Utilities.getInstance().animateFAB(activity, true, fabAnswerDescription);
-                    txtQuestionDescription.setVisibility(View.GONE);
+                    layoutQuestionDescription.setVisibility(View.GONE);
                     questionDescriptionShowStatus[0] =!questionDescriptionShowStatus[0];
                 }
             }
