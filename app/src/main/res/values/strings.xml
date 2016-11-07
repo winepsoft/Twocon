@@ -147,6 +147,7 @@
     <string name="settings_reminder_description">Reminder For Study and Learn</string>
     <string name="setting_more_button_text">More</string>
     <string name="setting_button_select_time">Time</string>
+    <string name="setting_button_select_time_Default">8:00 am</string>
     <string name="setting_spinner_select_day">Day</string>
     <string name="setting_message_select_day">Select Day</string>
     <string name="setting_message_select_Time">Select Time</string>

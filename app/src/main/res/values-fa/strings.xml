@@ -150,7 +150,8 @@
     <string name="settings_reminder_description">یادآوری مطالعه و یادگیری</string>
     <string name="setting_more_button_text">بیشتر</string>
     <string name="setting_button_select_time">زمان</string>
-    <string name="setting_spinner_select_day">Day</string>
+    <string name="setting_button_select_time_Default">8:00 صبح</string>
+    <string name="setting_spinner_select_day">روز</string>
     <string name="setting_message_select_day">روز موردنظر را انتخاب کنید</string>
     <string name="setting_message_select_Time">ساعت مورد نظر را انتخاب کنید</string>
     <string name="settings_backup_title">پشتیبانی</string>

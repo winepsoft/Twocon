@@ -94,6 +94,7 @@ public class SettingsActivity extends AppCompatActivity {
         layoutMore.setVisibility(View.GONE);
         spinnerSelectDay=(Spinner)findViewById(R.id.spinner_Select_Day);
         btnSelectTime=(Button)findViewById(R.id.btn_select_Time);
+        Utilities.getInstance().setFontButtonView(context,btnSelectTime);
         btnAddReminderOk=(Button)findViewById(R.id.btn_new_reminder_ok);
         ArrayAdapter<String> dayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item,getResources().getStringArray(R.array.days));
         dayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -132,7 +133,7 @@ public class SettingsActivity extends AppCompatActivity {
                 else if (newReminder.getDay()!=null && newReminder.getHour()!=null) {
                     reminderAdapter.addreminder(newReminder);
                     spinnerSelectDay.setSelection(0);
-                    btnSelectTime.setText(getString(R.string.setting_button_select_time));
+                    btnSelectTime.setText(getString(R.string.setting_button_select_time_Default));
                     layoutMore.setVisibility(View.GONE);
                 }
             }
