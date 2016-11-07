@@ -166,6 +166,14 @@ public class CourseRecyclerViewAdapter extends RecyclerView.Adapter<CourseRecycl
                 holder.courseShare.setImageResource(R.mipmap.share_green);
             }
         });
+
+        holder.courseFavourite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setUnSelected(position);
+                holder.courseFavourite.setImageResource(R.mipmap.favorite_ok);
+            }
+        });
     }
 
     public void setSelected(int pos) {

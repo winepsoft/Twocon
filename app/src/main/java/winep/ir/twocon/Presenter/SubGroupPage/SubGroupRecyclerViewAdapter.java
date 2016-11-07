@@ -156,6 +156,14 @@ public class SubGroupRecyclerViewAdapter extends RecyclerView.Adapter<SubGroupRe
                 setUnSelected(position);
             }
         });
+
+        holder.subGroupFavourite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setUnSelected(position);
+                holder.subGroupFavourite.setImageResource(R.mipmap.favorite_ok);
+            }
+        });
     }
 
     public void setSelected(int pos) {
