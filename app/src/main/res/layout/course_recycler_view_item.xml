@@ -39,8 +39,8 @@
                 android:layout_height="wrap_content"
                 android:src="@mipmap/favorite"
                 android:background="@null"
-                android:layout_marginRight="2dp"
-                android:layout_marginLeft="2dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginLeft="3dp"
                 android:layout_gravity="bottom" />
 
             <ImageButton
@@ -49,8 +49,8 @@
                 android:layout_height="wrap_content"
                 android:src="@mipmap/share_black"
                 android:background="@null"
-                android:layout_marginRight="2dp"
-                android:layout_marginLeft="2dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginLeft="3dp"
                 android:layout_gravity="bottom" />
 
             <LinearLayout
