@@ -42,15 +42,7 @@
                     android:layout_weight="1"
                     android:weightSum="2">
                     <include layout="@layout/statistics_flash_cart_left_bottom"/>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp">
-
-                    </LinearLayout>
+                    <include layout="@layout/statistics_flash_cart_right_bottom"/>
 
                 </LinearLayout>
             </LinearLayout>
