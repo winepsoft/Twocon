@@ -118,18 +118,18 @@
 
     //settings
     <string name="settings_activity_title">Settings</string>
-    <string name="setting_language">Application Language:</string>
+    <string name="setting_language">Application Language</string>
     <string name="persian">Farsi</string>
     <string name="english">English</string>
     <string name="arabic">Arabic</string>
-    <string name="settings_app_color">Application Color: </string>
-    <string name="settings_font_size">Font size:</string>
-    <string name="settings_view_dictionary">View the dictionary in Question:</string>
-    <string name="settings_view_voice_button">View the Voice in Question:</string>
-    <string name="settings_view_hard_button">View Hard Button in Questions:</string>
-    <string name="settings_direct_entry_subGroup">Direct entry to SubGroup:</string>
-    <string name="settings_change_question_and_answer">Change question and answer:</string>
-    <string name="settings_play_automatic_voice">Play automatic pronunciation of words:</string>
+    <string name="settings_app_color">Application color</string>
+    <string name="settings_font_size">Font size</string>
+    <string name="settings_view_dictionary">View the dictionary in Question</string>
+    <string name="settings_view_voice_button">View the Voice in Question</string>
+    <string name="settings_view_hard_button">View Hard Button in Questions</string>
+    <string name="settings_direct_entry_subGroup">Direct entry to SubGroup</string>
+    <string name="settings_change_question_and_answer">Change question and answer</string>
+    <string name="settings_play_automatic_voice">Play automatic pronunciation of words</string>
     <string name="setting_backup">BackUp</string>
     <string name="settings_retrieval">Retrieval settings</string>
     <string name="settings_app_update">Update</string>
@@ -137,12 +137,13 @@
     <string name="setting_save">save</string>
     <string name="color_picker_dialog_title">Choose color</string>
     <string name="select_language">Select Language</string>
-    <string name="settings_night_vision">Night Vision:</string>
+    <string name="settings_night_vision">Night Vision</string>
     <string name="settings_general_title">General Setting</string>
     <string name="settings_group_title">Groups</string>
+    <string name="settings_group_color_priority">Color Priority</string>
     <string name="settings_question_title">Question</string>
-    <string name="settings_level_number_title">Default levels setting:</string>
-    <string name="settings_automatic_rtl_ltr">Set Automatic RTL and LTR:</string>
+    <string name="settings_level_number_title">Default levels setting</string>
+    <string name="settings_automatic_rtl_ltr">Set Automatic RTL and LTR</string>
     <string name="settings_reminder_title">Reminder</string>
     <string name="settings_reminder_description">Reminder For Study and Learn</string>
     <string name="setting_more_button_text">More</string>
@@ -152,7 +153,7 @@
     <string name="setting_message_select_day">Select Day</string>
     <string name="setting_message_select_Time">Select Time</string>
     <string name="settings_backup_title">Backup</string>
-    <string name="settings_backup_time_title">Backup Time Frequency:</string>
+    <string name="settings_backup_time_title">Backup Time Frequency</string>
     <string name="settings_backup_email_title">Email backup files?</string>
     <string name="no">No</string>
     <array name="days">

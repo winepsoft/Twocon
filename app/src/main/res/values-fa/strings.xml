@@ -121,18 +121,18 @@
 
     //settings
     <string name="settings_activity_title">تنظیمات</string>
-    <string name="setting_language">زبان برنامه :</string>
+    <string name="setting_language">زبان برنامه </string>
     <string name="persian">فارسی</string>
     <string name="english">انگلیسی</string>
     <string name="arabic">عربی</string>
-    <string name="settings_app_color">رنگ نرم افزار : </string>
-    <string name="settings_font_size">اندازه متن :</string>
-    <string name="settings_view_dictionary">نمایش دیکشنری در سوالات :</string>
-    <string name="settings_view_voice_button">نمایش دکمه صوت در سوالات :</string>
-    <string name="settings_view_hard_button">نمایش دکمه سخت در سوال :</string>
-    <string name="settings_direct_entry_subGroup">ورود مستقیم به زیرگروه منتخب :</string>
-    <string name="settings_change_question_and_answer">جای پرسش و پاسخ تغییر کند :</string>
-    <string name="settings_play_automatic_voice">تلفظ کلمات به صورت اتوماتیک :</string>
+    <string name="settings_app_color">رنگ نرم افزار </string>
+    <string name="settings_font_size">اندازه متن </string>
+    <string name="settings_view_dictionary">نمایش دیکشنری در سوالات </string>
+    <string name="settings_view_voice_button">نمایش دکمه صوت در سوالات </string>
+    <string name="settings_view_hard_button">نمایش دکمه سخت در سوال </string>
+    <string name="settings_direct_entry_subGroup">ورود مستقیم به زیرگروه منتخب </string>
+    <string name="settings_change_question_and_answer">جای پرسش و پاسخ تغییر کند </string>
+    <string name="settings_play_automatic_voice">تلفظ کلمات به صورت اتوماتیک </string>
     <string name="setting_backup">پشتیبان گیری</string>
     <string name="settings_retrieval">بازیابی تنظیمات</string>
     <string name="settings_app_update">به روز رسانی</string>
@@ -140,12 +140,13 @@
     <string name="setting_save">ذخیره</string>
     <string name="color_picker_dialog_title">انتخاب رنگ</string>
     <string name="select_language">انتخاب زبان</string>
-    <string name="settings_night_vision">دید در شب:</string>
+    <string name="settings_night_vision">دید در شب</string>
     <string name="settings_general_title">تنظیمات عمومی</string>
     <string name="settings_group_title">گروهها</string>
+    <string name="settings_group_color_priority">اولویت رنگ</string>
     <string name="settings_question_title">سوالات</string>
-    <string name="settings_level_number_title">تنظیمات پیش فرض مراحل:</string>
-    <string name="settings_automatic_rtl_ltr">تنظیمات خودکار راست چین و چپ چین:</string>
+    <string name="settings_level_number_title">تنظیمات پیش فرض مراحل</string>
+    <string name="settings_automatic_rtl_ltr">تنظیمات خودکار راست چین و چپ چین</string>
     <string name="settings_reminder_title">یادآوری</string>
     <string name="settings_reminder_description">یادآوری مطالعه و یادگیری</string>
     <string name="setting_more_button_text">بیشتر</string>
@@ -155,7 +156,7 @@
     <string name="setting_message_select_day">روز موردنظر را انتخاب کنید</string>
     <string name="setting_message_select_Time">ساعت مورد نظر را انتخاب کنید</string>
     <string name="settings_backup_title">پشتیبانی</string>
-    <string name="settings_backup_time_title">زمان بندی پشتیبانی:</string>
+    <string name="settings_backup_time_title">زمان بندی پشتیبانی</string>
     <string name="settings_backup_email_title">آیا فایل پشتیبان ایمیل شود؟</string>
     <string name="no">خیر</string>
     <array name="days">

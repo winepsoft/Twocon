@@ -56,7 +56,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical|center_horizontal"
                         android:id="@+id/txt_settings_app_color"
-                        android:text="@string/settings_app_color"
+                        android:text="@string/settings_group_color_priority"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"/>

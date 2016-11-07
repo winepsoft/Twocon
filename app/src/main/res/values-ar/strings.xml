@@ -121,18 +121,18 @@
 
     //settings
     <string name="settings_activity_title">الإعدادات</string>
-    <string name="setting_language">لغة البرنامج :</string>
+    <string name="setting_language">لغة البرنامج </string>
     <string name="persian">فارسي</string>
     <string name="english">English</string>
     <string name="arabic">العربی</string>
-    <string name="settings_app_color">لون البرنامج : </string>
-    <string name="settings_font_size">حجم النص :</string>
-    <string name="settings_view_dictionary">عرض القاموس في الأسئلة :</string>
-    <string name="settings_view_voice_button">عرض زر الصوت في الأسئلة :</string>
-    <string name="settings_view_hard_button">عرض زر (صعب) في الأسئلة :</string>
-    <string name="settings_direct_entry_subGroup">الدخول المباشر إلى التصنيف المحدد :</string>
-    <string name="settings_change_question_and_answer">عكس مكان السؤال بالإجابة :</string>
-    <string name="settings_play_automatic_voice">نطق الكلمات أتوماتيكياً :</string>
+    <string name="settings_app_color">لون البرنامج </string>
+    <string name="settings_font_size">حجم النص </string>
+    <string name="settings_view_dictionary">عرض القاموس في الأسئلة</string>
+    <string name="settings_view_voice_button">عرض زر الصوت في الأسئلة </string>
+    <string name="settings_view_hard_button">عرض زر (صعب) في الأسئلة </string>
+    <string name="settings_direct_entry_subGroup">الدخول المباشر إلى التصنيف المحدد </string>
+    <string name="settings_change_question_and_answer">عكس مكان السؤال بالإجابة </string>
+    <string name="settings_play_automatic_voice">نطق الكلمات أتوماتيكياً </string>
     <string name="setting_backup">النسخ الإحتياطي</string>
     <string name="settings_retrieval">إستعادة الإعدادات</string>
     <string name="settings_app_update">تحيث البرنامج</string>
