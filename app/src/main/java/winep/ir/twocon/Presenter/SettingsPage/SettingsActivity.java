@@ -24,14 +24,12 @@ import com.flask.colorpicker.OnColorSelectedListener;
 import com.flask.colorpicker.builder.ColorPickerClickListener;
 import com.flask.colorpicker.builder.ColorPickerDialogBuilder;
 import com.getbase.floatingactionbutton.FloatingActionButton;
-import com.rey.material.app.Dialog;
-import com.rey.material.app.DialogFragment;
-import com.rey.material.app.TimePickerDialog;
 import com.rey.material.widget.Spinner;
+import com.wdullaer.materialdatetimepicker.time.RadialPickerLayout;
+import com.wdullaer.materialdatetimepicker.time.TimePickerDialog;
 
 import org.adw.library.widgets.discreteseekbar.DiscreteSeekBar;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
@@ -292,8 +290,25 @@ public class SettingsActivity extends AppCompatActivity {
         spinnerSelectLanguage.setAdapter(a);
     }
 
+    private void showTimePickerDialog() {
+        TimePickerDialog now = TimePickerDialog.newInstance(null,0,0,00,true);
+        now.setAccentColor(ContextCompat.getColor(context,R.color.colorPrimary));
+        now.setOnTimeSetListener(new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(RadialPickerLayout view, int hourOfDay, int minute, int second) {
+                newReminder.setHour(Integer.toString(hourOfDay));
+                newReminder.setMinute(Integer.toString(minute));
+                btnSelectTime.setText(Integer.toString(hourOfDay)+":"+Integer.toString(minute));
+            }
+        });
+        now.show(getFragmentManager(),"TimePicker");
 
-    private void showTimePickerDialog(){
+
+    }
+
+
+    //rey Time Picker
+   /* private void showTimePickerDialog(){
         Dialog.Builder builder=new TimePickerDialog.Builder(R.style.Material_Widget_TimePicker_Light,24,00){
             @Override public void onPositiveActionClicked(    DialogFragment fragment){
                 TimePickerDialog dialog=(TimePickerDialog)fragment.getDialog();
@@ -309,7 +324,7 @@ public class SettingsActivity extends AppCompatActivity {
         builder.positiveAction(getString(R.string.save)).negativeAction(getString(R.string.cancel));
         DialogFragment fragment=DialogFragment.newInstance(builder);
         fragment.show(getSupportFragmentManager(),null);
-    }
+    }*/
 
    /* @Override
     public boolean onCreateOptionsMenu(Menu menu) {
