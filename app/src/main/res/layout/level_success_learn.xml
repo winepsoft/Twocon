@@ -15,12 +15,16 @@
         android:layout_height="match_parent"
         android:orientation="horizontal"
         android:weightSum="10">
-        <ImageView
+        <LinearLayout
             android:layout_width="@dimen/level_number_circle_size"
             android:layout_height="@dimen/level_number_circle_size"
-            android:gravity="center"
-            android:layout_marginRight="5dp"
-            android:src="@mipmap/success_learn" />
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:src="@drawable/success_learn" />
+        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
