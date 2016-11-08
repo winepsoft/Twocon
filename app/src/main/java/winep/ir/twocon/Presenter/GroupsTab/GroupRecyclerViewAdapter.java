@@ -140,6 +140,9 @@ public class GroupRecyclerViewAdapter extends RecyclerView.Adapter<GroupRecycler
                             Intent intent=new Intent(context, LevelSettingActivity.class);
                             context.startActivity(intent);
                         }
+                        else if(item.getItemId()==R.id.color){
+                            Utilities.getInstance().showColorPickerDialog(context);
+                        }
                         return true;
                     }
                 });

@@ -19,6 +19,7 @@
     <string name="add_a_sub_group_to">Add New sub Group To</string>
     <string name="new_course_dialog_title">Select Sub Group</string>
     <string name="add_a_course_to">Add A Course To </string>
+    <string name="color">Color</string>
 
     //PopMenu_group_fragment
     <string name="information">Information</string>

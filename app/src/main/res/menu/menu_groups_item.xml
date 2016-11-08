@@ -14,6 +14,10 @@
         android:title="@string/set_the_level"
         app:showAsAction="always" />
     <item
+        android:id="@+id/color"
+        android:title="@string/color"
+        app:showAsAction="always" />
+    <item
         android:id="@+id/delete"
         android:title="@string/delete"
         app:showAsAction="always" />

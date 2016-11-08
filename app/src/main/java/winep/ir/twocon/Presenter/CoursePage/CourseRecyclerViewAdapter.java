@@ -116,6 +116,9 @@ public class CourseRecyclerViewAdapter extends RecyclerView.Adapter<CourseRecycl
                             intent.putExtra("pieChartStatus",false);
                             context.startActivity(intent);
                         }
+                        else if(item.getItemId()==R.id.color){
+                            Utilities.getInstance().showColorPickerDialog(context);
+                        }
                         return true;
                     }
                 });
