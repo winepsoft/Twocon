@@ -64,6 +64,7 @@ public class MemoryBankFragment extends Fragment implements
         //spinnerSelectGroupFilter=(Spinner)mainView.findViewById(R.id.spinner_select_group_filter);
         //spinnerSelectGroupFilter.setAdapter(setSpinnerGroupFilter());
         btnSelectGroupFilter=(Button)mainView.findViewById(R.id.btn_select_group_filter);
+        btnSelectGroupFilter.setText("پزشکی");
         btnSelectGroupFilter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -175,35 +176,38 @@ public class MemoryBankFragment extends Fragment implements
     }
 
     private String[] createListOfGroupsTitle(){
-        String[] groupsTitle=new String[3];
+        String[] groupsTitle=new String[4];
         groupsTitle[0]="پزشکی";
         groupsTitle[1]="مهندسی پزشکی";
         groupsTitle[2]="English title";
+        groupsTitle[3]=getString(R.string.filter_all);
         return groupsTitle;
     }
 
     private String[] createListOfSubGroupsOfAGroup(){
-        String[] subGroupTitle=new String[2];
+        String[] subGroupTitle=new String[3];
         subGroupTitle[0]="فیزیولوژی";
         subGroupTitle[1]="دهان و دندان";
+        subGroupTitle[2]=getString(R.string.filter_all);
         return subGroupTitle;
     }
 
     private String[] createListOfCourseOfSubGroup(){
-        String[] courseTitle=new String[2];
+        String[] courseTitle=new String[3];
         courseTitle[0]="زبان";
         courseTitle[1]="دندان جلو";
+        courseTitle[2]=getString(R.string.filter_all);
         return courseTitle;
     }
 
     private ArrayAdapter<String> setSpinnerGroupFilter(){
-        String[] GroupTitle = {getString(R.string.m_filter_group),"پزشکی","مهندسی پزشکی","English Title"};
+        String[] GroupTitle = {"پزشکی","مهندسی پزشکی","English Title"};
         ArrayAdapter<String> a =new ArrayAdapter<>(context,android.R.layout.simple_spinner_item, GroupTitle);
         a.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         return a;
     }
     private ArrayAdapter<String> setSpinnerPriorityFilter(){
-        String[] GroupTitle = {getString(R.string.m_filter_priority),getString(R.string.m_hard),getString(R.string.m_favourite)};
+        String[] GroupTitle = {getString(R.string.m_hard),getString(R.string.m_favourite)};
         ArrayAdapter<String> a =new ArrayAdapter<>(context,android.R.layout.simple_spinner_item, GroupTitle);
         a.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         return a;

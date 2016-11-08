@@ -244,4 +244,6 @@
 
     //Edit Question Activity
     <string name="edit_question_page_title">ویرایش سوال</string>
+    //Filter
+    <string name="filter_all">همه</string>
 </resources>

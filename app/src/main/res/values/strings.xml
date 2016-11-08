@@ -250,4 +250,7 @@
 
     //Edit Question Activity
     <string name="edit_question_page_title">Edit Question</string>
+
+    //Filter
+    <string name="filter_all">all</string>
 </resources>
