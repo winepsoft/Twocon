@@ -58,7 +58,6 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/level_status_ready"
                         android:id="@+id/txt_level_status"
                         android:gravity="center_vertical|center_horizontal" />
                 </LinearLayout>
