@@ -2,6 +2,7 @@ package winep.ir.twocon;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Point;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -12,6 +13,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -41,9 +43,9 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         context=this;
+        displayWindow();
         setContentView(R.layout.activity_main);
         StaticParameters.getInstance().mainActivityContext=this;
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         setTitle(getString(R.string.app_name));
@@ -74,8 +76,19 @@ public class MainActivity extends AppCompatActivity
     }
 
 
+    private void displayWindow() {
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
+            display.getSize(size);
+            StaticParameters.getInstance().screenWidth=size.x;
+            StaticParameters.getInstance().screenHeight =size.y;
+        }
+    }
 
-   private void setupViewPager() {
+
+
+        private void setupViewPager() {
 
        if (Utilities.getInstance().isRTL()) {
            // The view has LTR layout

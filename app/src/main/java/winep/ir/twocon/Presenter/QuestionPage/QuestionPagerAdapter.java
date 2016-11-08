@@ -17,6 +17,7 @@ import android.view.animation.LinearInterpolator;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -85,7 +86,7 @@ public class QuestionPagerAdapter  extends PagerAdapter {
         final LinearLayout layoutButtonKnowStatus=(LinearLayout)viewLayout.findViewById(R.id.layout_button_know_status);
         layoutButtonKnowStatus.setVisibility(View.GONE);
         final boolean[] showAnswerCartStatus = {false};
-
+        final ScrollView scrollView=(ScrollView)viewLayout.findViewById(R.id.scroll_view_question_activity);
 
 
         final TextView txtPleaseTouch=(TextView)viewLayout.findViewById(R.id.txt_please_touch);
@@ -213,6 +214,7 @@ public class QuestionPagerAdapter  extends PagerAdapter {
                     Utilities.getInstance().animateFAB(activity, false, btnAnswerDescription);
                     layoutQuestionDescription.setVisibility(View.VISIBLE);
                     questionDescriptionShowStatus[0] =!questionDescriptionShowStatus[0];
+
                 }
                 else if (questionDescriptionShowStatus[0]){
                     Utilities.getInstance().animateFAB(activity, true, btnAnswerDescription);
