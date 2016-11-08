@@ -11,7 +11,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.rey.material.widget.Spinner;
@@ -35,8 +34,8 @@ public class LevelSettingActivity extends AppCompatActivity {
     private DiscreteSeekBar seekBar;
     private ArrayList<LevelSetting> allLevelsInformation;
     private Context context;
-    private EditText eTextDefaultDay;
-    private EditText eTextDefaultHour;
+   // private EditText eTextDefaultDay;
+    //private EditText eTextDefaultHour;
     private Spinner spinnerSelectAnimation;
     private TextView txtLevelNumberTitle;
 
@@ -51,10 +50,10 @@ public class LevelSettingActivity extends AppCompatActivity {
         context=this;
         allLevelsInformation=new ArrayList<>();
 
-        eTextDefaultDay =(EditText) findViewById(R.id.edit_text_set_day_default);
+        /*eTextDefaultDay =(EditText) findViewById(R.id.edit_text_set_day_default);
         Utilities.getInstance().setFontEditTextView(context, eTextDefaultDay);
         eTextDefaultHour =(EditText) findViewById(R.id.edit_text_set_hour_default);
-        Utilities.getInstance().setFontEditTextView(context, eTextDefaultHour);
+        Utilities.getInstance().setFontEditTextView(context, eTextDefaultHour);*/
 
         spinnerSelectAnimation=(Spinner)findViewById(R.id.spinner_select_animation);
         spinnerSelectAnimation.setAdapter(setSpinnerAnimationType());
@@ -93,9 +92,7 @@ public class LevelSettingActivity extends AppCompatActivity {
                 int newCounter=discreteSeekBar.getProgress();
                 if(newCounter>lastCounter){
                     for(int j=0;j<newCounter-lastCounter;j++){
-                        LevelSetting newLevel=new LevelSetting(adapter.getItemCount()+2,
-                                Integer.parseInt(eTextDefaultDay.getText().toString()),
-                                Integer.parseInt(eTextDefaultHour.getText().toString()));
+                        LevelSetting newLevel=new LevelSetting(adapter.getItemCount()+2,0,0);
                         adapter.addNewItem(newLevel);
                     }
 
@@ -145,21 +142,21 @@ public class LevelSettingActivity extends AppCompatActivity {
     }
 
     private ArrayList<LevelSetting> createLevel(){
-        LevelSetting levelSetting1=new LevelSetting(1,4,2);
+        LevelSetting levelSetting1=new LevelSetting(1,0,0);
         allLevelsInformation.add(levelSetting1);
-        LevelSetting levelSetting2=new LevelSetting(2,3,2);
+        LevelSetting levelSetting2=new LevelSetting(2,0,6);
         allLevelsInformation.add(levelSetting2);
-        LevelSetting levelSetting3=new LevelSetting(3,5,2);
+        LevelSetting levelSetting3=new LevelSetting(3,0,12);
         allLevelsInformation.add(levelSetting3);
-        LevelSetting levelSetting4=new LevelSetting(4,3,6);
+        LevelSetting levelSetting4=new LevelSetting(4,1,0);
         allLevelsInformation.add(levelSetting4);
-        LevelSetting levelSetting5=new LevelSetting(5,2,2);
+        LevelSetting levelSetting5=new LevelSetting(5,2,0);
         allLevelsInformation.add(levelSetting5);
-        LevelSetting levelSetting6=new LevelSetting(6,1,3);
+        LevelSetting levelSetting6=new LevelSetting(6,4,0);
         allLevelsInformation.add(levelSetting6);
-        LevelSetting levelSetting7=new LevelSetting(7,3,2);
+        LevelSetting levelSetting7=new LevelSetting(7,8,0);
         allLevelsInformation.add(levelSetting7);
-        LevelSetting levelSetting8=new LevelSetting(8,2,2);
+        LevelSetting levelSetting8=new LevelSetting(8,14,0);
         allLevelsInformation.add(levelSetting8);
         return allLevelsInformation;
     }
