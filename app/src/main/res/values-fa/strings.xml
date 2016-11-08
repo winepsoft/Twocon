@@ -31,7 +31,7 @@
     <string name="user_profile">پنل کاربری</string>
     <string name="my_activities">فعالیت های من</string>
     <string name="shared_flashcard">اشتراک فلش کارت</string>
-    <string name="add_card_from_excel">اضافه کردن فلش کارت از اکسل</string>
+    <string name="add_card_from_excel">اضافه کردن فلش کارت از Excel</string>
     <string name="help">راهنما</string>
     <string name="setting_app">تنظیمات نرم افزار</string>
     <string name="ticket">تیکت</string>
@@ -181,7 +181,7 @@
     <string name="level_total">کل</string>
     <string name="level_add_new_question">اضافه کردن سوال جدید</string>
     <string name="level_add_free_question">اضافه کردن لیست سوالات آماده/مجانی</string>
-    <string name="level_add_question_from_excel">اضافه کردن لیست سوالات از فایل اکسل</string>
+    <string name="level_add_question_from_excel">اضافه کردن لیست سوال از فایل Excel</string>
     <string name="level_view_question_list">مشاهده لیست سوالات درس</string>
     <string name="level_share_course">اشتراک درس</string>
     <string name="level_review_questions">مرور سوالات مراحل </string>
