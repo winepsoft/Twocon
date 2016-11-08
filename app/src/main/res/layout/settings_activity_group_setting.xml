@@ -152,6 +152,33 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:id="@+id/txt_settings_color_success_learn_item"
+                        android:text="@string/settings_group_color_success_learn_item"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"/>
+                    <com.getbase.floatingactionbutton.FloatingActionButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:fab_colorNormal="@color/colorPrimary"
+                        app:fab_colorPressed="@color/colorPrimary"
+                        app:fab_size="mini"
+                        android:id="@+id/btn_settings_color_success_learn_item"
+                        android:layout_alignParentTop="true"
+                        android:layout_toEndOf="@+id/txt_settings_color_success_learn_item"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="start">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:id="@+id/txt_settings_level_number"
                         android:text="@string/settings_level_number_title"
                         android:layout_centerVertical="true"

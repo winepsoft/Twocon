@@ -69,6 +69,7 @@ public class SettingsActivity extends AppCompatActivity {
     private FloatingActionButton btnColor8;
     private FloatingActionButton btnColor9;
     private FloatingActionButton btnColor10;
+    private FloatingActionButton btnColorSuccessLearnCart;
     private TextView txtFontSizeShow;
     private DiscreteSeekBar seekBarFontSize;
 
@@ -193,12 +194,21 @@ public class SettingsActivity extends AppCompatActivity {
         btnColor8=(FloatingActionButton)findViewById(R.id.btn_settings_group_color_8);
         btnColor9=(FloatingActionButton)findViewById(R.id.btn_settings_group_color_9);
         btnColor10=(FloatingActionButton)findViewById(R.id.btn_settings_group_color_10);
+        btnColorSuccessLearnCart=(FloatingActionButton)findViewById(R.id.btn_settings_color_success_learn_item);
 
         btnSetLevelNumber.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context, LevelSettingActivity.class);
                 startActivityForResult(intent,STATIC_INTEGER_VALUE);
+            }
+        });
+
+        btnColorSuccessLearnCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showColorPickerDialog(btnColorSuccessLearnCart);
+
             }
         });
 
