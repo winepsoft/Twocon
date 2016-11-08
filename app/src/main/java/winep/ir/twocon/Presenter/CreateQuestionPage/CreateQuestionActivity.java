@@ -8,10 +8,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.github.aakira.expandablelayout.ExpandableLayout;
 import com.github.aakira.expandablelayout.ExpandableLayoutListener;
 import com.rey.material.widget.EditText;
@@ -39,7 +39,7 @@ public class CreateQuestionActivity extends AppCompatActivity {
     private EditText eTextAddExample;
     private ExpandableLayout layoutDescription;
     private boolean showDescriptionCartStatus = false;
-    private FloatingActionButton btnShowDescriptionCart;
+    private ImageButton btnShowDescriptionCart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,8 +55,8 @@ public class CreateQuestionActivity extends AppCompatActivity {
         spinnerCourse = (Spinner) findViewById(R.id.spinner_select_course);
         layoutDescription = (ExpandableLayout) findViewById(R.id.layout_description_create_question);
         //layoutDescription.setVisibility(View.GONE);
-        btnShowDescriptionCart = (FloatingActionButton) findViewById(R.id.btn_show_description_card_view);
-        btnShowDescriptionCart.setSize(FloatingActionButton.SIZE_MINI);
+        btnShowDescriptionCart = (ImageButton) findViewById(R.id.btn_show_description_card_view);
+        //btnShowDescriptionCart.setSize(FloatingActionButton.SIZE_MINI);
         txtQuestionNumber = (TextView) findViewById(R.id.txt_question_number);
         Utilities.getInstance().setFontTextView(context, txtQuestionNumber);
         eTextNewQuestionTitle=(EditText)findViewById(R.id.txt_new_question_title);
@@ -233,8 +233,6 @@ public class CreateQuestionActivity extends AppCompatActivity {
             finish();
         return super.onOptionsItemSelected(item);
     }
-
-
 
     @Override
     public void onBackPressed() {

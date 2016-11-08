@@ -19,16 +19,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-            <com.getbase.floatingactionbutton.FloatingActionButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:fab_size="mini"
-                app:fab_colorNormal="@color/white"
-                app:fab_colorPressed="@color/white"
+            <ImageButton
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:src="@mipmap/expand_gray_deep"
                 android:layout_centerVertical="true"
                 android:layout_alignParentStart="false"
-                android:background="@null"
+                android:background="@drawable/circle_white"
                 android:id="@+id/btn_show_description_card_view"/>
 
             <LinearLayout
