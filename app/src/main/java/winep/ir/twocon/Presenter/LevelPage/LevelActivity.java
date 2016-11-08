@@ -49,7 +49,7 @@ public class LevelActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         courseTitle=getIntent().getExtras().get("courseName").toString();
-        setTitle(getString(R.string.course)+" "+courseTitle);
+        setTitle(getString(R.string.level_title_page)+" "+courseTitle);
         context=this;
         allLevels=new ArrayList<Level>();
 

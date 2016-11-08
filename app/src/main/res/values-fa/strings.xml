@@ -176,6 +176,7 @@
 
 
     //level page
+    <string name="level_title_page">مراحل درس</string>
     <string name="level_ready">آماده یادگیری</string>
     <string name="level_total">کل</string>
     <string name="level_add_new_question">اضافه کردن سوال جدید</string>
