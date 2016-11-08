@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -53,8 +54,6 @@ public class LevelRecyclerViewAdapter extends RecyclerView.Adapter<LevelRecycler
         else if (allLevel.get(position).getLevelStatus()==2) {
             Utilities.getInstance().customView(holder.levelNumber, Color.GRAY, Color.GRAY);
             holder.itemView.setClickable(false);
-            holder.levelStatus.setText(context.getString(R.string.level_status_empty));
-
         }
 
         holder.levelTotalQuestionNumber.setText(Integer.toString(allLevel.get(position).getLevelTotalQuestion()));
@@ -66,6 +65,14 @@ public class LevelRecyclerViewAdapter extends RecyclerView.Adapter<LevelRecycler
                 if (allLevel.get(position).getLevelStatus()==0){
                     Intent intent=new Intent(context, QuestionActivity.class);
                     context.startActivity(intent);
+                }
+                else if (allLevel.get(position).getLevelStatus()==1) {
+                    Toast.makeText(context,"6"+context.getString(R.string.level_status_days)+"12"+context.getString(R.string.level_status_hours),Toast.LENGTH_SHORT).show();
+
+                }
+                else if (allLevel.get(position).getLevelStatus()==2) {
+                    Toast.makeText(context,context.getString(R.string.level_status_empty),Toast.LENGTH_SHORT).show();
+
                 }
             }
         });
