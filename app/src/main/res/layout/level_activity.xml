@@ -86,6 +86,24 @@
                 android:src="@mipmap/question"
                 fab:fab_title="@string/question"
                 fab:fab_size="mini"/>
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/level_fab_add_free_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="@color/fab_color"
+            app:fab_colorPressed="@color/fab_color"
+            android:src="@mipmap/free"
+            fab:fab_title="@string/level_add_free_question"
+            fab:fab_size="mini"/>
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/level_fab_add_question_from_excel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="@color/fab_color"
+            app:fab_colorPressed="@color/fab_color"
+            android:src="@mipmap/excle"
+            fab:fab_title="@string/level_add_question_from_excel"
+            fab:fab_size="mini"/>
         </com.getbase.floatingactionbutton.FloatingActionsMenu>
     </FrameLayout>
 </android.support.design.widget.CoordinatorLayout>

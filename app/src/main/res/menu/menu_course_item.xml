@@ -14,6 +14,22 @@
         android:title="@string/review_question"
         app:showAsAction="always" />
     <item
+        android:id="@+id/action_level_view_question_list"
+        android:title="@string/level_view_question_list"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/action_level_view_hard_questions"
+        android:title="@string/level_view_hard_questions"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/action_level_view_favourite"
+        android:title="@string/level_view_favourite"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/action_level_exam"
+        android:title="@string/level_exam"
+        app:showAsAction="always"/>
+    <item
         android:id="@+id/delete"
         android:title="@string/delete"
         app:showAsAction="always" />
