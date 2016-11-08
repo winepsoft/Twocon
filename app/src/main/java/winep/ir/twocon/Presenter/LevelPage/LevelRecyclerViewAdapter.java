@@ -3,6 +3,7 @@ package winep.ir.twocon.Presenter.LevelPage;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,7 +40,7 @@ public class LevelRecyclerViewAdapter extends RecyclerView.Adapter<LevelRecycler
     public void onBindViewHolder(MyViewHolder holder, final int position) {
         holder.levelNumber.setText(context.getString(R.string.level_number)+""+Integer.toString(allLevel.get(position).getLevelNumber()));
         if (allLevel.get(position).getLevelStatus()==0) {
-            Utilities.getInstance().customView(holder.levelNumber, Color.GREEN, Color.GREEN);
+            Utilities.getInstance().customView(holder.levelNumber, ContextCompat.getColor(context,R.color.green), ContextCompat.getColor(context,R.color.green));
             holder.levelStatus.setText(context.getString(R.string.level_status_ready));
         }
 
