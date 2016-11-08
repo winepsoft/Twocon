@@ -72,22 +72,6 @@ public class CourseRecyclerViewAdapter extends RecyclerView.Adapter<CourseRecycl
         holder.courseName.setText(allCourses.get(position).getTitle());
         holder.courseDescription.setText(allCourses.get(position).getDescription());
 
-        // set background item when drag
-        final int dragState = holder.getDragStateFlags();
-        if (((dragState & Draggable.STATE_FLAG_IS_UPDATED) != 0)) {
-
-            if ((dragState & Draggable.STATE_FLAG_IS_ACTIVE) != 0) {
-                Context c = holder.itemView.getContext();
-                d = new ColorDrawable(ContextCompat.getColor(c, R.color.item_foreground_selected_color));
-
-            } else if ((dragState & Draggable.STATE_FLAG_DRAGGING) != 0) {
-                d = null;
-            } else {
-                d = null;
-            }
-            ((FrameLayout) holder.colorSquare).setForeground(d);
-        }
-
         holder.courseSetting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -138,7 +122,6 @@ public class CourseRecyclerViewAdapter extends RecyclerView.Adapter<CourseRecycl
                 popup.show();
             }
         });
-
         //Change color item when click
         if (allCourses.get(position).isSelected()) {
             Context c = holder.itemView.getContext();
@@ -147,6 +130,23 @@ public class CourseRecyclerViewAdapter extends RecyclerView.Adapter<CourseRecycl
             d = null;
         }
         ((FrameLayout) holder.colorSquare).setForeground(d);
+
+        // set background item when drag
+        final int dragState = holder.getDragStateFlags();
+        if (((dragState & Draggable.STATE_FLAG_IS_UPDATED) != 0)) {
+
+            if ((dragState & Draggable.STATE_FLAG_IS_ACTIVE) != 0) {
+                Context c = holder.itemView.getContext();
+                d = new ColorDrawable(ContextCompat.getColor(c, R.color.item_foreground_selected_color));
+
+            } else if ((dragState & Draggable.STATE_FLAG_DRAGGING) != 0) {
+                d = null;
+            } else {
+                d = null;
+            }
+            ((FrameLayout) holder.colorSquare).setForeground(d);
+        }
+
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
