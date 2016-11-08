@@ -14,12 +14,12 @@ import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.rey.material.widget.Button;
 
 import java.util.ArrayList;
@@ -68,14 +68,14 @@ public class QuestionPagerAdapter  extends PagerAdapter {
         Utilities.getInstance().setFontTextView(activity,txtQuestionNumber);
         final LinearLayout layoutQuestionDescription=(LinearLayout)viewLayout.findViewById(R.id.layout_description);
         layoutQuestionDescription.setVisibility(View.GONE);
-        final FloatingActionButton fabAnswerVoice=(FloatingActionButton)viewLayout.findViewById(R.id.answer_voice);
-        fabAnswerVoice.setSize(FloatingActionButton.SIZE_MINI);
-        final FloatingActionButton fabQuestionMark=(FloatingActionButton)viewLayout.findViewById(R.id.question_mark);
-        fabQuestionMark.setSize(FloatingActionButton.SIZE_MINI);
-        final FloatingActionButton fabAnswerDescription=(FloatingActionButton)viewLayout.findViewById(R.id.answer_description);
-        fabAnswerDescription.setSize(FloatingActionButton.SIZE_MINI);
-        final FloatingActionButton fabQuestionPlayVoice=(FloatingActionButton)viewLayout.findViewById(R.id.question_play_voice);
-        fabQuestionPlayVoice.setSize(FloatingActionButton.SIZE_MINI);
+        final ImageButton btnAnswerVoice=(ImageButton) viewLayout.findViewById(R.id.answer_voice);
+        //fabAnswerVoice.setSize(FloatingActionButton.SIZE_MINI);
+        final ImageButton btnQuestionMark=(ImageButton) viewLayout.findViewById(R.id.question_mark);
+        //fabQuestionMark.setSize(FloatingActionButton.SIZE_MINI);
+        final ImageButton btnAnswerDescription=(ImageButton)viewLayout.findViewById(R.id.answer_description);
+        //btnAnswerDescription.setSize(FloatingActionButton.SIZE_MINI);
+        final ImageButton btnQuestionPlayVoice=(ImageButton)viewLayout.findViewById(R.id.question_play_voice);
+        //fabQuestionPlayVoice.setSize(FloatingActionButton.SIZE_MINI);
         final Button btnKnowNumber=(Button)viewLayout.findViewById(R.id.btn_know_number);
         Utilities.getInstance().setFontButtonView(activity,btnKnowNumber);
         final Button btnNoKnowNumber=(Button)viewLayout.findViewById(R.id.btn_no_know_number);
@@ -206,16 +206,16 @@ public class QuestionPagerAdapter  extends PagerAdapter {
 
 
         final boolean[] questionDescriptionShowStatus = {false};
-        fabAnswerDescription.setOnClickListener(new View.OnClickListener() {
+        btnAnswerDescription.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (!questionDescriptionShowStatus[0]){
-                    Utilities.getInstance().animateFAB(activity, false, fabAnswerDescription);
+                    Utilities.getInstance().animateFAB(activity, false, btnAnswerDescription);
                     layoutQuestionDescription.setVisibility(View.VISIBLE);
                     questionDescriptionShowStatus[0] =!questionDescriptionShowStatus[0];
                 }
                 else if (questionDescriptionShowStatus[0]){
-                    Utilities.getInstance().animateFAB(activity, true, fabAnswerDescription);
+                    Utilities.getInstance().animateFAB(activity, true, btnAnswerDescription);
                     layoutQuestionDescription.setVisibility(View.GONE);
                     questionDescriptionShowStatus[0] =!questionDescriptionShowStatus[0];
                 }

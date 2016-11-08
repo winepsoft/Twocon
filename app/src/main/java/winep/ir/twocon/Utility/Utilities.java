@@ -11,6 +11,7 @@ import android.os.Build;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.getbase.floatingactionbutton.FloatingActionButton;
@@ -162,6 +163,21 @@ public class Utilities {
         } else {
 
             fab.startAnimation(rotate_forward);
+
+        }
+    }
+
+    public void animateFAB(Context context,boolean isFabOpen,ImageButton buttun){
+
+        Animation rotate_forward = AnimationUtils.loadAnimation(context.getApplicationContext(), R.anim.rotate_forward);
+        Animation rotate_backward = AnimationUtils.loadAnimation(context.getApplicationContext(),R.anim.rotate_backward);
+        if(isFabOpen){
+
+            buttun.startAnimation(rotate_backward);
+
+        } else {
+
+            buttun.startAnimation(rotate_forward);
 
         }
     }
