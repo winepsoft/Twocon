@@ -45,6 +45,8 @@
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".Presenter.QuestionPage.EditQuestionActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".Presenter.QuestionPage.ShowImageActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
 
     </application>
 </manifest>

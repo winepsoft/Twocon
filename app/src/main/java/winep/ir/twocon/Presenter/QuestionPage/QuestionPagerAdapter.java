@@ -71,6 +71,7 @@ public class QuestionPagerAdapter  extends PagerAdapter {
         layoutQuestionDescription.setVisibility(View.GONE);
         final ImageButton btnAnswerVoice=(ImageButton) viewLayout.findViewById(R.id.answer_voice);
         //fabAnswerVoice.setSize(FloatingActionButton.SIZE_MINI);
+        final ImageButton btnAnswerPicture=(ImageButton)viewLayout.findViewById(R.id.answer_picture);
         final ImageButton btnQuestionMark=(ImageButton) viewLayout.findViewById(R.id.question_mark);
         //fabQuestionMark.setSize(FloatingActionButton.SIZE_MINI);
         final ImageButton btnAnswerDescription=(ImageButton)viewLayout.findViewById(R.id.answer_description);
@@ -135,9 +136,6 @@ public class QuestionPagerAdapter  extends PagerAdapter {
                     layoutButtonKnowStatus.setVisibility(View.VISIBLE);
                     showAnswerCartStatus[0] =true;
                 }
-
-
-
                 /*YoYo.with(Techniques.FlipOutX)
                         .withListener(new Animator.AnimatorListener() {
                             @Override
@@ -221,6 +219,15 @@ public class QuestionPagerAdapter  extends PagerAdapter {
                     layoutQuestionDescription.setVisibility(View.GONE);
                     questionDescriptionShowStatus[0] =!questionDescriptionShowStatus[0];
                 }
+            }
+        });
+
+        btnAnswerPicture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(activity,ShowImageActivity.class);
+                activity.startActivity(intent);
+
             }
         });
 

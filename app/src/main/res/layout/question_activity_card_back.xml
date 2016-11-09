@@ -57,6 +57,15 @@
                         android:layout_width="45dp"
                         android:layout_height="45dp"
                         android:gravity="center_vertical|center_horizontal"
+                        android:id="@+id/answer_picture"
+                        android:src="@mipmap/picture"
+                        android:layout_toStartOf="@+id/answer_voice"
+                        android:background="@drawable/circle_purple"
+                        android:layout_centerVertical="true" />
+                    <ImageButton
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:gravity="center_vertical|center_horizontal"
                         android:id="@+id/answer_voice"
                         android:src="@mipmap/play_voice"
                         android:layout_toStartOf="@+id/question_mark"
