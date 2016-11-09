@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
@@ -11,10 +12,12 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.h6ah4i.android.widget.advrecyclerview.draggable.DraggableItemAdapter;
 import com.h6ah4i.android.widget.advrecyclerview.draggable.DraggableItemConstants;
@@ -24,6 +27,7 @@ import com.h6ah4i.android.widget.advrecyclerview.utils.AbstractDraggableItemView
 import java.util.ArrayList;
 
 import winep.ir.twocon.DataModel.Course;
+import winep.ir.twocon.Presenter.ExamPage.ExamActivity;
 import winep.ir.twocon.Presenter.LevelPage.LevelActivity;
 import winep.ir.twocon.Presenter.StatisticsGroupPage.StatisticsGroupActivity;
 import winep.ir.twocon.R;
@@ -118,6 +122,26 @@ public class CourseRecyclerViewAdapter extends RecyclerView.Adapter<CourseRecycl
                         }
                         else if(item.getItemId()==R.id.color){
                             Utilities.getInstance().showColorPickerDialog(context);
+                        }
+                        else if(item.getItemId()==R.id.action_course_exam){
+                            boolean wrapInScrollView = true;
+                            new MaterialDialog.Builder(context)
+                                    .customView(R.layout.exam_dialog, wrapInScrollView)
+                                    .positiveText(R.string.save)
+                                    .positiveColor(ContextCompat.getColor(context, R.color.dialog_save_color))
+                                    .negativeText(R.string.cancel)
+                                    .negativeColor(ContextCompat.getColor(context, R.color.dialog_cancel_color))
+                                    .typeface(font.getRTLFontNameForDialog(),null)
+                                    .onPositive(new MaterialDialog.SingleButtonCallback() {
+                                        @Override
+                                        public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                                            EditText editTextExamNumber=(EditText)dialog.findViewById(R.id.edit_text_exam_number);
+                                            Intent intent=new Intent(context, ExamActivity.class);
+                                            intent.putExtra("examNumber",editTextExamNumber.getText());
+                                            context.startActivity(intent);
+                                        }
+                                    })
+                                    .show();
                         }
                         return true;
                     }

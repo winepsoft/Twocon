@@ -106,6 +106,7 @@
     <string name="next">next</string>
     <string name="previous">previous</string>
     <string name="end">end</string>
+    <string name="exam_dialog_title">The number of test questions</string>
 
     //question page
     <string name="question_activity_title">See Question</string>

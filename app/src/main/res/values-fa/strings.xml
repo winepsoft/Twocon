@@ -109,6 +109,8 @@
     <string name="next">بعدی</string>
     <string name="previous">قبلی</string>
     <string name="end">پایان</string>
+    <string name="exam_dialog_title">تعدا سوالات آزمون</string>
+
 
     //question page
     <string name="question_activity_title">مشاهده سوال</string>

@@ -26,7 +26,7 @@
         android:title="@string/level_view_favourite"
         app:showAsAction="always"/>
     <item
-        android:id="@+id/action_level_exam"
+        android:id="@+id/action_course_exam"
         android:title="@string/level_exam"
         app:showAsAction="always"/>
     <item
