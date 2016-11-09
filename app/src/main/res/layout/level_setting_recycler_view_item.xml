@@ -74,9 +74,7 @@
                 android:layout_gravity="center"
                 android:id="@+id/editText_set_hour"
                 android:textAlignment="center"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true">
+                android:textAppearance="?android:attr/textAppearanceMedium">
             </EditText>
             <TextView
                 android:layout_width="0dp"
