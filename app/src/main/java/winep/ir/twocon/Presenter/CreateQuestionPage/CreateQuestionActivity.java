@@ -3,13 +3,15 @@ package winep.ir.twocon.Presenter.CreateQuestionPage;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
-import android.widget.ScrollView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.github.aakira.expandablelayout.ExpandableLayout;
@@ -17,7 +19,10 @@ import com.github.aakira.expandablelayout.ExpandableLayoutListener;
 import com.rey.material.widget.EditText;
 import com.rey.material.widget.Spinner;
 
+import java.util.ArrayList;
+
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+import winep.ir.twocon.DataModel.MediaItem;
 import winep.ir.twocon.R;
 import winep.ir.twocon.Utility.Utilities;
 
@@ -40,6 +45,12 @@ public class CreateQuestionActivity extends AppCompatActivity {
     private ExpandableLayout layoutDescription;
     private boolean showDescriptionCartStatus = false;
     private ImageButton btnShowDescriptionCart;
+    private LinearLayout btnAddPicture;
+    private LinearLayout btnAddVoice;
+
+    private RecyclerView recyclerViewAddmedia;
+    private AddNewMediaRecyclerViewAdapter addmediaAdapter;
+    private ArrayList<MediaItem> allNewMedias;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +82,35 @@ public class CreateQuestionActivity extends AppCompatActivity {
         Utilities.getInstance().setFontEditTextView(context,eTextAddAntonym);
         eTextAddExample=(EditText)findViewById(R.id.txt_add_example);
         Utilities.getInstance().setFontEditTextView(context,eTextAddExample);
-        final ScrollView scrollViewDescriptionPart=(ScrollView)findViewById(R.id.scroll_description_part);
+        //Media
+        allNewMedias=new ArrayList<>();
+        recyclerViewAddmedia=(RecyclerView)findViewById(R.id.recycler_view_add_new_media);
+        recyclerViewAddmedia.setLayoutManager(new LinearLayoutManager(context));
+        addmediaAdapter=new AddNewMediaRecyclerViewAdapter(context,allNewMedias);
+        recyclerViewAddmedia.setAdapter(addmediaAdapter);
+        btnAddPicture=(LinearLayout)findViewById(R.id.add_picture);
+        btnAddVoice=(LinearLayout)findViewById(R.id.add_voice);
+        btnAddPicture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MediaItem newMedia=new MediaItem();
+                newMedia.setMediaItemName("Picture");
+                newMedia.setMediaItemType(0);
+                addmediaAdapter.addNewMedia(newMedia);
+
+            }
+        });
+        btnAddVoice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MediaItem newMedia=new MediaItem();
+                newMedia.setMediaItemName("Voice");
+                newMedia.setMediaItemType(1);
+                addmediaAdapter.addNewMedia(newMedia);
+
+            }
+        });
+
 
         String[] GroupTitle = {"پزشکی", "مهندسی پزشکی", "English Title"};
         ArrayAdapter<String> a = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, GroupTitle);

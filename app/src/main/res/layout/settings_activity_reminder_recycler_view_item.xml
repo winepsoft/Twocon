@@ -13,9 +13,7 @@
         android:layout_centerVertical="true"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:layout_alignParentStart="true"
-        android:layout_toLeftOf="@+id/editText_settings_level_number"
-        android:layout_toStartOf="@+id/editText_settings_level_number"/>
+        android:layout_alignParentStart="true"/>
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
