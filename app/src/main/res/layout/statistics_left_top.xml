@@ -54,7 +54,6 @@
                     android:id="@+id/txt_value_left_top"
                     android:gravity="center_vertical|center_horizontal"
                     android:textColor="@color/white"
-                    android:textSize="10sp"
                     android:layout_centerVertical="true"
                     android:layout_centerHorizontal="true" />
             </RelativeLayout>

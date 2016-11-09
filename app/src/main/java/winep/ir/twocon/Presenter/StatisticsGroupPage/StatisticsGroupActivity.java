@@ -6,6 +6,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -86,10 +87,14 @@ public class StatisticsGroupActivity extends AppCompatActivity {
         txtLeftTopValue =(TextView)findViewById(R.id.txt_value_left_top);
         Utilities.getInstance().setFontTextView(context, txtLeftTopValue);
         txtLeftTopValue.setText("95/07/07");
+        txtLeftTopValue.setTextSize(TypedValue.COMPLEX_UNIT_SP,8);
+
 
         txtLeftBottomValue =(TextView)findViewById(R.id.txt_value_left_bottom);
         Utilities.getInstance().setFontTextView(context, txtLeftBottomValue);
         txtLeftBottomValue.setText("95/08/10");
+        txtLeftBottomValue.setTextSize(TypedValue.COMPLEX_UNIT_SP,8);
+
 
         txtRightTopValue =(TextView)findViewById(R.id.txt_value_right_top);
         Utilities.getInstance().setFontTextView(context, txtRightTopValue);
