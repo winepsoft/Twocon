@@ -64,7 +64,7 @@ public class MemoryBankFragment extends Fragment implements
         //spinnerSelectGroupFilter=(Spinner)mainView.findViewById(R.id.spinner_select_group_filter);
         //spinnerSelectGroupFilter.setAdapter(setSpinnerGroupFilter());
         btnSelectGroupFilter=(Button)mainView.findViewById(R.id.btn_select_group_filter);
-        btnSelectGroupFilter.setText("پزشکی");
+        btnSelectGroupFilter.setText(getString(R.string.filter_all));
         btnSelectGroupFilter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -144,32 +144,51 @@ public class MemoryBankFragment extends Fragment implements
     }
 
     private void showDialogFilterOnGroup(){
+        final CharSequence[] filterSelectedTitle = {""};
         new MaterialDialog.Builder(context)
                 .title(R.string.group)
                 .items(createListOfGroupsTitle())
                 .itemsCallback(new MaterialDialog.ListCallback() {
                     @Override
                     public void onSelection(MaterialDialog dialog, View view, int which, CharSequence text) {
-                        new MaterialDialog.Builder(context)
-                                .title(R.string.sub_group)
-                                .items(createListOfSubGroupsOfAGroup())
-                                .itemsCallback(new MaterialDialog.ListCallback() {
-                                    @Override
-                                    public void onSelection(MaterialDialog dialog, View view, int which, CharSequence text) {
-                                        new MaterialDialog.Builder(context)
-                                                .title(R.string.course)
-                                                .items(createListOfCourseOfSubGroup())
-                                                .itemsCallback(new MaterialDialog.ListCallback() {
-                                                    @Override
-                                                    public void onSelection(MaterialDialog dialog, View itemView, int position, CharSequence text) {
-                                                        btnSelectGroupFilter.setText(text);
-                                                    }
-                                                })
-                                                .show();
+                        if (text.equals(getString(R.string.filter_all))) {
+                            btnSelectGroupFilter.setText(text);
+                            dialog.dismiss();
+                        }
+                        else {
+                            filterSelectedTitle[0] =text;
+                            new MaterialDialog.Builder(context)
+                                    .title(R.string.sub_group)
+                                    .items(createListOfSubGroupsOfAGroup())
+                                    .itemsCallback(new MaterialDialog.ListCallback() {
+                                        @Override
+                                        public void onSelection(MaterialDialog dialog, View view, int which, CharSequence text) {
+                                            if (text.equals(getString(R.string.filter_all))) {
+                                               btnSelectGroupFilter.setText(filterSelectedTitle[0]);
+                                                dialog.dismiss();
+                                            }
+                                            else {
+                                                filterSelectedTitle[0] =text;
+                                                new MaterialDialog.Builder(context)
+                                                        .title(R.string.course)
+                                                        .items(createListOfCourseOfSubGroup())
+                                                        .itemsCallback(new MaterialDialog.ListCallback() {
+                                                            @Override
+                                                            public void onSelection(MaterialDialog dialog, View itemView, int position, CharSequence text) {
+                                                                if (text.equals(getString(R.string.filter_all)))
+                                                                    btnSelectGroupFilter.setText(filterSelectedTitle[0]);
+                                                                else
+                                                                    btnSelectGroupFilter.setText(text);
+                                                            }
+                                                        })
+                                                        .show();
+                                            }
 
-                                    }
-                                })
-                                .show();
+                                        }
+                                    })
+                                    .show();
+
+                        }
                     }
                 })
                 .show();
@@ -177,37 +196,31 @@ public class MemoryBankFragment extends Fragment implements
 
     private String[] createListOfGroupsTitle(){
         String[] groupsTitle=new String[4];
-        groupsTitle[0]="پزشکی";
-        groupsTitle[1]="مهندسی پزشکی";
-        groupsTitle[2]="English title";
-        groupsTitle[3]=getString(R.string.filter_all);
+        groupsTitle[0]=getString(R.string.filter_all);
+        groupsTitle[1]="پزشکی";
+        groupsTitle[2]="مهندسی پزشکی";
+        groupsTitle[3]="English title";
         return groupsTitle;
     }
 
     private String[] createListOfSubGroupsOfAGroup(){
         String[] subGroupTitle=new String[3];
-        subGroupTitle[0]="فیزیولوژی";
-        subGroupTitle[1]="دهان و دندان";
-        subGroupTitle[2]=getString(R.string.filter_all);
+        subGroupTitle[0]=getString(R.string.filter_all);
+        subGroupTitle[1]="فیزیولوژی";
+        subGroupTitle[2]="دهان و دندان";
         return subGroupTitle;
     }
 
     private String[] createListOfCourseOfSubGroup(){
         String[] courseTitle=new String[3];
-        courseTitle[0]="زبان";
-        courseTitle[1]="دندان جلو";
-        courseTitle[2]=getString(R.string.filter_all);
+        courseTitle[0]=getString(R.string.filter_all);
+        courseTitle[1]="زبان";
+        courseTitle[2]="دندان جلو";
         return courseTitle;
     }
 
-    private ArrayAdapter<String> setSpinnerGroupFilter(){
-        String[] GroupTitle = {"پزشکی","مهندسی پزشکی","English Title"};
-        ArrayAdapter<String> a =new ArrayAdapter<>(context,android.R.layout.simple_spinner_item, GroupTitle);
-        a.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        return a;
-    }
     private ArrayAdapter<String> setSpinnerPriorityFilter(){
-        String[] GroupTitle = {getString(R.string.m_hard),getString(R.string.m_favourite)};
+        String[] GroupTitle = {getString(R.string.filter_all),getString(R.string.m_hard),getString(R.string.m_favourite)};
         ArrayAdapter<String> a =new ArrayAdapter<>(context,android.R.layout.simple_spinner_item, GroupTitle);
         a.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         return a;
