@@ -70,8 +70,18 @@ public class ExamActivity extends AppCompatActivity {
             btnExamPreview.setVisibility(View.GONE);
             currentQuestion=1;
         }
-        else
+        if (allQuestionTest==1){
+            percent = (double) 1 / (double) allQuestionTest;
+            btnExamNext.setVisibility(View.GONE);
+            btnExamPreview.setVisibility(View.GONE);
+        }
+        if (allQuestionTest==0){
+            btnExamNext.setVisibility(View.GONE);
+            btnExamPreview.setVisibility(View.GONE);
             percent=0;
+
+
+        }
 
         progressBarExamProcess.setProgress((float)percent);
         progressBarExamProcess.setSecondaryProgress(allQuestionTest);
