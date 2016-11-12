@@ -48,7 +48,13 @@ public class LevelRecyclerViewAdapter extends RecyclerView.Adapter<LevelRecycler
         else if (allLevel.get(position).getLevelStatus()==1) {
             Utilities.getInstance().customView(holder.levelNumber, Color.RED, Color.RED);
             holder.itemView.setClickable(false);
-            holder.levelStatus.setText("6"+context.getString(R.string.level_status_days)+"12"+context.getString(R.string.level_status_hours));
+            holder.levelStatus.setText( "6"+
+                    context.getString(R.string.level_status_days)+
+                    " "+
+                    context.getString(R.string.and)+
+                    " "+
+                    "12"+
+                    context.getString(R.string.level_status_hours));
 
         }
         else if (allLevel.get(position).getLevelStatus()==2) {
@@ -67,7 +73,12 @@ public class LevelRecyclerViewAdapter extends RecyclerView.Adapter<LevelRecycler
                     context.startActivity(intent);
                 }
                 else if (allLevel.get(position).getLevelStatus()==1) {
-                    Toast.makeText(context,"6"+context.getString(R.string.level_status_days)+"12"+context.getString(R.string.level_status_hours),Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context,"6"+
+                            context.getString(R.string.level_status_days)+
+                            context.getString(R.string.and)+"12"+
+                            context.getString(R.string.level_status_hours)+
+                            " "+
+                            context.getString(R.string.open),Toast.LENGTH_SHORT).show();
 
                 }
                 else if (allLevel.get(position).getLevelStatus()==2) {

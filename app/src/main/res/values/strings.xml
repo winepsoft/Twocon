@@ -256,4 +256,9 @@
 
     //Filter
     <string name="filter_all">all</string>
+
+    //ect
+    <string name="and">and</string>
+    <string name="open">Opened</string>
+
 </resources>

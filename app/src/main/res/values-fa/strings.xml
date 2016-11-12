@@ -20,9 +20,6 @@
     <string name="add_a_course_to">اضافه کردن درس جدید به </string>
     <string name="color">رنگ</string>
 
-
-
-
     //PopMenu_group_fragment
     <string name="information">اطلاعات</string>
     <string name="edit_name">ویرایش نام</string>
@@ -251,4 +248,8 @@
     <string name="edit_question_page_title">ویرایش سوال</string>
     //Filter
     <string name="filter_all">همه</string>
+
+    //ect
+    <string name="and">و</string>
+    <string name="open">دیگر باز می شود</string>
 </resources>
