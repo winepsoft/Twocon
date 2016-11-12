@@ -36,6 +36,7 @@ public class ExamActivity extends AppCompatActivity {
     private int previewPage=0;
     private int allQuestionTest=0;
     private int currentQuestion=0;
+    private boolean swipPager=false;
     private double percent;
     private ViewPager examViewPager;
 
@@ -67,33 +68,39 @@ public class ExamActivity extends AppCompatActivity {
         if (allQuestionTest!=0) {
             percent = (double) 1 / (double) allQuestionTest;
             btnExamPreview.setVisibility(View.GONE);
+            currentQuestion=1;
         }
         else
             percent=0;
 
-        progressBarExamProcess.setProgress(0);
+        progressBarExamProcess.setProgress((float)percent);
         progressBarExamProcess.setSecondaryProgress(allQuestionTest);
         txtExamProcess.setText(Integer.toString(currentQuestion)+"/"+Integer.toString(allQuestionTest));
 
         examViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                if(previewPage<position)
-                    nextQuestion();
-                else if(previewPage>position)
-                    previewQuestion();
 
             }
 
             @Override
             public void onPageSelected(int position) {
-
+                if (swipPager){
+                    if(previewPage<position)
+                        nextQuestion();
+                    else if(previewPage>position)
+                        previewQuestion();
+                    swipPager=false;
+                }
             }
 
             @Override
             public void onPageScrollStateChanged(int state) {
-                if(state== ViewPager.SCROLL_STATE_DRAGGING)
-                    previewPage=examViewPager.getCurrentItem();
+                if(state== ViewPager.SCROLL_STATE_DRAGGING) {
+                    previewPage = examViewPager.getCurrentItem();
+                    swipPager=true;
+                    //Toast.makeText(context,"Preview:"+Integer.toString(previewPage),Toast.LENGTH_SHORT).show();
+                }
 
             }
         });
@@ -189,8 +196,10 @@ public class ExamActivity extends AppCompatActivity {
             currentQuestion=currentQuestion+1;
             txtExamProcess.setText(Integer.toString(currentQuestion)+"/"+Integer.toString(allQuestionTest));
             progressBarExamProcess.setProgress(progressBarExamProcess.getProgress()+(float) percent);
-            if (currentQuestion==1)
+            if (currentQuestion==2)
                 btnExamPreview.setVisibility(View.VISIBLE);
+            if (currentQuestion==allQuestionTest)
+                btnExamNext.setVisibility(View.GONE);
         }
         else
             btnExamNext.setVisibility(View.GONE);
@@ -198,13 +207,14 @@ public class ExamActivity extends AppCompatActivity {
     }
 
     private void previewQuestion(){
-        if (currentQuestion>0){
+        if (currentQuestion>1){
             currentQuestion=currentQuestion-1;
             txtExamProcess.setText(currentQuestion+"/"+allQuestionTest);
             progressBarExamProcess.setProgress(progressBarExamProcess.getProgress()-(float) percent);
             if (currentQuestion<allQuestionTest)
                 btnExamNext.setVisibility(View.VISIBLE);
-
+            if(currentQuestion==1)
+                btnExamPreview.setVisibility(View.GONE);
         }
         else
             btnExamPreview.setVisibility(View.GONE);
