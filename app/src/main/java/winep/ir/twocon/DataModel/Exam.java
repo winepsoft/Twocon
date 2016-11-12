@@ -4,17 +4,19 @@ package winep.ir.twocon.DataModel;
  * Created by ShaisteS on 11/12/2016.
  */
 public class Exam {
-    private String question;
+    private Question question;
     private String  answerOne;
     private String answerTwo;
     private String answerThree;
     private String answerFour;
+    private int userSelectAnswer; //default=0
+    private int answerTrue;
 
-    public String getQuestion() {
+    public Question getQuestion() {
         return question;
     }
 
-    public void setQuestion(String question) {
+    public void setQuestion(Question question) {
         this.question = question;
     }
 
@@ -48,5 +50,21 @@ public class Exam {
 
     public void setAnswerFour(String answerFour) {
         this.answerFour = answerFour;
+    }
+
+    public int getUserSelectAnswer() {
+        return userSelectAnswer;
+    }
+
+    public void setUserSelectAnswer(int userSelectAnswer) {
+        this.userSelectAnswer = userSelectAnswer;
+    }
+
+    public int getAnswerTrue() {
+        return answerTrue;
+    }
+
+    public void setAnswerTrue(int answerTrue) {
+        this.answerTrue = answerTrue;
     }
 }

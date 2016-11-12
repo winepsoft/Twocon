@@ -17,6 +17,7 @@ import java.util.ArrayList;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 import winep.ir.twocon.DataModel.Exam;
+import winep.ir.twocon.DataModel.Question;
 import winep.ir.twocon.R;
 import winep.ir.twocon.Utility.Utilities;
 
@@ -32,8 +33,10 @@ public class ExamActivity extends AppCompatActivity {
     private Button btnExamPreview;
     private TextView txtExamProcess;
     private ProgressView progressBarExamProcess;
+    private int previewPage=0;
     private int allQuestionTest=0;
     private int currentQuestion=0;
+    private double percent;
     private ViewPager examViewPager;
 
 
@@ -49,6 +52,7 @@ public class ExamActivity extends AppCompatActivity {
 
         exam=new ArrayList<>();
         examViewPager=(ViewPager)findViewById(R.id.exam_pager);
+        //examViewPager.setOffscreenPageLimit(1);
         examViewPager.setAdapter(new ExamPagerAdapter(createExam(allQuestionTest),this));
 
 
@@ -59,31 +63,46 @@ public class ExamActivity extends AppCompatActivity {
         txtExamProcess=(TextView)findViewById(R.id.txt_exam_process);
         Utilities.getInstance().setFontTextView(context,txtExamProcess);
 
-        final double perecent;
+
         if (allQuestionTest!=0) {
-            perecent = (double) 1 / (double) allQuestionTest;
+            percent = (double) 1 / (double) allQuestionTest;
             btnExamPreview.setVisibility(View.GONE);
         }
         else
-            perecent=0;
+            percent=0;
 
         progressBarExamProcess.setProgress(0);
         progressBarExamProcess.setSecondaryProgress(allQuestionTest);
         txtExamProcess.setText(Integer.toString(currentQuestion)+"/"+Integer.toString(allQuestionTest));
 
+        examViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                if(previewPage<position)
+                    nextQuestion();
+                else if(previewPage>position)
+                    previewQuestion();
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+                if(state== ViewPager.SCROLL_STATE_DRAGGING)
+                    previewPage=examViewPager.getCurrentItem();
+
+            }
+        });
 
         btnExamNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (currentQuestion<allQuestionTest){
-                    currentQuestion=currentQuestion+1;
-                    txtExamProcess.setText(Integer.toString(currentQuestion)+"/"+Integer.toString(allQuestionTest));
-                    progressBarExamProcess.setProgress(progressBarExamProcess.getProgress()+(float) perecent);
-                    if (currentQuestion==1)
-                        btnExamPreview.setVisibility(View.VISIBLE);
-                }
-                else
-                    btnExamNext.setVisibility(View.GONE);
+                examViewPager.setCurrentItem(examViewPager.getCurrentItem()+1);
+                nextQuestion();
 
             }
         });
@@ -91,16 +110,8 @@ public class ExamActivity extends AppCompatActivity {
         btnExamPreview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (currentQuestion>0){
-                    currentQuestion=currentQuestion-1;
-                    txtExamProcess.setText(currentQuestion+"/"+allQuestionTest);
-                    progressBarExamProcess.setProgress(progressBarExamProcess.getProgress()-(float) perecent);
-                    if (currentQuestion<allQuestionTest)
-                        btnExamNext.setVisibility(View.VISIBLE);
-
-                }
-                else
-                    btnExamPreview.setVisibility(View.GONE);
+                examViewPager.setCurrentItem(examViewPager.getCurrentItem()-1);
+                previewQuestion();
 
             }
         });
@@ -108,15 +119,95 @@ public class ExamActivity extends AppCompatActivity {
     }
 
     private ArrayList<Exam> createExam(int examQuestionNumber){
+        for (int i=0;i<examQuestionNumber;i++){
+            Question question=new Question();
+            Exam aQuestion=new Exam();
+            aQuestion.setQuestion(question);
+            aQuestion.setAnswerOne("Answer1");
+            aQuestion.setAnswerTwo("Answer2");
+            aQuestion.setAnswerThree("Answer3");
+            aQuestion.setAnswerFour("Answer4");
+            aQuestion.setUserSelectAnswer(0);
+            exam.add(aQuestion);
+        }
+
+        /*Question question=new Question();
         Exam aQuestion=new Exam();
-        aQuestion.setQuestion("Question");
+        aQuestion.setQuestion(question);
         aQuestion.setAnswerOne("Answer1");
         aQuestion.setAnswerTwo("Answer2");
         aQuestion.setAnswerThree("Answer3");
         aQuestion.setAnswerFour("Answer4");
-        for (int i=0;i<examQuestionNumber;i++)
-            exam.add(i,aQuestion);
+        aQuestion.setUserSelectAnswer(0);
+        exam.add(aQuestion);
+
+        Question question1=new Question();
+        Exam aQuestion1=new Exam();
+        aQuestion1.setQuestion(question1);
+        aQuestion1.setAnswerOne("Answer1");
+        aQuestion1.setAnswerTwo("Answer2");
+        aQuestion1.setAnswerThree("Answer3");
+        aQuestion1.setAnswerFour("Answer4");
+        aQuestion1.setUserSelectAnswer(0);
+        exam.add(aQuestion1);
+
+        Question question2=new Question();
+        Exam aQuestion2=new Exam();
+        aQuestion2.setQuestion(question2);
+        aQuestion2.setAnswerOne("Answer1");
+        aQuestion2.setAnswerTwo("Answer2");
+        aQuestion2.setAnswerThree("Answer3");
+        aQuestion2.setAnswerFour("Answer4");
+        aQuestion2.setUserSelectAnswer(0);
+        exam.add(aQuestion2);
+
+        Question question3=new Question();
+        Exam aQuestion3=new Exam();
+        aQuestion3.setQuestion(question3);
+        aQuestion3.setAnswerOne("Answer1");
+        aQuestion3.setAnswerTwo("Answer2");
+        aQuestion3.setAnswerThree("Answer3");
+        aQuestion3.setAnswerFour("Answer4");
+        aQuestion3.setUserSelectAnswer(0);
+        exam.add(aQuestion3);
+
+        Question question4=new Question();
+        Exam aQuestion4=new Exam();
+        aQuestion4.setQuestion(question4);
+        aQuestion4.setAnswerOne("Answer1");
+        aQuestion4.setAnswerTwo("Answer2");
+        aQuestion4.setAnswerThree("Answer3");
+        aQuestion4.setAnswerFour("Answer4");
+        aQuestion4.setUserSelectAnswer(0);
+        exam.add(aQuestion4);*/
         return exam;
+
+    }
+
+    private void nextQuestion(){
+        if (currentQuestion<allQuestionTest){
+            currentQuestion=currentQuestion+1;
+            txtExamProcess.setText(Integer.toString(currentQuestion)+"/"+Integer.toString(allQuestionTest));
+            progressBarExamProcess.setProgress(progressBarExamProcess.getProgress()+(float) percent);
+            if (currentQuestion==1)
+                btnExamPreview.setVisibility(View.VISIBLE);
+        }
+        else
+            btnExamNext.setVisibility(View.GONE);
+
+    }
+
+    private void previewQuestion(){
+        if (currentQuestion>0){
+            currentQuestion=currentQuestion-1;
+            txtExamProcess.setText(currentQuestion+"/"+allQuestionTest);
+            progressBarExamProcess.setProgress(progressBarExamProcess.getProgress()-(float) percent);
+            if (currentQuestion<allQuestionTest)
+                btnExamNext.setVisibility(View.VISIBLE);
+
+        }
+        else
+            btnExamPreview.setVisibility(View.GONE);
     }
 
     @Override
