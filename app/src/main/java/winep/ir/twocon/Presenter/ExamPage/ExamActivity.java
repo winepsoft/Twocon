@@ -2,6 +2,7 @@ package winep.ir.twocon.Presenter.ExamPage;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -12,7 +13,10 @@ import android.widget.TextView;
 import com.rey.material.widget.Button;
 import com.rey.material.widget.ProgressView;
 
+import java.util.ArrayList;
+
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+import winep.ir.twocon.DataModel.Exam;
 import winep.ir.twocon.R;
 import winep.ir.twocon.Utility.Utilities;
 
@@ -21,24 +25,16 @@ import winep.ir.twocon.Utility.Utilities;
  */
 public class ExamActivity extends AppCompatActivity {
 
+    private ArrayList<Exam> exam;
     private Context context;
     private Button btnExamEnd;
     private Button btnExamNext;
     private Button btnExamPreview;
     private TextView txtExamProcess;
-    private TextView txtExamQuestionNumber;
-    private TextView txtExamQuestionTitle;
-    private TextView txtAnswerNumberOne;
-    private TextView txtAnswerValueOne;
-    private TextView txtAnswerNumberTwo;
-    private TextView txtAnswerValueTwo;
-    private TextView txtAnswerNumberThree;
-    private TextView txtAnswerValueThree;
-    private TextView txtAnswerNumberFour;
-    private TextView txtAnswerValueFour;
     private ProgressView progressBarExamProcess;
     private int allQuestionTest=0;
     private int currentQuestion=0;
+    private ViewPager examViewPager;
 
 
     @Override
@@ -51,32 +47,17 @@ public class ExamActivity extends AppCompatActivity {
         setTitle(getString(R.string.exam_activity_title));
         context=this;
 
+        exam=new ArrayList<>();
+        examViewPager=(ViewPager)findViewById(R.id.exam_pager);
+        examViewPager.setAdapter(new ExamPagerAdapter(createExam(allQuestionTest),this));
+
+
         btnExamEnd=(Button)findViewById(R.id.exam_end);
         btnExamNext=(Button)findViewById(R.id.exam_next);
         btnExamPreview=(Button)findViewById(R.id.exam_preview);
         progressBarExamProcess =(ProgressView)findViewById(R.id.progress_bar_exam_process);
         txtExamProcess=(TextView)findViewById(R.id.txt_exam_process);
         Utilities.getInstance().setFontTextView(context,txtExamProcess);
-        txtExamQuestionNumber=(TextView)findViewById(R.id.txt_exam_question_number);
-        Utilities.getInstance().setFontTextView(context,txtExamQuestionNumber);
-        txtExamQuestionTitle=(TextView)findViewById(R.id.txt_exam_question_title);
-        Utilities.getInstance().setFontTextView(context,txtExamQuestionTitle);
-        txtAnswerNumberOne=(TextView)findViewById(R.id.txt_exam_number_one);
-        Utilities.getInstance().setFontTextView(context,txtAnswerNumberOne);
-        txtAnswerValueOne=(TextView)findViewById(R.id.txt_exam_answer_one);
-        Utilities.getInstance().setFontTextView(context,txtAnswerValueOne);
-        txtAnswerNumberTwo=(TextView)findViewById(R.id.txt_exam_number_two);
-        Utilities.getInstance().setFontTextView(context,txtAnswerNumberTwo);
-        txtAnswerValueTwo=(TextView)findViewById(R.id.txt_exam_answer_two);
-        Utilities.getInstance().setFontTextView(context,txtAnswerValueTwo);
-        txtAnswerNumberThree=(TextView)findViewById(R.id.txt_exam_number_three);
-        Utilities.getInstance().setFontTextView(context,txtAnswerNumberThree);
-        txtAnswerValueThree=(TextView)findViewById(R.id.txt_exam_answer_three);
-        Utilities.getInstance().setFontTextView(context,txtAnswerValueThree);
-        txtAnswerNumberFour=(TextView)findViewById(R.id.txt_exam_number_four);
-        Utilities.getInstance().setFontTextView(context,txtAnswerNumberFour);
-        txtAnswerValueFour=(TextView)findViewById(R.id.txt_exam_answer_four);
-        Utilities.getInstance().setFontTextView(context,txtAnswerValueFour);
 
         final double perecent;
         if (allQuestionTest!=0) {
@@ -124,6 +105,18 @@ public class ExamActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private ArrayList<Exam> createExam(int examQuestionNumber){
+        Exam aQuestion=new Exam();
+        aQuestion.setQuestion("Question");
+        aQuestion.setAnswerOne("Answer1");
+        aQuestion.setAnswerTwo("Answer2");
+        aQuestion.setAnswerThree("Answer3");
+        aQuestion.setAnswerFour("Answer4");
+        for (int i=0;i<examQuestionNumber;i++)
+            exam.add(i,aQuestion);
+        return exam;
     }
 
     @Override

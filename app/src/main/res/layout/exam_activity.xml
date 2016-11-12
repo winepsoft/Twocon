@@ -20,22 +20,12 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <ScrollView
+        <android.support.v4.view.ViewPager
+            android:id="@+id/exam_pager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_above="@+id/exam_button_toolbar">
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/margin_recycler_view_top"
-                android:layout_marginRight="@dimen/margin_recycler_view_right"
-                android:layout_marginLeft="@dimen/margin_recycler_view_right">
-                <include layout="@layout/exam_timer_toolbar"/>
-                <include layout="@layout/exam_question"/>
-                <include layout="@layout/exam_answer"/>
-            </LinearLayout>
-        </ScrollView>
+            android:layout_alignParentStart="true"
+            android:layout_above="@+id/exam_button_toolbar" />
         <include layout="@layout/exam_button_toolbar"
             android:id="@+id/exam_button_toolbar"
             android:layout_width="match_parent"
