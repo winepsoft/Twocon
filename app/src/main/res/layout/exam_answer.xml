@@ -6,20 +6,21 @@
     <RelativeLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/circle_exam_answer_number"
-            android:id="@+id/txt_number_one"
+            android:id="@+id/txt_exam_number_one"
             android:text="@string/answer_one"
             android:textColor="@color/white"
-            android:gravity="center_vertical|center" />
+            android:gravity="center_vertical|center"
+            android:layout_centerVertical="true" />
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_toEndOf="@+id/txt_number_one"
+            android:layout_toEndOf="@+id/txt_exam_number_one"
             card_view:cardCornerRadius="@dimen/card_corner_radius"
             card_view:contentPadding="@dimen/card_content_padding"
             card_view:cardElevation="@dimen/card_elevation"
@@ -53,11 +54,11 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:id="@+id/txt_answer_one"
+                            android:id="@+id/txt_exam_answer_one"
                             android:text="@string/answer"
                             android:layout_centerVertical="true"
-                            android:layout_toEndOf="@+id/txt_question_number"
-                            android:layout_marginLeft="5dp" />
+                            android:layout_marginLeft="5dp"
+                            android:textAppearance="?android:attr/textAppearanceMedium"/>
                     </RelativeLayout>
                 </LinearLayout>
                 <LinearLayout
@@ -77,15 +78,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/circle_exam_answer_number"
-            android:id="@+id/txt_number_two"
+            android:id="@+id/txt_exam_number_two"
             android:text="@string/answer_two"
             android:textColor="@color/white"
-            android:gravity="center_vertical|center" />
+            android:gravity="center_vertical|center"
+            android:layout_centerVertical="true" />
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_toEndOf="@+id/txt_number_two"
+            android:layout_toEndOf="@+id/txt_exam_number_two"
             card_view:cardCornerRadius="@dimen/card_corner_radius"
             card_view:contentPadding="@dimen/card_content_padding"
             card_view:cardElevation="@dimen/card_elevation"
@@ -119,11 +120,11 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:id="@+id/txt_answer_two"
+                            android:id="@+id/txt_exam_answer_two"
                             android:text="@string/answer"
                             android:layout_centerVertical="true"
-                            android:layout_toEndOf="@+id/txt_question_number"
-                            android:layout_marginLeft="5dp" />
+                            android:layout_marginLeft="5dp"
+                            android:textAppearance="?android:attr/textAppearanceMedium"/>
                     </RelativeLayout>
                 </LinearLayout>
                 <LinearLayout
@@ -143,15 +144,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/circle_exam_answer_number"
-            android:id="@+id/txt_number_three"
+            android:id="@+id/txt_exam_number_three"
             android:text="@string/answer_three"
             android:textColor="@color/white"
-            android:gravity="center_vertical|center" />
+            android:gravity="center_vertical|center"
+            android:layout_centerVertical="true" />
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_toEndOf="@+id/txt_number_three"
+            android:layout_toEndOf="@+id/txt_exam_number_three"
             card_view:cardCornerRadius="@dimen/card_corner_radius"
             card_view:contentPadding="@dimen/card_content_padding"
             card_view:cardElevation="@dimen/card_elevation"
@@ -185,11 +186,11 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:id="@+id/txt_answer_three"
+                            android:id="@+id/txt_exam_answer_three"
                             android:text="@string/answer"
                             android:layout_centerVertical="true"
-                            android:layout_toEndOf="@+id/txt_question_number"
-                            android:layout_marginLeft="5dp" />
+                            android:layout_marginLeft="5dp"
+                            android:textAppearance="?android:attr/textAppearanceMedium"/>
                     </RelativeLayout>
                 </LinearLayout>
                 <LinearLayout
@@ -209,15 +210,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/circle_exam_answer_number"
-            android:id="@+id/txt_number_four"
+            android:id="@+id/txt_exam_number_four"
             android:text="@string/answer_four"
             android:textColor="@color/white"
-            android:gravity="center_vertical|center" />
+            android:gravity="center_vertical|center"
+            android:layout_centerVertical="true" />
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_toEndOf="@+id/txt_number_four"
+            android:layout_toEndOf="@+id/txt_exam_number_four"
             card_view:cardCornerRadius="@dimen/card_corner_radius"
             card_view:contentPadding="@dimen/card_content_padding"
             card_view:cardElevation="@dimen/card_elevation"
@@ -251,11 +253,11 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:id="@+id/txt_answer_four"
+                            android:id="@+id/txt_exam_answer_four"
                             android:text="@string/answer"
                             android:layout_centerVertical="true"
-                            android:layout_toEndOf="@+id/txt_question_number"
-                            android:layout_marginLeft="5dp" />
+                            android:layout_marginLeft="5dp"
+                            android:textAppearance="?android:attr/textAppearanceMedium"/>
                     </RelativeLayout>
                 </LinearLayout>
                 <LinearLayout

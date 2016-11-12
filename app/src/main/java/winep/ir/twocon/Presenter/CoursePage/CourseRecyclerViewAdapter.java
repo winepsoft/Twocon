@@ -136,8 +136,13 @@ public class CourseRecyclerViewAdapter extends RecyclerView.Adapter<CourseRecycl
                                         @Override
                                         public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
                                             EditText editTextExamNumber=(EditText)dialog.findViewById(R.id.edit_text_exam_number);
+                                            int examNumber;
+                                            if (editTextExamNumber.getText().toString().equals(""))
+                                                examNumber=0;
+                                            else
+                                                examNumber =Integer.parseInt(editTextExamNumber.getText().toString());
                                             Intent intent=new Intent(context, ExamActivity.class);
-                                            intent.putExtra("examNumber",editTextExamNumber.getText());
+                                            intent.putExtra("examQuestionNumber",examNumber);
                                             context.startActivity(intent);
                                         }
                                     })

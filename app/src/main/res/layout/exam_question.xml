@@ -40,45 +40,37 @@
                     android:background="@drawable/circle_memory_bank_item_question_number"
                     android:textColor="@color/white"
                     android:text="243"
-                    android:id="@+id/txt_question_number"
+                    android:id="@+id/txt_exam_question_number"
                     android:gravity="center_vertical|center_horizontal"
-                    android:layout_marginRight="5dp"/>
+                    android:layout_marginRight="5dp"
+                    android:layout_centerVertical="true" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/txt_question_title"
+                    android:id="@+id/txt_exam_question_title"
                     android:text="Question is easy?"
                     android:layout_centerVertical="true"
-                    android:layout_toEndOf="@+id/txt_question_number"
-                    android:layout_marginLeft="5dp" />
+                    android:layout_toEndOf="@+id/txt_exam_question_number"
+                    android:layout_marginLeft="5dp"
+                    android:textAppearance="?android:attr/textAppearanceMedium"/>
             </RelativeLayout>
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_margin="5dp"
-                android:layout_gravity="center"
                 android:weightSum="2"
                 android:baselineAligned="false">
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:id="@+id/linearLayoutInform"
-                    android:gravity="end"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:baselineAligned="false">
-                    <ImageButton
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
-                        android:gravity="center_vertical|center_horizontal"
-                        android:layout_marginRight="@dimen/memory_bank_item_margin_between_circle"
-                        android:layout_marginLeft="@dimen/memory_bank_item_margin_between_circle"
-                        android:id="@+id/exam_voice"
-                        android:src="@mipmap/play_voice"
-                        android:background="@drawable/circle_blue"/>
-                </LinearLayout>
+                <ImageButton
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginRight="@dimen/memory_bank_item_margin_between_circle"
+                    android:layout_marginLeft="@dimen/memory_bank_item_margin_between_circle"
+                    android:id="@+id/exam_voice"
+                    android:src="@mipmap/play_voice"
+                    android:background="@drawable/circle_blue"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentEnd="true"/>
             </RelativeLayout>
         </LinearLayout>
         <LinearLayout

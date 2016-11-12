@@ -1,31 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<android.support.v7.widget.CardView
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:gravity="center">
-    
-    <Button
-        android:layout_width="wrap_content"
+    card_view:contentPadding="@dimen/card_content_padding">
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/end"
-        android:backgroundTint="@color/exam_end_button_color"
-        android:textColor="@color/white"
-        android:id="@+id/exam_end"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/previous"
-        android:backgroundTint="@color/exam_prev_button_color"
-        android:textColor="@color/white"
-        android:id="@+id/prev_question"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/next"
-        android:backgroundTint="@color/exam_next_button_color"
-        android:textColor="@color/white"
-        android:id="@+id/nav_exit"/>
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_exam_process"
+            android:textColor="@color/black"
+            android:text="0/0"/>
+        <com.rey.material.widget.ProgressView
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/progress_bar_exam_process"
+            app:pv_circular="false"
+            card_view:pv_autostart="false"
+            app:pv_progressMode="determinate"/>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:weightSum="4">
 
-</LinearLayout>
+            <com.rey.material.widget.Button
+                app:rd_enable="true"
+                app:rd_style="@style/Material.Drawable.Ripple.Wave"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="@string/end"
+                android:textColor="@color/white"
+                android:background="@drawable/button_with_corner_orange"
+                android:id="@+id/exam_end"
+                android:layout_weight="1"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <com.rey.material.widget.Button
+                app:rd_enable="true"
+                app:rd_style="@style/Material.Drawable.Ripple.Wave"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="@string/previous"
+                android:textColor="@color/white"
+                android:id="@+id/exam_preview"
+                android:background="@drawable/button_with_corner_red"
+                android:layout_weight="1"/>
+            <LinearLayout
+                android:layout_width="10dp"
+                android:layout_height="match_parent"/>
+
+            <com.rey.material.widget.Button
+                app:rd_enable="true"
+                app:rd_style="@style/Material.Drawable.Ripple.Wave"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="@string/next"
+                android:textColor="@color/white"
+                android:id="@+id/exam_next"
+                android:background="@drawable/button_with_corner_green"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>
