@@ -10,19 +10,26 @@
         android:theme="@style/AppTheme"
         android:name="winep.ir.twocon.Utility.Font"
         android:layoutDirection = "locale">
+
+        <meta-data
+            android:name="com.crashlytics.ApiKey"/>
+
+
         <activity
             android:name="winep.ir.twocon.MainActivity"
-            android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".Presenter.LoginPage.LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
         <activity
             android:name="winep.ir.twocon.Presenter.SubGroupPage.SubGroupActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".Presenter.StatisticsGroupPage.StatisticsGroupActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name="winep.ir.twocon.Presenter.ExamPage.ExamActivity"
