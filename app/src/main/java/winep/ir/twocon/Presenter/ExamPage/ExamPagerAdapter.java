@@ -11,6 +11,7 @@ import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -53,10 +54,10 @@ public class ExamPagerAdapter  extends PagerAdapter {
         viewLayout = inflater.inflate(R.layout.exam_pager, container, false);
 
         CardView cardViewExamQuestion=(CardView)viewLayout.findViewById(R.id.cart_view_exam_question);
-        final CardView cardViewExamAnswerOne=(CardView)viewLayout.findViewById(R.id.card_view_exam_answer_one);
-        final CardView cardViewExamAnswerTwo=(CardView)viewLayout.findViewById(R.id.card_view_exam_answer_two);
-        final CardView cardViewExamAnswerThree=(CardView)viewLayout.findViewById(R.id.card_view_exam_answer_three);
-        final CardView cardViewExamAnswerFour=(CardView)viewLayout.findViewById(R.id.card_view_exam_answer_four);
+        final LinearLayout layoutAnswerOne=(LinearLayout)viewLayout.findViewById(R.id.layout_exam_answer_one);
+        final LinearLayout layoutExamAnswerTwo=(LinearLayout) viewLayout.findViewById(R.id.layout_exam_answer_two);
+        final LinearLayout layoutExamAnswerThree=(LinearLayout) viewLayout.findViewById(R.id.layout_exam_answer_three);
+        final LinearLayout layoutExamAnswerFour=(LinearLayout)viewLayout.findViewById(R.id.layout_exam_answer_four);
 
 
         TextView txtExamQuestionNumber=(TextView)viewLayout.findViewById(R.id.txt_exam_question_number);
@@ -82,13 +83,13 @@ public class ExamPagerAdapter  extends PagerAdapter {
 
 
         if (examList.get(position).getUserSelectAnswer()==1)
-            cardViewExamAnswerOne.setBackgroundColor(ContextCompat.getColor(activity,R.color.item_foreground_selected_color));
+            layoutAnswerOne.setBackgroundColor(ContextCompat.getColor(activity,R.color.item_foreground_selected_color));
         else if (examList.get(position).getUserSelectAnswer()==2)
-            cardViewExamAnswerTwo.setBackgroundColor(ContextCompat.getColor(activity,R.color.item_foreground_selected_color));
+            layoutExamAnswerTwo.setBackgroundColor(ContextCompat.getColor(activity,R.color.item_foreground_selected_color));
         else if (examList.get(position).getUserSelectAnswer()==3)
-            cardViewExamAnswerThree.setBackgroundColor(ContextCompat.getColor(activity,R.color.item_foreground_selected_color));
+            layoutExamAnswerThree.setBackgroundColor(ContextCompat.getColor(activity,R.color.item_foreground_selected_color));
         else if (examList.get(position).getUserSelectAnswer()==4)
-            cardViewExamAnswerFour.setBackgroundColor(ContextCompat.getColor(activity,R.color.item_foreground_selected_color));
+            layoutExamAnswerFour.setBackgroundColor(ContextCompat.getColor(activity,R.color.item_foreground_selected_color));
 
 
         cardViewExamQuestion.setOnLongClickListener(new View.OnLongClickListener() {
@@ -104,48 +105,48 @@ public class ExamPagerAdapter  extends PagerAdapter {
             }
         });
 
-        cardViewExamAnswerOne.setOnClickListener(new View.OnClickListener() {
+        layoutAnswerOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 examList.get(position).setUserSelectAnswer(1);
-                cardViewExamAnswerOne.setBackgroundColor(ContextCompat.getColor(activity,R.color.item_foreground_selected_color));
-                cardViewExamAnswerTwo.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
-                cardViewExamAnswerThree.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
-                cardViewExamAnswerFour.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
+                layoutAnswerOne.setBackgroundColor(ContextCompat.getColor(activity,R.color.item_foreground_selected_color));
+                layoutExamAnswerTwo.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
+                layoutExamAnswerThree.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
+                layoutExamAnswerFour.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
 
             }
         });
 
-        cardViewExamAnswerTwo.setOnClickListener(new View.OnClickListener() {
+        layoutExamAnswerTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 examList.get(position).setUserSelectAnswer(2);
-                cardViewExamAnswerOne.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
-                cardViewExamAnswerTwo.setBackgroundColor(ContextCompat.getColor(activity,R.color.item_foreground_selected_color));
-                cardViewExamAnswerThree.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
-                cardViewExamAnswerFour.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
+                layoutAnswerOne.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
+                layoutExamAnswerTwo.setBackgroundColor(ContextCompat.getColor(activity,R.color.item_foreground_selected_color));
+                layoutExamAnswerThree.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
+                layoutExamAnswerFour.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
             }
         });
 
-        cardViewExamAnswerThree.setOnClickListener(new View.OnClickListener() {
+        layoutExamAnswerThree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 examList.get(position).setUserSelectAnswer(3);
-                cardViewExamAnswerOne.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
-                cardViewExamAnswerTwo.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
-                cardViewExamAnswerThree.setBackgroundColor(ContextCompat.getColor(activity,R.color.item_foreground_selected_color));
-                cardViewExamAnswerFour.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
+                layoutAnswerOne.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
+                layoutExamAnswerTwo.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
+                layoutExamAnswerThree.setBackgroundColor(ContextCompat.getColor(activity,R.color.item_foreground_selected_color));
+                layoutExamAnswerFour.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
             }
         });
 
-        cardViewExamAnswerFour.setOnClickListener(new View.OnClickListener() {
+        layoutExamAnswerFour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 examList.get(position).setUserSelectAnswer(4);
-                cardViewExamAnswerOne.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
-                cardViewExamAnswerTwo.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
-                cardViewExamAnswerThree.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
-                cardViewExamAnswerFour.setBackgroundColor(ContextCompat.getColor(activity,R.color.item_foreground_selected_color));
+                layoutAnswerOne.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
+                layoutExamAnswerTwo.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
+                layoutExamAnswerThree.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
+                layoutExamAnswerFour.setBackgroundColor(ContextCompat.getColor(activity,R.color.item_foreground_selected_color));
             }
         });
 

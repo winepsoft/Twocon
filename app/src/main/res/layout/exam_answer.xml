@@ -30,6 +30,7 @@
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:orientation="horizontal"
+                android:id="@+id/layout_exam_answer_one"
                 android:weightSum="3"
                 android:baselineAligned="false">
                 <LinearLayout
@@ -97,6 +98,7 @@
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:orientation="horizontal"
+                android:id="@+id/layout_exam_answer_two"
                 android:weightSum="3"
                 android:baselineAligned="false">
                 <LinearLayout
@@ -164,6 +166,7 @@
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:orientation="horizontal"
+                android:id="@+id/layout_exam_answer_three"
                 android:weightSum="3"
                 android:baselineAligned="false">
                 <LinearLayout
@@ -232,6 +235,7 @@
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:orientation="horizontal"
+                android:id="@+id/layout_exam_answer_four"
                 android:weightSum="3"
                 android:baselineAligned="false">
                 <LinearLayout

@@ -18,10 +18,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".Presenter.LoginPage.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
-
         <activity
             android:name="winep.ir.twocon.Presenter.SubGroupPage.SubGroupActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
