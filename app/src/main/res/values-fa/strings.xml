@@ -107,6 +107,8 @@
     <string name="previous">قبلی</string>
     <string name="end">پایان</string>
     <string name="exam_dialog_title">تعداد سوالات آزمون</string>
+    <string name="exam_dialog_all_question_course">تعداد سوالات درس</string>
+
 
 
     //question page

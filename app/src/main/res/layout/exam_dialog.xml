@@ -1,23 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:text="@string/exam_dialog_title"
-        android:layout_weight="1"
-        android:gravity="center_vertical" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="@string/exam_dialog_all_question_course"
+            android:layout_weight="1"
+            android:gravity="center_vertical" />
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:id="@+id/text_all_question_course"
+            android:text="0"/>
 
-    <com.rey.material.widget.EditText
-        app:et_labelEnable="true"
-        app:et_inputId="@+id/edit_text_exam_number_input"
-        android:layout_width="60dp"
-        android:layout_height="match_parent"
-        android:hint="10"
-        android:inputType="number"
-        android:id="@+id/edit_text_exam_number"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="@string/exam_dialog_title"
+            android:layout_weight="1"
+            android:gravity="center_vertical" />
+        <EditText
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:inputType="number"
+            android:id="@+id/edit_text_exam_number"/>
+    </LinearLayout>
 </LinearLayout>
