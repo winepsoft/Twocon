@@ -10,11 +10,6 @@
         android:theme="@style/AppTheme"
         android:name="winep.ir.twocon.Utility.Font"
         android:layoutDirection = "locale">
-
-        <meta-data
-            android:name="com.crashlytics.ApiKey"/>
-
-
         <activity
             android:name="winep.ir.twocon.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">

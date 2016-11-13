@@ -104,51 +104,48 @@ public class ExamPagerAdapter  extends PagerAdapter {
             }
         });
 
-        cardViewExamAnswerOne.setOnLongClickListener(new View.OnLongClickListener() {
+        cardViewExamAnswerOne.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onLongClick(View view) {
+            public void onClick(View view) {
                 examList.get(position).setUserSelectAnswer(1);
                 cardViewExamAnswerOne.setBackgroundColor(ContextCompat.getColor(activity,R.color.item_foreground_selected_color));
                 cardViewExamAnswerTwo.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
                 cardViewExamAnswerThree.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
                 cardViewExamAnswerFour.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
-                return false;
+
             }
         });
 
-        cardViewExamAnswerTwo.setOnLongClickListener(new View.OnLongClickListener() {
+        cardViewExamAnswerTwo.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onLongClick(View view) {
+            public void onClick(View view) {
                 examList.get(position).setUserSelectAnswer(2);
                 cardViewExamAnswerOne.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
                 cardViewExamAnswerTwo.setBackgroundColor(ContextCompat.getColor(activity,R.color.item_foreground_selected_color));
                 cardViewExamAnswerThree.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
                 cardViewExamAnswerFour.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
-                return false;
             }
         });
 
-        cardViewExamAnswerThree.setOnLongClickListener(new View.OnLongClickListener() {
+        cardViewExamAnswerThree.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onLongClick(View view) {
+            public void onClick(View view) {
                 examList.get(position).setUserSelectAnswer(3);
                 cardViewExamAnswerOne.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
                 cardViewExamAnswerTwo.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
                 cardViewExamAnswerThree.setBackgroundColor(ContextCompat.getColor(activity,R.color.item_foreground_selected_color));
                 cardViewExamAnswerFour.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
-                return false;
             }
         });
 
-        cardViewExamAnswerFour.setOnLongClickListener(new View.OnLongClickListener() {
+        cardViewExamAnswerFour.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onLongClick(View view) {
+            public void onClick(View view) {
                 examList.get(position).setUserSelectAnswer(4);
                 cardViewExamAnswerOne.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
                 cardViewExamAnswerTwo.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
                 cardViewExamAnswerThree.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
                 cardViewExamAnswerFour.setBackgroundColor(ContextCompat.getColor(activity,R.color.item_foreground_selected_color));
-                return false;
             }
         });
 
