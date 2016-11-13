@@ -34,7 +34,7 @@ public class ExamActivity extends AppCompatActivity
 
     private ArrayList<Exam> exam;
     private Context context;
-    private Button btnExamEnd;
+    //private Button btnExamEnd;
     private Button btnExamNext;
     private Button btnExamPreview;
     private TextView txtExamProcess;
@@ -63,7 +63,7 @@ public class ExamActivity extends AppCompatActivity
         examViewPager.setAdapter(new ExamPagerAdapter(createExam(allQuestionTest),this));
 
 
-        btnExamEnd=(Button)findViewById(R.id.exam_end);
+        //btnExamEnd=(Button)findViewById(R.id.exam_end);
         btnExamNext=(Button)findViewById(R.id.exam_next);
         btnExamPreview=(Button)findViewById(R.id.exam_preview);
         progressBarExamProcess =(ProgressView)findViewById(R.id.progress_bar_exam_process);

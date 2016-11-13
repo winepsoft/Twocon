@@ -29,10 +29,9 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:weightSum="4">
+            android:gravity="center">
 
-            <com.rey.material.widget.Button
+            <!--<com.rey.material.widget.Button
                 app:rd_enable="true"
                 app:rd_style="@style/Material.Drawable.Ripple.Wave"
                 android:layout_width="wrap_content"
@@ -41,9 +40,21 @@
                 android:textColor="@color/white"
                 android:background="@drawable/button_with_corner_gray"
                 android:id="@+id/exam_end"
-                android:layout_weight="1"/>
+                android:layout_weight="1"/>-->
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="10dp"
+                android:layout_height="match_parent"/>
+            <com.rey.material.widget.Button
+                app:rd_enable="true"
+                app:rd_style="@style/Material.Drawable.Ripple.Wave"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="@string/next"
+                android:textColor="@color/white"
+                android:id="@+id/exam_next"
+                android:background="@drawable/button_with_corner_green"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"/>
             <com.rey.material.widget.Button
@@ -54,22 +65,10 @@
                 android:text="@string/previous"
                 android:textColor="@color/white"
                 android:id="@+id/exam_preview"
-                android:background="@drawable/button_with_corner_red"
-                android:layout_weight="1"/>
+                android:background="@drawable/button_with_corner_red"/>
             <LinearLayout
                 android:layout_width="10dp"
                 android:layout_height="match_parent"/>
-
-            <com.rey.material.widget.Button
-                app:rd_enable="true"
-                app:rd_style="@style/Material.Drawable.Ripple.Wave"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:text="@string/next"
-                android:textColor="@color/white"
-                android:id="@+id/exam_next"
-                android:background="@drawable/button_with_corner_green"
-                android:layout_weight="1"/>
 
         </LinearLayout>
     </LinearLayout>
