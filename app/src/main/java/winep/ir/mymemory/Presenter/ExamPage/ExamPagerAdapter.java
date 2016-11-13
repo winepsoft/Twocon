@@ -18,6 +18,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import winep.ir.mymemory.DataModel.Exam;
+import winep.ir.mymemory.Presenter.ObserverPackage.setClickOnAnswerOfQuestionExam;
 import winep.ir.mymemory.Presenter.QuestionPage.EditQuestionActivity;
 import winep.ir.mymemory.R;
 import winep.ir.mymemory.Utility.Utilities;
@@ -113,7 +114,7 @@ public class ExamPagerAdapter  extends PagerAdapter {
                 layoutExamAnswerTwo.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
                 layoutExamAnswerThree.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
                 layoutExamAnswerFour.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
-
+                setClickOnAnswerOfQuestionExam.setClickOnAnswerStatus(true);
             }
         });
 
@@ -125,6 +126,8 @@ public class ExamPagerAdapter  extends PagerAdapter {
                 layoutExamAnswerTwo.setBackgroundColor(ContextCompat.getColor(activity,R.color.item_foreground_selected_color));
                 layoutExamAnswerThree.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
                 layoutExamAnswerFour.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
+                setClickOnAnswerOfQuestionExam.setClickOnAnswerStatus(true);
+
             }
         });
 
@@ -136,6 +139,8 @@ public class ExamPagerAdapter  extends PagerAdapter {
                 layoutExamAnswerTwo.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
                 layoutExamAnswerThree.setBackgroundColor(ContextCompat.getColor(activity,R.color.item_foreground_selected_color));
                 layoutExamAnswerFour.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
+                setClickOnAnswerOfQuestionExam.setClickOnAnswerStatus(true);
+
             }
         });
 
@@ -147,6 +152,8 @@ public class ExamPagerAdapter  extends PagerAdapter {
                 layoutExamAnswerTwo.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
                 layoutExamAnswerThree.setBackgroundColor(ContextCompat.getColor(activity,R.color.white));
                 layoutExamAnswerFour.setBackgroundColor(ContextCompat.getColor(activity,R.color.item_foreground_selected_color));
+                setClickOnAnswerOfQuestionExam.setClickOnAnswerStatus(true);
+
             }
         });
 

@@ -23,6 +23,8 @@ import java.util.ArrayList;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 import winep.ir.mymemory.DataModel.Exam;
 import winep.ir.mymemory.DataModel.Question;
+import winep.ir.mymemory.Presenter.ObserverPackage.setClickOnAnswerOfQuestionExam;
+import winep.ir.mymemory.Presenter.ObserverPackage.setClickOnAnswerOfQuestionExamListener;
 import winep.ir.mymemory.R;
 import winep.ir.mymemory.Utility.Utilities;
 
@@ -140,6 +142,15 @@ public class ExamActivity extends AppCompatActivity
 
             }
         });*/
+
+        setClickOnAnswerOfQuestionExam.setClickOnAnswerOfQuestionExamListener(new setClickOnAnswerOfQuestionExamListener() {
+            @Override
+            public void clickOn() {
+                //Toast.makeText(context,"click",Toast.LENGTH_SHORT).show();
+                onClick(btnExamNext);
+            }
+        });
+
 
     }
 
