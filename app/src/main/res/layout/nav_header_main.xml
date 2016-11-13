@@ -11,7 +11,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
-    <winep.ir.twocon.Utility.RoundedImageView
+    <winep.ir.mymemory.Utility.RoundedImageView
         android:id="@+id/navigationImageView"
         android:layout_width="100dp"
         android:layout_height="100dp"

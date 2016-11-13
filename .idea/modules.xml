@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Twocon.iml" filepath="$PROJECT_DIR$/Twocon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyMemory.iml" filepath="$PROJECT_DIR$/MyMemory.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/library-release/library-release.iml" filepath="$PROJECT_DIR$/library-release/library-release.iml" />
     </modules>
