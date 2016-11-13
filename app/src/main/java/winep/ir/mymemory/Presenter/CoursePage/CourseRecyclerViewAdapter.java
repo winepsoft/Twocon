@@ -12,7 +12,6 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -23,6 +22,7 @@ import com.h6ah4i.android.widget.advrecyclerview.draggable.DraggableItemAdapter;
 import com.h6ah4i.android.widget.advrecyclerview.draggable.DraggableItemConstants;
 import com.h6ah4i.android.widget.advrecyclerview.draggable.ItemDraggableRange;
 import com.h6ah4i.android.widget.advrecyclerview.utils.AbstractDraggableItemViewHolder;
+import com.rey.material.widget.EditText;
 
 import java.util.ArrayList;
 
@@ -124,8 +124,9 @@ public class CourseRecyclerViewAdapter extends RecyclerView.Adapter<CourseRecycl
                             Utilities.getInstance().showColorPickerDialog(context);
                         }
                         else if(item.getItemId()==R.id.action_course_exam){
+
                             boolean wrapInScrollView = true;
-                            new MaterialDialog.Builder(context)
+                            MaterialDialog dialog=new MaterialDialog.Builder(context)
                                     .customView(R.layout.exam_dialog, wrapInScrollView)
                                     .positiveText(R.string.save)
                                     .positiveColor(ContextCompat.getColor(context, R.color.dialog_save_color))
@@ -145,8 +146,12 @@ public class CourseRecyclerViewAdapter extends RecyclerView.Adapter<CourseRecycl
                                             intent.putExtra("examQuestionNumber",examNumber);
                                             context.startActivity(intent);
                                         }
-                                    })
-                                    .show();
+                                    }).build();
+
+                            EditText editTextExamNumber=(EditText)dialog.findViewById(R.id.edit_text_exam_number);
+                            editTextExamNumber.setHint("20");
+                            Utilities.getInstance().setFontEditTextView(context,editTextExamNumber);
+                            dialog.show();
                         }
                         return true;
                     }
