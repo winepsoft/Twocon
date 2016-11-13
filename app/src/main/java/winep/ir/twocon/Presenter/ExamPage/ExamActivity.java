@@ -1,13 +1,18 @@
 package winep.ir.twocon.Presenter.ExamPage;
 
+import android.animation.Animator;
+import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.LinearInterpolator;
 import android.widget.TextView;
 
 import com.rey.material.widget.Button;
@@ -24,7 +29,8 @@ import winep.ir.twocon.Utility.Utilities;
 /**
  * Created by ShaisteS on 10/14/2016.
  */
-public class ExamActivity extends AppCompatActivity {
+public class ExamActivity extends AppCompatActivity
+        implements View.OnClickListener, Animator.AnimatorListener{
 
     private ArrayList<Exam> exam;
     private Context context;
@@ -115,7 +121,9 @@ public class ExamActivity extends AppCompatActivity {
             }
         });
 
-        btnExamNext.setOnClickListener(new View.OnClickListener() {
+        btnExamNext.setOnClickListener(this);
+        btnExamPreview.setOnClickListener(this);
+        /*btnExamNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 examViewPager.setCurrentItem(examViewPager.getCurrentItem()+1);
@@ -131,7 +139,7 @@ public class ExamActivity extends AppCompatActivity {
                 previewQuestion();
 
             }
-        });
+        });*/
 
     }
 
@@ -147,56 +155,6 @@ public class ExamActivity extends AppCompatActivity {
             aQuestion.setUserSelectAnswer(0);
             exam.add(aQuestion);
         }
-
-        /*Question question=new Question();
-        Exam aQuestion=new Exam();
-        aQuestion.setQuestion(question);
-        aQuestion.setAnswerOne("Answer1");
-        aQuestion.setAnswerTwo("Answer2");
-        aQuestion.setAnswerThree("Answer3");
-        aQuestion.setAnswerFour("Answer4");
-        aQuestion.setUserSelectAnswer(0);
-        exam.add(aQuestion);
-
-        Question question1=new Question();
-        Exam aQuestion1=new Exam();
-        aQuestion1.setQuestion(question1);
-        aQuestion1.setAnswerOne("Answer1");
-        aQuestion1.setAnswerTwo("Answer2");
-        aQuestion1.setAnswerThree("Answer3");
-        aQuestion1.setAnswerFour("Answer4");
-        aQuestion1.setUserSelectAnswer(0);
-        exam.add(aQuestion1);
-
-        Question question2=new Question();
-        Exam aQuestion2=new Exam();
-        aQuestion2.setQuestion(question2);
-        aQuestion2.setAnswerOne("Answer1");
-        aQuestion2.setAnswerTwo("Answer2");
-        aQuestion2.setAnswerThree("Answer3");
-        aQuestion2.setAnswerFour("Answer4");
-        aQuestion2.setUserSelectAnswer(0);
-        exam.add(aQuestion2);
-
-        Question question3=new Question();
-        Exam aQuestion3=new Exam();
-        aQuestion3.setQuestion(question3);
-        aQuestion3.setAnswerOne("Answer1");
-        aQuestion3.setAnswerTwo("Answer2");
-        aQuestion3.setAnswerThree("Answer3");
-        aQuestion3.setAnswerFour("Answer4");
-        aQuestion3.setUserSelectAnswer(0);
-        exam.add(aQuestion3);
-
-        Question question4=new Question();
-        Exam aQuestion4=new Exam();
-        aQuestion4.setQuestion(question4);
-        aQuestion4.setAnswerOne("Answer1");
-        aQuestion4.setAnswerTwo("Answer2");
-        aQuestion4.setAnswerThree("Answer3");
-        aQuestion4.setAnswerFour("Answer4");
-        aQuestion4.setUserSelectAnswer(0);
-        exam.add(aQuestion4);*/
         return exam;
 
     }
@@ -264,5 +222,97 @@ public class ExamActivity extends AppCompatActivity {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
         Utilities.getInstance().setSettingLanguage(newBase);
 
+    }
+
+
+    private boolean mIsInAnimation;
+    private long mMotionBeginTime;
+    private float mLastMotionX;
+
+    @Override
+    public void onClick(View view) {
+        if (mIsInAnimation) return;
+        ObjectAnimator anim;
+
+        if (view == btnExamPreview) {
+            if (!hasPrevPage()) return;
+            anim = ObjectAnimator.ofFloat(this, "motionX", 0, examViewPager.getWidth());
+        }
+        else if (view == btnExamNext) {
+            if (!hasNextPage()) return;
+            anim = ObjectAnimator.ofFloat(this, "motionX", 0, -examViewPager.getWidth());
+        }
+        else return;
+
+        anim.setInterpolator(new LinearInterpolator());
+        anim.addListener(this);
+        anim.setDuration(300);
+        anim.start();
+
+    }
+
+    public void setMotionX(float motionX) {
+        if (!mIsInAnimation) return;
+        mLastMotionX = motionX;
+        final long time = SystemClock.uptimeMillis();
+        simulate(MotionEvent.ACTION_MOVE, mMotionBeginTime, time);
+    }
+
+    @Override
+    public void onAnimationEnd(Animator animation) {
+        mIsInAnimation = false;
+        final long time = SystemClock.uptimeMillis();
+        simulate(MotionEvent.ACTION_UP, mMotionBeginTime, time);
+    }
+
+    @Override
+    public void onAnimationStart(Animator animation) {
+        mLastMotionX = 0;
+        mIsInAnimation = true;
+        final long time = SystemClock.uptimeMillis();
+        simulate(MotionEvent.ACTION_DOWN, time, time);
+        mMotionBeginTime = time;
+    }
+
+    // method from http://stackoverflow.com/a/11599282/1294681
+    private void simulate(int action, long startTime, long endTime) {
+        // specify the property for the two touch points
+        MotionEvent.PointerProperties[] properties = new MotionEvent.PointerProperties[1];
+        MotionEvent.PointerProperties pp = new MotionEvent.PointerProperties();
+        pp.id = 0;
+        pp.toolType = MotionEvent.TOOL_TYPE_FINGER;
+
+        properties[0] = pp;
+
+        // specify the coordinations of the two touch points
+        // NOTE: you MUST set the pressure and size value, or it doesn't work
+        MotionEvent.PointerCoords[] pointerCoords = new MotionEvent.PointerCoords[1];
+        MotionEvent.PointerCoords pc = new MotionEvent.PointerCoords();
+        pc.x = mLastMotionX;
+        pc.pressure = 1;
+        pc.size = 1;
+        pointerCoords[0] = pc;
+
+        final MotionEvent ev = MotionEvent.obtain(
+                startTime, endTime, action, 1, properties,
+                pointerCoords, 0,  0, 1, 1, 0, 0, 0, 0);
+
+        examViewPager.dispatchTouchEvent(ev);
+    }
+
+    private boolean hasPrevPage() {
+        return examViewPager.getCurrentItem() > 0;
+    }
+
+    private boolean hasNextPage() {
+        return examViewPager.getCurrentItem() + 1 < examViewPager.getAdapter().getCount();
+    }
+
+    @Override
+    public void onAnimationCancel(Animator animation) {
+    }
+
+    @Override
+    public void onAnimationRepeat(Animator animation) {
     }
 }
