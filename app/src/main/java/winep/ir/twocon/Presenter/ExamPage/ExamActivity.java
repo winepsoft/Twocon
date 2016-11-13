@@ -42,7 +42,7 @@ public class ExamActivity extends AppCompatActivity
     private int previewPage=0;
     private int allQuestionTest=0;
     private int currentQuestion=0;
-    private boolean swipPager=false;
+    private boolean swipePager =false;
     private double percent;
     private ViewPager examViewPager;
 
@@ -101,12 +101,12 @@ public class ExamActivity extends AppCompatActivity
 
             @Override
             public void onPageSelected(int position) {
-                if (swipPager){
+                if (swipePager){
                     if(previewPage<position)
                         nextQuestion();
                     else if(previewPage>position)
                         previewQuestion();
-                    swipPager=false;
+                    swipePager =false;
                 }
             }
 
@@ -114,7 +114,7 @@ public class ExamActivity extends AppCompatActivity
             public void onPageScrollStateChanged(int state) {
                 if(state== ViewPager.SCROLL_STATE_DRAGGING) {
                     previewPage = examViewPager.getCurrentItem();
-                    swipPager=true;
+                    swipePager =true;
                     //Toast.makeText(context,"Preview:"+Integer.toString(previewPage),Toast.LENGTH_SHORT).show();
                 }
 

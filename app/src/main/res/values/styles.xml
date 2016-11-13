@@ -22,4 +22,9 @@
         <item name="android:textColor">@color/white</item>
     </style>
 
+    <style name="LinearProgress" parent="Material.Drawable.LinearProgress">
+        <item name="lpd_strokeSize">10dp</item>
+        <item name="lpd_strokeColor">@color/orange</item>
+    </style>
+
 </resources>
