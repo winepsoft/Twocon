@@ -29,7 +29,7 @@ import winep.ir.mymemory.Presenter.StatisticsTotalPage.StatisticsTotalActivity;
 import winep.ir.mymemory.Utility.StaticParameters;
 import winep.ir.mymemory.Utility.Utilities;
 
-public class MainActivity extends AppCompatActivity
+public class MainPage extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private Context context;
@@ -131,10 +131,10 @@ public class MainActivity extends AppCompatActivity
 
         /*FragmentManager fm = getFragmentManager();
         if (fm.getBackStackEntryCount() > 0) {
-            Log.i("MainActivity", "popping backstack");
+            Log.i("MainPage", "popping backstack");
             fm.popBackStack();
         } else {
-            Log.i("MainActivity", "nothing on backstack, calling super");
+            Log.i("MainPage", "nothing on backstack, calling super");
             super.onBackPressed();
         }*/
 

@@ -25,7 +25,7 @@ import winep.ir.mymemory.DataModel.Group;
 import winep.ir.mymemory.Presenter.CreateQuestionPage.CreateQuestionActivity;
 import winep.ir.mymemory.R;
 import winep.ir.mymemory.Utility.ClickListener;
-import winep.ir.mymemory.Utility.Font;
+import winep.ir.mymemory.Utility.MyApplication;
 import winep.ir.mymemory.Utility.RecyclerTouchListener;
 
 /**
@@ -42,14 +42,14 @@ public class GroupsFragment extends Fragment {
     private FloatingActionButton fabAddNewQuestion;
     private FrameLayout frameLayout;
     private ArrayList<Group> groups;
-    private Font font;
+    private MyApplication myApplication;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
         View mainView = inflater.inflate(R.layout.groups_fragment, container, false);
         context=getContext();
-        font=new Font();
+        myApplication =new MyApplication();
         groups=new ArrayList<>();
         recyclerViewGroups=(RecyclerView)mainView.findViewById(R.id.recycler_view_groups);
         floatingActionsMenu=(FloatingActionsMenu)mainView.findViewById(R.id.group_fab_add);
@@ -118,7 +118,7 @@ public class GroupsFragment extends Fragment {
                         .positiveColor(ContextCompat.getColor(context, R.color.dialog_save_color))
                         .negativeText(R.string.cancel)
                         .negativeColor(ContextCompat.getColor(context, R.color.dialog_cancel_color))
-                        .typeface(font.getRTLFontNameForDialog(),null)
+                        .typeface(myApplication.getRTLFontNameForDialog(),null)
                         .show();
                 closeFloatingActionMenu();
             }
@@ -142,7 +142,7 @@ public class GroupsFragment extends Fragment {
                                         .positiveColor(ContextCompat.getColor(context, R.color.dialog_save_color))
                                         .negativeText(R.string.cancel)
                                         .negativeColor(ContextCompat.getColor(context, R.color.dialog_cancel_color))
-                                        .typeface(font.getRTLFontNameForDialog(),null)
+                                        .typeface(myApplication.getRTLFontNameForDialog(),null)
                                         .show();
                             }
                         })
@@ -174,7 +174,7 @@ public class GroupsFragment extends Fragment {
                                                         .positiveColor(ContextCompat.getColor(context, R.color.dialog_save_color))
                                                         .negativeText(R.string.cancel)
                                                         .negativeColor(ContextCompat.getColor(context, R.color.dialog_cancel_color))
-                                                        .typeface(font.getRTLFontNameForDialog(),null)
+                                                        .typeface(myApplication.getRTLFontNameForDialog(),null)
                                                         .show();
                                             }
                                         })

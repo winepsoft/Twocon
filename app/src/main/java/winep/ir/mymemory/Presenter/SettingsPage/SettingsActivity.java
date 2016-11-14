@@ -294,8 +294,7 @@ public class SettingsActivity extends AppCompatActivity {
 
 
         spinnerSelectLanguage =(Spinner)findViewById(R.id.spinner_settings_language);
-        String[] languageTitle = {getString(R.string.select_language), getString(R.string.english),getString(R.string.persian),getString(R.string.arabic)};
-        ArrayAdapter<String> a = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, languageTitle);
+        ArrayAdapter<String> a = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, Utilities.getInstance().getAllLanguageTitle(context));
         a.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerSelectLanguage.setAdapter(a);
     }

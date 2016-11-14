@@ -24,7 +24,7 @@ import winep.ir.mymemory.DataModel.MemoryBankItem;
 import winep.ir.mymemory.Presenter.QuestionPage.EditQuestionActivity;
 import winep.ir.mymemory.Presenter.QuestionPage.QuestionActivity;
 import winep.ir.mymemory.R;
-import winep.ir.mymemory.Utility.Font;
+import winep.ir.mymemory.Utility.MyApplication;
 
 /**
  * Created by ShaisteS on 10/1/2016.
@@ -46,14 +46,14 @@ public class MemoryBankFragment extends Fragment implements
     private ImageButton btnAnswerSeen;
     private ImageButton btnQuestionTrue;
     private ImageButton btnQuestionWrong;
-    private Font font;
+    private MyApplication myApplication;
 
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
 
         View mainView = inflater.inflate(R.layout.memory_bank_fragment, container, false);
         context=getContext();
-        font=new Font();
+        myApplication =new MyApplication();
         recyclerViewMemoryBank=(DragSelectRecyclerView) mainView.findViewById(R.id.recycler_view_memory_bank);
         recyclerViewMemoryBank.setLayoutManager(new LinearLayoutManager(context));
         //recyclerViewMemoryBank.addItemDecoration(new DividerItemDecorationRecyclerView(10));

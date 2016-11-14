@@ -27,7 +27,7 @@ import winep.ir.mymemory.DataModel.Group;
 import winep.ir.mymemory.Presenter.CoursePage.CourseActivity;
 import winep.ir.mymemory.Presenter.StatisticsGroupPage.StatisticsGroupActivity;
 import winep.ir.mymemory.R;
-import winep.ir.mymemory.Utility.Font;
+import winep.ir.mymemory.Utility.MyApplication;
 import winep.ir.mymemory.Utility.RectangleView;
 import winep.ir.mymemory.Utility.Utilities;
 
@@ -40,7 +40,7 @@ public class SubGroupRecyclerViewAdapter extends RecyclerView.Adapter<SubGroupRe
 
     private ArrayList<Group> allSubGroups;
     private Context context;
-    private Font font;
+    private MyApplication myApplication;
     private Drawable d;
 
     // NOTE: Make accessible with short name
@@ -51,7 +51,7 @@ public class SubGroupRecyclerViewAdapter extends RecyclerView.Adapter<SubGroupRe
         setHasStableIds(true); // this is required for D&D feature.
         this.context = context;
         allSubGroups = subGroups;
-        font = new Font();
+        myApplication = new MyApplication();
     }
 
     @Override
@@ -90,7 +90,7 @@ public class SubGroupRecyclerViewAdapter extends RecyclerView.Adapter<SubGroupRe
                                     .positiveColor(ContextCompat.getColor(context, R.color.dialog_save_color))
                                     .negativeText(R.string.cancel)
                                     .negativeColor(ContextCompat.getColor(context, R.color.dialog_cancel_color))
-                                    .typeface(font.getRTLFontNameForDialog(),null)
+                                    .typeface(myApplication.getRTLFontNameForDialog(),null)
                                     .show();
                         }
                         else if(item.getTitle().equals(context.getString(R.string.delete))){
@@ -107,7 +107,7 @@ public class SubGroupRecyclerViewAdapter extends RecyclerView.Adapter<SubGroupRe
                                     .positiveColor(ContextCompat.getColor(context, R.color.dialog_save_color))
                                     .negativeText(R.string.cancel)
                                     .neutralColor(ContextCompat.getColor(context, R.color.dialog_cancel_color))
-                                    .typeface(font.getRTLFontNameForDialog(),null)
+                                    .typeface(myApplication.getRTLFontNameForDialog(),null)
                                     .show();
                         }
                         else if(item.getTitle().equals(context.getString(R.string.information))){
@@ -238,12 +238,12 @@ public class SubGroupRecyclerViewAdapter extends RecyclerView.Adapter<SubGroupRe
 
     private ArrayList<Group> allSubGroups;
     private Context context;
-    private Font font;
+    private MyApplication myApplication;
 
     public SubGroupRecyclerViewAdapter(Context context,ArrayList<Group> subGroups){
         this.context=context;
         allSubGroups=subGroups;
-        font=new Font();
+        myApplication=new MyApplication();
     }
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {

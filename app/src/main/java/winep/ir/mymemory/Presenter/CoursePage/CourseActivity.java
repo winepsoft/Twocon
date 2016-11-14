@@ -29,7 +29,7 @@ import winep.ir.mymemory.DataModel.Course;
 import winep.ir.mymemory.Presenter.CreateQuestionPage.CreateQuestionActivity;
 import winep.ir.mymemory.R;
 import winep.ir.mymemory.Utility.ClickListener;
-import winep.ir.mymemory.Utility.Font;
+import winep.ir.mymemory.Utility.MyApplication;
 import winep.ir.mymemory.Utility.RecyclerTouchListener;
 import winep.ir.mymemory.Utility.Utilities;
 
@@ -48,7 +48,7 @@ public class CourseActivity extends AppCompatActivity
     private FloatingActionsMenu floatingActionsMenu;
     private FloatingActionButton fabAddCourse;
     private FloatingActionButton fabAddQuestion;
-    private Font font;
+    private MyApplication myApplication;
     private String subGroupTitle;
 
 
@@ -59,7 +59,7 @@ public class CourseActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.course_activity);
         context = this;
-        font=new Font();
+        myApplication =new MyApplication();
         subGroupTitle=getIntent().getExtras().get("subGroupName").toString();
 
         setTitle(getString(R.string.sub_group)+ " "+subGroupTitle);
@@ -133,7 +133,7 @@ public class CourseActivity extends AppCompatActivity
                         .positiveColor(ContextCompat.getColor(context, R.color.dialog_save_color))
                         .negativeText(R.string.cancel)
                         .negativeColor(ContextCompat.getColor(context, R.color.dialog_cancel_color))
-                        .typeface(font.getRTLFontNameForDialog(),null)
+                        .typeface(myApplication.getRTLFontNameForDialog(),null)
                         .show();
                 closeFloatingActionMenu();
             }

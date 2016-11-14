@@ -90,13 +90,13 @@ public class Utilities {
 
     public void setFontTextView(Context context,TextView textview){
         if (isSelectedALTRLanguage(context)){
-            Font font=new Font();
-            Typeface face = Typeface.createFromAsset(context.getAssets(),font.getFarsiFontName());
+            MyApplication myApplication =new MyApplication();
+            Typeface face = Typeface.createFromAsset(context.getAssets(), myApplication.getFarsiFontName());
             textview.setTypeface(face);
         }
         else {
-            Font font=new Font();
-            Typeface face = Typeface.createFromAsset(context.getAssets(),font.getFontName());
+            MyApplication myApplication =new MyApplication();
+            Typeface face = Typeface.createFromAsset(context.getAssets(), myApplication.getFontName());
             textview.setTypeface(face);
 
         }
@@ -104,13 +104,13 @@ public class Utilities {
 
     public void setFontEditTextView(Context context,EditText textview){
         if (isSelectedALTRLanguage(context)){
-            Font font=new Font();
-            Typeface face = Typeface.createFromAsset(context.getAssets(),font.getFarsiFontName());
+            MyApplication myApplication =new MyApplication();
+            Typeface face = Typeface.createFromAsset(context.getAssets(), myApplication.getFarsiFontName());
             textview.setTypeface(face);
         }
         else {
-            Font font=new Font();
-            Typeface face = Typeface.createFromAsset(context.getAssets(),font.getFontName());
+            MyApplication myApplication =new MyApplication();
+            Typeface face = Typeface.createFromAsset(context.getAssets(), myApplication.getFontName());
             textview.setTypeface(face);
 
         }
@@ -118,13 +118,13 @@ public class Utilities {
 
     public void setFontEditTextView(Context context, android.widget.EditText textview){
         if (isSelectedALTRLanguage(context)){
-            Font font=new Font();
-            Typeface face = Typeface.createFromAsset(context.getAssets(),font.getFarsiFontName());
+            MyApplication myApplication =new MyApplication();
+            Typeface face = Typeface.createFromAsset(context.getAssets(), myApplication.getFarsiFontName());
             textview.setTypeface(face);
         }
         else {
-            Font font=new Font();
-            Typeface face = Typeface.createFromAsset(context.getAssets(),font.getFontName());
+            MyApplication myApplication =new MyApplication();
+            Typeface face = Typeface.createFromAsset(context.getAssets(), myApplication.getFontName());
             textview.setTypeface(face);
 
         }
@@ -132,13 +132,13 @@ public class Utilities {
 
     public void setFontButtonView(Context context,Button button){
         if (isSelectedALTRLanguage(context)){
-            Font font=new Font();
-            Typeface face = Typeface.createFromAsset(context.getAssets(),font.getFarsiFontName());
+            MyApplication myApplication =new MyApplication();
+            Typeface face = Typeface.createFromAsset(context.getAssets(), myApplication.getFarsiFontName());
             button.setTypeface(face);
         }
         else {
-            Font font=new Font();
-            Typeface face = Typeface.createFromAsset(context.getAssets(),font.getFontName());
+            MyApplication myApplication =new MyApplication();
+            Typeface face = Typeface.createFromAsset(context.getAssets(), myApplication.getFontName());
             button.setTypeface(face);
 
         }
@@ -146,13 +146,13 @@ public class Utilities {
 
     public void setFontButtonView(Context context, android.widget.Button button){
         if (isSelectedALTRLanguage(context)){
-            Font font=new Font();
-            Typeface face = Typeface.createFromAsset(context.getAssets(),font.getFarsiFontName());
+            MyApplication myApplication =new MyApplication();
+            Typeface face = Typeface.createFromAsset(context.getAssets(), myApplication.getFarsiFontName());
             button.setTypeface(face);
         }
         else {
-            Font font=new Font();
-            Typeface face = Typeface.createFromAsset(context.getAssets(),font.getFontName());
+            MyApplication myApplication =new MyApplication();
+            Typeface face = Typeface.createFromAsset(context.getAssets(), myApplication.getFontName());
             button.setTypeface(face);
 
         }
@@ -224,5 +224,16 @@ public class Utilities {
                 .build()
                 .show();
     }
+
+    public String[] getAllLanguageTitle(Context context){
+
+        String[] languageTitle = {context.getString(R.string.select_language),
+                context.getString(R.string.english),
+                context.getString(R.string.persian),
+                context.getString(R.string.arabic)};
+        return languageTitle;
+    }
+
+
 
 }

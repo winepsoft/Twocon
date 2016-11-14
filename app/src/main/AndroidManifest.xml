@@ -8,18 +8,20 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:name="winep.ir.mymemory.Utility.Font"
+        android:name=".Utility.MyApplication"
         android:layoutDirection = "locale">
+
         <activity
-            android:name="winep.ir.mymemory.MainActivity"
+            android:name=".MainPage"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity android:name=".Presenter.LoginPage.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="winep.ir.mymemory.Presenter.LoginPage.LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name="winep.ir.mymemory.Presenter.SubGroupPage.SubGroupActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
@@ -48,6 +50,19 @@
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name="winep.ir.mymemory.Presenter.QuestionPage.ShowImageActivity"
             android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+
+        <activity android:name="com.facebook.FacebookActivity"
+            android:configChanges=
+                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:label="@string/app_name" />
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="5d973cbfe46f2888f592712136e6bc887c157e4a" />
+
+        <meta-data android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id"/>
+
 
     </application>
 </manifest>

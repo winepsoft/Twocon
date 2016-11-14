@@ -31,7 +31,7 @@ import winep.ir.mymemory.Presenter.ExamPage.ExamActivity;
 import winep.ir.mymemory.Presenter.LevelPage.LevelActivity;
 import winep.ir.mymemory.Presenter.StatisticsGroupPage.StatisticsGroupActivity;
 import winep.ir.mymemory.R;
-import winep.ir.mymemory.Utility.Font;
+import winep.ir.mymemory.Utility.MyApplication;
 import winep.ir.mymemory.Utility.RectangleView;
 import winep.ir.mymemory.Utility.Utilities;
 
@@ -42,7 +42,7 @@ public class CourseRecyclerViewAdapter extends RecyclerView.Adapter<CourseRecycl
 
     private ArrayList<Course> allCourses;
     private Context context;
-    private Font font;
+    private MyApplication myApplication;
     private Drawable d;
 
     // NOTE: Make accessible with short name
@@ -54,7 +54,7 @@ public class CourseRecyclerViewAdapter extends RecyclerView.Adapter<CourseRecycl
         setHasStableIds(true); // this is required for D&D feature.
         this.context=context;
         allCourses =courses;
-        font=new Font();
+        myApplication =new MyApplication();
     }
 
     @Override
@@ -94,7 +94,7 @@ public class CourseRecyclerViewAdapter extends RecyclerView.Adapter<CourseRecycl
                                     .positiveColor(ContextCompat.getColor(context, R.color.dialog_save_color))
                                     .negativeText(R.string.cancel)
                                     .negativeColor(ContextCompat.getColor(context, R.color.dialog_cancel_color))
-                                    .typeface(font.getRTLFontNameForDialog(),null)
+                                    .typeface(myApplication.getRTLFontNameForDialog(),null)
                                     .show();
                         }
                         else if(item.getTitle().equals(context.getString(R.string.delete))){
@@ -111,7 +111,7 @@ public class CourseRecyclerViewAdapter extends RecyclerView.Adapter<CourseRecycl
                                     .positiveColor(ContextCompat.getColor(context, R.color.dialog_save_color))
                                     .negativeText(R.string.cancel)
                                     .neutralColor(ContextCompat.getColor(context, R.color.dialog_cancel_color))
-                                    .typeface(font.getRTLFontNameForDialog(),null)
+                                    .typeface(myApplication.getRTLFontNameForDialog(),null)
                                     .show();
                         }
                         else if(item.getTitle().equals(context.getString(R.string.information))){
@@ -132,7 +132,7 @@ public class CourseRecyclerViewAdapter extends RecyclerView.Adapter<CourseRecycl
                                     .positiveColor(ContextCompat.getColor(context, R.color.dialog_save_color))
                                     .negativeText(R.string.cancel)
                                     .negativeColor(ContextCompat.getColor(context, R.color.dialog_cancel_color))
-                                    .typeface(font.getRTLFontNameForDialog(),null)
+                                    .typeface(myApplication.getRTLFontNameForDialog(),null)
                                     .onPositive(new MaterialDialog.SingleButtonCallback() {
                                         @Override
                                         public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {

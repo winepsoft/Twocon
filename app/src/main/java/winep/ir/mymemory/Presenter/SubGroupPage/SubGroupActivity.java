@@ -29,7 +29,7 @@ import winep.ir.mymemory.DataModel.Group;
 import winep.ir.mymemory.Presenter.CreateQuestionPage.CreateQuestionActivity;
 import winep.ir.mymemory.R;
 import winep.ir.mymemory.Utility.ClickListener;
-import winep.ir.mymemory.Utility.Font;
+import winep.ir.mymemory.Utility.MyApplication;
 import winep.ir.mymemory.Utility.RecyclerTouchListener;
 import winep.ir.mymemory.Utility.Utilities;
 
@@ -47,7 +47,7 @@ public class SubGroupActivity extends AppCompatActivity
     private FrameLayout frameLayout;
     private Context context;
     private  SubGroupRecyclerViewAdapter adapter;
-    private Font font;
+    private MyApplication myApplication;
     private String groupTitle;
 
 
@@ -58,7 +58,7 @@ public class SubGroupActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sub_group_activity);
         context=this;
-        font=new Font();
+        myApplication =new MyApplication();
         groupTitle=getIntent().getExtras().get("groupName").toString();
         setTitle(getString(R.string.group)+ " "+groupTitle);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -132,7 +132,7 @@ public class SubGroupActivity extends AppCompatActivity
                         .positiveColor(ContextCompat.getColor(context, R.color.dialog_save_color))
                         .negativeText(R.string.cancel)
                         .negativeColor(ContextCompat.getColor(context, R.color.dialog_cancel_color))
-                        .typeface(font.getRTLFontNameForDialog(),null)
+                        .typeface(myApplication.getRTLFontNameForDialog(),null)
                         .show();
                 closeFloatingActionMenu();
             }
@@ -156,7 +156,7 @@ public class SubGroupActivity extends AppCompatActivity
                                     .positiveColor(ContextCompat.getColor(context, R.color.dialog_save_color))
                                     .negativeText(R.string.cancel)
                                     .negativeColor(ContextCompat.getColor(context, R.color.dialog_cancel_color))
-                                    .typeface(font.getRTLFontNameForDialog(),null)
+                                    .typeface(myApplication.getRTLFontNameForDialog(),null)
                                     .show();
                         }
                     })

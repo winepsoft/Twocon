@@ -1,10 +1,21 @@
 <resources>
+
+    //SocialNetwork Id
+    <string name="facebook_app_id">1781982312059300</string>
+    <string name="twitter_api_key">A6Z21iFfQ9MJkuhYNdUPlNEa5</string>
+    <string name="twitter_consumer_key">A6Z21iFfQ9MJkuhYNdUPlNEa5</string>
+    <string name="twitter_consumer_secret">CrOF4snEYY0agLhPcG2QjkUlbMKPBMOGh1Kl0VbQd4OjbIKtez</string>
+
+
     //ActionBar
     <string name="app_name">My Memory</string>
     <string name="user_profile_name">User Name</string>
     <string name="action_search">Search</string>
     <string name="navigation_drawer_open">navigation_drawer_open</string>
     <string name="navigation_drawer_close">navigation_drawer_close</string>
+
+    //login Page
+    <string name="log_in_tour_button_title">Take A tour</string>
 
 
     //Tabs

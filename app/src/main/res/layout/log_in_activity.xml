@@ -1,77 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/main_background_color">
-    <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@mipmap/ic_launcher"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/imageView2" />
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/gray"
-        android:layout_below="@+id/imageView2"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/linearLayout2">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:layout_alignBottom="@+id/imageView2"
-            android:layout_centerHorizontal="true"
-            android:textSize="30sp"
-            android:textColor="@color/white"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp" />
-    </LinearLayout>
-    <LinearLayout
+    android:layout_height="wrap_content"
+    android:background="@drawable/log_in_page_back">
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/linearLayout2"
-        android:layout_centerHorizontal="true">
-        <com.google.android.gms.common.SignInButton
-            android:id="@+id/log_in_google_plus"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"/>
-        <com.facebook.login.widget.LoginButton
-            android:id="@+id/log_in_facebook"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/layout_tool_bar_tour">
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"/>
-        <com.twitter.sdk.android.core.identity.TwitterLoginButton
-            android:id="@+id/twitter_sign_in_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp" />
-    </LinearLayout>
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/app_icon"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/imageView2"
+                android:layout_gravity="center_horizontal" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_with_corner_gray"
+                android:layout_gravity="center_horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_name"
+                    android:textSize="30sp"
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_gravity="center_horizontal" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/linearLayout2"
+                android:layout_centerHorizontal="true">
+                <com.google.android.gms.common.SignInButton
+                    android:id="@+id/log_in_google_plus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <com.facebook.login.widget.LoginButton
+                    android:id="@+id/log_in_facebook"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_recycler_view_top"/>
+                <com.twitter.sdk.android.core.identity.TwitterLoginButton
+                    android:id="@+id/twitter_login_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="@dimen/margin_recycler_view_top"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
         android:layout_marginRight="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginBottom="5dp"
-        android:layout_marginTop="5dp">
+        android:layout_marginTop="5dp"
+        android:id="@+id/layout_tool_bar_tour">
         <com.rey.material.widget.Spinner
             style="@style/Material.Widget.Spinner"
             app:rd_style="@style/Material.Drawable.Ripple.Wave"
+            android:background="@color/gray"
             android:layout_width="0dp"
             android:layout_height="40dp"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:id="@+id/spinner_log_in_select_language"/>
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -80,7 +91,10 @@
         <com.rey.material.widget.Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:background="@color/gray"
-            android:layout_weight="1"/>
+            android:background="@drawable/button_with_corner_gray"
+            android:text="@string/log_in_tour_button_title"
+            android:textColor="@color/white"
+            android:layout_weight="1"
+            android:id="@+id/btn_log_in_tour"/>
     </LinearLayout>
 </RelativeLayout>

@@ -28,7 +28,7 @@ import winep.ir.mymemory.Presenter.LevelSettingPage.LevelSettingActivity;
 import winep.ir.mymemory.Presenter.StatisticsGroupPage.StatisticsGroupActivity;
 import winep.ir.mymemory.Presenter.SubGroupPage.SubGroupActivity;
 import winep.ir.mymemory.R;
-import winep.ir.mymemory.Utility.Font;
+import winep.ir.mymemory.Utility.MyApplication;
 import winep.ir.mymemory.Utility.RectangleView;
 import winep.ir.mymemory.Utility.Utilities;
 
@@ -43,7 +43,7 @@ public class GroupRecyclerViewAdapter extends RecyclerView.Adapter<GroupRecycler
 
     private ArrayList<Group> allGroups;
     private Context context;
-    private Font font;
+    private MyApplication myApplication;
     private Drawable d;
 
     // NOTE: Make accessible with short name
@@ -54,7 +54,7 @@ public class GroupRecyclerViewAdapter extends RecyclerView.Adapter<GroupRecycler
         setHasStableIds(true); // this is required for D&D feature.
         this.context=context;
         allGroups=groups;
-        font=new Font();
+        myApplication =new MyApplication();
     }
 
     @Override
@@ -106,7 +106,7 @@ public class GroupRecyclerViewAdapter extends RecyclerView.Adapter<GroupRecycler
                                     .positiveColor(ContextCompat.getColor(context, R.color.dialog_save_color))
                                     .negativeText(R.string.cancel)
                                     .negativeColor(ContextCompat.getColor(context, R.color.dialog_cancel_color))
-                                    .typeface(font.getRTLFontNameForDialog(),null)
+                                    .typeface(myApplication.getRTLFontNameForDialog(),null)
                                     .show();
                         }
                         else if(item.getTitle().equals(context.getString(R.string.delete))){
@@ -127,7 +127,7 @@ public class GroupRecyclerViewAdapter extends RecyclerView.Adapter<GroupRecycler
                                     .positiveColor(ContextCompat.getColor(context, R.color.dialog_save_color))
                                     .negativeText(R.string.cancel)
                                     .neutralColor(ContextCompat.getColor(context, R.color.dialog_cancel_color))
-                                    .typeface(font.getRTLFontNameForDialog(),null)
+                                    .typeface(myApplication.getRTLFontNameForDialog(),null)
                                     .show();
                         }
                         else if(item.getTitle().equals(context.getString(R.string.information))){
