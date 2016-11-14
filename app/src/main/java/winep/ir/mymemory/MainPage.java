@@ -26,6 +26,7 @@ import winep.ir.mymemory.Presenter.OnlineDictionaryTab.OnlineDictionaryFragment;
 import winep.ir.mymemory.Presenter.PagerAdapter;
 import winep.ir.mymemory.Presenter.SettingsPage.SettingsActivity;
 import winep.ir.mymemory.Presenter.StatisticsTotalPage.StatisticsTotalActivity;
+import winep.ir.mymemory.Presenter.UserProfileActivity;
 import winep.ir.mymemory.Utility.StaticParameters;
 import winep.ir.mymemory.Utility.Utilities;
 
@@ -189,6 +190,10 @@ public class MainPage extends AppCompatActivity
 
         else if(id==R.id.nav_my_activities){
             Intent intent=new Intent(this, StatisticsTotalActivity.class);
+            startActivity(intent);
+        }
+        else if(id==R.id.nav_user_profile){
+            Intent intent=new Intent(this, UserProfileActivity.class);
             startActivity(intent);
         }
 

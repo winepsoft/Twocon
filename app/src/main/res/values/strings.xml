@@ -273,4 +273,13 @@
     <string name="and">and</string>
     <string name="open">Opened</string>
 
+    //user profile page
+    <string name="user_profile_title">Profile</string>
+    <string name="user_profile_last_name">Last name</string>
+    <string name="user_profile_first_name">First name</string>
+    <string name="user_profile_email">Email</string>
+    <string name="user_profile_mobile">Mobile</string>
+    <string name="user_profile_account">Account</string>
+    <string name="user_profile_log_out">Log out</string>
+    <string name="user_profile_upgrade">Upgrade</string>
 </resources>
