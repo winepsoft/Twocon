@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MyMemory.iml" filepath="$PROJECT_DIR$/MyMemory.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/google-api-translate-java-0.92/google-api-translate-java-0.92.iml" filepath="$PROJECT_DIR$/google-api-translate-java-0.92/google-api-translate-java-0.92.iml" />
       <module fileurl="file://$PROJECT_DIR$/library-release/library-release.iml" filepath="$PROJECT_DIR$/library-release/library-release.iml" />
     </modules>
   </component>

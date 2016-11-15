@@ -86,4 +86,6 @@ dependencies {
     compile('com.twitter.sdk.android:twitter:2.2.0@aar') {
         transitive = true;
     }
+    //Google Translate API
+    compile project(':google-api-translate-java-0.92')
 }

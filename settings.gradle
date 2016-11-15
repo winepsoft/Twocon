@@ -1,1 +1,1 @@
-include ':app', ':library-release'
+include ':app', ':library-release', ':google-api-translate-java-0.92'
