@@ -293,4 +293,8 @@
     <string name="translation_page_to">to</string>
     <string name="translation_page_btn_translation">Translation</string>
     <string name="translation_page_btn_add_memory_bank">Add memory bank</string>
+    
+    //Flash cart tab
+    <string name="flash_cart_tab_btn_select_group">Select Group</string>
+    <string name="flash_cart_tab_btn_filter">Filter</string>
 </resources>
