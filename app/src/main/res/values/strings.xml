@@ -287,4 +287,10 @@
     <string name="activation_page_purchase_one_year">Purchase an annual subscription</string>
     <string name="activation_page_purchase_continual">Buy permanent share</string>
     <string name="activation_page_purchase_one_year_description">-active for one\n-active online support\n-remove all advertisement</string>
+
+    //translation page
+    <string name="translation_page_from">from</string>
+    <string name="translation_page_to">to</string>
+    <string name="translation_page_btn_translation">Translation</string>
+    <string name="translation_page_btn_add_memory_bank">Add memory bank</string>
 </resources>
