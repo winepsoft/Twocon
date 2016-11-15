@@ -264,4 +264,17 @@
     <string name="user_profile_account">حساب کاربری</string>
     <string name="user_profile_log_out">خروج</string>
     <string name="user_profile_upgrade">ارتقا</string>
+
+    //activation page
+    <string name="activation_page_purchase_one_year">خرید اشتراک سالیانه</string>
+    <string name="activation_page_purchase_continual">خرید اشتراک دائمی</string>
+    <string name="activation_page_purchase_one_year_description">
+        -فعال سازی تمام بخشهای برنامه به مدت یکسال
+        \n
+        مترجم، تشخیص گفتار،جمله یابی،تلفظ و ...
+        \n
+        -فعال شدن بخش پشتیبانی آنلاین
+        \n
+    -حذف تمامی تبلیغات اپلیکیشن
+    </string>
 </resources>

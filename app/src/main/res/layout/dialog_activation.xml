@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activation_page_purchase_one_year"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:layout_weight="1"
+            android:checked="true"
+            android:id="@+id/radio_button_activation_page_purchase_one_year"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activation_page_purchase_continual"
+            android:layout_weight="1"
+            android:id="@+id/radio_button_activation_page_purchase_continual"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_gravity="left" />
+
+    </RadioGroup>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_activation_page_purchase_description"
+        android:text="@string/activation_page_purchase_one_year_description"
+        android:textColor="@color/black"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="40dp"/>
+    <com.rey.material.widget.Button
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:background="@drawable/button_with_corner_red"
+        android:id="@+id/btn_activation_page_purchase"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/white"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:text="@string/activation_page_purchase_one_year"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@mipmap/telegram_logo"
+            android:background="@drawable/circle_pink"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/activation_page_telegram"/>
+    </RelativeLayout>
+</LinearLayout>

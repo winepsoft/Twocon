@@ -7,12 +7,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.ViewSwitcher;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 import winep.ir.mymemory.R;
+import winep.ir.mymemory.Utility.Dialogs;
+import winep.ir.mymemory.Utility.MyApplication;
 import winep.ir.mymemory.Utility.Utilities;
 
 /**
@@ -21,6 +24,7 @@ import winep.ir.mymemory.Utility.Utilities;
 public class UserProfileActivity extends AppCompatActivity {
 
     private Context context;
+    private MyApplication myApplication;
     private ViewSwitcher viewSwitcherLastName;
     private TextView txtLastName;
     private EditText editTextLastName;
@@ -36,12 +40,14 @@ public class UserProfileActivity extends AppCompatActivity {
     private ViewSwitcher viewSwitcherAccount;
     private TextView txtAccount;
     private EditText editTextAccount;
+    private Button btnUpgrade;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_profile_activity);
         context = this;
+        myApplication =new MyApplication();
 
         setTitle(getString(R.string.user_profile_title));
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -63,6 +69,7 @@ public class UserProfileActivity extends AppCompatActivity {
         viewSwitcherAccount=(ViewSwitcher)findViewById(R.id.view_switcher_user_profile_account);
         txtAccount=(TextView)findViewById(R.id.txt_user_profile_account);
         editTextAccount=(EditText)findViewById(R.id.edit_txt_user_profile_account);
+        btnUpgrade=(Button)findViewById(R.id.btn_user_profile_upgrade);
 
         txtLastName.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,6 +103,13 @@ public class UserProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 viewSwitcherAccount.showNext();
+            }
+        });
+
+        btnUpgrade.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Dialogs.getInstance().showActivationDialog(context);
             }
         });
     }
