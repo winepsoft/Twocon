@@ -25,6 +25,9 @@ public class UserProfileActivity extends AppCompatActivity {
 
     private Context context;
     private MyApplication myApplication;
+    private ViewSwitcher viewSwitcherUserName;
+    private TextView txtUserName;
+    private EditText editTextUserName;
     private ViewSwitcher viewSwitcherLastName;
     private TextView txtLastName;
     private EditText editTextLastName;
@@ -53,7 +56,9 @@ public class UserProfileActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
+        viewSwitcherUserName=(ViewSwitcher)findViewById(R.id.view_switcher_user_profile_user_name);
+        txtUserName=(TextView)findViewById(R.id.txt_user_profile_user_name);
+        editTextUserName=(EditText)findViewById(R.id.edit_txt_user_profile_user_name);
         viewSwitcherLastName=(ViewSwitcher)findViewById(R.id.view_switcher_user_profile_last_name);
         txtLastName=(TextView)findViewById(R.id.txt_user_profile_last_name);
         editTextLastName=(EditText)findViewById(R.id.edit_txt_user_profile_last_name);
@@ -70,6 +75,13 @@ public class UserProfileActivity extends AppCompatActivity {
         txtAccount=(TextView)findViewById(R.id.txt_user_profile_account);
         editTextAccount=(EditText)findViewById(R.id.edit_txt_user_profile_account);
         btnUpgrade=(Button)findViewById(R.id.btn_user_profile_upgrade);
+
+        txtUserName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                viewSwitcherUserName.showNext();
+            }
+        });
 
         txtLastName.setOnClickListener(new View.OnClickListener() {
             @Override
