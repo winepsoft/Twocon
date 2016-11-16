@@ -22,22 +22,38 @@
 
         <winep.ir.mymemory.Utility.RoundedImageView
             android:id="@+id/navigationImageView"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:src="@drawable/user"
             android:paddingTop="@dimen/nav_header_vertical_spacing"
-            android:layout_centerVertical="true"
+            android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true" />
-        <TextView
-            android:layout_width="match_parent"
+        <ViewSwitcher
             android:layout_height="wrap_content"
-            android:paddingTop="@dimen/nav_header_vertical_spacing"
-            android:paddingBottom="@dimen/nav_header_vertical_spacing"
-            android:text="@string/user_profile_name"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:layout_alignParentBottom="true"
-            android:textColor="@color/white"
-            android:gravity="center_vertical|center_horizontal" />
+            android:layout_width="match_parent"
+            android:id="@+id/view_switcher_user_profile_user_name"
+            android:layout_alignParentBottom="true">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="@dimen/nav_header_vertical_spacing"
+                android:paddingBottom="@dimen/nav_header_vertical_spacing"
+                android:text="@string/user_profile_name"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/white"
+                android:gravity="center_vertical|center_horizontal"
+                android:id="@+id/txt_user_profile_user_name"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/user_profile_name"
+                android:id="@+id/edit_txt_user_profile_user_name"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:gravity="center_vertical|center_horizontal" />
+
+        </ViewSwitcher>
+
+
     </RelativeLayout>
     <include layout="@layout/user_profile_activity_content"/>
 </LinearLayout>
