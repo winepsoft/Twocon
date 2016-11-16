@@ -297,4 +297,12 @@
     //Flash cart tab
     <string name="flash_cart_tab_btn_select_group">Select Group</string>
     <string name="flash_cart_tab_btn_filter">Filter</string>
+
+    //Login page
+    <string name="login_page_google">Sign in with google</string>
+    <string name="login_page_facebook">Sign in with facebook</string>
+    <string name="login_page_twitter">Sign in with twitter</string>
+
+
+
 </resources>

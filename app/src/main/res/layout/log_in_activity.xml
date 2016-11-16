@@ -25,7 +25,6 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/button_with_corner_gray"
                 android:layout_gravity="center_horizontal">
                 <TextView
                     android:layout_width="wrap_content"
@@ -47,21 +46,83 @@
                 android:layout_marginTop="10dp"
                 android:layout_below="@+id/linearLayout2"
                 android:layout_centerHorizontal="true">
-                <com.google.android.gms.common.SignInButton
+
+                <LinearLayout
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_horizontal"
+                    android:id="@+id/btn_google">
+                    <ImageButton
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@color/google_color"
+                        android:src="@mipmap/google_plus"/>
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/google_color"
+                        android:text="@string/login_page_google"
+                        android:textColor="@color/white"
+                        style="?android:attr/buttonStyleSmall"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    android:layout_gravity="center_horizontal"
+                    android:id="@+id/btn_facebook">
+                    <ImageButton
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@color/facebook_color"
+                        android:src="@mipmap/facebook"/>
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/facebook_color"
+                        android:text="@string/login_page_facebook"
+                        android:textColor="@color/white"
+                        style="?android:attr/buttonStyleSmall"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    android:layout_gravity="center_horizontal"
+                    android:id="@+id/btn_twitter">
+                    <ImageButton
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@color/twitter_color"
+                        android:src="@mipmap/twitter"/>
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/twitter_color"
+                        android:text="@string/login_page_twitter"
+                        android:textColor="@color/white"
+                        style="?android:attr/buttonStyleSmall"/>
+                </LinearLayout>
+               <!-- <com.google.android.gms.common.SignInButton
                     android:id="@+id/log_in_google_plus"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center" />
                 <com.facebook.login.widget.LoginButton
                     android:id="@+id/log_in_facebook"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_recycler_view_top"/>
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="@dimen/margin_recycler_view_top"
+                    android:layout_gravity="center" />
                 <com.twitter.sdk.android.core.identity.TwitterLoginButton
                     android:id="@+id/twitter_login_button"
-                    android:layout_width="match_parent"
+                    android:layout_width="300dp"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:layout_marginTop="@dimen/margin_recycler_view_top"/>
+                    android:layout_marginTop="@dimen/margin_recycler_view_top"
+                    android:layout_gravity="center" />-->
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
@@ -78,9 +139,9 @@
         <com.rey.material.widget.Spinner
             style="@style/Material.Widget.Spinner"
             app:rd_style="@style/Material.Drawable.Ripple.Wave"
-            android:background="@color/gray"
             android:layout_width="0dp"
             android:layout_height="40dp"
+            android:background="@color/white"
             android:layout_weight="1"
             android:id="@+id/spinner_log_in_select_language"/>
         <LinearLayout
@@ -91,7 +152,7 @@
         <com.rey.material.widget.Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:background="@drawable/button_with_corner_gray"
+            android:background="@null"
             android:text="@string/log_in_tour_button_title"
             android:textColor="@color/white"
             android:layout_weight="1"

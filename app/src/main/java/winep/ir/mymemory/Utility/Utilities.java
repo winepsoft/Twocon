@@ -227,8 +227,7 @@ public class Utilities {
 
     public String[] getAllLanguageTitle(Context context){
 
-        String[] languageTitle = {context.getString(R.string.select_language),
-                context.getString(R.string.english),
+        String[] languageTitle = {context.getString(R.string.english),
                 context.getString(R.string.persian),
                 context.getString(R.string.arabic)};
         return languageTitle;

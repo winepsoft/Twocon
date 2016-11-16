@@ -71,4 +71,8 @@
     <color name="deep_purple">#673AB7</color>
     <color name="black">#000000</color>
     <color name="black_transparent">#00000000</color>
+
+    <color name="google_color">#d62d20</color>
+    <color name="facebook_color">#3b5998</color>
+    <color name="twitter_color">#1dcaff</color>
 </resources>

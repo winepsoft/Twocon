@@ -1,27 +1,19 @@
 package winep.ir.mymemory.Presenter.LoginPage;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Toast;
+import android.widget.LinearLayout;
 
 import com.facebook.CallbackManager;
-import com.facebook.FacebookCallback;
-import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
-import com.facebook.login.LoginResult;
-import com.facebook.login.widget.LoginButton;
 import com.rey.material.widget.Button;
 import com.rey.material.widget.Spinner;
-import com.twitter.sdk.android.core.Callback;
-import com.twitter.sdk.android.core.Result;
-import com.twitter.sdk.android.core.TwitterException;
-import com.twitter.sdk.android.core.TwitterSession;
-import com.twitter.sdk.android.core.identity.TwitterLoginButton;
 
 import winep.ir.mymemory.MainPage;
 import winep.ir.mymemory.R;
@@ -38,11 +30,12 @@ public class MainActivity extends AppCompatActivity {
     private Spinner spinnerSelectLanguage;
     private Context context;
     private CallbackManager mFacebookCallbackManager;
-    private LoginButton mFacebookSignInButton;
-    private TwitterLoginButton loginButton;
+    private LinearLayout mFacebookSignInButton;
+    private LinearLayout loginButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        forceRTLIfSupported();
         FacebookSdk.sdkInitialize(getApplicationContext());
         mFacebookCallbackManager = CallbackManager.Factory.create();
         setContentView(R.layout.log_in_activity);
@@ -63,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        loginButton = (TwitterLoginButton) findViewById(R.id.twitter_login_button);
+        /*loginButton = (TwitterLoginButton) findViewById(R.id.twitter_login_button);
         loginButton.setCallback(new Callback<TwitterSession>() {
             @Override
             public void success(Result<TwitterSession> result) {
@@ -94,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                                 LoginManager.getInstance().logOut();
                                 return null;
                             }
-                        });*/
+                        });
                     }
 
                     @Override
@@ -108,7 +101,15 @@ public class MainActivity extends AppCompatActivity {
                         //handleSignInResult(null);
                     }
                 }
-        );
+        );*/
+    }
+
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
+    private void forceRTLIfSupported()
+    {
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1){
+            getWindow().getDecorView().setLayoutDirection(View.LAYOUT_DIRECTION_LTR);
+        }
     }
 
    @Override
@@ -116,6 +117,6 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         // Make sure that the loginButton hears the result from any
         // Activity that it triggered.
-        loginButton.onActivityResult(requestCode, resultCode, data);
+        //loginButton.onActivityResult(requestCode, resultCode, data);
     }
 }
