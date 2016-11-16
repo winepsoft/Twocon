@@ -2,7 +2,6 @@ package winep.ir.mymemory.Utility;
 
 import android.content.Context;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
@@ -33,7 +32,7 @@ public class Dialogs {
         RadioButton radioButtonPurchaseContinual=(RadioButton)dialog.findViewById(R.id.radio_button_activation_page_purchase_continual);
         final TextView txtPurchaseDescription=(TextView)dialog.findViewById(R.id.txt_activation_page_purchase_description);
         final com.rey.material.widget.Button btnPurchase=(com.rey.material.widget.Button)dialog.findViewById(R.id.btn_activation_page_purchase);
-        ImageButton imgButtonTelegram=(ImageButton)dialog.findViewById(R.id.activation_page_telegram);
+        //ImageButton imgButtonTelegram=(ImageButton)dialog.findViewById(R.id.activation_page_telegram);
         radioButtonPurchaseOneYear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
