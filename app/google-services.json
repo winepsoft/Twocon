@@ -1,0 +1,51 @@
+{
+  "project_info": {
+    "project_number": "745044026687",
+    "project_id": "firebase-mymemory"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:745044026687:android:1db0caddfd775a02",
+        "android_client_info": {
+          "package_name": "winep.ir.mymemory"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "745044026687-fork0lk2dtofokkg09cf4tb3keiuqfac.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "winep.ir.mymemory",
+            "certificate_hash": "CAED1E89ED43920C3BD0FDB595630920B084C55A"
+          }
+        },
+        {
+          "client_id": "745044026687-9iejvvfn95dvltbrn3solcdu8mkev9in.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEULE4cCdyHNgfkakju2GZQ-Q6tjUa_Vc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-87337384-1"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
