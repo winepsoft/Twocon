@@ -1,12 +1,19 @@
 package winep.ir.mymemory.Utility;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 
+import winep.ir.mymemory.Presenter.ExamPage.ExamActivity;
 import winep.ir.mymemory.R;
 
 /**
@@ -73,6 +80,41 @@ public class Dialogs {
         Utilities.getInstance().setFontTextView(context,flashViewed);
         TextView flashDownload=(TextView)dialog.findViewById(R.id.dialog_flash_description_download_value);
         Utilities.getInstance().setFontTextView(context,flashDownload);
+        dialog.show();
+    }
+
+    public void showExamDialog(final Context context){
+        MyApplication myApplication=new MyApplication();
+        boolean wrapInScrollView = true;
+        MaterialDialog dialog=new MaterialDialog.Builder(context)
+                .customView(R.layout.exam_dialog, wrapInScrollView)
+                .positiveText(R.string.save)
+                .positiveColor(ContextCompat.getColor(context, R.color.dialog_save_color))
+                .negativeText(R.string.cancel)
+                .negativeColor(ContextCompat.getColor(context, R.color.dialog_cancel_color))
+                .typeface(myApplication.getRTLFontNameForDialog(),null)
+                .onPositive(new MaterialDialog.SingleButtonCallback() {
+                    @Override
+                    public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                        EditText editTextExamNumber=(EditText)dialog.findViewById(R.id.edit_text_exam_number);
+                        int examNumber;
+                        if (editTextExamNumber.getText().toString().equals(""))
+                            examNumber=0;
+                        else
+                            examNumber =Integer.parseInt(editTextExamNumber.getText().toString());
+                        Intent intent=new Intent(context, ExamActivity.class);
+                        intent.putExtra("examQuestionNumber",examNumber);
+                        context.startActivity(intent);
+                        if (context==StaticParameters.getInstance().examResultContext)
+                            ((Activity)context).finish();
+
+                    }
+                }).build();
+        EditText editTextExamNumber=(EditText)dialog.findViewById(R.id.edit_text_exam_number);
+        Utilities.getInstance().setFontEditTextView(context,editTextExamNumber);
+        TextView txtAllQuestionCourse=(TextView)dialog.findViewById(R.id.text_all_question_course);
+        txtAllQuestionCourse.setText("20");
+        Utilities.getInstance().setFontTextView(context,txtAllQuestionCourse);
         dialog.show();
     }
 }

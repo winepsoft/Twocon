@@ -18,4 +18,5 @@ public class StaticParameters {
     public Context mainActivityContext;
     public int screenWidth=0;
     public int screenHeight =0;
+    public Context examResultContext;
 }

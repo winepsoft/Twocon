@@ -3,6 +3,7 @@ package winep.ir.mymemory.Presenter.ExamPage;
 import android.animation.Animator;
 import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.v4.view.ViewPager;
@@ -23,6 +24,7 @@ import java.util.ArrayList;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 import winep.ir.mymemory.DataModel.Exam;
 import winep.ir.mymemory.DataModel.Question;
+import winep.ir.mymemory.Presenter.ExamResultActivity;
 import winep.ir.mymemory.Presenter.ObserverPackage.setClickOnAnswerOfQuestionExam;
 import winep.ir.mymemory.Presenter.ObserverPackage.setClickOnAnswerOfQuestionExamListener;
 import winep.ir.mymemory.R;
@@ -152,6 +154,13 @@ public class ExamActivity extends AppCompatActivity
         });
 
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent=new Intent(context, ExamResultActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     private ArrayList<Exam> createExam(int examQuestionNumber){

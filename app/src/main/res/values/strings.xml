@@ -323,4 +323,13 @@
     <string name="dialog_flash_description_viewed">Viewed</string>
     <string name="dialog_flash_description_download">Download</string>
     <string name="dialog_flash_description_cards_review">Cards review</string>
+
+    //exam result page
+    <string name="exam_result_page_title">Result</string>
+    <string name="result_exam_all_question">All question</string>
+    <string name="result_exam_correct_answer">Correct</string>
+    <string name="result_exam_incorrect_answer">Incorrect</string>
+    <string name="result_exam_no_answer">No answer</string>
+    <string name="result_exam_review">Question review</string>
+    <string name="result_exam_retry">Retry</string>
 </resources>

@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
@@ -12,12 +11,10 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.h6ah4i.android.widget.advrecyclerview.draggable.DraggableItemAdapter;
 import com.h6ah4i.android.widget.advrecyclerview.draggable.DraggableItemConstants;
@@ -27,10 +24,10 @@ import com.h6ah4i.android.widget.advrecyclerview.utils.AbstractDraggableItemView
 import java.util.ArrayList;
 
 import winep.ir.mymemory.DataModel.Course;
-import winep.ir.mymemory.Presenter.ExamPage.ExamActivity;
 import winep.ir.mymemory.Presenter.LevelPage.LevelActivity;
 import winep.ir.mymemory.Presenter.StatisticsGroupPage.StatisticsGroupActivity;
 import winep.ir.mymemory.R;
+import winep.ir.mymemory.Utility.Dialogs;
 import winep.ir.mymemory.Utility.MyApplication;
 import winep.ir.mymemory.Utility.RectangleView;
 import winep.ir.mymemory.Utility.Utilities;
@@ -124,36 +121,7 @@ public class CourseRecyclerViewAdapter extends RecyclerView.Adapter<CourseRecycl
                             Utilities.getInstance().showColorPickerDialog(context);
                         }
                         else if(item.getItemId()==R.id.action_course_exam){
-
-                            boolean wrapInScrollView = true;
-                            MaterialDialog dialog=new MaterialDialog.Builder(context)
-                                    .customView(R.layout.exam_dialog, wrapInScrollView)
-                                    .positiveText(R.string.save)
-                                    .positiveColor(ContextCompat.getColor(context, R.color.dialog_save_color))
-                                    .negativeText(R.string.cancel)
-                                    .negativeColor(ContextCompat.getColor(context, R.color.dialog_cancel_color))
-                                    .typeface(myApplication.getRTLFontNameForDialog(),null)
-                                    .onPositive(new MaterialDialog.SingleButtonCallback() {
-                                        @Override
-                                        public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-                                            EditText editTextExamNumber=(EditText)dialog.findViewById(R.id.edit_text_exam_number);
-                                            int examNumber;
-                                            if (editTextExamNumber.getText().toString().equals(""))
-                                                examNumber=0;
-                                            else
-                                                examNumber =Integer.parseInt(editTextExamNumber.getText().toString());
-                                            Intent intent=new Intent(context, ExamActivity.class);
-                                            intent.putExtra("examQuestionNumber",examNumber);
-                                            context.startActivity(intent);
-                                        }
-                                    }).build();
-
-                            EditText editTextExamNumber=(EditText)dialog.findViewById(R.id.edit_text_exam_number);
-                            Utilities.getInstance().setFontEditTextView(context,editTextExamNumber);
-                            TextView txtAllQuestionCourse=(TextView)dialog.findViewById(R.id.text_all_question_course);
-                            txtAllQuestionCourse.setText("20");
-                            Utilities.getInstance().setFontTextView(context,txtAllQuestionCourse);
-                            dialog.show();
+                            Dialogs.getInstance().showExamDialog(context);
                         }
                         return true;
                     }

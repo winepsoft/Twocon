@@ -309,4 +309,12 @@
     <string name="dialog_flash_description_download">دانلود</string>
     <string name="dialog_flash_description_cards_review">مرور کارت ها</string>
 
+    //exam result page
+    <string name="exam_result_page_title">نتیجه</string>
+    <string name="result_exam_all_question">کل سوالات</string>
+    <string name="result_exam_correct_answer">صحیح</string>
+    <string name="result_exam_incorrect_answer">غلط</string>
+    <string name="result_exam_no_answer">نزده</string>
+    <string name="result_exam_review">مرور سوالات</string>
+    <string name="result_exam_retry">تلاش مجدد</string>
 </resources>
