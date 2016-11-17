@@ -287,4 +287,16 @@
     //Flash cart tab
     <string name="flash_cart_tab_btn_select_group">انتخاب دسته</string>
     <string name="flash_cart_tab_btn_filter">فیلتر</string>
+
+    //dialog flash dialog
+    <string name="dialog_flash_description_title">توضیحات</string>
+    <string name="dialog_flash_description_author">نویسنده</string>
+    <string name="dialog_flash_description_download_size">حجم</string>
+    <string name="dialog_flash_description_created_date">تاریخ ایجاد</string>
+    <string name="dialog_flash_description_last_modified">تاریخ آخرین بروزرسانی</string>
+    <string name="dialog_flash_description_cards">تعداد سوال</string>
+    <string name="dialog_flash_description_viewed">بازدید</string>
+    <string name="dialog_flash_description_download">دانلود</string>
+    <string name="dialog_flash_description_cards_review">مرور کارت ها</string>
+
 </resources>

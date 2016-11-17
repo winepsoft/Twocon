@@ -14,6 +14,7 @@ import java.util.ArrayList;
 
 import winep.ir.mymemory.DataModel.FlashCart;
 import winep.ir.mymemory.R;
+import winep.ir.mymemory.Utility.Dialogs;
 import winep.ir.mymemory.Utility.RectangleView;
 import winep.ir.mymemory.Utility.Utilities;
 
@@ -37,10 +38,16 @@ public class FlashRecyclerViewAdapter extends RecyclerView.Adapter<FlashRecycler
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         FlashCart aFlashCart=allFlashCarts.get(position);
-        holder.txtFlashTitle.setText(aFlashCart.getTitle()+"\n"+aFlashCart.getDownloadSize());
+        holder.txtFlashTitle.setText(aFlashCart.getTitle());
         if (!aFlashCart.getMainPrice().equals("0"))
             holder.txtFlashMainPrice.setText(aFlashCart.getMainPrice());
         holder.btnFlashPurchase.setText(aFlashCart.getPurchasePrice());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Dialogs.getInstance().showDescriptionFlash(context);
+            }
+        });
     }
 
     @Override
@@ -53,6 +60,7 @@ public class FlashRecyclerViewAdapter extends RecyclerView.Adapter<FlashRecycler
         private ImageView imgFlashPic;
         private TextView txtFlashTitle;
         private TextView txtFlashMainPrice;
+        private TextView txtFlashDownloadSize;
         private Button btnFlashPurchase;
         private RectangleView colorSquare;
 
@@ -61,6 +69,8 @@ public class FlashRecyclerViewAdapter extends RecyclerView.Adapter<FlashRecycler
             imgFlashPic=(ImageView)itemView.findViewById(R.id.image_flash);
             txtFlashTitle=(TextView)itemView.findViewById(R.id.txt_flash_title);
             Utilities.getInstance().setFontTextView(context,txtFlashTitle);
+            txtFlashDownloadSize=(TextView)itemView.findViewById(R.id.txt_flash_download_size);
+            Utilities.getInstance().setFontTextView(context,txtFlashDownloadSize);
             txtFlashMainPrice=(TextView)itemView.findViewById(R.id.txt_flash_main_price);
             Utilities.getInstance().setFontTextView(context,txtFlashMainPrice);
             txtFlashMainPrice.setPaintFlags(txtFlashMainPrice.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);

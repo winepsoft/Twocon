@@ -303,6 +303,14 @@
     <string name="login_page_facebook">Sign in with facebook</string>
     <string name="login_page_twitter">Sign in with twitter</string>
 
-
-
+    //dialog flash dialog
+    <string name="dialog_flash_description_title">Description</string>
+    <string name="dialog_flash_description_author">Author</string>
+    <string name="dialog_flash_description_download_size">Size</string>
+    <string name="dialog_flash_description_created_date">Created date</string>
+    <string name="dialog_flash_description_last_modified">Last modified</string>
+    <string name="dialog_flash_description_cards">Cards</string>
+    <string name="dialog_flash_description_viewed">Viewed</string>
+    <string name="dialog_flash_description_download">Download</string>
+    <string name="dialog_flash_description_cards_review">Cards review</string>
 </resources>

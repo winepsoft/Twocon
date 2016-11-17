@@ -51,4 +51,35 @@ public class Dialogs {
 
     }
 
+    public void showDescriptionFlash(final Context context){
+        MyApplication myApplication=new MyApplication();
+        boolean wrapInScrollView = true;
+        MaterialDialog dialog=new MaterialDialog.Builder(context)
+                .customView(R.layout.dialog_flash_description, wrapInScrollView)
+                .typeface(myApplication.getRTLFontNameForDialog(),null)
+                .build();
+        TextView flashDescription=(TextView)dialog.findViewById(R.id.dialog_flash_description_value);
+        Utilities.getInstance().setFontTextView(context,flashDescription);
+        TextView flashAuthor=(TextView)dialog.findViewById(R.id.dialog_flash_description_author_value);
+        TextView flashSize=(TextView)dialog.findViewById(R.id.dialog_flash_description_download_size_value);
+        Utilities.getInstance().setFontTextView(context,flashSize);
+        TextView flashCreatedTime=(TextView)dialog.findViewById(R.id.dialog_flash_description_create_time_value);
+        Utilities.getInstance().setFontTextView(context,flashCreatedTime);
+        TextView flashLastModified=(TextView)dialog.findViewById(R.id.dialog_flash_description_last_modified_value);
+        Utilities.getInstance().setFontTextView(context,flashLastModified);
+        TextView flashCards=(TextView)dialog.findViewById(R.id.dialog_flash_description_cards_value);
+        Utilities.getInstance().setFontTextView(context,flashCards);
+        TextView flashViewed=(TextView)dialog.findViewById(R.id.dialog_flash_description_viewed_value);
+        Utilities.getInstance().setFontTextView(context,flashViewed);
+        TextView flashDownload=(TextView)dialog.findViewById(R.id.dialog_flash_description_download_value);
+        Utilities.getInstance().setFontTextView(context,flashDownload);
+        dialog.show();
+
+
+
+
+
+
+    }
+
 }
