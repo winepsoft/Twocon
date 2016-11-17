@@ -74,12 +74,5 @@ public class Dialogs {
         TextView flashDownload=(TextView)dialog.findViewById(R.id.dialog_flash_description_download_value);
         Utilities.getInstance().setFontTextView(context,flashDownload);
         dialog.show();
-
-
-
-
-
-
     }
-
 }

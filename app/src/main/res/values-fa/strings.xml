@@ -287,6 +287,16 @@
     //Flash cart tab
     <string name="flash_cart_tab_btn_select_group">انتخاب دسته</string>
     <string name="flash_cart_tab_btn_filter">فیلتر</string>
+    <array name="flash_cart_filter_item">
+        <item>همه</item>
+        <item>جدیدترین</item>
+        <item>آخرین بروزرسانی</item>
+        <item>رایگان</item>
+        <item>فروشی</item>
+        <item>بیشترین دانلود</item>
+        <item>بیشترین بازدید</item>
+        <item>بیشترین سوال</item>
+    </array>
 
     //dialog flash dialog
     <string name="dialog_flash_description_title">توضیحات</string>

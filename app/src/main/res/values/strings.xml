@@ -297,6 +297,16 @@
     //Flash cart tab
     <string name="flash_cart_tab_btn_select_group">Select Group</string>
     <string name="flash_cart_tab_btn_filter">Filter</string>
+    <array name="flash_cart_filter_item">
+        <item>all</item>
+        <item>Recently added</item>
+        <item>Recently Updated</item>
+        <item>Free</item>
+        <item>Paid</item>
+        <item>Most downloaded</item>
+        <item>Most visited</item>
+        <item>Most cards</item>
+    </array>
 
     //Login page
     <string name="login_page_google">Sign in with google</string>
