@@ -12,6 +12,7 @@ import java.util.ArrayList;
 
 import winep.ir.mymemory.DataModel.SharedFlashCard;
 import winep.ir.mymemory.R;
+import winep.ir.mymemory.Utility.Dialogs;
 import winep.ir.mymemory.Utility.RectangleView;
 import winep.ir.mymemory.Utility.Utilities;
 
@@ -37,6 +38,12 @@ public class SharedCardsRecyclerViewAdapter extends RecyclerView.Adapter<SharedC
         holder.txtUsername.setText(aSharedFlashCard.getUserName());
         holder.txtSharedCardsTitle.setText(aSharedFlashCard.getFlashCard().getTitle());
         holder.txtSharedCardsSize.setText(aSharedFlashCard.getFlashCard().getDownloadSize());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Dialogs.getInstance().showSharedFlashCardsDescriptionDialog(context);
+            }
+        });
 
     }
 

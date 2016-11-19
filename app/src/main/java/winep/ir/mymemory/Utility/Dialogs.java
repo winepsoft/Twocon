@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
@@ -14,6 +15,7 @@ import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 
 import winep.ir.mymemory.Presenter.ExamPage.ExamActivity;
+import winep.ir.mymemory.Presenter.ServerConnectionHandler;
 import winep.ir.mymemory.R;
 
 /**
@@ -116,5 +118,61 @@ public class Dialogs {
         txtAllQuestionCourse.setText("20");
         Utilities.getInstance().setFontTextView(context,txtAllQuestionCourse);
         dialog.show();
+    }
+
+    public void showSharedFlashCardsDescriptionDialog(final Context context){
+        MyApplication myApplication=new MyApplication();
+        boolean wrapInScrollView = true;
+        final MaterialDialog dialog=new MaterialDialog.Builder(context)
+                .customView(R.layout.dialog_shared_cards, wrapInScrollView)
+                .typeface(myApplication.getRTLFontNameForDialog(),null)
+                .build();
+        TextView SharedCardsDescription=(TextView)dialog.findViewById(R.id.dialog_shared_cards_description_value);
+        Utilities.getInstance().setFontTextView(context,SharedCardsDescription);
+        TextView SharedCardsAuthor=(TextView)dialog.findViewById(R.id.dialog_shared_cards_author_value);
+        TextView SharedCardsSize=(TextView)dialog.findViewById(R.id.dialog_shared_cards_download_size_value);
+        Utilities.getInstance().setFontTextView(context,SharedCardsSize);
+        TextView SharedCardsCreatedTime=(TextView)dialog.findViewById(R.id.dialog_shared_cards_create_time_value);
+        Utilities.getInstance().setFontTextView(context,SharedCardsCreatedTime);
+        TextView SharedCardsLastModified=(TextView)dialog.findViewById(R.id.dialog_shared_cards_last_modified_value);
+        Utilities.getInstance().setFontTextView(context,SharedCardsLastModified);
+        TextView SharedCards=(TextView)dialog.findViewById(R.id.dialog_shared_cards_cards_value);
+        Utilities.getInstance().setFontTextView(context,SharedCards);
+        TextView SharedCardsViewed=(TextView)dialog.findViewById(R.id.dialog_shared_cards_viewed_value);
+        Utilities.getInstance().setFontTextView(context,SharedCardsViewed);
+        TextView SharedCardsDownload=(TextView)dialog.findViewById(R.id.dialog_shared_cards_download_value);
+        Utilities.getInstance().setFontTextView(context,SharedCardsDownload);
+        ImageButton btnSharedCardsDownload=(ImageButton) dialog.findViewById(R.id.btn_dialog_shared_cards_downloads);
+        btnSharedCardsDownload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+                showGroupAndSubGroupListDialog(context);
+            }
+        });
+        dialog.show();
+    }
+
+    public void showGroupAndSubGroupListDialog(final Context context){
+        final ServerConnectionHandler serverConnectionHandler=new ServerConnectionHandler(context);
+        new MaterialDialog.Builder(context)
+                .title(R.string.new_sub_group_dialog_title)
+                .items(serverConnectionHandler.createListOfGroupsTitle())
+                .itemsCallback(new MaterialDialog.ListCallback() {
+                    @Override
+                    public void onSelection(MaterialDialog dialog, View view, int which, CharSequence text) {
+                        new MaterialDialog.Builder(context)
+                                .title(R.string.new_course_dialog_title)
+                                .items(serverConnectionHandler.createListOfSubGroupsOfAGroup())
+                                .itemsCallback(new MaterialDialog.ListCallback() {
+                                    @Override
+                                    public void onSelection(MaterialDialog dialog, View view, int which, CharSequence text) {
+
+                                    }
+                                })
+                                .show();
+                    }
+                })
+                .show();
     }
 }
