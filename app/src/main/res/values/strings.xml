@@ -332,4 +332,7 @@
     <string name="result_exam_no_answer">No answer</string>
     <string name="result_exam_review">Question review</string>
     <string name="result_exam_retry">Retry</string>
+
+    //purchased lesson
+    <string name="purchased_lesson_page_title">Purchased Lesson</string>
 </resources>

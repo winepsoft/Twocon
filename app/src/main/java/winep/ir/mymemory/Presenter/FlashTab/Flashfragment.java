@@ -31,7 +31,7 @@ public class Flashfragment extends Fragment {
     private ServerConnectionHandler serverConnectionHandler;
     private Button btnSelectGroupFilter;
     private TextView txtFlashGroupFilterValue;
-    private Button btnselectFilter;
+    private Button btnSelectFilter;
     private TextView txtFilterValue;
 
 
@@ -44,7 +44,7 @@ public class Flashfragment extends Fragment {
         flashCarts=new ArrayList<>();
         recyclerViewFlash=(RecyclerView) mainView.findViewById(R.id.recycler_view_flash);
         recyclerViewFlash.setLayoutManager(new LinearLayoutManager(context));
-        adapterFlash=new FlashRecyclerViewAdapter(context,createFlashCart());
+        adapterFlash=new FlashRecyclerViewAdapter(context,serverConnectionHandler.createFlashCart());
         recyclerViewFlash.setAdapter(adapterFlash);
 
         //Group Filter
@@ -58,9 +58,9 @@ public class Flashfragment extends Fragment {
         });
 
         //Filter
-        btnselectFilter=(Button)mainView.findViewById(R.id.btn_flash_tab_filter);
+        btnSelectFilter =(Button)mainView.findViewById(R.id.btn_flash_tab_filter);
         txtFilterValue=(TextView)mainView.findViewById(R.id.txt_flash_tab_filter);
-        btnselectFilter.setOnClickListener(new View.OnClickListener() {
+        btnSelectFilter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 showDialogFilter();
@@ -70,29 +70,6 @@ public class Flashfragment extends Fragment {
         return mainView;
     }
 
-    private ArrayList<FlashCart> createFlashCart(){
-        FlashCart flashCart=new FlashCart();
-        flashCart.setTitle("دندانپزشکی پیشرفته");
-        flashCart.setDownloadSize("حجم: 1M");
-        flashCart.setMainPrice("0");
-        flashCart.setPurchasePrice("1000 تومان");
-        flashCarts.add(flashCart);
-
-        FlashCart flashCart1=new FlashCart();
-        flashCart1.setTitle("نام حیوانات");
-        flashCart1.setDownloadSize("حجم: 1M");
-        flashCart1.setMainPrice("1000 تومان");
-        flashCart1.setPurchasePrice("500 تومان");
-        flashCarts.add(flashCart1);
-
-        FlashCart flashCart2=new FlashCart();
-        flashCart2.setTitle("world people");
-        flashCart2.setDownloadSize("حجم: 1M");
-        flashCart2.setMainPrice("1000 تومان");
-        flashCart2.setPurchasePrice("500 تومان");
-        flashCarts.add(flashCart2);
-        return flashCarts;
-    }
 
     private void showDialogFilterOnGroup(){
         final CharSequence[] filterSelectedTitle = {""};

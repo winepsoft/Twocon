@@ -2,6 +2,9 @@ package winep.ir.mymemory.Presenter;
 
 import android.content.Context;
 
+import java.util.ArrayList;
+
+import winep.ir.mymemory.DataModel.FlashCart;
 import winep.ir.mymemory.R;
 
 /**
@@ -40,4 +43,30 @@ public class ServerConnectionHandler {
         courseTitle[2]="دندان جلو";
         return courseTitle;
     }
+
+    public ArrayList<FlashCart> createFlashCart(){
+        ArrayList<FlashCart> flashCarts=new ArrayList<>();
+        FlashCart flashCart=new FlashCart();
+        flashCart.setTitle("دندانپزشکی پیشرفته");
+        flashCart.setDownloadSize("حجم: 1M");
+        flashCart.setMainPrice("0");
+        flashCart.setPurchasePrice("1000 تومان");
+        flashCarts.add(flashCart);
+
+        FlashCart flashCart1=new FlashCart();
+        flashCart1.setTitle("نام حیوانات");
+        flashCart1.setDownloadSize("حجم: 1M");
+        flashCart1.setMainPrice("1000 تومان");
+        flashCart1.setPurchasePrice("500 تومان");
+        flashCarts.add(flashCart1);
+
+        FlashCart flashCart2=new FlashCart();
+        flashCart2.setTitle("world people");
+        flashCart2.setDownloadSize("حجم: 1M");
+        flashCart2.setMainPrice("1000 تومان");
+        flashCart2.setPurchasePrice("500 تومان");
+        flashCarts.add(flashCart2);
+        return flashCarts;
+    }
+
 }

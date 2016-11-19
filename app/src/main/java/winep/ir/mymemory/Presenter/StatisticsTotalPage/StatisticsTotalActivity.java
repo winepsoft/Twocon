@@ -27,6 +27,7 @@ import com.github.mikephil.charting.utils.ColorTemplate;
 import java.util.ArrayList;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+import winep.ir.mymemory.Presenter.PurchasedLessonPage.PurchasedLessonActivity;
 import winep.ir.mymemory.Presenter.StatisticsGroupPage.StatisticsGroupActivity;
 import winep.ir.mymemory.R;
 import winep.ir.mymemory.Utility.Utilities;
@@ -57,6 +58,7 @@ public class StatisticsTotalActivity extends AppCompatActivity {
     private RelativeLayout layoutGroup;
     private RelativeLayout layoutSubGroup;
     private LinearLayout layoutCourse;
+    private LinearLayout layoutPurchasedLesson;
 
 
     @Override
@@ -176,6 +178,15 @@ public class StatisticsTotalActivity extends AppCompatActivity {
                         .show();
             }
 
+        });
+
+        layoutPurchasedLesson=(LinearLayout)findViewById(R.id.layout_purchased_lesson);
+        layoutPurchasedLesson.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context, PurchasedLessonActivity.class);
+                startActivity(intent);
+            }
         });
 
 

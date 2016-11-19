@@ -317,4 +317,7 @@
     <string name="result_exam_no_answer">نزده</string>
     <string name="result_exam_review">مرور سوالات</string>
     <string name="result_exam_retry">تلاش مجدد</string>
+
+    //purchased lesson
+    <string name="purchased_lesson_page_title">دروس خریداری شده</string>
 </resources>
