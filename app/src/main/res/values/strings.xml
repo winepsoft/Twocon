@@ -338,4 +338,5 @@
 
     //shared flash cards page
     <string name="shared_flash_cards_page">Users shared flashcards</string>
+    <string name="shared_cards_search_default_text">Type your title here</string>
 </resources>
