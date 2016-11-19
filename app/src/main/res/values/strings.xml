@@ -335,4 +335,7 @@
 
     //purchased lesson
     <string name="purchased_lesson_page_title">Purchased Lesson</string>
+
+    //shared flash cards page
+    <string name="shared_flash_cards_page">Users shared flashcards</string>
 </resources>

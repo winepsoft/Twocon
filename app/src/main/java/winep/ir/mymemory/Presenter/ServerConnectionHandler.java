@@ -5,6 +5,7 @@ import android.content.Context;
 import java.util.ArrayList;
 
 import winep.ir.mymemory.DataModel.FlashCart;
+import winep.ir.mymemory.DataModel.SharedFlashCard;
 import winep.ir.mymemory.R;
 
 /**
@@ -67,6 +68,30 @@ public class ServerConnectionHandler {
         flashCart2.setPurchasePrice("500 تومان");
         flashCarts.add(flashCart2);
         return flashCarts;
+    }
+
+    public ArrayList<SharedFlashCard> createSharedFlashCards(){
+        ArrayList<SharedFlashCard> sharedFlashCards=new ArrayList<>();
+        SharedFlashCard sharedFlashCard=new SharedFlashCard();
+        sharedFlashCard.setUserName("علی");
+        FlashCart flashCart=new FlashCart();
+        flashCart.setTitle("دندانپزشکی پیشرفته");
+        flashCart.setDownloadSize("حجم: 1M");
+        flashCart.setMainPrice("0");
+        flashCart.setPurchasePrice("1000 تومان");
+        sharedFlashCard.setFlashCard(flashCart);
+        sharedFlashCards.add(sharedFlashCard);
+
+        SharedFlashCard sharedFlashCard2=new SharedFlashCard();
+        sharedFlashCard2.setUserName("Mohammad");
+        FlashCart flashCart2=new FlashCart();
+        flashCart2.setTitle("world people");
+        flashCart2.setDownloadSize("حجم: 1M");
+        flashCart2.setMainPrice("1000 تومان");
+        flashCart2.setPurchasePrice("500 تومان");
+        sharedFlashCard2.setFlashCard(flashCart2);
+        sharedFlashCards.add(sharedFlashCard2);
+        return sharedFlashCards;
     }
 
 }

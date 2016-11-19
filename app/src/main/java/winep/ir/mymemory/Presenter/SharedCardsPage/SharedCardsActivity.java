@@ -1,4 +1,4 @@
-package winep.ir.mymemory.Presenter.PurchasedLessonPage;
+package winep.ir.mymemory.Presenter.SharedCardsPage;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -17,27 +17,28 @@ import winep.ir.mymemory.Utility.Utilities;
 /**
  * Created by ShaisteS on 11/19/2016.
  */
-public class PurchasedLessonActivity extends AppCompatActivity {
+public class SharedCardsActivity extends AppCompatActivity {
 
     private Context context;
-    private RecyclerView recyclerViewPurchaseLesson;
-    private PurchasedLessonRecyclerViewAdapter adapterPurchaseLesson;
+    private RecyclerView recyclerViewSharedCards;
+    private SharedCardsRecyclerViewAdapter adapterSharedCards;
     private ServerConnectionHandler serverConnectionHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.purchased_lesson_activity);
-        setTitle(getString(R.string.purchased_lesson_page_title));
+        setContentView(R.layout.shared_cards_activity);
+        setTitle(getString(R.string.shared_flash_cards_page));
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         context=this;
         serverConnectionHandler=new ServerConnectionHandler(context);
 
-        recyclerViewPurchaseLesson=(RecyclerView) findViewById(R.id.recycler_purchase_lesson);
-        recyclerViewPurchaseLesson.setLayoutManager(new LinearLayoutManager(context));
-        adapterPurchaseLesson=new PurchasedLessonRecyclerViewAdapter(context,serverConnectionHandler.createFlashCart());
-        recyclerViewPurchaseLesson.setAdapter(adapterPurchaseLesson);
+        recyclerViewSharedCards=(RecyclerView)findViewById(R.id.recycler_view_shared_card);
+        recyclerViewSharedCards.setLayoutManager(new LinearLayoutManager(context));
+        adapterSharedCards=new SharedCardsRecyclerViewAdapter(context,serverConnectionHandler.createSharedFlashCards());
+        recyclerViewSharedCards.setAdapter(adapterSharedCards);
+
     }
 
     @Override

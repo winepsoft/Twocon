@@ -1,4 +1,4 @@
-package winep.ir.mymemory.Presenter.FlashTab;
+package winep.ir.mymemory.Presenter.PurchasedLessonPage;
 
 import android.content.Context;
 import android.graphics.Paint;
@@ -19,25 +19,28 @@ import winep.ir.mymemory.Utility.RectangleView;
 import winep.ir.mymemory.Utility.Utilities;
 
 /**
- * Created by ShaisteS on 11/15/2016.
+ * Created by ShaisteS on 11/19/2016.
  */
-class FlashRecyclerViewAdapter extends RecyclerView.Adapter<FlashRecyclerViewAdapter.MyViewHolder> {
-    private Context context;
-    private ArrayList<FlashCart> allFlashCarts;
+public class PurchasedLessonRecyclerViewAdapter extends RecyclerView.Adapter<PurchasedLessonRecyclerViewAdapter.MyViewHolder> {
 
-    public FlashRecyclerViewAdapter(Context context,ArrayList<FlashCart> flashCarts){
+    private Context context;
+    private ArrayList<FlashCart> allPurchaseLessons;
+
+    public PurchasedLessonRecyclerViewAdapter(Context context,ArrayList<FlashCart> PurchaseLessons){
         this.context=context;
-        allFlashCarts=flashCarts;
+        allPurchaseLessons =PurchaseLessons;
     }
+
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+
         View v= LayoutInflater.from(context).inflate(R.layout.flash_fragment_recycler_view_item,parent,false);
         return new MyViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        FlashCart aFlashCart=allFlashCarts.get(position);
+        FlashCart aFlashCart= allPurchaseLessons.get(position);
         holder.txtFlashTitle.setText(aFlashCart.getTitle());
         if (!aFlashCart.getMainPrice().equals("0"))
             holder.txtFlashMainPrice.setText(aFlashCart.getMainPrice());
@@ -52,11 +55,10 @@ class FlashRecyclerViewAdapter extends RecyclerView.Adapter<FlashRecyclerViewAda
 
     @Override
     public int getItemCount() {
-        return allFlashCarts.size();
+        return allPurchaseLessons.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-
         private ImageView imgFlashPic;
         private TextView txtFlashTitle;
         private TextView txtFlashMainPrice;

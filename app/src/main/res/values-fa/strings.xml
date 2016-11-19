@@ -320,4 +320,7 @@
 
     //purchased lesson
     <string name="purchased_lesson_page_title">دروس خریداری شده</string>
+
+    //shared flash cards page
+    <string name="shared_flash_cards_page">فلش کارتهای اشتراکی کاربران</string>
 </resources>

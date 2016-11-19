@@ -25,6 +25,7 @@ import winep.ir.mymemory.Presenter.MemoryBankTab.MemoryBankFragment;
 import winep.ir.mymemory.Presenter.OnlineDictionaryTab.OnlineDictionaryFragment;
 import winep.ir.mymemory.Presenter.PagerAdapter;
 import winep.ir.mymemory.Presenter.SettingsPage.SettingsActivity;
+import winep.ir.mymemory.Presenter.SharedCardsPage.SharedCardsActivity;
 import winep.ir.mymemory.Presenter.StatisticsTotalPage.StatisticsTotalActivity;
 import winep.ir.mymemory.Presenter.UserProfileActivity;
 import winep.ir.mymemory.Utility.StaticParameters;
@@ -194,6 +195,11 @@ public class MainPage extends AppCompatActivity
         }
         else if(id==R.id.nav_user_profile){
             Intent intent=new Intent(this, UserProfileActivity.class);
+            startActivity(intent);
+        }
+
+        else if(id==R.id.nav_shared_flashcard){
+            Intent intent=new Intent(this, SharedCardsActivity.class);
             startActivity(intent);
         }
 
