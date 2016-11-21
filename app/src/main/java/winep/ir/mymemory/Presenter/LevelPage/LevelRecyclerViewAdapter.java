@@ -8,6 +8,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +28,8 @@ public class LevelRecyclerViewAdapter extends RecyclerView.Adapter<LevelRecycler
 
     private ArrayList<Level> allLevel;
     private Context context;
+    private int lastPosition = -1;
+
 
     public LevelRecyclerViewAdapter(Context context, ArrayList<Level> levels){
         this.context=context;
@@ -39,6 +44,7 @@ public class LevelRecyclerViewAdapter extends RecyclerView.Adapter<LevelRecycler
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
+        setAnimation(holder.container, position);
         holder.levelNumber.setText(context.getString(R.string.level_number)+""+Integer.toString(allLevel.get(position).getLevelNumber()));
         if (allLevel.get(position).getLevelStatus()==0) {
             Utilities.getInstance().customView(holder.levelNumber, ContextCompat.getColor(context,R.color.green), ContextCompat.getColor(context,R.color.green));
@@ -94,13 +100,28 @@ public class LevelRecyclerViewAdapter extends RecyclerView.Adapter<LevelRecycler
         return allLevel.size();
     }
 
+    private void setAnimation(View viewToAnimate, int position)
+    {
+        // If the bound view wasn't previously displayed on screen, it's animated
+        if (position > lastPosition)
+        {
+            Animation animation = AnimationUtils.loadAnimation(context, android.R.anim.fade_in);
+            viewToAnimate.startAnimation(animation);
+            lastPosition = position;
+        }
+    }
+
+
+
     public class MyViewHolder extends RecyclerView.ViewHolder {
+        private FrameLayout container;
         private TextView levelNumber;
         private TextView levelReadyQuestionNumber;
         private TextView levelTotalQuestionNumber;
         private TextView levelStatus;
         public MyViewHolder(View itemView) {
             super(itemView);
+            container=(FrameLayout)itemView.findViewById(R.id.level_item_container);
             levelNumber=(TextView)itemView.findViewById(R.id.txt_level_number);
             Utilities.getInstance().setFontTextView(context,levelNumber);
             levelReadyQuestionNumber=(TextView)itemView.findViewById(R.id.txt_ready);
