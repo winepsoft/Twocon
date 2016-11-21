@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
@@ -82,6 +83,37 @@ public class Dialogs {
         Utilities.getInstance().setFontTextView(context,flashViewed);
         TextView flashDownload=(TextView)dialog.findViewById(R.id.dialog_flash_description_download_value);
         Utilities.getInstance().setFontTextView(context,flashDownload);
+        Button btnCardsReview=(Button)dialog.findViewById(R.id.btn_dialog_flash_description_cards_review);
+        ImageButton imageButtonPlay=(ImageButton)dialog.findViewById(R.id.btn_dialog_flash_description_play);
+        dialog.show();
+    }
+
+    public void showDescriptionFlashCartPurchased(final Context context){
+        MyApplication myApplication=new MyApplication();
+        boolean wrapInScrollView = true;
+        MaterialDialog dialog=new MaterialDialog.Builder(context)
+                .customView(R.layout.dialog_flash_description, wrapInScrollView)
+                .typeface(myApplication.getRTLFontNameForDialog(),null)
+                .build();
+        TextView flashDescription=(TextView)dialog.findViewById(R.id.dialog_flash_description_value);
+        Utilities.getInstance().setFontTextView(context,flashDescription);
+        TextView flashAuthor=(TextView)dialog.findViewById(R.id.dialog_flash_description_author_value);
+        TextView flashSize=(TextView)dialog.findViewById(R.id.dialog_flash_description_download_size_value);
+        Utilities.getInstance().setFontTextView(context,flashSize);
+        TextView flashCreatedTime=(TextView)dialog.findViewById(R.id.dialog_flash_description_create_time_value);
+        Utilities.getInstance().setFontTextView(context,flashCreatedTime);
+        TextView flashLastModified=(TextView)dialog.findViewById(R.id.dialog_flash_description_last_modified_value);
+        Utilities.getInstance().setFontTextView(context,flashLastModified);
+        TextView flashCards=(TextView)dialog.findViewById(R.id.dialog_flash_description_cards_value);
+        Utilities.getInstance().setFontTextView(context,flashCards);
+        TextView flashViewed=(TextView)dialog.findViewById(R.id.dialog_flash_description_viewed_value);
+        Utilities.getInstance().setFontTextView(context,flashViewed);
+        TextView flashDownload=(TextView)dialog.findViewById(R.id.dialog_flash_description_download_value);
+        Utilities.getInstance().setFontTextView(context,flashDownload);
+        Button btnCardsReview=(Button)dialog.findViewById(R.id.btn_dialog_flash_description_cards_review);
+        btnCardsReview.setVisibility(View.GONE);
+        ImageButton imageButtonPlay=(ImageButton)dialog.findViewById(R.id.btn_dialog_flash_description_play);
+        imageButtonPlay.setVisibility(View.GONE);
         dialog.show();
     }
 

@@ -48,7 +48,7 @@ public class PurchasedLessonRecyclerViewAdapter extends RecyclerView.Adapter<Pur
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Dialogs.getInstance().showDescriptionFlash(context);
+                Dialogs.getInstance().showDescriptionFlashCartPurchased(context);
             }
         });
     }
