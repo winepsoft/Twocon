@@ -15,6 +15,7 @@ import android.widget.ViewSwitcher;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 import winep.ir.mymemory.Presenter.SettingsPage.SettingsActivity;
+import winep.ir.mymemory.Presenter.StatisticsTotalPage.StatisticsTotalActivity;
 import winep.ir.mymemory.R;
 import winep.ir.mymemory.Utility.Dialogs;
 import winep.ir.mymemory.Utility.MyApplication;
@@ -43,6 +44,7 @@ public class UserProfileActivity extends AppCompatActivity {
     private TextView txtMobile;
     private EditText editTextMobile;
     private ViewSwitcher viewSwitcherAccount;
+    private TextView txtAccountTitle;
     private TextView txtAccount;
     private EditText editTextAccount;
     private Button btnUpgrade;
@@ -74,6 +76,7 @@ public class UserProfileActivity extends AppCompatActivity {
         txtMobile=(TextView)findViewById(R.id.txt_user_profile_mobile);
         editTextMobile=(EditText)findViewById(R.id.edit_txt_user_profile_mobile);
         viewSwitcherAccount=(ViewSwitcher)findViewById(R.id.view_switcher_user_profile_account);
+        txtAccountTitle=(TextView)findViewById(R.id.txt_user_profile_account_title);
         txtAccount=(TextView)findViewById(R.id.txt_user_profile_account);
         editTextAccount=(EditText)findViewById(R.id.edit_txt_user_profile_account);
         btnUpgrade=(Button)findViewById(R.id.btn_user_profile_upgrade);
@@ -110,6 +113,14 @@ public class UserProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 viewSwitcherMobile.showNext();
+            }
+        });
+
+        txtAccountTitle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context, StatisticsTotalActivity.class);
+                startActivity(intent);
             }
         });
 
