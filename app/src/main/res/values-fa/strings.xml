@@ -329,4 +329,7 @@
     //ticket dialog
     <string name="dialog_ticket_description">شرح</string>
     <string name="dialog_ticket_send">ارسال</string>
+
+    //shared lesson page
+    <string name="shared_lesson_page_title">دروس به اشتراک گذاشته شده</string>
 </resources>

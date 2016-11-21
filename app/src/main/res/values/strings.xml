@@ -342,4 +342,7 @@
     //ticket dialog
     <string name="dialog_ticket_description">Description</string>
     <string name="dialog_ticket_send">Send</string>
+
+    //shared lesson page
+    <string name="shared_lesson_page_title">Shared Lessons</string>
 </resources>

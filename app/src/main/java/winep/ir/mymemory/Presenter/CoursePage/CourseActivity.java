@@ -19,7 +19,6 @@ import android.widget.FrameLayout;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
-import com.github.lzyzsd.randomcolor.RandomColor;
 import com.h6ah4i.android.widget.advrecyclerview.draggable.RecyclerViewDragDropManager;
 
 import java.util.ArrayList;
@@ -27,6 +26,7 @@ import java.util.ArrayList;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 import winep.ir.mymemory.DataModel.Course;
 import winep.ir.mymemory.Presenter.CreateQuestionPage.CreateQuestionActivity;
+import winep.ir.mymemory.Presenter.ServerConnectionHandler;
 import winep.ir.mymemory.R;
 import winep.ir.mymemory.Utility.ClickListener;
 import winep.ir.mymemory.Utility.MyApplication;
@@ -50,6 +50,7 @@ public class CourseActivity extends AppCompatActivity
     private FloatingActionButton fabAddQuestion;
     private MyApplication myApplication;
     private String subGroupTitle;
+    private ServerConnectionHandler serverConnectionHandler;
 
 
 
@@ -59,6 +60,7 @@ public class CourseActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.course_activity);
         context = this;
+        serverConnectionHandler=new ServerConnectionHandler(context);
         myApplication =new MyApplication();
         subGroupTitle=getIntent().getExtras().get("subGroupName").toString();
 
@@ -79,7 +81,7 @@ public class CourseActivity extends AppCompatActivity
         dragMgr.setInitiateOnLongPress(true);
         recyclerViewCourses.setLayoutManager(new LinearLayoutManager(context));
         //recyclerViewCourses.addItemDecoration(new DividerItemDecorationRecyclerView(5));
-        adapter=new CourseRecyclerViewAdapter(context,createCourse());
+        adapter=new CourseRecyclerViewAdapter(context,serverConnectionHandler.createCourse());
         recyclerViewCourses.setAdapter(dragMgr.createWrappedAdapter(adapter));
         dragMgr.attachRecyclerView(recyclerViewCourses);
         recyclerViewCourses.addOnItemTouchListener(new RecyclerTouchListener(context,recyclerViewCourses, new ClickListener() {
@@ -155,26 +157,6 @@ public class CourseActivity extends AppCompatActivity
         floatingActionsMenu.collapse();
     }
 
-    private ArrayList<Course> createCourse(){
-
-        RandomColor rnd1 = new RandomColor();
-        int color1 = rnd1.randomColor();
-        Course course1=new Course(0);
-        course1.setTitle("زبان");
-        course1.setDescription("توضیحاتی در مورد این بخش");
-        course1.setColor(color1);
-        allCourse.add(course1);
-
-        RandomColor rnd2 = new RandomColor();
-        int color2 = rnd2.randomColor();
-        Course course2=new Course(1);
-        course2.setTitle("دندان جلو");
-        course2.setDescription("توضیحاتی در مورد این بخش");
-        course2.setColor(color2);
-        allCourse.add(course2);
-        return allCourse;
-
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

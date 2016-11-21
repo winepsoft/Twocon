@@ -2,8 +2,11 @@ package winep.ir.mymemory.Presenter;
 
 import android.content.Context;
 
+import com.github.lzyzsd.randomcolor.RandomColor;
+
 import java.util.ArrayList;
 
+import winep.ir.mymemory.DataModel.Course;
 import winep.ir.mymemory.DataModel.FlashCart;
 import winep.ir.mymemory.DataModel.SharedFlashCard;
 import winep.ir.mymemory.R;
@@ -43,6 +46,28 @@ public class ServerConnectionHandler {
         courseTitle[1]="زبان";
         courseTitle[2]="دندان جلو";
         return courseTitle;
+    }
+
+    public ArrayList<Course> createCourse(){
+
+        ArrayList<Course> allCourse=new ArrayList();
+        RandomColor rnd1 = new RandomColor();
+        int color1 = rnd1.randomColor();
+        Course course1=new Course(0);
+        course1.setTitle("زبان");
+        course1.setDescription("توضیحاتی در مورد این بخش");
+        course1.setColor(color1);
+        allCourse.add(course1);
+
+        RandomColor rnd2 = new RandomColor();
+        int color2 = rnd2.randomColor();
+        Course course2=new Course(1);
+        course2.setTitle("دندان جلو");
+        course2.setDescription("توضیحاتی در مورد این بخش");
+        course2.setColor(color2);
+        allCourse.add(course2);
+        return allCourse;
+
     }
 
     public ArrayList<FlashCart> createFlashCart(){

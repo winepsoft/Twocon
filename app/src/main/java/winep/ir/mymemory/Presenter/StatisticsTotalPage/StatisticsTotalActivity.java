@@ -28,6 +28,7 @@ import java.util.ArrayList;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 import winep.ir.mymemory.Presenter.PurchasedLessonPage.PurchasedLessonActivity;
+import winep.ir.mymemory.Presenter.SharedLessonPage.SharedLessonActivity;
 import winep.ir.mymemory.Presenter.StatisticsGroupPage.StatisticsGroupActivity;
 import winep.ir.mymemory.R;
 import winep.ir.mymemory.Utility.Utilities;
@@ -59,6 +60,7 @@ public class StatisticsTotalActivity extends AppCompatActivity {
     private RelativeLayout layoutSubGroup;
     private LinearLayout layoutCourse;
     private LinearLayout layoutPurchasedLesson;
+    private RelativeLayout layoutSharedLesson;
 
 
     @Override
@@ -185,6 +187,15 @@ public class StatisticsTotalActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context, PurchasedLessonActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        layoutSharedLesson=(RelativeLayout)findViewById(R.id.layout_shared_lessons);
+        layoutSharedLesson.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context, SharedLessonActivity.class);
                 startActivity(intent);
             }
         });
