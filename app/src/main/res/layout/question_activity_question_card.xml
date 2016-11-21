@@ -67,12 +67,11 @@
                         android:textAppearance="?android:attr/textAppearanceMedium"/>
                 </RelativeLayout>
                 <RelativeLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_margin="5dp"
-                    android:weightSum="2"
-                    android:baselineAligned="false">
+                    android:weightSum="2">
                     <com.rey.material.widget.Button
                         app:rd_enable="true"
                         app:rd_style="@style/Material.Drawable.Ripple.Wave"
@@ -81,7 +80,6 @@
                         android:text="@string/hard_question"
                         android:layout_centerVertical="true"
                         android:layout_alignParentTop="true"
-                        android:layout_toStartOf="@+id/exam_voice"
                         android:background="@drawable/button_with_corner_orange"
                         android:textColor="@color/white"
                         android:layout_marginRight="5dp"
