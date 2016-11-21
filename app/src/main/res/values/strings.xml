@@ -234,7 +234,6 @@
     <array name="animation_type">
         <item>None</item>
         <item>Fade In</item>
-        <item>Fade Out</item>
         <item>One by One</item>
     </array>
     <string name="level_status_ready">it is ready!</string>
