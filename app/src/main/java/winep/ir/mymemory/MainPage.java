@@ -85,6 +85,17 @@ public class MainPage extends AppCompatActivity
                 Dialogs.getInstance().showDescriptionFlash(context);
             }
         });
+
+        if(getIntent().getBooleanExtra("show flash tab",false)){
+            if (Utilities.getInstance().isRTL()) {
+                viewPager.setCurrentItem(0);
+            }
+            else {
+                viewPager.setCurrentItem(pagerAdapter.getCount()-1);
+
+            }
+
+        }
     }
 
 

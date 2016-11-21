@@ -22,6 +22,7 @@ import java.util.ArrayList;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 import winep.ir.mymemory.DataModel.Level;
+import winep.ir.mymemory.MainPage;
 import winep.ir.mymemory.Presenter.CreateQuestionPage.CreateQuestionActivity;
 import winep.ir.mymemory.R;
 import winep.ir.mymemory.Utility.Utilities;
@@ -37,6 +38,8 @@ public class LevelActivity extends AppCompatActivity {
     private FrameLayout frameLayout;
     private FloatingActionsMenu floatingActionsMenu;
     private FloatingActionButton fabAddQuestion;
+    private FloatingActionButton fabAddFreeQuestions;
+    private FloatingActionButton fabAddQuestionsFromExcel;
     private TextView txtSuccessLearnValue;
     private TextView txtReadyNumber;
     private TextView txtTotalNumber;
@@ -72,6 +75,8 @@ public class LevelActivity extends AppCompatActivity {
 
         floatingActionsMenu=(FloatingActionsMenu)findViewById(R.id.level_fab_add);
         fabAddQuestion=(FloatingActionButton)findViewById(R.id.level_fab_question);
+        fabAddFreeQuestions=(FloatingActionButton)findViewById(R.id.level_fab_add_free_question);
+        fabAddQuestionsFromExcel=(FloatingActionButton)findViewById(R.id.level_fab_add_question_from_excel);
         frameLayout=(FrameLayout)findViewById(R.id.containerFloatingActionMenu);
         frameLayout.setClickable(false);
         floatingActionsMenu.setOnFloatingActionsMenuUpdateListener(new FloatingActionsMenu.OnFloatingActionsMenuUpdateListener() {
@@ -102,6 +107,19 @@ public class LevelActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        fabAddFreeQuestions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                closeFloatingActionMenu();
+                Intent intent = new Intent(context, MainPage.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.putExtra("show flash tab",true);
+                startActivity(intent);
+            }
+        });
+
+
     }
 
     private void closeFloatingActionMenu(){
