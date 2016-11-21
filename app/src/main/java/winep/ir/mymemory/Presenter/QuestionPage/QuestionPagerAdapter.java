@@ -26,6 +26,7 @@ import com.rey.material.widget.Button;
 import java.util.ArrayList;
 
 import winep.ir.mymemory.DataModel.Question;
+import winep.ir.mymemory.Presenter.ObserverPackage.setClickOnKnowButton;
 import winep.ir.mymemory.R;
 import winep.ir.mymemory.Utility.Utilities;
 
@@ -124,6 +125,13 @@ public class QuestionPagerAdapter  extends PagerAdapter {
             @Override
             public void onClick(View view) {
                 Toast.makeText(activity,activity.getString(R.string.no_Know_question_title)+"12",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        btnKnow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setClickOnKnowButton.setClickOnAnswerStatus(true);
             }
         });
 

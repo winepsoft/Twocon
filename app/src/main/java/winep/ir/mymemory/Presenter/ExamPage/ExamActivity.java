@@ -50,6 +50,11 @@ public class ExamActivity extends AppCompatActivity
     private double percent;
     private ViewPager examViewPager;
 
+    private boolean mIsInAnimation;
+    private long mMotionBeginTime;
+    private float mLastMotionX;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -243,11 +248,6 @@ public class ExamActivity extends AppCompatActivity
         Utilities.getInstance().setSettingLanguage(newBase);
 
     }
-
-
-    private boolean mIsInAnimation;
-    private long mMotionBeginTime;
-    private float mLastMotionX;
 
     @Override
     public void onClick(View view) {
