@@ -1,6 +1,7 @@
 package winep.ir.mymemory.Presenter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import android.widget.ViewSwitcher;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+import winep.ir.mymemory.Presenter.SettingsPage.SettingsActivity;
 import winep.ir.mymemory.R;
 import winep.ir.mymemory.Utility.Dialogs;
 import winep.ir.mymemory.Utility.MyApplication;
@@ -151,6 +153,10 @@ public class UserProfileActivity extends AppCompatActivity {
             finish();
         if (id==R.id.action_back)
             finish();
+        if (id==R.id.action_settings){
+            Intent intent=new Intent(context, SettingsActivity.class);
+            startActivity(intent);
+        }
         return super.onOptionsItemSelected(item);
     }
     @Override
