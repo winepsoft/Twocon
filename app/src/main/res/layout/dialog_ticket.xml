@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dialog_ticket_description"
+        android:textColor="@color/black"/>
+
+    <com.rey.material.widget.EditText
+        app:et_labelEnable="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edit_text_dialog_ticket"
+        app:et_inputId="@+id/edit_text_dialog_ticket_input"
+        android:minLines="3"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
+        <com.rey.material.widget.Button
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:background="@drawable/button_with_corner_green"
+            android:id="@+id/btn_dialog_ticket_send"
+            android:textColor="@color/white"
+            android:text="@string/dialog_ticket_send"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+</LinearLayout>

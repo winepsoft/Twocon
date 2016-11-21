@@ -325,4 +325,8 @@
     <string name="shared_flash_cards_page">فلش کارتهای اشتراکی کاربران</string>
     <string name="shared_cards_search_default_text">عنوان مورد نظر . . .</string>
     <string name="level_setting_select_time_type_month">ماه</string>
+
+    //ticket dialog
+    <string name="dialog_ticket_description">شرح</string>
+    <string name="dialog_ticket_send">ارسال</string>
 </resources>

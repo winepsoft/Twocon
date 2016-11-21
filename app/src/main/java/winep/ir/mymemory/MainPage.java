@@ -22,12 +22,15 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 import winep.ir.mymemory.Presenter.FlashTab.Flashfragment;
 import winep.ir.mymemory.Presenter.GroupsTab.GroupsFragment;
 import winep.ir.mymemory.Presenter.MemoryBankTab.MemoryBankFragment;
+import winep.ir.mymemory.Presenter.ObserverPackage.setShowTicketDialog;
+import winep.ir.mymemory.Presenter.ObserverPackage.setShowTicketDialogListener;
 import winep.ir.mymemory.Presenter.OnlineDictionaryTab.OnlineDictionaryFragment;
 import winep.ir.mymemory.Presenter.PagerAdapter;
 import winep.ir.mymemory.Presenter.SettingsPage.SettingsActivity;
 import winep.ir.mymemory.Presenter.SharedCardsPage.SharedCardsActivity;
 import winep.ir.mymemory.Presenter.StatisticsTotalPage.StatisticsTotalActivity;
 import winep.ir.mymemory.Presenter.UserProfileActivity;
+import winep.ir.mymemory.Utility.Dialogs;
 import winep.ir.mymemory.Utility.StaticParameters;
 import winep.ir.mymemory.Utility.Utilities;
 
@@ -75,6 +78,13 @@ public class MainPage extends AppCompatActivity
         tabLayout.setupWithViewPager(viewPager);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         viewPager.setOffscreenPageLimit(4);
+
+        setShowTicketDialog.setShowTicketDialogListener(new setShowTicketDialogListener() {
+            @Override
+            public void showTicketDialog() {
+                Dialogs.getInstance().showDescriptionFlash(context);
+            }
+        });
     }
 
 
@@ -178,7 +188,6 @@ public class MainPage extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
@@ -201,6 +210,9 @@ public class MainPage extends AppCompatActivity
         else if(id==R.id.nav_shared_flashcard){
             Intent intent=new Intent(this, SharedCardsActivity.class);
             startActivity(intent);
+        }
+        else if(id==R.id.nav_ticket){
+           Dialogs.getInstance().showTicketDialog(context);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

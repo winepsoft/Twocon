@@ -175,4 +175,15 @@ public class Dialogs {
                 })
                 .show();
     }
+
+    public void showTicketDialog(final Context context){
+        MyApplication myApplication=new MyApplication();
+        boolean wrapInScrollView = true;
+        final MaterialDialog dialog=new MaterialDialog.Builder(context)
+                .customView(R.layout.dialog_ticket, wrapInScrollView)
+                .typeface(myApplication.getRTLFontNameForDialog(),null)
+                .build();
+        dialog.show();
+
+    }
 }
