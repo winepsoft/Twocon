@@ -74,21 +74,21 @@ public class ServerConnectionHandler {
         ArrayList<FlashCart> flashCarts=new ArrayList<>();
         FlashCart flashCart=new FlashCart();
         flashCart.setTitle("دندانپزشکی پیشرفته");
-        flashCart.setDownloadSize("حجم: 1M");
+        flashCart.setDownloadSize("حجم : 1 مگ");
         flashCart.setMainPrice("0");
         flashCart.setPurchasePrice("1000 تومان");
         flashCarts.add(flashCart);
 
         FlashCart flashCart1=new FlashCart();
         flashCart1.setTitle("نام حیوانات");
-        flashCart1.setDownloadSize("حجم: 1M");
+        flashCart1.setDownloadSize("حجم: 1 مگ");
         flashCart1.setMainPrice("1000 تومان");
         flashCart1.setPurchasePrice("500 تومان");
         flashCarts.add(flashCart1);
 
         FlashCart flashCart2=new FlashCart();
         flashCart2.setTitle("world people");
-        flashCart2.setDownloadSize("حجم: 1M");
+        flashCart2.setDownloadSize("size: 1M");
         flashCart2.setMainPrice("1000 تومان");
         flashCart2.setPurchasePrice("500 تومان");
         flashCarts.add(flashCart2);
@@ -101,7 +101,7 @@ public class ServerConnectionHandler {
         sharedFlashCard.setUserName("علی");
         FlashCart flashCart=new FlashCart();
         flashCart.setTitle("دندانپزشکی پیشرفته");
-        flashCart.setDownloadSize("حجم: 1M");
+        flashCart.setDownloadSize("حجم: 1 مگ");
         flashCart.setMainPrice("0");
         flashCart.setPurchasePrice("1000 تومان");
         sharedFlashCard.setFlashCard(flashCart);
@@ -111,7 +111,7 @@ public class ServerConnectionHandler {
         sharedFlashCard2.setUserName("Mohammad");
         FlashCart flashCart2=new FlashCart();
         flashCart2.setTitle("world people");
-        flashCart2.setDownloadSize("حجم: 1M");
+        flashCart2.setDownloadSize("size:1M");
         flashCart2.setMainPrice("1000 تومان");
         flashCart2.setPurchasePrice("500 تومان");
         sharedFlashCard2.setFlashCard(flashCart2);

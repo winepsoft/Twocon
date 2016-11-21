@@ -40,7 +40,8 @@
                         android:textColor="@color/black"
                         android:gravity="center_vertical"
                         android:id="@+id/txt_shared_cards_user_name"
-                        android:layout_gravity="center_vertical" />
+                        android:layout_gravity="center_vertical"
+                        android:textDirection="locale"/>
 
                     <TextView
                         android:layout_width="match_parent"
@@ -50,14 +51,16 @@
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:gravity="center_vertical"
                         android:id="@+id/txt_shared_cards_title"
-                        android:layout_gravity="center_vertical" />
+                        android:layout_gravity="center_vertical"
+                        android:textDirection="locale"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="حجم: 1M"
+                        android:text="size: 1M"
                         android:gravity="center_vertical"
                         android:id="@+id/txt_shared_cards_size"
-                        android:layout_gravity="center_vertical" />
+                        android:layout_gravity="center_vertical"
+                        android:textDirection="locale"/>
                 </LinearLayout>
 
             </LinearLayout>
