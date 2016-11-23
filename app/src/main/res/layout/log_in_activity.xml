@@ -58,13 +58,13 @@
                         android:layout_height="50dp"
                         android:background="@color/google_color"
                         android:src="@mipmap/google_plus"/>
-                    <Button
+                    <com.rey.material.widget.Button
+                        style="@style/Material.Drawable.Ripple.Touch"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@color/google_color"
                         android:text="@string/login_page_google"
-                        android:textColor="@color/white"
-                        style="?android:attr/buttonStyleSmall"/>
+                        android:textColor="@color/white"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="300dp"
@@ -78,13 +78,13 @@
                         android:layout_height="50dp"
                         android:background="@color/facebook_color"
                         android:src="@mipmap/facebook"/>
-                    <Button
+                    <com.rey.material.widget.Button
+                        style="@style/Material.Drawable.Ripple.Touch"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@color/facebook_color"
                         android:text="@string/login_page_facebook"
-                        android:textColor="@color/white"
-                        style="?android:attr/buttonStyleSmall"/>
+                        android:textColor="@color/white"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="300dp"
@@ -98,13 +98,13 @@
                         android:layout_height="50dp"
                         android:background="@color/twitter_color"
                         android:src="@mipmap/twitter"/>
-                    <Button
+                    <com.rey.material.widget.Button
+                        style="@style/Material.Drawable.Ripple.Touch"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@color/twitter_color"
                         android:text="@string/login_page_twitter"
-                        android:textColor="@color/white"
-                        style="?android:attr/buttonStyleSmall"/>
+                        android:textColor="@color/white"/>
                 </LinearLayout>
                <!-- <com.google.android.gms.common.SignInButton
                     android:id="@+id/log_in_google_plus"
