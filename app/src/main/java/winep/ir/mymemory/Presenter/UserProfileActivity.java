@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ViewSwitcher;
 
@@ -48,6 +49,7 @@ public class UserProfileActivity extends AppCompatActivity {
     private TextView txtAccount;
     private EditText editTextAccount;
     private Button btnUpgrade;
+    private ImageView imgUserProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +62,7 @@ public class UserProfileActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        imgUserProfile=(ImageView)findViewById(R.id.image_user_profile);
         viewSwitcherUserName=(ViewSwitcher)findViewById(R.id.view_switcher_user_profile_user_name);
         txtUserName=(TextView)findViewById(R.id.txt_user_profile_user_name);
         editTextUserName=(EditText)findViewById(R.id.edit_txt_user_profile_user_name);
@@ -80,6 +83,14 @@ public class UserProfileActivity extends AppCompatActivity {
         txtAccount=(TextView)findViewById(R.id.txt_user_profile_account);
         editTextAccount=(EditText)findViewById(R.id.edit_txt_user_profile_account);
         btnUpgrade=(Button)findViewById(R.id.btn_user_profile_upgrade);
+
+
+        imgUserProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Utilities.getInstance().showImageGalleryOrCammera(context);
+            }
+        });
 
         txtUserName.setOnClickListener(new View.OnClickListener() {
             @Override

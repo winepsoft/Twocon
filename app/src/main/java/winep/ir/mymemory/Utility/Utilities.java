@@ -10,6 +10,7 @@ import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
+import android.provider.MediaStore;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -278,11 +279,21 @@ public class Utilities {
         return languageTitle;
     }
 
-    public void showImageGallery(Context context){
-        Intent intent = new Intent();
-        intent.setType("image/*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);//
-        ((Activity)context).startActivityForResult(Intent.createChooser(intent, "Select Picture"),
-                StaticParameters.getInstance().SELECT_PICTURE_FROM_GALLERY_RESULT_CODE);
+    public void showImageGalleryOrCammera(Context context){
+        Intent pickIntent = new Intent();
+        pickIntent.setType("image/*");
+        pickIntent.setAction(Intent.ACTION_GET_CONTENT);
+
+        Intent takePhotoIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+
+        String pickTitle = "Select or take a new Picture"; // Or get from strings.xml
+        Intent chooserIntent = Intent.createChooser(pickIntent, pickTitle);
+        chooserIntent.putExtra
+                (
+                        Intent.EXTRA_INITIAL_INTENTS,
+                        new Intent[] { takePhotoIntent }
+                );
+
+        ((Activity)context).startActivityForResult(chooserIntent,StaticParameters.getInstance().SELECT_PICTURE_FROM_GALLERY_OR_CAMERA_RESULT_CODE);
     }
 }
