@@ -8,9 +8,8 @@
 
     //Tabs
     <string name="tab_one">المجموعة</string>
-    <string name="tab_two">قاموس أونلاين</string>
-    <string name="tab_three">بنك الذاكرة</string>
-    <string name="tab_four">كرت</string>
+    <string name="tab_two">بنك الذاكرة</string>
+    <string name="tab_three">متجر</string>
 
     //Group Fragment
     <string name="new_group_dialog_title">إضافة مجموعة جديدة</string>

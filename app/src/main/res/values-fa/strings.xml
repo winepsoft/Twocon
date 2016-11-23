@@ -8,9 +8,8 @@
 
     //Tabs
     <string name="tab_one">گروهها</string>
-    <string name="tab_two">دیکشنری آنلاین</string>
-    <string name="tab_three">بانک حافظه</string>
-    <string name="tab_four">فلش</string>
+    <string name="tab_two">بانک حافظه</string>
+    <string name="tab_three">فروشگاه</string>
 
     //Group Fragment
     <string name="new_group_dialog_title">اضافه کردن گروه جدید</string>

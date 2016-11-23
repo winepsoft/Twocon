@@ -24,7 +24,6 @@ import winep.ir.mymemory.Presenter.GroupsTab.GroupsFragment;
 import winep.ir.mymemory.Presenter.MemoryBankTab.MemoryBankFragment;
 import winep.ir.mymemory.Presenter.ObserverPackage.setShowTicketDialog;
 import winep.ir.mymemory.Presenter.ObserverPackage.setShowTicketDialogListener;
-import winep.ir.mymemory.Presenter.OnlineDictionaryTab.OnlineDictionaryFragment;
 import winep.ir.mymemory.Presenter.PagerAdapter;
 import winep.ir.mymemory.Presenter.SettingsPage.SettingsActivity;
 import winep.ir.mymemory.Presenter.SharedCardsPage.SharedCardsActivity;
@@ -77,7 +76,7 @@ public class MainPage extends AppCompatActivity
         setupViewPager();
         tabLayout.setupWithViewPager(viewPager);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-        viewPager.setOffscreenPageLimit(4);
+        viewPager.setOffscreenPageLimit(pagerAdapter.getCount());
 
         setShowTicketDialog.setShowTicketDialogListener(new setShowTicketDialogListener() {
             @Override
@@ -115,9 +114,8 @@ public class MainPage extends AppCompatActivity
 
        if (Utilities.getInstance().isRTL()) {
            // The view has LTR layout
-           pagerAdapter.addFragment(new Flashfragment(), getString(R.string.tab_four));
-           pagerAdapter.addFragment(new MemoryBankFragment(),getString(R.string.tab_three));
-           pagerAdapter.addFragment(new OnlineDictionaryFragment(),getString(R.string.tab_two));
+           pagerAdapter.addFragment(new Flashfragment(), getString(R.string.tab_three));
+           pagerAdapter.addFragment(new MemoryBankFragment(),getString(R.string.tab_two));
            pagerAdapter.addFragment(new GroupsFragment(),getString(R.string.tab_one));
            viewPager.setAdapter(pagerAdapter);
            viewPager.setCurrentItem(pagerAdapter.getCount()-1);
@@ -125,9 +123,8 @@ public class MainPage extends AppCompatActivity
         } else {
            // The view has RTL layout
            pagerAdapter.addFragment(new GroupsFragment(), getString(R.string.tab_one));
-           pagerAdapter.addFragment(new OnlineDictionaryFragment(),getString(R.string.tab_two));
-           pagerAdapter.addFragment(new MemoryBankFragment(),getString(R.string.tab_three));
-           pagerAdapter.addFragment(new Flashfragment(),getString(R.string.tab_four));
+           pagerAdapter.addFragment(new MemoryBankFragment(),getString(R.string.tab_two));
+           pagerAdapter.addFragment(new Flashfragment(),getString(R.string.tab_three));
            viewPager.setAdapter(pagerAdapter);
            viewPager.setCurrentItem(0);
        }
