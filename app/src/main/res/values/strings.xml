@@ -119,6 +119,7 @@
     <string name="end">end</string>
     <string name="exam_dialog_title">The number of test questions</string>
     <string name="exam_dialog_all_question_course">All Question Of this Course</string>
+    <string name="result">result</string>
 
     //question page
     <string name="question_activity_title">See Question</string>

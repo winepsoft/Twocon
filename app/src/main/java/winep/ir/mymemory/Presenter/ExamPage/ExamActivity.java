@@ -38,7 +38,7 @@ public class ExamActivity extends AppCompatActivity
 
     private ArrayList<Exam> exam;
     private Context context;
-    //private Button btnExamEnd;
+    private Button btnResult;
     private Button btnExamNext;
     private Button btnExamPreview;
     private TextView txtExamProcess;
@@ -72,7 +72,8 @@ public class ExamActivity extends AppCompatActivity
         examViewPager.setAdapter(new ExamPagerAdapter(createExam(allQuestionTest),this));
 
 
-        //btnExamEnd=(Button)findViewById(R.id.exam_end);
+        btnResult=(Button)findViewById(R.id.exam_result);
+        btnResult.setVisibility(View.GONE);
         btnExamNext=(Button)findViewById(R.id.exam_next);
         btnExamPreview=(Button)findViewById(R.id.exam_preview);
         progressBarExamProcess =(ProgressView)findViewById(R.id.progress_bar_exam_process);
@@ -158,6 +159,15 @@ public class ExamActivity extends AppCompatActivity
             }
         });
 
+        btnResult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context, ExamResultActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
 
     }
 
@@ -191,8 +201,10 @@ public class ExamActivity extends AppCompatActivity
             progressBarExamProcess.setProgress(progressBarExamProcess.getProgress()+(float) percent);
             if (currentQuestion==2)
                 btnExamPreview.setVisibility(View.VISIBLE);
-            if (currentQuestion==allQuestionTest)
+            if (currentQuestion==allQuestionTest) {
                 btnExamNext.setVisibility(View.GONE);
+                btnResult.setVisibility(View.VISIBLE);
+            }
         }
         else
             btnExamNext.setVisibility(View.GONE);
