@@ -30,6 +30,7 @@
     <string name="user_profile">لوحة التحكم</string>
     <string name="my_activities">نشاطاتي</string>
     <string name="shared_flashcard">مشاركة بطاقة تعليمية</string>
+    <string name="dictionary">قاموس</string>
     <string name="add_card_from_excel">إضافة بطاقة تعليمية من برنامج EXCEL</string>
     <string name="help">دلیل</string>
     <string name="setting_app">إعدادات البرنامج</string>

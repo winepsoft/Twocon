@@ -60,6 +60,8 @@
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".Presenter.SharedLessonPage.SharedLessonActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".Presenter.OnlineDictionaryTab.OnlineDictionaryActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
 
         <activity android:name="com.facebook.FacebookActivity"
             android:configChanges=

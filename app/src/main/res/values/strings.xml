@@ -41,6 +41,7 @@
     <string name="user_profile">User Panel</string>
     <string name="my_activities">My Activities</string>
     <string name="shared_flashcard">Shared flashcard</string>
+    <string name="dictionary">Dictionary</string>
     <string name="add_card_from_excel">Add Card from Excel</string>
     <string name="help">Guide</string>
     <string name="setting_app">Setting</string>

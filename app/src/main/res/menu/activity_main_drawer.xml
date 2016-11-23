@@ -15,6 +15,11 @@
             android:icon="@mipmap/backup"
             android:title="@string/shared_flashcard" />
         <item
+            android:id="@+id/nav_dictionary"
+            android:title="@string/dictionary">
+
+        </item>
+        <item
             android:id="@+id/nav_add_card_from_excel"
             android:icon="@mipmap/backup"
             android:title="@string/add_card_from_excel" />
