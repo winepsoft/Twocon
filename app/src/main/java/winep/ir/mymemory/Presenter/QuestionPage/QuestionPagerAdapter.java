@@ -135,6 +135,13 @@ public class QuestionPagerAdapter  extends PagerAdapter {
             }
         });
 
+        btnoNOKnow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setClickOnKnowButton.setClickOnAnswerStatus(true);
+            }
+        });
+
         cardFront.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
