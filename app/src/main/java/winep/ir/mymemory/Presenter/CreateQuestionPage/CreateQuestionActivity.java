@@ -112,17 +112,17 @@ public class CreateQuestionActivity extends AppCompatActivity {
         });
 
 
-        String[] GroupTitle = {"پزشکی", "مهندسی پزشکی", "English Title"};
+        String[] GroupTitle = {getString(R.string.group),"پزشکی", "مهندسی پزشکی", "English Title"};
         ArrayAdapter<String> a = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, GroupTitle);
         a.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerGroup.setAdapter(a);
 
-        String[] subGroupTitle = {"فیزیولوژی", "دهان و دندان"};
+        String[] subGroupTitle = {getString(R.string.sub_group),"فیزیولوژی", "دهان و دندان"};
         ArrayAdapter<String> b = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, subGroupTitle);
         b.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerSubGroup.setAdapter(b);
 
-        String[] courseTitle = {"زبان", "دندان جلو"};
+        String[] courseTitle = {getString(R.string.course),"زبان", "دندان جلو"};
         ArrayAdapter<String> c = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, courseTitle);
         c.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerCourse.setAdapter(c);
