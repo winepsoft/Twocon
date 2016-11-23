@@ -103,7 +103,7 @@
                 app:et_inputId="@+id/edit_text_translation_page_from_text_input"
                 android:minLines="3"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:background="@drawable/button_with_corner_blue_strocke"
+                android:background="@drawable/button_with_corner_blue_stroke"
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
                 android:paddingTop="5dp"
