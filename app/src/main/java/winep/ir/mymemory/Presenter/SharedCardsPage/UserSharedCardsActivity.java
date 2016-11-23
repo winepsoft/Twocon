@@ -17,17 +17,17 @@ import winep.ir.mymemory.Utility.Utilities;
 /**
  * Created by ShaisteS on 11/19/2016.
  */
-public class SharedCardsActivity extends AppCompatActivity {
+public class UserSharedCardsActivity extends AppCompatActivity {
 
     private Context context;
     private RecyclerView recyclerViewSharedCards;
-    private SharedCardsRecyclerViewAdapter adapterSharedCards;
+    private UserSharedCardsRecyclerViewAdapter adapterSharedCards;
     private ServerConnectionHandler serverConnectionHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.shared_cards_activity);
+        setContentView(R.layout.user_shared_cards_activity);
         setTitle(getString(R.string.shared_flash_cards_page));
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -36,7 +36,7 @@ public class SharedCardsActivity extends AppCompatActivity {
 
         recyclerViewSharedCards=(RecyclerView)findViewById(R.id.recycler_view_shared_card);
         recyclerViewSharedCards.setLayoutManager(new LinearLayoutManager(context));
-        adapterSharedCards=new SharedCardsRecyclerViewAdapter(context,serverConnectionHandler.createSharedFlashCards());
+        adapterSharedCards=new UserSharedCardsRecyclerViewAdapter(context,serverConnectionHandler.createSharedFlashCards());
         recyclerViewSharedCards.setAdapter(adapterSharedCards);
 
     }

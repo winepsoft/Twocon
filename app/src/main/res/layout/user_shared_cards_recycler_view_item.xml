@@ -18,10 +18,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-                <ImageView
+                <winep.ir.mymemory.Utility.RoundedImageView
                     android:layout_width="75dp"
                     android:layout_height="75dp"
-                    android:src="@drawable/app_icon"
+                    android:src="@drawable/user"
                     android:layout_marginEnd="5dp"
                     android:id="@+id/image_shared_cards"
                     android:layout_gravity="center_vertical" />

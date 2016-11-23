@@ -56,7 +56,7 @@
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".Presenter.PurchasedLessonPage.PurchasedLessonActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".Presenter.SharedCardsPage.SharedCardsActivity"
+        <activity android:name=".Presenter.SharedCardsPage.UserSharedCardsActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".Presenter.SharedLessonPage.SharedLessonActivity"
             android:theme="@style/AppTheme.NoActionBar"/>

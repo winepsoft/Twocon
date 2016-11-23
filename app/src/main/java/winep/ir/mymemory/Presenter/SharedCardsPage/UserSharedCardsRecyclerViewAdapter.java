@@ -19,17 +19,17 @@ import winep.ir.mymemory.Utility.Utilities;
 /**
  * Created by ShaisteS on 11/19/2016.
  */
-public class SharedCardsRecyclerViewAdapter extends RecyclerView.Adapter<SharedCardsRecyclerViewAdapter.MyViewHolder> {
+public class UserSharedCardsRecyclerViewAdapter extends RecyclerView.Adapter<UserSharedCardsRecyclerViewAdapter.MyViewHolder> {
     private Context context;
     private ArrayList<SharedFlashCard> allShardFlashCards;
 
-    public SharedCardsRecyclerViewAdapter(Context context,ArrayList<SharedFlashCard> sharedFlashCards){
+    public UserSharedCardsRecyclerViewAdapter(Context context, ArrayList<SharedFlashCard> sharedFlashCards){
         this.context=context;
         allShardFlashCards=sharedFlashCards;
     }
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v= LayoutInflater.from(context).inflate(R.layout.shared_cards_recycler_view_item,parent,false);
+        View v= LayoutInflater.from(context).inflate(R.layout.user_shared_cards_recycler_view_item,parent,false);
         return new MyViewHolder(v);     }
 
     @Override

@@ -27,7 +27,7 @@ import winep.ir.mymemory.Presenter.ObserverPackage.setShowTicketDialogListener;
 import winep.ir.mymemory.Presenter.OnlineDictionaryTab.OnlineDictionaryActivity;
 import winep.ir.mymemory.Presenter.PagerAdapter;
 import winep.ir.mymemory.Presenter.SettingsPage.SettingsActivity;
-import winep.ir.mymemory.Presenter.SharedCardsPage.SharedCardsActivity;
+import winep.ir.mymemory.Presenter.SharedCardsPage.UserSharedCardsActivity;
 import winep.ir.mymemory.Presenter.StatisticsTotalPage.StatisticsTotalActivity;
 import winep.ir.mymemory.Presenter.UserProfileActivity;
 import winep.ir.mymemory.Utility.Dialogs;
@@ -205,7 +205,7 @@ public class MainPage extends AppCompatActivity
         }
 
         else if(id==R.id.nav_shared_flashcard){
-            Intent intent=new Intent(this, SharedCardsActivity.class);
+            Intent intent=new Intent(this, UserSharedCardsActivity.class);
             startActivity(intent);
         }
         else if(id==R.id.nav_dictionary){
