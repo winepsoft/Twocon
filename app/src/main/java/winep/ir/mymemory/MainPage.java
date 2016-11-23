@@ -27,7 +27,7 @@ import winep.ir.mymemory.Presenter.ObserverPackage.setShowTicketDialogListener;
 import winep.ir.mymemory.Presenter.OnlineDictionaryTab.OnlineDictionaryActivity;
 import winep.ir.mymemory.Presenter.PagerAdapter;
 import winep.ir.mymemory.Presenter.SettingsPage.SettingsActivity;
-import winep.ir.mymemory.Presenter.SharedCardsPage.UserSharedCardsActivity;
+import winep.ir.mymemory.Presenter.UserSharedCardsPage.UserSharedCardsActivity;
 import winep.ir.mymemory.Presenter.StatisticsTotalPage.StatisticsTotalActivity;
 import winep.ir.mymemory.Presenter.UserProfileActivity;
 import winep.ir.mymemory.Utility.Dialogs;

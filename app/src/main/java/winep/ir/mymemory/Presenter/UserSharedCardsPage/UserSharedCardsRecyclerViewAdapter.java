@@ -1,4 +1,4 @@
-package winep.ir.mymemory.Presenter.SharedCardsPage;
+package winep.ir.mymemory.Presenter.UserSharedCardsPage;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
