@@ -44,10 +44,8 @@ public class UserProfileActivity extends AppCompatActivity {
     private ViewSwitcher viewSwitcherMobile;
     private TextView txtMobile;
     private EditText editTextMobile;
-    private ViewSwitcher viewSwitcherAccount;
     private TextView txtAccountTitle;
     private TextView txtAccount;
-    private EditText editTextAccount;
     private Button btnUpgrade;
     private ImageView imgUserProfile;
 
@@ -78,10 +76,8 @@ public class UserProfileActivity extends AppCompatActivity {
         viewSwitcherMobile=(ViewSwitcher)findViewById(R.id.view_switcher_user_profile_mobile);
         txtMobile=(TextView)findViewById(R.id.txt_user_profile_mobile);
         editTextMobile=(EditText)findViewById(R.id.edit_txt_user_profile_mobile);
-        viewSwitcherAccount=(ViewSwitcher)findViewById(R.id.view_switcher_user_profile_account);
         txtAccountTitle=(TextView)findViewById(R.id.txt_user_profile_account_title);
         txtAccount=(TextView)findViewById(R.id.txt_user_profile_account);
-        editTextAccount=(EditText)findViewById(R.id.edit_txt_user_profile_account);
         btnUpgrade=(Button)findViewById(R.id.btn_user_profile_upgrade);
 
 
@@ -92,13 +88,24 @@ public class UserProfileActivity extends AppCompatActivity {
             }
         });
 
+        //UserName
         txtUserName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 viewSwitcherUserName.showNext();
             }
         });
+        editTextUserName.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean hasFocus) {
+                if(!hasFocus) {
+                    txtUserName.setText(editTextUserName.getText());
+                    viewSwitcherUserName.showPrevious();
+                }
+            }
+        });
 
+        //LastName
         txtLastName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -106,24 +113,64 @@ public class UserProfileActivity extends AppCompatActivity {
             }
         });
 
+        editTextLastName.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean hasFocus) {
+                if (!hasFocus) {
+                    txtLastName.setText(editTextLastName.getText());
+                    viewSwitcherLastName.showPrevious();
+                }
+            }
+        });
+
+        //FirstName
         txtFirstName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 viewSwitcherFirstName.showNext();
             }
         });
+        editTextFirstName.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean hasFocus) {
+                if (!hasFocus) {
+                    txtFirstName.setText(editTextFirstName.getText());
+                    viewSwitcherFirstName.showPrevious();
+                }
+            }
+        });
 
+        //Email
         txtEmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 viewSwitcherEmail.showNext();
             }
         });
+        editTextEmail.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean hasFocus) {
+                if (!hasFocus) {
+                    txtEmail.setText(editTextEmail.getText());
+                    viewSwitcherEmail.showPrevious();
+                }
+            }
+        });
 
+        //Mobile
         txtMobile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 viewSwitcherMobile.showNext();
+            }
+        });
+        editTextMobile.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean hasFocus) {
+                if (!hasFocus) {
+                    txtMobile.setText(editTextMobile.getText());
+                    viewSwitcherMobile.showPrevious();
+                }
             }
         });
 
@@ -132,13 +179,6 @@ public class UserProfileActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent=new Intent(context, StatisticsTotalActivity.class);
                 startActivity(intent);
-            }
-        });
-
-        txtAccount.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                viewSwitcherAccount.showNext();
             }
         });
 
