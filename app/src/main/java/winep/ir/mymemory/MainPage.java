@@ -19,7 +19,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
-import winep.ir.mymemory.Presenter.FlashTab.Flashfragment;
+import winep.ir.mymemory.Presenter.StoreTab.StoreFragment;
 import winep.ir.mymemory.Presenter.GroupsTab.GroupsFragment;
 import winep.ir.mymemory.Presenter.MemoryBankTab.MemoryBankFragment;
 import winep.ir.mymemory.Presenter.ObserverPackage.setShowTicketDialog;
@@ -115,7 +115,7 @@ public class MainPage extends AppCompatActivity
 
        if (Utilities.getInstance().isRTL()) {
            // The view has LTR layout
-           pagerAdapter.addFragment(new Flashfragment(), getString(R.string.tab_three));
+           pagerAdapter.addFragment(new StoreFragment(), getString(R.string.tab_three));
            pagerAdapter.addFragment(new MemoryBankFragment(),getString(R.string.tab_two));
            pagerAdapter.addFragment(new GroupsFragment(),getString(R.string.tab_one));
            viewPager.setAdapter(pagerAdapter);
@@ -125,7 +125,7 @@ public class MainPage extends AppCompatActivity
            // The view has RTL layout
            pagerAdapter.addFragment(new GroupsFragment(), getString(R.string.tab_one));
            pagerAdapter.addFragment(new MemoryBankFragment(),getString(R.string.tab_two));
-           pagerAdapter.addFragment(new Flashfragment(),getString(R.string.tab_three));
+           pagerAdapter.addFragment(new StoreFragment(),getString(R.string.tab_three));
            viewPager.setAdapter(pagerAdapter);
            viewPager.setCurrentItem(0);
        }

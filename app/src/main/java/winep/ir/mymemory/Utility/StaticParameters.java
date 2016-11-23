@@ -19,4 +19,6 @@ public class StaticParameters {
     public int screenWidth=0;
     public int screenHeight =0;
     public Context examResultContext;
+
+    public int SELECT_PICTURE_FROM_GALLERY_RESULT_CODE=100;
 }

@@ -1,6 +1,7 @@
 package winep.ir.mymemory.Utility;
 
 import android.annotation.TargetApi;
+import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -275,5 +276,13 @@ public class Utilities {
                 context.getString(R.string.persian),
                 context.getString(R.string.english)};
         return languageTitle;
+    }
+
+    public void showImageGallery(Context context){
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);//
+        ((Activity)context).startActivityForResult(Intent.createChooser(intent, "Select Picture"),
+                StaticParameters.getInstance().SELECT_PICTURE_FROM_GALLERY_RESULT_CODE);
     }
 }

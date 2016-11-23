@@ -1,4 +1,4 @@
-package winep.ir.mymemory.Presenter.FlashTab;
+package winep.ir.mymemory.Presenter.StoreTab;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -22,12 +22,12 @@ import winep.ir.mymemory.R;
 /**
  * Created by ShaisteS on 10/1/2016.
  */
-public class Flashfragment extends Fragment {
+public class StoreFragment extends Fragment {
 
     private ArrayList<FlashCart> flashCarts;
     private Context context;
     private RecyclerView recyclerViewFlash;
-    private FlashRecyclerViewAdapter adapterFlash;
+    private StoreRecyclerViewAdapter adapterFlash;
     private ServerConnectionHandler serverConnectionHandler;
     private Button btnSelectGroupFilter;
     private TextView txtFlashGroupFilterValue;
@@ -44,7 +44,7 @@ public class Flashfragment extends Fragment {
         flashCarts=new ArrayList<>();
         recyclerViewFlash=(RecyclerView) mainView.findViewById(R.id.recycler_view_flash);
         recyclerViewFlash.setLayoutManager(new LinearLayoutManager(context));
-        adapterFlash=new FlashRecyclerViewAdapter(context,serverConnectionHandler.createFlashCart());
+        adapterFlash=new StoreRecyclerViewAdapter(context,serverConnectionHandler.createFlashCart());
         recyclerViewFlash.setAdapter(adapterFlash);
 
         //Group Filter

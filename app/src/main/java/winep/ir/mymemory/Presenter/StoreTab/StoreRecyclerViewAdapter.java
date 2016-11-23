@@ -1,4 +1,4 @@
-package winep.ir.mymemory.Presenter.FlashTab;
+package winep.ir.mymemory.Presenter.StoreTab;
 
 import android.content.Context;
 import android.graphics.Paint;
@@ -21,11 +21,11 @@ import winep.ir.mymemory.Utility.Utilities;
 /**
  * Created by ShaisteS on 11/15/2016.
  */
-class FlashRecyclerViewAdapter extends RecyclerView.Adapter<FlashRecyclerViewAdapter.MyViewHolder> {
+class StoreRecyclerViewAdapter extends RecyclerView.Adapter<StoreRecyclerViewAdapter.MyViewHolder> {
     private Context context;
     private ArrayList<FlashCart> allFlashCarts;
 
-    public FlashRecyclerViewAdapter(Context context,ArrayList<FlashCart> flashCarts){
+    public StoreRecyclerViewAdapter(Context context, ArrayList<FlashCart> flashCarts){
         this.context=context;
         allFlashCarts=flashCarts;
     }
@@ -46,6 +46,12 @@ class FlashRecyclerViewAdapter extends RecyclerView.Adapter<FlashRecyclerViewAda
             @Override
             public void onClick(View view) {
                 Dialogs.getInstance().showDescriptionFlash(context);
+            }
+        });
+        holder.imgFlashPic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Utilities.getInstance().showImageGallery(context);
             }
         });
     }
