@@ -1,6 +1,7 @@
 package winep.ir.mymemory.Presenter.StoreTab;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Paint;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import winep.ir.mymemory.DataModel.FlashCart;
+import winep.ir.mymemory.Presenter.ImageGallery.ImageGalleryActivity;
 import winep.ir.mymemory.R;
 import winep.ir.mymemory.Utility.Dialogs;
 import winep.ir.mymemory.Utility.RectangleView;
@@ -51,7 +53,8 @@ class StoreRecyclerViewAdapter extends RecyclerView.Adapter<StoreRecyclerViewAda
         holder.imgFlashPic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Utilities.getInstance().showImageGallery(context);
+                Intent intent=new Intent(context, ImageGalleryActivity.class);
+                context.startActivity(intent);
             }
         });
     }
