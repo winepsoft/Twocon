@@ -60,6 +60,8 @@
                         android:src="@mipmap/google_plus"/>
                     <com.rey.material.widget.Button
                         style="@style/Material.Drawable.Ripple.Touch"
+                        android:textAllCaps="false"
+                        app:rd_rippleColor="@color/google_color_ripple"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@color/google_color"
@@ -80,6 +82,8 @@
                         android:src="@mipmap/facebook"/>
                     <com.rey.material.widget.Button
                         style="@style/Material.Drawable.Ripple.Touch"
+                        android:textAllCaps="false"
+                        app:rd_rippleColor="@color/facebook_color_ripple"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@color/facebook_color"
@@ -100,6 +104,8 @@
                         android:src="@mipmap/twitter"/>
                     <com.rey.material.widget.Button
                         style="@style/Material.Drawable.Ripple.Touch"
+                        app:rd_rippleColor="@color/twitter_color_ripple"
+                        android:textAllCaps="false"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@color/twitter_color"
