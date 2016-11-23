@@ -13,7 +13,6 @@ import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
-import com.github.mikephil.charting.utils.ColorTemplate;
 import com.rey.material.widget.Button;
 
 import java.util.ArrayList;
@@ -70,7 +69,7 @@ public class ExamResultActivity extends AppCompatActivity {
         entries.add(new Entry(5, 1));
         entries.add(new Entry(12, 1));
         PieDataSet set = new PieDataSet(entries,"");
-        set.setColors(ColorTemplate.PASTEL_COLORS);
+        set.setColors(new int[]{R.color.gray_light,R.color.red,R.color.green_light},context);
         PieData data = new PieData(x,set);
         resultChart.setData(data);
         resultChart.setCenterText(getString(R.string.exam_result_page_title));
