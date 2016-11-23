@@ -15,6 +15,7 @@ import com.facebook.FacebookSdk;
 import com.rey.material.widget.Button;
 import com.rey.material.widget.Spinner;
 
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 import winep.ir.mymemory.MainPage;
 import winep.ir.mymemory.R;
 import winep.ir.mymemory.Utility.Utilities;
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnTakeTour=(Button)findViewById(R.id.btn_log_in_tour);
         spinnerSelectLanguage=(Spinner)findViewById(R.id.spinner_log_in_select_language);
-        ArrayAdapter<String> a = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, Utilities.getInstance().getAllLanguageTitle(context));
+        ArrayAdapter<String> a = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, Utilities.getInstance().getDefaultLanguageListTitle(context));
         a.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerSelectLanguage.setAdapter(a);
 
@@ -52,6 +53,23 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent=new Intent(context, MainPage.class);
                 startActivity(intent);
+            }
+        });
+
+        spinnerSelectLanguage.setOnItemSelectedListener(new Spinner.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(Spinner parent, View view, int position, long id) {
+
+                if (parent.getSelectedItem().toString().equals(getString(R.string.persian))) {
+                    Utilities.getInstance().setLocale(context,"fa");
+                }
+                else if(parent.getSelectedItem().toString().equals(getString(R.string.english))){
+                    Utilities.getInstance().setLocale(context,"en");
+                }
+                else if(parent.getSelectedItem().toString().equals(getString(R.string.arabic))){
+                    Utilities.getInstance().setLocale(context,"ar");
+                }
+
             }
         });
 
@@ -118,5 +136,11 @@ public class MainActivity extends AppCompatActivity {
         // Make sure that the loginButton hears the result from any
         // Activity that it triggered.
         //loginButton.onActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+        Utilities.getInstance().setSettingLanguage(newBase);
     }
 }

@@ -22,11 +22,11 @@ public class SettingsManager {
         editor = pref.edit();
     }
 
-    public void setLangugeSetting(String languge){
-        editor.putString(LANGUAGE_SETTING,languge);
+    public void setLanguageSetting(String language){
+        editor.putString(LANGUAGE_SETTING,language);
         editor.commit();
     }
-    public String getLangugeSetting(){
+    public String getLanguageSetting(){
         return pref.getString(LANGUAGE_SETTING,"en");
     }
 }

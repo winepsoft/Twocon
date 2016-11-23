@@ -184,18 +184,6 @@ public class MainPage extends AppCompatActivity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_persian_languge) {
-            Utilities.getInstance().setLocale(context,"fa");
-            return true;
-        }
-        else if(id==R.id.action_english_languge){
-            Utilities.getInstance().setLocale(context,"en");
-        }
-        else if(id==R.id.action_arabic_language){
-            Utilities.getInstance().setLocale(context,"ar");
-        }
         return super.onOptionsItemSelected(item);
     }
 

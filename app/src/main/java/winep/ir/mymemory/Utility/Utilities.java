@@ -53,7 +53,7 @@ public class Utilities {
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
     public void setSettingLanguage(Context context) {
         SettingsManager settingsManager=new SettingsManager(context);
-        Locale myLocale = new Locale(settingsManager.getLangugeSetting());
+        Locale myLocale = new Locale(settingsManager.getLanguageSetting());
         Resources res = context.getResources();
         Configuration conf = res.getConfiguration();
         conf.setLocale(myLocale);
@@ -69,7 +69,7 @@ public class Utilities {
         Configuration conf = res.getConfiguration();
         conf.setLocale(myLocale);
         Locale.setDefault(myLocale);
-        settingsManager.setLangugeSetting(lang);
+        settingsManager.setLanguageSetting(lang);
         context.getResources().updateConfiguration(conf, context.getResources().getDisplayMetrics());
         Intent i = context.getPackageManager()
                 .getLaunchIntentForPackage( context.getPackageName());
@@ -80,7 +80,7 @@ public class Utilities {
     public  boolean isSelectedALTRLanguage(Context context){
         SettingsManager settingsManager=new SettingsManager(context);
         boolean status;
-        if(settingsManager.getLangugeSetting().equals("fa") ||settingsManager.getLangugeSetting().equals("ar") ) {
+        if(settingsManager.getLanguageSetting().equals("fa") ||settingsManager.getLanguageSetting().equals("ar") ) {
             status=true;
         }
         else
@@ -225,13 +225,59 @@ public class Utilities {
                 .show();
     }
 
-    public String[] getAllLanguageTitle(Context context){
+    public String getLanguge(Context context){
+        String language=context.getString(R.string.english);
+        SettingsManager settingsManager=new SettingsManager(context);
+        if (settingsManager.getLanguageSetting().equals("fa"))
+            language=context.getString(R.string.persian);
+        else if (settingsManager.getLanguageSetting().equals("ar"))
+            language=context.getString(R.string.arabic);
+        return language;
+    }
 
-        String[] languageTitle = {context.getString(R.string.english),
+    public String[] getDefaultLanguageListTitle(Context context){
+        String language=getLanguge(context);
+        if (language.equals(context.getString(R.string.arabic)))
+            return getAllLanguageTitleDefaultArabic(context);
+        else if (language.equals(context.getString(R.string.persian)))
+            return getAllLanguageTitleDefaultPersian(context);
+        else
+            return getAllLanguageTitleDefaultEnglish(context);
+    }
+
+    public String[] getAllLanguageTitle(Context context){
+        String[] languageTitle = {context.getString(R.string.select_language),
+                context.getString(R.string.english),
                 context.getString(R.string.persian),
                 context.getString(R.string.arabic)};
         return languageTitle;
     }
+
+    public String[] getAllLanguageTitleDefaultEnglish(Context context){
+        String[] languageTitle = {
+                context.getString(R.string.english),
+                context.getString(R.string.persian),
+                context.getString(R.string.arabic)};
+        return languageTitle;
+    }
+
+    public String[] getAllLanguageTitleDefaultPersian(Context context){
+        String[] languageTitle = {
+                context.getString(R.string.persian),
+                context.getString(R.string.english),
+                context.getString(R.string.arabic)};
+        return languageTitle;
+    }
+
+    public String[] getAllLanguageTitleDefaultArabic(Context context){
+        String[] languageTitle = {
+                context.getString(R.string.arabic),
+                context.getString(R.string.persian),
+                context.getString(R.string.english)};
+        return languageTitle;
+    }
+
+
 
 
 
