@@ -85,6 +85,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="@string/translation_page_btn_translation"
+                    android:textAllCaps="false"
                     android:textColor="@color/white"
                     android:background="@drawable/button_with_corner_blue"
                     android:paddingRight="5dp"
@@ -131,6 +132,7 @@
                 android:layout_marginTop="20dp"
                 android:paddingRight="5dp"
                 android:paddingLeft="5dp"
+                android:textAllCaps="false"
                 android:id="@+id/btn_translation_page_add_memory_bank"/>
         </LinearLayout>
     </ScrollView>
