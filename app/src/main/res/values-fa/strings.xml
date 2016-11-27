@@ -152,7 +152,7 @@
     <string name="setting_save">ذخیره</string>
     <string name="color_picker_dialog_title">انتخاب رنگ</string>
     <string name="select_language">انتخاب زبان</string>
-    <string name="settings_night_vision">دید در شب</string>
+    <string name="settings_night_vision">صفحه نمایش دستگاه خاموش نشود</string>
     <string name="settings_general_title">تنظیمات عمومی</string>
     <string name="settings_group_title">گروهها</string>
     <string name="settings_group_color_priority">اولویت رنگ</string>

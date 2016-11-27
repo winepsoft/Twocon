@@ -156,7 +156,7 @@
     <string name="setting_save">save</string>
     <string name="color_picker_dialog_title">Choose color</string>
     <string name="select_language">Select Language</string>
-    <string name="settings_night_vision">Night Vision</string>
+    <string name="settings_night_vision">The screen does not turn off</string>
     <string name="settings_general_title">General Setting</string>
     <string name="settings_group_title">Groups</string>
     <string name="settings_group_color_priority">Color Priority</string>

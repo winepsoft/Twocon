@@ -237,7 +237,6 @@
     <string name="settings_group_title">المجموعات</string>
     <string name="settings_group_color_success_learn_item">لون بطاقات تم تعلمها</string>
     <string name="settings_level_number_title">إعدادات المراحل الإفتراضية</string>
-    <string name="settings_night_vision">الرؤية الليلية</string>
     <string name="settings_question_title">أسئلة</string>
     <string name="settings_reminder_description">تذكير القراءة و التعلم</string>
     <string name="settings_reminder_title">تذكير</string>
@@ -254,6 +253,7 @@
     <string name="user_profile_mobile">الموبايل</string>
     <string name="user_profile_title">الملف الشخصي</string>
     <string name="user_profile_upgrade">ترقية الحساب</string>
+    <string name="settings_night_vision"></string>
 
 
 </resources>
