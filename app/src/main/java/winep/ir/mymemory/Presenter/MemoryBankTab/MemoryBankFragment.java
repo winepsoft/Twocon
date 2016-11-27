@@ -92,21 +92,21 @@ public class MemoryBankFragment extends Fragment implements
         btnQuestionSeen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context,context.getString(R.string.app_name),Toast.LENGTH_SHORT).show();
+                Toast.makeText(context,context.getString(R.string.m_sorted_by_question_seen_message),Toast.LENGTH_SHORT).show();
             }
         });
 
         btnAnswerSeen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context,context.getString(R.string.app_name),Toast.LENGTH_SHORT).show();
+                Toast.makeText(context,context.getString(R.string.m_sorted_by_answer_seen_message),Toast.LENGTH_SHORT).show();
             }
         });
 
         btnQuestionTrue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context,context.getString(R.string.app_name),Toast.LENGTH_SHORT).show();
+                Toast.makeText(context,context.getString(R.string.m_sorted_by_question_true_message),Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -114,7 +114,7 @@ public class MemoryBankFragment extends Fragment implements
         btnQuestionWrong.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context,context.getString(R.string.app_name),Toast.LENGTH_SHORT).show();
+                Toast.makeText(context,context.getString(R.string.m_sorted_by_question_wrong_message),Toast.LENGTH_SHORT).show();
 
             }
         });

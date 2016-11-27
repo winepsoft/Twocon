@@ -95,6 +95,13 @@
     <string name="m_filter_priority">اولویت</string>
     <string name="m_hard">سوالات سخت</string>
     <string name="m_favourite">علاقه مندی ها</string>
+    <string name="m_sorted_by_question_seen_message">سوالات بر اساس تعداد نمایش سوال مرتب شده اند</string>
+    <string name="m_sorted_by_answer_seen_message">سوالات بر اساس تعداد نمایش پاسخ مرتب شده اند</string>
+    <string name="m_sorted_by_question_true_message">سوالات بر اساس تعداد پاسخ صحیح مرتب شده اند</string>
+    <string name="m_sorted_by_question_wrong_message">سوالات بر اساس تعداد پاسخ غلط مرتب شده اند</string>
+
+
+
 
     //exam page
     <string name="exam_activity_title">امتحان</string>

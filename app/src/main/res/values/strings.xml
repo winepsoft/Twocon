@@ -106,6 +106,10 @@
     <string name="m_filter_priority">Priority</string>
     <string name="m_hard">Hard question</string>
     <string name="m_favourite">Favourite</string>
+    <string name="m_sorted_by_question_seen_message">Sorted by number of display Questions</string>
+    <string name="m_sorted_by_answer_seen_message">Sorted by number of display Answer</string>
+    <string name="m_sorted_by_question_true_message">Sorted by number of true Answer</string>
+    <string name="m_sorted_by_question_wrong_message">Sorted by number of wrong Answer</string>
 
     //exam page
     <string name="exam_activity_title">Exam</string>
