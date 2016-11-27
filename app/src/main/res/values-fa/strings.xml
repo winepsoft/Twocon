@@ -18,6 +18,8 @@
     <string name="new_course_dialog_title">انتخاب زیر گروه</string>
     <string name="add_a_course_to">اضافه کردن درس جدید به </string>
     <string name="color">رنگ</string>
+    <string name="direct_entry_on">ورود مستقیم: روشن</string>
+    <string name="direct_entry_off">ورود مستقیم خاموش</string>
 
     //PopMenu_group_fragment
     <string name="information">اطلاعات</string>
