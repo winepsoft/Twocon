@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
@@ -62,10 +63,23 @@ public class LevelActivity extends AppCompatActivity {
         txtReadyNumber=(TextView)findViewById(R.id.txt_ready);
         Utilities.getInstance().setFontTextView(context,txtReadyNumber);
         txtReadyNumber.setText(getString(R.string.level_ready)+ ": "+"138");
+        txtReadyNumber.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context,getString(R.string.level_ready_message)+"138",Toast.LENGTH_LONG).show();
+            }
+        });
 
         txtTotalNumber=(TextView)findViewById(R.id.txt_total);
         Utilities.getInstance().setFontTextView(context,txtTotalNumber);
         txtTotalNumber.setText(getString(R.string.level_total)+": "+"192");
+        txtTotalNumber.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context,getString(R.string.level_total_message)+"192",Toast.LENGTH_LONG).show();
+
+            }
+        });
 
         recyclerViewLevel=(RecyclerView)findViewById(R.id.recycler_view_level);
         recyclerViewLevel.setLayoutManager(new LinearLayoutManager(context));

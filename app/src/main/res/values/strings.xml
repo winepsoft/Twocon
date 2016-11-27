@@ -203,7 +203,8 @@
     <string name="level_view_favourite">View favorite questions</string>
     <string name="level_exam">Test</string>
     <string name="success_learn">Learned Successfully</string>
-
+    <string name="level_ready_message">The number of questions ready to learn this lesson:</string>
+    <string name="level_total_message">The number of total questions to learn this lesson:</string>
 
 
     //create_question
