@@ -74,23 +74,29 @@ public class ServerConnectionHandler {
         ArrayList<FlashCart> flashCarts=new ArrayList<>();
         FlashCart flashCart=new FlashCart();
         flashCart.setTitle("دندانپزشکی پیشرفته");
-        flashCart.setDownloadSize("حجم : 1 مگ");
+        flashCart.setDownloadSize("1 مگ");
         flashCart.setMainPrice("0");
         flashCart.setPurchasePrice("1000 تومان");
+        flashCart.setNumberOfDownload("47");
+        flashCart.setNumberOfVisit("199");
         flashCarts.add(flashCart);
 
         FlashCart flashCart1=new FlashCart();
         flashCart1.setTitle("نام حیوانات");
-        flashCart1.setDownloadSize("حجم: 1 مگ");
+        flashCart1.setDownloadSize("1 مگ");
         flashCart1.setMainPrice("1000 تومان");
         flashCart1.setPurchasePrice("500 تومان");
+        flashCart1.setNumberOfDownload("47");
+        flashCart1.setNumberOfVisit("199");
         flashCarts.add(flashCart1);
 
         FlashCart flashCart2=new FlashCart();
         flashCart2.setTitle("world people");
-        flashCart2.setDownloadSize("size: 1M");
+        flashCart2.setDownloadSize("1M");
         flashCart2.setMainPrice("1000 تومان");
         flashCart2.setPurchasePrice("500 تومان");
+        flashCart2.setNumberOfDownload("47");
+        flashCart2.setNumberOfVisit("199");
         flashCarts.add(flashCart2);
         return flashCarts;
     }

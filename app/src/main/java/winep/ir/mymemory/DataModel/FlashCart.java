@@ -8,6 +8,8 @@ public class FlashCart {
     private String downloadSize;
     private String mainPrice;
     private String purchasePrice;
+    private String numberOfVisit;
+    private String numberOfDownload;
 
     public String getTitle() {
         return title;
@@ -39,5 +41,21 @@ public class FlashCart {
 
     public void setPurchasePrice(String purchasePrice) {
         this.purchasePrice = purchasePrice;
+    }
+
+    public String getNumberOfVisit() {
+        return numberOfVisit;
+    }
+
+    public void setNumberOfVisit(String numberOfVisit) {
+        this.numberOfVisit = numberOfVisit;
+    }
+
+    public String getNumberOfDownload() {
+        return numberOfDownload;
+    }
+
+    public void setNumberOfDownload(String numberOfDownload) {
+        this.numberOfDownload = numberOfDownload;
     }
 }

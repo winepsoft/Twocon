@@ -41,6 +41,9 @@ class StoreRecyclerViewAdapter extends RecyclerView.Adapter<StoreRecyclerViewAda
     public void onBindViewHolder(MyViewHolder holder, int position) {
         FlashCart aFlashCart=allFlashCarts.get(position);
         holder.txtFlashTitle.setText(aFlashCart.getTitle());
+        holder.txtFlashDownloadSize.setText(context.getString(R.string.dialog_flash_description_download_size)+":"+aFlashCart.getDownloadSize()+"|"+
+        context.getString(R.string.dialog_flash_description_viewed)+":"+aFlashCart.getNumberOfVisit()+"|"+
+        context.getString(R.string.dialog_flash_description_download)+":"+aFlashCart.getNumberOfDownload());
         if (!aFlashCart.getMainPrice().equals("0")) {
             holder.txtFlashMainPrice.setText(aFlashCart.getMainPrice());
             holder.txtFlashDiscountPercent.setText("50%");
