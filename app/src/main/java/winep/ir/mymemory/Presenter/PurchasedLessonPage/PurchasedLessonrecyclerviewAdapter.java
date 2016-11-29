@@ -34,7 +34,7 @@ public class PurchasedLessonRecyclerViewAdapter extends RecyclerView.Adapter<Pur
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View v= LayoutInflater.from(context).inflate(R.layout.flash_fragment_recycler_view_item,parent,false);
+        View v= LayoutInflater.from(context).inflate(R.layout.store_fragment_recycler_view_item,parent,false);
         return new MyViewHolder(v);
     }
 

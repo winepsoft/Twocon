@@ -2,8 +2,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/log_in_page_back">
+    android:layout_height="wrap_content">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/log_in_page_back"
+        android:focusable="false"
+        android:scaleType="fitXY" />
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -46,7 +51,6 @@
                 android:layout_marginTop="10dp"
                 android:layout_below="@+id/linearLayout2"
                 android:layout_centerHorizontal="true">
-
                 <LinearLayout
                     android:layout_width="300dp"
                     android:layout_height="50dp"

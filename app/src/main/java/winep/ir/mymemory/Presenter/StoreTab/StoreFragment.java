@@ -38,7 +38,7 @@ public class StoreFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View mainView = inflater.inflate(R.layout.flash_fragment, container, false);
+        View mainView = inflater.inflate(R.layout.store_fragment, container, false);
         context=getContext();
         serverConnectionHandler=new ServerConnectionHandler(context);
         flashCarts=new ArrayList<>();
