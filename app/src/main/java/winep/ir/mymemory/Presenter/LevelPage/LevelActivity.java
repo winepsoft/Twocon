@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -49,6 +50,7 @@ public class LevelActivity extends AppCompatActivity {
     private TextView txtTotalNumber;
     private String courseTitle;
     private ScrollView scrollViewLevelPage;
+    private LinearLayout layoutLevelSuccessLearn;
 
 
 
@@ -85,6 +87,14 @@ public class LevelActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Toast.makeText(context,getString(R.string.level_total_message)+"192",Toast.LENGTH_LONG).show();
 
+            }
+        });
+
+        layoutLevelSuccessLearn=(LinearLayout)findViewById(R.id.layout_level_success_learn);
+        layoutLevelSuccessLearn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context,getString(R.string.level_success_learn_message)+"897",Toast.LENGTH_LONG).show();
             }
         });
 

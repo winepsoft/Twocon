@@ -210,6 +210,8 @@
     <string name="level_status_days">روز</string>
     <string name="level_ready_message">تعدا سوالات آماده یادگیری این درس:</string>
     <string name="level_total_message">تعداد کل سوالات این درس:</string>
+    <string name="level_success_learn_message">تعداد کل سوالات یاد گرفته شده:</string>
+
 
     //create_question
     <string name="create_question_activity_title">افزودن سوال جدید</string>

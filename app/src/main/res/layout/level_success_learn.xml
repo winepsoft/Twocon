@@ -14,7 +14,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        android:weightSum="10">
+        android:weightSum="10"
+        android:id="@+id/layout_level_success_learn">
         <LinearLayout
             android:layout_width="@dimen/level_number_circle_size"
             android:layout_height="@dimen/level_number_circle_size"
