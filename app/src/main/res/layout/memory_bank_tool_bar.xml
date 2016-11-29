@@ -43,8 +43,7 @@
                         style="?android:attr/buttonStyleSmall"
                         android:background="@null"
                         android:textColor="@color/black"
-                        android:text="@string/m_filter_group"
-                        android:drawableRight="@mipmap/triangle_down"/>
+                        android:text="@string/m_filter_group"/>
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="2dp"
