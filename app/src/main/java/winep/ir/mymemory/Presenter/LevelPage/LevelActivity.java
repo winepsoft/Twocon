@@ -12,7 +12,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,6 +36,7 @@ import winep.ir.mymemory.Utility.Utilities;
 public class LevelActivity extends AppCompatActivity {
 
     private RecyclerView recyclerViewLevel;
+    private LinearLayoutManager linearLayoutManagerRecycler;
     private Context context;
     private ArrayList<Level> allLevels;
     private FrameLayout frameLayout;
@@ -45,6 +48,10 @@ public class LevelActivity extends AppCompatActivity {
     private TextView txtReadyNumber;
     private TextView txtTotalNumber;
     private String courseTitle;
+    private ScrollView scrollViewLevelPage;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,17 +89,31 @@ public class LevelActivity extends AppCompatActivity {
         });
 
         recyclerViewLevel=(RecyclerView)findViewById(R.id.recycler_view_level);
-        recyclerViewLevel.setLayoutManager(new LinearLayoutManager(context));
+        linearLayoutManagerRecycler=new LinearLayoutManager(context);
+        recyclerViewLevel.setLayoutManager(linearLayoutManagerRecycler);
         //recyclerViewLevel.addItemDecoration(new DividerItemDecorationRecyclerView(10));
         LevelRecyclerViewAdapter adapter=new LevelRecyclerViewAdapter(context,createLevel());
         recyclerViewLevel.setAdapter(adapter);
 
+        scrollViewLevelPage=(ScrollView)findViewById(R.id.scroll_view_level_page);
         floatingActionsMenu=(FloatingActionsMenu)findViewById(R.id.level_fab_add);
         fabAddQuestion=(FloatingActionButton)findViewById(R.id.level_fab_question);
         fabAddFreeQuestions=(FloatingActionButton)findViewById(R.id.level_fab_add_free_question);
         fabAddQuestionsFromExcel=(FloatingActionButton)findViewById(R.id.level_fab_add_question_from_excel);
         frameLayout=(FrameLayout)findViewById(R.id.containerFloatingActionMenu);
         frameLayout.setClickable(false);
+
+        scrollViewLevelPage.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
+            @Override
+            public void onScrollChanged() {
+                if(scrollViewLevelPage.getScrollY()>0){
+                    floatingActionsMenu.setVisibility(View.GONE);
+                }
+                else if(scrollViewLevelPage.getScrollY()==0){
+                    floatingActionsMenu.setVisibility(View.VISIBLE);
+                }
+            }
+        });
         floatingActionsMenu.setOnFloatingActionsMenuUpdateListener(new FloatingActionsMenu.OnFloatingActionsMenuUpdateListener() {
             @Override
             public void onMenuExpanded() {
@@ -162,6 +183,35 @@ public class LevelActivity extends AppCompatActivity {
         level3.setLevelReadyQuestion(0);
         level3.setLevelStatus(2);
         allLevels.add(level3);
+
+        Level level4=new Level();
+        level4.setLevelNumber(4);
+        level4.setLevelTotalQuestion(0);
+        level4.setLevelReadyQuestion(0);
+        level4.setLevelStatus(2);
+        allLevels.add(level4);
+
+
+        Level level5=new Level();
+        level5.setLevelNumber(5);
+        level5.setLevelTotalQuestion(0);
+        level5.setLevelReadyQuestion(0);
+        level5.setLevelStatus(2);
+        allLevels.add(level5);
+
+        Level level6=new Level();
+        level6.setLevelNumber(6);
+        level6.setLevelTotalQuestion(0);
+        level6.setLevelReadyQuestion(0);
+        level6.setLevelStatus(2);
+        allLevels.add(level6);
+
+        Level level7=new Level();
+        level7.setLevelNumber(7);
+        level7.setLevelTotalQuestion(0);
+        level7.setLevelReadyQuestion(0);
+        level7.setLevelStatus(2);
+        allLevels.add(level7);
 
         return allLevels;
     }

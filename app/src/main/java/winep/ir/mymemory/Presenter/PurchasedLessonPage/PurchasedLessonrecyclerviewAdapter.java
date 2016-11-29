@@ -42,8 +42,13 @@ public class PurchasedLessonRecyclerViewAdapter extends RecyclerView.Adapter<Pur
     public void onBindViewHolder(MyViewHolder holder, int position) {
         FlashCart aFlashCart= allPurchaseLessons.get(position);
         holder.txtFlashTitle.setText(aFlashCart.getTitle());
-        if (!aFlashCart.getMainPrice().equals("0"))
+        if (!aFlashCart.getMainPrice().equals("0")) {
             holder.txtFlashMainPrice.setText(aFlashCart.getMainPrice());
+            holder.txtFlashDiscountPercent.setText("50%");
+        }
+        else {
+            holder.txtFlashDiscountPercent.setVisibility(View.GONE);
+        }
         holder.btnFlashPurchase.setText(aFlashCart.getPurchasePrice());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +67,7 @@ public class PurchasedLessonRecyclerViewAdapter extends RecyclerView.Adapter<Pur
         private ImageView imgFlashPic;
         private TextView txtFlashTitle;
         private TextView txtFlashMainPrice;
+        private TextView txtFlashDiscountPercent;
         private TextView txtFlashDownloadSize;
         private Button btnFlashPurchase;
         private RectangleView colorSquare;
@@ -75,6 +81,8 @@ public class PurchasedLessonRecyclerViewAdapter extends RecyclerView.Adapter<Pur
             Utilities.getInstance().setFontTextView(context,txtFlashDownloadSize);
             txtFlashMainPrice=(TextView)itemView.findViewById(R.id.txt_flash_main_price);
             Utilities.getInstance().setFontTextView(context,txtFlashMainPrice);
+            txtFlashDiscountPercent=(TextView)itemView.findViewById(R.id.txt_flash_main_price_off);
+            Utilities.getInstance().setFontTextView(context,txtFlashDiscountPercent);
             txtFlashMainPrice.setPaintFlags(txtFlashMainPrice.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
             btnFlashPurchase=(Button)itemView.findViewById(R.id.btn_flash_purchase);
             Utilities.getInstance().setFontButtonView(context,btnFlashPurchase);
