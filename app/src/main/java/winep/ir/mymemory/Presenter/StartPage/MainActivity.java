@@ -11,6 +11,7 @@ import android.view.View;
 import com.rey.material.widget.Button;
 
 import winep.ir.mymemory.R;
+import winep.ir.mymemory.Utility.ItemDecorationWithLineRecyclerView;
 import winep.ir.mymemory.Utility.Utilities;
 
 /**
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         btnGo=(Button)findViewById(R.id.btn_start_page_go);
 
         recyclerViewSelectLanguage.setLayoutManager(new LinearLayoutManager(context));
+        recyclerViewSelectLanguage.addItemDecoration(new ItemDecorationWithLineRecyclerView(context, LinearLayoutManager.VERTICAL));
         adapter=new StartPageRecyclerViewAdapter(context,Utilities.getInstance().getAllLanguageTitleList(context));
         recyclerViewSelectLanguage.setAdapter(adapter);
 
