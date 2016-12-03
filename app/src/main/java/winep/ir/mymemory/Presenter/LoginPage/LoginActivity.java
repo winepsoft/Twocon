@@ -24,7 +24,7 @@ import winep.ir.mymemory.Utility.Utilities;
 /**
  * Created by ShaisteS on 11/12/2016.
  */
-public class MainActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
 
     private Button btnTakeTour;
@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onError(FacebookException error) {
-                        Log.d(MainActivity.class.getCanonicalName(), error.getMessage());
+                        Log.d(LoginActivity.class.getCanonicalName(), error.getMessage());
                         //handleSignInResult(null);
                     }
                 }

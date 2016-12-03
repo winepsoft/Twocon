@@ -354,4 +354,12 @@
 
     //shared lesson page
     <string name="shared_lesson_page_title">Shared Lessons</string>
+
+    //start page
+    <string name="start_page_btn_go_title">Go</string>
+
+    //Tour page
+    <string name="tour_page_agree">agree</string>
+    <string name="tour_page_skip">skip</string>
+    <string name="tour_page_start">start</string>
 </resources>

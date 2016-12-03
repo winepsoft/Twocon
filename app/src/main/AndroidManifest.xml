@@ -15,13 +15,17 @@
             android:name=".MainPage"
             android:theme="@style/AppTheme.NoActionBar"/>
 
-        <activity android:name=".Presenter.LoginPage.MainActivity"
+        <activity android:name=".Presenter.StartPage.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Presenter.StartPage.TourActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".Presenter.LoginPage.LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name="winep.ir.mymemory.Presenter.SubGroupPage.SubGroupActivity"
             android:theme="@style/AppTheme.NoActionBar"/>

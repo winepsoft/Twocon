@@ -347,4 +347,13 @@
 
     //shared lesson page
     <string name="shared_lesson_page_title">دروس به اشتراک گذاشته شده</string>
+
+    //start page
+    <string name="start_page_btn_go_title">برو</string>
+
+    //Tour page
+    <string name="tour_page_agree">موافق</string>
+    <string name="tour_page_skip">بی خیال</string>
+    <string name="tour_page_start">شروع</string>
+
 </resources>

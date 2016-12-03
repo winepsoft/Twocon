@@ -25,6 +25,7 @@ import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.rey.material.widget.Button;
 import com.rey.material.widget.EditText;
 
+import java.util.ArrayList;
 import java.util.Locale;
 
 import winep.ir.mymemory.R;
@@ -227,7 +228,7 @@ public class Utilities {
                 .show();
     }
 
-    public String getLanguge(Context context){
+    public String getLanguage(Context context){
         String language=context.getString(R.string.english);
         SettingsManager settingsManager=new SettingsManager(context);
         if (settingsManager.getLanguageSetting().equals("fa"))
@@ -238,13 +239,21 @@ public class Utilities {
     }
 
     public String[] getDefaultLanguageListTitle(Context context){
-        String language=getLanguge(context);
+        String language= getLanguage(context);
         if (language.equals(context.getString(R.string.arabic)))
             return getAllLanguageTitleDefaultArabic(context);
         else if (language.equals(context.getString(R.string.persian)))
             return getAllLanguageTitleDefaultPersian(context);
         else
             return getAllLanguageTitleDefaultEnglish(context);
+    }
+
+    public ArrayList<String> getAllLanguageTitleList(Context context){
+        ArrayList<String> languageTitleList=new ArrayList<>();
+        languageTitleList.add(context.getString(R.string.english));
+        languageTitleList.add(context.getString(R.string.persian));
+        languageTitleList.add( context.getString(R.string.arabic));
+        return languageTitleList;
     }
 
     public String[] getAllLanguageTitle(Context context){

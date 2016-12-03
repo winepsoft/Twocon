@@ -27,4 +27,8 @@
     <dimen name="margin_recycler_view_top">3dp</dimen>
     <dimen name="margin_recycler_view_right">3dp</dimen>
     <dimen name="margin_recycler_view_left">3dp</dimen>
+    <dimen name="dots_height">30dp</dimen>
+    <dimen name="dots_margin_bottom">20dp</dimen>
+    <dimen name="desc_padding">40dp</dimen>
+
 </resources>
