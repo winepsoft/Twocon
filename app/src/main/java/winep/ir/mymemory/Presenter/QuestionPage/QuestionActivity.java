@@ -13,6 +13,7 @@
       import android.view.MotionEvent;
       import android.view.View;
       import android.view.animation.LinearInterpolator;
+      import android.widget.TextView;
 
       import com.rey.material.widget.Button;
 
@@ -32,12 +33,14 @@
 public class QuestionActivity extends AppCompatActivity
               implements  Animator.AnimatorListener {
 
+    private Context context;
     private ArrayList<Question> allQuestions;
     private ViewPager questionViewPager;
     private boolean mIsInAnimation;
     private long mMotionBeginTime;
     private float mLastMotionX;
     private StackedHorizontalProgressBar progressBarAnswerStatus;
+    private TextView txtAllQuestionNumber;
     private Button btnKnow;
     private Button btnNOKnow;
     private int knowNumber=0;
@@ -50,6 +53,7 @@ public class QuestionActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         setTitle(getString(R.string.question_activity_title));
+        context=this;
         allQuestions=new ArrayList<>();
         questionViewPager = (ViewPager) findViewById(R.id.pager);
         questionViewPager.setAdapter(new QuestionPagerAdapter(createQuestion(),this));
@@ -57,6 +61,9 @@ public class QuestionActivity extends AppCompatActivity
         progressBarAnswerStatus.setMax(allQuestions.size());
         progressBarAnswerStatus.setProgress(knowNumber);
         progressBarAnswerStatus.setSecondaryProgress(noKnowNumber);
+        txtAllQuestionNumber=(TextView)findViewById(R.id.txt_all_question_number);
+        Utilities.getInstance().setFontTextView(context,txtAllQuestionNumber);
+        txtAllQuestionNumber.setText(Integer.toString(allQuestions.size()));
         btnKnow=(Button)findViewById(R.id.btn_know);
         btnKnow.setVisibility(View.INVISIBLE);
         btnNOKnow=(Button)findViewById(R.id.btn_no_know);
