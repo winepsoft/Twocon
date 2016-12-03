@@ -1,26 +1,30 @@
       package winep.ir.mymemory.Presenter.QuestionPage;
 
       import android.animation.Animator;
-import android.animation.ObjectAnimator;
-import android.content.Context;
-import android.os.Bundle;
-import android.os.SystemClock;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.MotionEvent;
-import android.view.animation.LinearInterpolator;
+      import android.animation.ObjectAnimator;
+      import android.content.Context;
+      import android.os.Bundle;
+      import android.os.SystemClock;
+      import android.support.v4.view.ViewPager;
+      import android.support.v7.app.AppCompatActivity;
+      import android.support.v7.widget.Toolbar;
+      import android.view.Menu;
+      import android.view.MenuItem;
+      import android.view.MotionEvent;
+      import android.view.View;
+      import android.view.animation.LinearInterpolator;
 
-import java.util.ArrayList;
+      import com.rey.material.widget.Button;
 
-import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
-import winep.ir.mymemory.DataModel.Question;
+      import java.util.ArrayList;
+
+      import github.nisrulz.stackedhorizontalprogressbar.StackedHorizontalProgressBar;
+      import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+      import winep.ir.mymemory.DataModel.Question;
       import winep.ir.mymemory.Presenter.ObserverPackage.setClickOnKnowButton;
       import winep.ir.mymemory.Presenter.ObserverPackage.setClickOnKnowButtonListener;
       import winep.ir.mymemory.R;
-import winep.ir.mymemory.Utility.Utilities;
+      import winep.ir.mymemory.Utility.Utilities;
 
       /**
  * Created by ShaisteS on 10/14/2016.
@@ -33,6 +37,11 @@ public class QuestionActivity extends AppCompatActivity
     private boolean mIsInAnimation;
     private long mMotionBeginTime;
     private float mLastMotionX;
+    private StackedHorizontalProgressBar progressBarAnswerStatus;
+    private Button btnKnow;
+    private Button btnNOKnow;
+    private int knowNumber=0;
+    private int noKnowNumber=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,11 +53,43 @@ public class QuestionActivity extends AppCompatActivity
         allQuestions=new ArrayList<>();
         questionViewPager = (ViewPager) findViewById(R.id.pager);
         questionViewPager.setAdapter(new QuestionPagerAdapter(createQuestion(),this));
-
+        progressBarAnswerStatus=(StackedHorizontalProgressBar)findViewById(R.id.progress_bar_question_process);
+        progressBarAnswerStatus.setMax(allQuestions.size());
+        progressBarAnswerStatus.setProgress(knowNumber);
+        progressBarAnswerStatus.setSecondaryProgress(noKnowNumber);
+        btnKnow=(Button)findViewById(R.id.btn_know);
+        btnKnow.setVisibility(View.INVISIBLE);
+        btnNOKnow=(Button)findViewById(R.id.btn_no_know);
+        btnNOKnow.setVisibility(View.INVISIBLE);
         setClickOnKnowButton.setClickOnKnowButtonListener(new setClickOnKnowButtonListener() {
             @Override
             public void clickOnKnowButton() {
+                btnKnow.setVisibility(View.VISIBLE);
+                btnNOKnow.setVisibility(View.VISIBLE);
+            }
+        });
+        btnKnow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                knowNumber++;
+                progressBarAnswerStatus.setProgress(knowNumber);
+                progressBarAnswerStatus.setSecondaryProgress(noKnowNumber);
                 nextQuestion(true);
+                btnNOKnow.setVisibility(View.INVISIBLE);
+                btnKnow.setVisibility(View.INVISIBLE);
+
+            }
+        });
+
+        btnNOKnow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                noKnowNumber++;
+                progressBarAnswerStatus.setProgress(knowNumber);
+                progressBarAnswerStatus.setSecondaryProgress(noKnowNumber);
+                nextQuestion(true);
+                btnNOKnow.setVisibility(View.INVISIBLE);
+                btnKnow.setVisibility(View.INVISIBLE);
             }
         });
     }

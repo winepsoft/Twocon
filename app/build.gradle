@@ -88,4 +88,7 @@ dependencies {
     }
     //Google Translate API
     compile project(':google-api-translate-java-0.92')
+
+    //stack progress bar
+    compile 'com.github.nisrulz:stackedhorizontalprogressbar:1.0.3'
 }

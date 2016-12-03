@@ -40,12 +40,5 @@
             </FrameLayout>
         </RelativeLayout>
     </ScrollView>
-    <include
-        layout="@layout/question_activity_button_toolbar"
-        android:id="@+id/button_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_alignParentBottom="true" />
 </RelativeLayout>
 

@@ -80,6 +80,10 @@
     <color name="twitter_color">#1dcaff</color>
     <color name="twitter_color_ripple">#00aced</color>
 
+
+    <color name="shpbr_primary_progress">@color/green</color>
+    <color name="shpbr_secondary_progress">@color/red</color>
+
     //Tour page color
     <color name="bg_screen1">#f64c73</color>
     <color name="bg_screen2">#20d2bb</color>

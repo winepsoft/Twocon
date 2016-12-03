@@ -19,9 +19,6 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.rey.material.widget.Button;
 
 import java.util.ArrayList;
 
@@ -38,6 +35,8 @@ public class QuestionPagerAdapter  extends PagerAdapter {
     private ArrayList<Question> allQuestion;
     private Activity activity;
     private View viewLayout;
+    private int knowNumber=0;
+    private int noKnowNumber=0;
 
     public QuestionPagerAdapter(ArrayList<Question> questions,Activity activity) {
         allQuestion = questions;
@@ -79,14 +78,15 @@ public class QuestionPagerAdapter  extends PagerAdapter {
         //btnAnswerDescription.setSize(FloatingActionButton.SIZE_MINI);
         final ImageButton btnQuestionPlayVoice=(ImageButton)viewLayout.findViewById(R.id.question_play_voice);
         //fabQuestionPlayVoice.setSize(FloatingActionButton.SIZE_MINI);
-        final Button btnKnowNumber=(Button)viewLayout.findViewById(R.id.btn_know_number);
-        Utilities.getInstance().setFontButtonView(activity,btnKnowNumber);
-        final Button btnNoKnowNumber=(Button)viewLayout.findViewById(R.id.btn_no_know_number);
-        Utilities.getInstance().setFontButtonView(activity,btnNoKnowNumber);
-        final Button btnKnow=(Button)viewLayout.findViewById(R.id.btn_know);
-        final Button btnoNOKnow=(Button)viewLayout.findViewById(R.id.btn_no_know);
-        final LinearLayout layoutButtonKnowStatus=(LinearLayout)viewLayout.findViewById(R.id.layout_button_know_status);
-        layoutButtonKnowStatus.setVisibility(View.GONE);
+        //final Button btnKnowNumber=(Button)viewLayout.findViewById(R.id.btn_know_number);
+        //Utilities.getInstance().setFontButtonView(activity,btnKnowNumber);
+        //final Button btnNoKnowNumber=(Button)viewLayout.findViewById(R.id.btn_no_know_number);
+        //Utilities.getInstance().setFontButtonView(activity,btnNoKnowNumber);
+        //final StackedHorizontalProgressBar progressBarAnswerStatus=(StackedHorizontalProgressBar)viewLayout.findViewById(R.id.progress_bar_question_process);
+        //final Button btnKnow=(Button)viewLayout.findViewById(R.id.btn_know);
+        //final Button btnNOKnow=(Button)viewLayout.findViewById(R.id.btn_no_know);
+        //final LinearLayout layoutButtonKnowStatus=(LinearLayout)viewLayout.findViewById(R.id.layout_button_know_status);
+        //layoutButtonKnowStatus.setVisibility(View.GONE);
         final boolean[] showAnswerCartStatus = {false};
         final ScrollView scrollView=(ScrollView)viewLayout.findViewById(R.id.scroll_view_question_activity);
 
@@ -100,6 +100,9 @@ public class QuestionPagerAdapter  extends PagerAdapter {
         txtPleaseTouch.setAnimation(animation);
 
 
+        /*progressBarAnswerStatus.setMax(allQuestion.size());
+        progressBarAnswerStatus.setProgress(knowNumber);
+        progressBarAnswerStatus.setSecondaryProgress(noKnowNumber);*/
 
         cardQuestion.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -114,7 +117,7 @@ public class QuestionPagerAdapter  extends PagerAdapter {
             }
         });
 
-        btnKnowNumber.setOnClickListener(new View.OnClickListener() {
+        /*btnKnowNumber.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(activity,activity.getString(R.string.know_number_question_title)+"2",Toast.LENGTH_SHORT).show();
@@ -126,21 +129,23 @@ public class QuestionPagerAdapter  extends PagerAdapter {
             public void onClick(View view) {
                 Toast.makeText(activity,activity.getString(R.string.no_Know_question_title)+"12",Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
 
-        btnKnow.setOnClickListener(new View.OnClickListener() {
+       /* btnKnow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 setClickOnKnowButton.setClickOnAnswerStatus(true);
+                knowNumber++;
             }
         });
 
-        btnoNOKnow.setOnClickListener(new View.OnClickListener() {
+        btnNOKnow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 setClickOnKnowButton.setClickOnAnswerStatus(true);
+                noKnowNumber++;
             }
-        });
+        });*/
 
         cardFront.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -148,7 +153,8 @@ public class QuestionPagerAdapter  extends PagerAdapter {
 
                 if (!showAnswerCartStatus[0]){
                     flipOut(cardFront,cardBack);
-                    layoutButtonKnowStatus.setVisibility(View.VISIBLE);
+                    //layoutButtonKnowStatus.setVisibility(View.VISIBLE);
+                    setClickOnKnowButton.setClickOnAnswerStatus(true);
                     showAnswerCartStatus[0] =true;
                 }
                 /*YoYo.with(Techniques.FlipOutX)
