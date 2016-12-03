@@ -6,6 +6,11 @@
     <string name="navigation_drawer_open">navigation_drawer_open</string>
     <string name="navigation_drawer_close">navigation_drawer_close</string>
 
+    //Language List
+    <string name="persian">فارسی</string>
+    <string name="english">English</string>
+    <string name="arabic">العربیه</string>
+
     //Tabs
     <string name="tab_one">المجموعة</string>
     <string name="tab_two">بنك الذاكرة</string>
@@ -122,9 +127,6 @@
     //settings
     <string name="settings_activity_title">الإعدادات</string>
     <string name="setting_language">لغة البرنامج </string>
-    <string name="persian">فارسي</string>
-    <string name="english">English</string>
-    <string name="arabic">العربی</string>
     <string name="settings_app_color">لون البرنامج </string>
     <string name="settings_font_size">حجم النص </string>
     <string name="settings_view_dictionary">عرض القاموس في الأسئلة</string>

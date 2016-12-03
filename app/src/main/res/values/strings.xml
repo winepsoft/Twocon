@@ -14,6 +14,11 @@
     <string name="navigation_drawer_open">navigation_drawer_open</string>
     <string name="navigation_drawer_close">navigation_drawer_close</string>
 
+    //Language List
+    <string name="persian">فارسی</string>
+    <string name="english">English</string>
+    <string name="arabic">العربیه</string>
+
     //login Page
     <string name="log_in_tour_button_title">Take A tour</string>
 
@@ -140,9 +145,6 @@
     //settings
     <string name="settings_activity_title">Settings</string>
     <string name="setting_language">Application Language</string>
-    <string name="persian">Farsi</string>
-    <string name="english">English</string>
-    <string name="arabic">Arabic</string>
     <string name="settings_app_color">Application color</string>
     <string name="settings_font_size">Font size</string>
     <string name="settings_view_dictionary">View the dictionary in Question</string>
