@@ -21,6 +21,14 @@
 
     //login Page
     <string name="log_in_tour_button_title">Take A tour</string>
+    <string name="log_in_user_name">User Name</string>
+    <string name="log_in_password">Password</string>
+    <string name="log_in_confirm_password">Confirm</string>
+    <string name="log_in_email">Email</string>
+    <string name="log_in_forgot_password">Forgot Password</string>
+    <string name="log_in_page_sin_up">Sign Up</string>
+    <string name="log_in_page_sign_in">Sign in</string>
+    <string name="log_in_enter_with_account">or Enter Your Account</string>
 
 
     //Tabs

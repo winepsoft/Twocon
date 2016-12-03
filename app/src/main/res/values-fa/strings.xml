@@ -11,6 +11,17 @@
     <string name="english">English</string>
     <string name="arabic">العربیه</string>
 
+    //log in
+    <string name="log_in_user_name">نام کاربری</string>
+    <string name="log_in_password">رمز عبور</string>
+    <string name="log_in_confirm_password">تکرار رمز عبور</string>
+    <string name="log_in_email">ایمیل</string>
+    <string name="log_in_forgot_password">فراموشی رمز عبور</string>
+    <string name="log_in_page_sin_up">ثبت نام</string>
+    <string name="log_in_page_sign_in">ورود</string>
+    <string name="log_in_enter_with_account">یا ورود با حساب کاربری</string>
+
+
     //Tabs
     <string name="tab_one">گروهها</string>
     <string name="tab_two">بانک حافظه</string>

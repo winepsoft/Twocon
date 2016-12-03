@@ -15,10 +15,10 @@ import android.widget.TextView;
 import android.widget.ViewSwitcher;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+import winep.ir.mymemory.Presenter.LoginPage.LoginActivity;
 import winep.ir.mymemory.Presenter.SettingsPage.SettingsActivity;
 import winep.ir.mymemory.Presenter.StatisticsTotalPage.StatisticsTotalActivity;
 import winep.ir.mymemory.R;
-import winep.ir.mymemory.Utility.Dialogs;
 import winep.ir.mymemory.Utility.MyApplication;
 import winep.ir.mymemory.Utility.Utilities;
 
@@ -185,7 +185,9 @@ public class UserProfileActivity extends AppCompatActivity {
         btnUpgrade.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Dialogs.getInstance().showActivationDialog(context);
+                //Dialogs.getInstance().showActivationDialog(context);
+                Intent intent=new Intent(context, LoginActivity.class);
+                startActivity(intent);
             }
         });
     }

@@ -7,16 +7,15 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.ViewSwitcher;
 
 import com.facebook.CallbackManager;
 import com.facebook.FacebookSdk;
-import com.rey.material.widget.Button;
-import com.rey.material.widget.Spinner;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
-import winep.ir.mymemory.MainPage;
 import winep.ir.mymemory.R;
 import winep.ir.mymemory.Utility.Utilities;
 
@@ -27,8 +26,11 @@ import winep.ir.mymemory.Utility.Utilities;
 public class LoginActivity extends AppCompatActivity {
 
 
-    private Button btnTakeTour;
-    private Spinner spinnerSelectLanguage;
+    //private Button btnTakeTour;
+    //private Spinner spinnerSelectLanguage;
+    private TextView txtSignUp;
+    private ViewSwitcher viewSwitcherLoginPage;
+    private Button btnLogin;
     private Context context;
     private CallbackManager mFacebookCallbackManager;
     private LinearLayout mFacebookSignInButton;
@@ -36,13 +38,25 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        forceRTLIfSupported();
+        //forceRTLIfSupported();
         FacebookSdk.sdkInitialize(getApplicationContext());
         mFacebookCallbackManager = CallbackManager.Factory.create();
         setContentView(R.layout.log_in_activity);
         context=this;
 
-        btnTakeTour=(Button)findViewById(R.id.btn_log_in_tour);
+        txtSignUp=(TextView)findViewById(R.id.txt_log_in_page_sign_up);
+        btnLogin=(Button)findViewById(R.id.btn_log_in);
+        viewSwitcherLoginPage=(ViewSwitcher)findViewById(R.id.view_switcher_login_page);
+
+        txtSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                viewSwitcherLoginPage.showNext();
+                btnLogin.setText(getString(R.string.log_in_page_sin_up));
+            }
+        });
+
+        /*btnTakeTour=(Button)findViewById(R.id.btn_log_in_tour);
         spinnerSelectLanguage=(Spinner)findViewById(R.id.spinner_log_in_select_language);
         ArrayAdapter<String> a = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, Utilities.getInstance().getDefaultLanguageListTitle(context));
         a.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -72,7 +86,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
 
             }
-        });
+        });*/
 
 
         /*loginButton = (TwitterLoginButton) findViewById(R.id.twitter_login_button);

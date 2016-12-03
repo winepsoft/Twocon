@@ -25,7 +25,8 @@
         <activity android:name=".Presenter.StartPage.TourActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".Presenter.LoginPage.LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden"/>
         <activity
             android:name="winep.ir.mymemory.Presenter.SubGroupPage.SubGroupActivity"
             android:theme="@style/AppTheme.NoActionBar"/>

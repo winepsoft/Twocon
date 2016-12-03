@@ -23,8 +23,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/app_icon"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
                 android:id="@+id/imageView2"
                 android:layout_gravity="center_horizontal" />
             <LinearLayout
@@ -42,98 +40,242 @@
                     android:layout_marginRight="5dp"
                     android:layout_gravity="center_horizontal" />
             </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
+            <ViewSwitcher android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_below="@+id/linearLayout2"
-                android:layout_centerHorizontal="true">
-                <LinearLayout
-                    android:layout_width="300dp"
-                    android:layout_height="50dp"
-                    android:orientation="horizontal"
-                    android:layout_gravity="center_horizontal"
-                    android:id="@+id/btn_google">
-                    <ImageButton
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@color/google_color"
-                        android:src="@mipmap/google_plus"/>
-                    <com.rey.material.widget.Button
-                        style="@style/Material.Drawable.Ripple.Touch"
-                        android:textAllCaps="false"
-                        app:rd_rippleColor="@color/google_color_ripple"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/google_color"
-                        android:text="@string/login_page_google"
-                        android:textColor="@color/white"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="300dp"
-                    android:layout_height="50dp"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="5dp"
-                    android:layout_gravity="center_horizontal"
-                    android:id="@+id/btn_facebook">
-                    <ImageButton
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@color/facebook_color"
-                        android:src="@mipmap/facebook"/>
-                    <com.rey.material.widget.Button
-                        style="@style/Material.Drawable.Ripple.Touch"
-                        android:textAllCaps="false"
-                        app:rd_rippleColor="@color/facebook_color_ripple"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/facebook_color"
-                        android:text="@string/login_page_facebook"
-                        android:textColor="@color/white"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="300dp"
-                    android:layout_height="50dp"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="5dp"
-                    android:layout_gravity="center_horizontal"
-                    android:id="@+id/btn_twitter">
-                    <ImageButton
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@color/twitter_color"
-                        android:src="@mipmap/twitter"/>
-                    <com.rey.material.widget.Button
-                        style="@style/Material.Drawable.Ripple.Touch"
-                        app:rd_rippleColor="@color/twitter_color_ripple"
-                        android:textAllCaps="false"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/twitter_color"
-                        android:text="@string/login_page_twitter"
-                        android:textColor="@color/white"/>
-                </LinearLayout>
-               <!-- <com.google.android.gms.common.SignInButton
-                    android:id="@+id/log_in_google_plus"
-                    android:layout_width="300dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center" />
-                <com.facebook.login.widget.LoginButton
-                    android:id="@+id/log_in_facebook"
-                    android:layout_width="300dp"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="@dimen/margin_recycler_view_top"
-                    android:layout_gravity="center" />
-                <com.twitter.sdk.android.core.identity.TwitterLoginButton
-                    android:id="@+id/twitter_login_button"
-                    android:layout_width="300dp"
+                android:id="@+id/view_switcher_login_page">
+               <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_recycler_view_top"
-                    android:layout_gravity="center" />-->
-            </LinearLayout>
+                    android:orientation="vertical"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp">
+                    <com.rey.material.widget.EditText
+                        app:et_labelEnable="true"
+                        app:et_inputId="@+id/edit_text_login_user_name_input"
+                        android:id="@+id/edit_text_login_user_name"
+                        app:et_labelTextColor="@color/white"
+                        android:textColor="@color/white"
+                        android:hint="@string/log_in_user_name"
+                        android:layout_width="300dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/button_with_corner_gray_stroke"
+                        android:padding="5dp"
+                        android:layout_marginTop="5dp">
+                    </com.rey.material.widget.EditText>
+                    <com.rey.material.widget.EditText
+                        app:et_labelEnable="true"
+                        app:et_inputId="@+id/edit_text_login_password_input"
+                        android:id="@+id/edit_text_login_password"
+                        app:et_labelTextColor="@color/white"
+                        android:textColor="@color/white"
+                        android:hint="@string/log_in_password"
+                        android:layout_width="300dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/button_with_corner_gray_stroke"
+                        android:padding="5dp"
+                        android:layout_marginTop="5dp">
+                    </com.rey.material.widget.EditText>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="5dp"
+                        android:weightSum="2">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/log_in_forgot_password"
+                            android:textColor="@color/white"
+                            android:gravity="center_horizontal"
+                            android:id="@+id/txt_log_in_forgot_password"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/log_in_page_sin_up"
+                            android:textColor="@color/white"
+                            android:gravity="center_horizontal"
+                            android:id="@+id/txt_log_in_page_sign_up"/>
+                    </LinearLayout>
+                </LinearLayout>
+               <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/linearLayout2"
+                    android:layout_centerHorizontal="true">
+                    <LinearLayout
+                        android:layout_width="300dp"
+                        android:layout_height="50dp"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center_horizontal"
+                        android:id="@+id/btn_google">
+                        <ImageButton
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@color/google_color"
+                            android:src="@mipmap/google_plus"/>
+                        <com.rey.material.widget.Button
+                            style="@style/Material.Drawable.Ripple.Touch"
+                            android:textAllCaps="false"
+                            app:rd_rippleColor="@color/google_color_ripple"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/google_color"
+                            android:text="@string/login_page_google"
+                            android:textColor="@color/white"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="300dp"
+                        android:layout_height="50dp"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="5dp"
+                        android:layout_gravity="center_horizontal"
+                        android:id="@+id/btn_facebook">
+                        <ImageButton
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@color/facebook_color"
+                            android:src="@mipmap/facebook"/>
+                        <com.rey.material.widget.Button
+                            style="@style/Material.Drawable.Ripple.Touch"
+                            android:textAllCaps="false"
+                            app:rd_rippleColor="@color/facebook_color_ripple"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/facebook_color"
+                            android:text="@string/login_page_facebook"
+                            android:textColor="@color/white"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="300dp"
+                        android:layout_height="50dp"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="5dp"
+                        android:layout_gravity="center_horizontal"
+                        android:id="@+id/btn_twitter">
+                        <ImageButton
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@color/twitter_color"
+                            android:src="@mipmap/twitter"/>
+                        <com.rey.material.widget.Button
+                            style="@style/Material.Drawable.Ripple.Touch"
+                            app:rd_rippleColor="@color/twitter_color_ripple"
+                            android:textAllCaps="false"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/twitter_color"
+                            android:text="@string/login_page_twitter"
+                            android:textColor="@color/white"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp"
+                        android:weightSum="3">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="2dp"
+                            android:background="@color/gray_deep"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight="1">
+                        </LinearLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/log_in_enter_with_account"
+                            android:textColor="@color/white"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal" />
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="2dp"
+                            android:background="@color/gray_deep"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight="1">
+                        </LinearLayout>
+                    </LinearLayout>
+                    <com.rey.material.widget.EditText
+                        app:et_labelEnable="true"
+                        app:et_inputId="@+id/edit_text_sign_up_user_name_input"
+                        android:id="@+id/edit_text_sign_up_user_name"
+                        app:et_labelTextColor="@color/white"
+                        android:textColor="@color/white"
+                        android:hint="@string/log_in_user_name"
+                        android:layout_width="300dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/button_with_corner_gray_stroke"
+                        android:padding="5dp"
+                        android:layout_marginTop="5dp"/>
+                    <com.rey.material.widget.EditText
+                        app:et_labelEnable="true"
+                        app:et_inputId="@+id/edit_text_sign_up_email_input"
+                        android:id="@+id/edit_text_sign_up_email"
+                        app:et_labelTextColor="@color/white"
+                        android:textColor="@color/white"
+                        android:hint="@string/log_in_email"
+                        android:layout_width="300dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/button_with_corner_gray_stroke"
+                        android:padding="5dp"
+                        android:layout_marginTop="5dp"/>
+                    <com.rey.material.widget.EditText
+                        app:et_labelEnable="true"
+                        app:et_inputId="@+id/edit_text_sign_up_password_input"
+                        android:id="@+id/edit_text_sign_up_password"
+                        app:et_labelTextColor="@color/white"
+                        android:textColor="@color/white"
+                        android:hint="@string/log_in_password"
+                        android:layout_width="300dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/button_with_corner_gray_stroke"
+                        android:padding="5dp"
+                        android:layout_marginTop="5dp"/>
+                    <com.rey.material.widget.EditText
+                        app:et_labelEnable="true"
+                        app:et_inputId="@+id/edit_text_sign_up_confirm_password_input"
+                        android:id="@+id/edit_text_sign_up_confirm_password"
+                        app:et_labelTextColor="@color/white"
+                        android:textColor="@color/white"
+                        android:hint="@string/log_in_confirm_password"
+                        android:layout_width="300dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/button_with_corner_gray_stroke"
+                        android:padding="5dp"
+                        android:layout_marginTop="5dp"/>
+
+                    <!-- <com.google.android.gms.common.SignInButton
+                         android:id="@+id/log_in_google_plus"
+                         android:layout_width="300dp"
+                         android:layout_height="40dp"
+                         android:layout_gravity="center" />
+                     <com.facebook.login.widget.LoginButton
+                         android:id="@+id/log_in_facebook"
+                         android:layout_width="300dp"
+                         android:layout_height="40dp"
+                         android:layout_marginTop="@dimen/margin_recycler_view_top"
+                         android:layout_gravity="center" />
+                     <com.twitter.sdk.android.core.identity.TwitterLoginButton
+                         android:id="@+id/twitter_login_button"
+                         android:layout_width="300dp"
+                         android:layout_height="wrap_content"
+                         android:layout_marginTop="@dimen/margin_recycler_view_top"
+                         android:layout_gravity="center" />-->
+                </LinearLayout>
+            </ViewSwitcher>
         </LinearLayout>
     </ScrollView>
     <LinearLayout
@@ -146,14 +288,11 @@
         android:layout_marginBottom="5dp"
         android:layout_marginTop="5dp"
         android:id="@+id/layout_tool_bar_tour">
-        <com.rey.material.widget.Spinner
-            style="@style/Material.Widget.Spinner"
-            app:rd_style="@style/Material.Drawable.Ripple.Wave"
+        <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:background="@color/white"
-            android:layout_weight="1"
-            android:id="@+id/spinner_log_in_select_language"/>
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+        </LinearLayout>
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -165,9 +304,9 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:background="@null"
-            android:text="@string/log_in_tour_button_title"
+            android:text="@string/log_in_page_sign_in"
             android:textColor="@color/white"
             android:layout_weight="1"
-            android:id="@+id/btn_log_in_tour"/>
+            android:id="@+id/btn_log_in"/>
     </LinearLayout>
 </RelativeLayout>
