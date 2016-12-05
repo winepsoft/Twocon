@@ -24,6 +24,7 @@
       import winep.ir.mymemory.DataModel.Question;
       import winep.ir.mymemory.Presenter.ObserverPackage.setClickOnKnowButton;
       import winep.ir.mymemory.Presenter.ObserverPackage.setClickOnKnowButtonListener;
+      import winep.ir.mymemory.Presenter.ServerConnectionHandler;
       import winep.ir.mymemory.R;
       import winep.ir.mymemory.Utility.Utilities;
 
@@ -34,6 +35,7 @@ public class QuestionActivity extends AppCompatActivity
               implements  Animator.AnimatorListener {
 
     private Context context;
+    private ServerConnectionHandler serverConnectionHandler;
     private ArrayList<Question> allQuestions;
     private ViewPager questionViewPager;
     private boolean mIsInAnimation;
@@ -54,9 +56,11 @@ public class QuestionActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
         setTitle(getString(R.string.question_activity_title));
         context=this;
+        serverConnectionHandler=new ServerConnectionHandler(context);
         allQuestions=new ArrayList<>();
+        allQuestions=serverConnectionHandler.createQuestion();
         questionViewPager = (ViewPager) findViewById(R.id.pager);
-        questionViewPager.setAdapter(new QuestionPagerAdapter(createQuestion(),this));
+        questionViewPager.setAdapter(new QuestionPagerAdapter(allQuestions,this));
         progressBarAnswerStatus=(StackedHorizontalProgressBar)findViewById(R.id.progress_bar_question_process);
         progressBarAnswerStatus.setMax(allQuestions.size());
         progressBarAnswerStatus.setProgress(knowNumber);
@@ -99,42 +103,6 @@ public class QuestionActivity extends AppCompatActivity
                 btnKnow.setVisibility(View.INVISIBLE);
             }
         });
-    }
-
-    private ArrayList<Question> createQuestion(){
-        Question question1=new Question();
-        question1.setQuestionTitle("Question1?");
-        question1.setQuestionAnswer("Answer Of Question 1");
-        question1.setQuestionDescription("Description Question 1");
-        allQuestions.add(question1);
-
-        Question question2=new Question();
-        question2.setQuestionTitle("Question2?");
-        question2.setQuestionAnswer("Answer Of Question 2");
-        question2.setQuestionDescription("Description Question 2");
-        allQuestions.add(question2);
-
-        Question question3=new Question();
-        question3.setQuestionTitle("Question3?");
-        question3.setQuestionAnswer("Answer Of Question 3");
-        question3.setQuestionDescription("Description Question 3");
-        allQuestions.add(question3);
-
-        Question question4=new Question();
-        question4.setQuestionTitle("Question4?");
-        question4.setQuestionAnswer("Answer Of Question 4");
-        question4.setQuestionDescription("Description Question 4");
-        allQuestions.add(question4);
-
-
-        Question question5=new Question();
-        question5.setQuestionTitle("Question5?");
-        question5.setQuestionAnswer("Answer Of Question 5");
-        question5.setQuestionDescription("Description Question 5");
-        allQuestions.add(question5);
-
-
-        return allQuestions;
     }
 
     @Override

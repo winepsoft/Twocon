@@ -16,6 +16,7 @@ import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 
 import winep.ir.mymemory.Presenter.ExamPage.ExamActivity;
+import winep.ir.mymemory.Presenter.ReviewCardPage.ReviewCardActivity;
 import winep.ir.mymemory.Presenter.ServerConnectionHandler;
 import winep.ir.mymemory.R;
 
@@ -180,6 +181,15 @@ public class Dialogs {
             public void onClick(View view) {
                 dialog.dismiss();
                 showGroupAndSubGroupListDialog(context);
+            }
+        });
+        Button btnReviewCards=(Button)dialog.findViewById(R.id.btn_dialog_shared_cards_cards_review);
+        btnReviewCards.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context, ReviewCardActivity.class);
+                context.startActivity(intent);
+                dialog.dismiss();
             }
         });
         dialog.show();

@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import winep.ir.mymemory.DataModel.Course;
 import winep.ir.mymemory.DataModel.FlashCart;
+import winep.ir.mymemory.DataModel.Question;
 import winep.ir.mymemory.DataModel.SharedFlashCard;
 import winep.ir.mymemory.R;
 
@@ -123,6 +124,44 @@ public class ServerConnectionHandler {
         sharedFlashCard2.setFlashCard(flashCart2);
         sharedFlashCards.add(sharedFlashCard2);
         return sharedFlashCards;
+    }
+
+    public ArrayList<Question> createQuestion(){
+
+        ArrayList<Question> allQuestions=new ArrayList<>();
+        Question question1=new Question();
+        question1.setQuestionTitle("Question1?");
+        question1.setQuestionAnswer("Answer Of Question 1");
+        question1.setQuestionDescription("Description Question 1");
+        allQuestions.add(question1);
+
+        Question question2=new Question();
+        question2.setQuestionTitle("Question2?");
+        question2.setQuestionAnswer("Answer Of Question 2");
+        question2.setQuestionDescription("Description Question 2");
+        allQuestions.add(question2);
+
+        Question question3=new Question();
+        question3.setQuestionTitle("Question3?");
+        question3.setQuestionAnswer("Answer Of Question 3");
+        question3.setQuestionDescription("Description Question 3");
+        allQuestions.add(question3);
+
+        Question question4=new Question();
+        question4.setQuestionTitle("Question4?");
+        question4.setQuestionAnswer("Answer Of Question 4");
+        question4.setQuestionDescription("Description Question 4");
+        allQuestions.add(question4);
+
+
+        Question question5=new Question();
+        question5.setQuestionTitle("Question5?");
+        question5.setQuestionAnswer("Answer Of Question 5");
+        question5.setQuestionDescription("Description Question 5");
+        allQuestions.add(question5);
+
+
+        return allQuestions;
     }
 
 }
