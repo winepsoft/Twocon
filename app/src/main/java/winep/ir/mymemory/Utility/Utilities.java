@@ -228,6 +228,9 @@ public class Utilities {
                 .show();
     }
 
+
+
+
     public String getLanguage(Context context){
         String language=context.getString(R.string.english);
         SettingsManager settingsManager=new SettingsManager(context);
@@ -246,6 +249,15 @@ public class Utilities {
             return getAllLanguageTitleDefaultPersian(context);
         else
             return getAllLanguageTitleDefaultEnglish(context);
+    }
+
+    public ArrayList<String> getAllLanguageTitleListByTitle(Context context){
+        ArrayList<String> languageTitleList=new ArrayList<>();
+        languageTitleList.add(context.getString(R.string.select_language));
+        languageTitleList.add(context.getString(R.string.english));
+        languageTitleList.add(context.getString(R.string.persian));
+        languageTitleList.add( context.getString(R.string.arabic));
+        return languageTitleList;
     }
 
     public ArrayList<String> getAllLanguageTitleList(Context context){
