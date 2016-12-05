@@ -35,8 +35,6 @@ public class QuestionPagerAdapter  extends PagerAdapter {
     private ArrayList<Question> allQuestion;
     private Activity activity;
     private View viewLayout;
-    private int knowNumber=0;
-    private int noKnowNumber=0;
 
     public QuestionPagerAdapter(ArrayList<Question> questions,Activity activity) {
         allQuestion = questions;
@@ -63,7 +61,7 @@ public class QuestionPagerAdapter  extends PagerAdapter {
         final CardView cardQuestion=(CardView)viewLayout.findViewById(R.id.question_cart_layout);
         final CardView cardFront=(CardView)viewLayout.findViewById(R.id.front_card);
         final CardView cardBack=(CardView) viewLayout.findViewById(R.id.back_card);
-        final RelativeLayout back_layout=(RelativeLayout)viewLayout.findViewById(R.id.back_layout);
+        //final RelativeLayout back_layout=(RelativeLayout)viewLayout.findViewById(R.id.back_layout);
         cardBack.setVisibility(View.GONE);
         final TextView txtQuestionNumber=(TextView)viewLayout.findViewById(R.id.txt_question_number);
         Utilities.getInstance().setFontTextView(activity,txtQuestionNumber);

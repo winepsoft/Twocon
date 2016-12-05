@@ -55,15 +55,31 @@
 
         </RelativeLayout>
     </LinearLayout>
-
-    <com.rey.material.widget.Button
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@drawable/button_with_corner_green"
-        android:id="@+id/btn_start_page_go"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:text="@string/start_page_btn_go_title"
-        android:textColor="@color/white"
-        android:textAllCaps="false"/>
+        android:layout_marginBottom="5dp">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+        </LinearLayout>
+        <com.rey.material.widget.Button
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="2"
+            android:background="@drawable/button_with_corner_green"
+            android:id="@+id/btn_start_page_go"
+            android:text="@string/start_page_btn_go_title"
+            android:textColor="@color/white"
+            android:textAllCaps="false"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+        </LinearLayout>
+    </LinearLayout>
 </RelativeLayout>
