@@ -58,7 +58,6 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/txt_exam_answer_one"
                             android:text="@string/answer"
-                            android:textDirection="locale"
                             android:layout_centerVertical="true"
                             android:layout_marginLeft="5dp"
                             android:textAppearance="?android:attr/textAppearanceMedium"/>
@@ -127,7 +126,6 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/txt_exam_answer_two"
                             android:text="@string/answer"
-                            android:textDirection="locale"
                             android:layout_centerVertical="true"
                             android:layout_marginLeft="5dp"
                             android:textAppearance="?android:attr/textAppearanceMedium"/>
@@ -196,7 +194,6 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/txt_exam_answer_three"
                             android:text="@string/answer"
-                            android:textDirection="locale"
                             android:layout_centerVertical="true"
                             android:layout_marginLeft="5dp"
                             android:textAppearance="?android:attr/textAppearanceMedium"/>
@@ -266,7 +263,6 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/txt_exam_answer_four"
                             android:text="@string/answer"
-                            android:textDirection="locale"
                             android:layout_centerVertical="true"
                             android:layout_marginLeft="5dp"
                             android:textAppearance="?android:attr/textAppearanceMedium"/>
@@ -281,5 +277,4 @@
             </LinearLayout>
         </android.support.v7.widget.CardView>
     </RelativeLayout>
-
 </LinearLayout>

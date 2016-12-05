@@ -135,8 +135,7 @@
                         android:layout_centerVertical="true"
                         android:layout_toEndOf="@+id/txt_question_number"
                         android:layout_marginLeft="5dp"
-                        android:gravity="center_vertical"
-                        android:textDirection="locale"/>
+                        android:gravity="center_vertical"/>
                 </RelativeLayout>
             </LinearLayout>
             <LinearLayout
